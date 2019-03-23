@@ -1,7 +1,5 @@
 ---
 author: cryptax
-layout: post
-categories: en
 tags:
 - insomnihack
 - conference
