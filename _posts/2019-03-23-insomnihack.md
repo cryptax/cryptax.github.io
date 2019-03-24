@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Insomni'hack 2019 CTF"
+author: cryptax
 tags:
 - insomnihack
 - 2019
 - CTF
 ---
 
-## Exploit Quest challenge
+# Exploit Quest challenge
 
 
 
@@ -19,7 +20,7 @@ This was a different type of challenge, in between regular Escape Rooms/ Geo-cac
 
 The challenges weren't too difficult, but I found this rather long and was happy to complete the task with @IdleWog (mushd00m team).
 
-### Spot 11
+## Spot 11
 
 The following image was taped on a desk.
 
@@ -29,7 +30,7 @@ Put this image in front of a mirror and you'd get the following sentence *"A fla
 
 "In the air". Wifi! Indeed, we quickly located a Wifi with a SSID whose name was one of the 11 codes to figure out.
 
-### Spot 5
+## Spot 5
 
 The following business card could be found on spot #5.
 
