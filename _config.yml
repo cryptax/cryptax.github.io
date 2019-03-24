@@ -1,3 +1,9 @@
 encoding: utf-8
-description: stuff concerning computer security, CTF, conferences
+description: Personal blog on computer security, CTF, conferences
 theme: jekyll-theme-hacker
+
+exclude: 
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
