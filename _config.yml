@@ -1,1 +1,3 @@
-future: true
+encoding: utf-8
+description: stuff concerning computer security, CTF, conferences
+theme: jekyll-theme-hacker
