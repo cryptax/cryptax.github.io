@@ -20,15 +20,12 @@ layout: default
 <h2>Tags</h2>
 
 
- <div>
    {% for tag in site.tags %}
    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
    {% endfor %}
- </div>
  
-<div>
     {% for tag in site.tags %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
     <ul>
       {% for post in tag[1] %}
         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
@@ -40,7 +37,6 @@ layout: default
       {% endfor %}
     </ul>
     {% endfor %}
-</div>
 
 <h2>List of all blog posts</h2>
 <ul>
