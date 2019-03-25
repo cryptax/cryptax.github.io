@@ -1,6 +1,8 @@
 encoding: utf-8
+title: "cryptax.github.io"
 description: "Cryptax's hand bag :)"
 theme: jekyll-theme-hacker
+avatar: /images/ghost.png
 
 exclude: 
   - README.md
