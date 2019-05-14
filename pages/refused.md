@@ -22,13 +22,16 @@ permalink: /fail/
 - CanSecWest 2013
 - Black Hat USA 2013
 - DEFCON 2013
-- I can't remember before 2013 :)
+
+I can't remember before 2013 :)
 
 ## Honourable mentions
 
-- Most submissions rejected in one go: **Le Hack 2019**
+- Most submissions rejected in one go: **Le Hack 2019** (3 submissions)
 - Rejected but never informed: **Paranoia 2019**
 - Gentle rejection before end of CFP: **Pass The Salt 2019**
+- Worst year(s): 2015, 2019
+
 
 ## Analysis
 
