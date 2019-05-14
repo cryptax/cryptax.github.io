@@ -4,7 +4,7 @@ title: "My best (or worst) failures"
 permalink: /fail/
 ---
 
-*We all talk about our success with pride and joy. Let's not forget we get there because of numerous failures. Here is a personal list of conferences where my submissions have been declined. Sometimes, I feel they were right (topic not mature yet, not in the scope of the conference etc). Sometimes, I was genuinely surprised and still don't understand the decision... but that's the way it is.
+*We all talk about our success with pride and joy. Let's not forget we get there because of numerous failures. Here is a personal list of conferences where my submissions have been declined. Sometimes, I feel they were right (topic not mature yet, not in the scope of the conference etc). Sometimes, I was genuinely surprised and still don't understand the decision... but that's the way it is!
 
 ## List of declined submissions
 
