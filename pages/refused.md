@@ -8,6 +8,7 @@ permalink: /fail/
 
 ## List of declined submissions
 
+- Black Hat Europe 2019
 - Hardwear.io 2019
 - Le Hack 2019
 - Paranoia 2018, 2019
