@@ -32,6 +32,7 @@ I can't remember before 2013 :)
 - Most submissions rejected in one go: **Le Hack 2019** (3 submissions)
 - Rejected but never informed: **Paranoia 2019**
 - Gentle rejection before end of CFP: **Pass The Salt 2019**
+- Notified as accepted, then as rejected, then as accepted: **RSA 2020**
 - Worst year(s): 2015, 2019
 
 

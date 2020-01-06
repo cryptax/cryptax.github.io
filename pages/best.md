@@ -10,3 +10,7 @@ permalink: /best/
 
 - Yanick Fratantonio, *"Betrayed by the Android UI"*, Insomni'hack 2019 [link](https://docs.google.com/presentation/d/1Ya2BThnbkXzAtXR3zh9SAiLAZ_mC3nYt8Zxm-KAIqZ4/edit#slide=id.p)
 - S. Pastrana, G. Suarez-Tangil, *"A First Look at the Crypto-Mining Ecosystem: A Decade of Unrestricted Wealth"* [link](https://arxiv.org/pdf/1901.00846.pdf)
+
+# In 2018
+
+- Renaud Lifchitz, *"Reversing Cryptographic Primitives Using Quantum Computing"*, BlackAlps 2018 [video](https://www.youtube.com/watch?v=fFqOjyCJaIQ)
