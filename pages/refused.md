@@ -32,7 +32,7 @@ I can't remember before 2013 :)
 ## Honourable mentions
 
 - Most submissions rejected in one go: **Le Hack 2019** (3 submissions)
-- Rejected but never informed: **Paranoia 2019**, **SAS 2020**
+- Rejected but never informed: **Paranoia 2019**
 - Rejected and informed on the day of the conference: **CoRIIN 2020**
 - Gentle rejection before end of CFP: **Pass The Salt 2019**
 - Notified as accepted, then as rejected, then as accepted: **RSA 2020**
