@@ -8,6 +8,7 @@ permalink: /fail/
 
 ## List of declined submissions
 
+- RootedCon 2020
 - SAS 2020
 - CoRIIN 2020
 - Black Hat Europe 2019
@@ -32,10 +33,10 @@ I can't remember before 2013 :)
 ## Honourable mentions
 
 - Most submissions rejected in one go: **Le Hack 2019** (3 submissions)
-- Rejected but never informed: **Paranoia 2019**
+- Rejected but never informed: **Paranoia 2019**, **RootedCon 2020**
 - Rejected and informed on the day of the conference: **CoRIIN 2020**
 - Gentle rejection before end of CFP: **Pass The Salt 2019**
-- Notified as accepted, then as rejected, then as accepted: **RSA 2020**
+- Notified as accepted, then as rejected, then as accepted: **RSA US 2020**
 - Worst year(s): 2015, 2019
 
 
