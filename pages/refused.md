@@ -8,6 +8,7 @@ permalink: /fail/
 
 ## List of declined submissions
 
+- SSTIC 2020
 - RootedCon 2020
 - SAS 2020
 - CoRIIN 2020
@@ -30,10 +31,11 @@ permalink: /fail/
 
 I can't remember before 2013 :)
 
+
 ## Honourable mentions
 
 - Most submissions rejected in one go: **Le Hack 2019** (3 submissions)
-- Rejected but never informed: **Paranoia 2019**, **RootedCon 2020**
+- Rejected but never informed: **Paranoia 2019**
 - Rejected and informed on the day of the conference: **CoRIIN 2020**
 - Gentle rejection before end of CFP: **Pass The Salt 2019**
 - Notified as accepted, then as rejected, then as accepted: **RSA US 2020**
@@ -42,8 +44,8 @@ I can't remember before 2013 :)
 
 ## Analysis
 
-Incidentally, I feel my submissions are most rejected when I submit a *new / novative topic* with little (or close to none) prior art. This explains why I have more rejections some years (those where I have finished research on a new topic) than others (digging into an already mature topic).
+Usually, my talks get a higher chance of being accepted when
 
-This is quite funny, because most conferences particularly seek for novative talks. My failure very certainly lies in *explaining what is so awesome about it*. *New topics require more explanations*, and it isn't always easy.
+1. I have already spoken in the conference. This is not surprising: there is always a "risk" for an organizer to accept a paper from a speaker he/she does not know.
 
-Eventually, all my research topics got published after a while. Usually, once a first talk has been accepted on the topic, it raises interest on the matter and it gets far easier for the next ones.
+2. The topic is extremely new, with little prior art. This is quite ironic because nearly all conferences will claim to seek novative talks. The fact is it is far more difficult to get a new topic accepted, because you need to explain things very well, and obviously, that's difficult.
