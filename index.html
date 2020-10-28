@@ -1,24 +1,21 @@
 ---
 layout: default
 ---
-<a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+
+<h1>Blog posts</h1>
+
 
 <div class="posts">
+<ul>
   {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%-d %B %Y" }}</h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more</a>
-    </article>
+    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%-d %B %Y" }}</li>
   {% endfor %}
+</ul>	    
 </div>
 
-<h2>Keywords</h2>
+
+<br>
+<h1>Keywords</h1>
 
 Click on a keyword to find related blog posts.<br>
 
@@ -60,7 +57,7 @@ Display all tags
 <a href="/tags.html#{{ tag | slugify }}"> {{ tag }} </a> - 
 {% endfor %}
 
-<h2>Archive</h2>
+<h1>Archive</h1>
 
 <ul>
   {% for post in site.posts %}
@@ -69,3 +66,5 @@ Display all tags
     </li>
   {% endfor %}
 </ul>
+
+<a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
