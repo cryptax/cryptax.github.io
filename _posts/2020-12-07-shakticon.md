@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shakticon CTF 2020"
+title: "Shakti CTF 2020"
 author: cryptax
 tags:
 - Shakticon
