@@ -256,7 +256,7 @@ Command ll -> factors: 27756: 2 2 3 3 3 257
 Command  sh -> factors: 2126696: 2 2 2 11 11 13 13 13
 ```
 
-The command ` sh ` (i.e starting with a space) should work.
+The command ` sh` (i.e starting with a space) should work.
 
 ## Executing the command
 
