@@ -139,11 +139,11 @@ Characteristic value/descriptor: 4e 6f 70 20 21
 
 In handle 0x39, we read `4e 6f 70 20 21` which is ASCII for `Nop !`. So, our input is incorrect and does not yield the flag.
 
-We quickly notice that each time we write to 0x48, a new value is generated in 0x2a:
+We quickly notice that each time we write to 0x48, a *new value* is generated in 0x2a.
 So, probably this is a challenge / response mechanism:
 
-1. We are expected to read a challenge nonce on handle 0x2a
-2. We are expected to write the corresponding challenge response on handle 0x48
+1. We are expected to read a **challenge nonce** on handle 0x2a
+2. We are expected to write the corresponding **challenge response** on handle 0x48
 3. If our response is correct, handle 0x39 will probably yield the flag.
 
 ## Relation between challenge and response
@@ -177,7 +177,7 @@ Characteristic value/descriptor: 62 58 66 59 0d 9c 3f 3e
 
 Then we compute its MD5 value
 
-```
+```python
 m = hashlib.md5()
 m.update(b'\x62\x58\x66\x59\x0d\x9c\x3f\x3e')
 m.hexdigest()
