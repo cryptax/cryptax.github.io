@@ -153,7 +153,7 @@ The nonce is 8 bytes long. Too big to brute force and attempt numerous connectio
 The expected answers is 16 bytes long.
 
 At this point, we went to have a look at the BLE devices. They are ESP32 devices.
-So, how could an ESP32 generate easily a 16-byte response? Encryption... Hash... SH1? too long. MD5 produces the right output length.
+So, how could an ESP32 generate easily a 16-byte response? Encryption... Hash... SHA1? too long. **MD5 produces the right output length**.
 
 ```python
 import hashlib
