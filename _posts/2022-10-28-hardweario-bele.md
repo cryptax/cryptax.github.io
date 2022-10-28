@@ -17,7 +17,7 @@ The challenge is named "BeLE" and says there are several BLE devices + provides 
 
 The PCAP file is small with only 5 packets.
 
-![](../images/bele-2022-pcap.png)
+![PCAP file provided in the description](/images/bele-2022-pcap.png)
 
 1. The first packet is a **BLE Read Request** to read the BLE characteristic with handle 0x2a
 
