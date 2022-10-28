@@ -181,7 +181,7 @@ Then we compute its MD5 value
 m = hashlib.md5()
 m.update(b'\x62\x58\x66\x59\x0d\x9c\x3f\x3e')
 m.hexdigest()
-`
+```
 
 The output is `df5e543a2cbc43508be6d23dc06fa213`. If we reverse the order, it is `13a26fc03dd2e68b5043bc2c3a545edf`.
 
