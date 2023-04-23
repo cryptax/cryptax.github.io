@@ -110,7 +110,7 @@ url = 'https://node01-eth.ctf.thcon.party:8545'
 web3 = Web3(Web3.HTTPProvider(url))
 
 # I am logged in the CTF interface with this personal address
-my_address = web3.to_checksum_address('0xc8fe8405b49b4bf6a7853cc77fde61b95070e12a')
+my_address = web3.to_checksum_address('0xc8fe...')
 
 # The contract is deployed at this address
 contract_address = web3.to_checksum_address('0xb9eE2C6DBa64e2dc3FE7e78aEE8e34FBb33FcAA3')
