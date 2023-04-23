@@ -14,7 +14,7 @@ tags:
 
 ![](/images/thcon23-nothingtohide-description.png)
 
-The challenge provides the following contract, and, same as the [Welcome challenge](./2023-04-22-welcome.md), the goal is to "unlock" to get the flag.
+The challenge provides the following contract, and, same as the [Welcome challenge](https://cryptax.github.io/2023/04/22/welcome.html), the goal is to "unlock" to get the flag.
 
 
 ```
