@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Android - Tag - Cryptax&#39;s hand bag</title>
+        <link>https://cryptax.github.io/tags/android/</link>
+        <description>Android - Tag - Cryptax&#39;s hand bag</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://cryptax.github.io/tags/android/" rel="self" type="application/rss+xml" /><item>
+    <title>draw.per - THCon 2021</title>
+    <link>https://cryptax.github.io/2021-06-14-thcon/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2021-06-14-thcon/</guid>
+    <description><![CDATA[Draw APK - THCon 2021  14 solves 249 points  First steps As the challenge creator tells me this app is &ldquo;based on a Trojan Horse&rdquo; and it is &ldquo;not recommended to install it on a real smartphone&rdquo;, even if there is actually &ldquo;no malicious payload&rdquo;, I am very reluctant at first to test the app, even in an emulator.
+So, I start off with my favorite static analysis combination: DroidLysis and JEB.]]></description>
+</item>
+<item>
+    <title>Flagdroid - Hack.Lu CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-28-flagdroid/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-28-flagdroid/</guid>
+    <description><![CDATA[Flagdroid  147 solves 153 points Easy Category: Reverse Author: m0ney Text: &ldquo;This app won&rsquo;t let me in without a secret message. Can you do me a favor and find out what it is?&rdquo; Download file: an APK  Analysis of the app We decompile the application. The validation of the flag is done when you press the button check:
+1 2 3 4 5 6 7 8 9 10 11 12 13  public void onClick(View arg10) { TextView tvWrong = (TextView)MainActivity.]]></description>
+</item>
+<item>
+    <title>Good old friend - THCon 2021</title>
+    <link>https://cryptax.github.io/2021-06-14-thcon-goodold/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2021-06-14-thcon-goodold/</guid>
+    <description><![CDATA[Good old friend The challenge provides an Android APK.
+Reversing the APK The main activity of this APK is party.thcon.y2021.level1.MainActivity. Its onCreate() method does the following:
+ Anti-debug. If the app is being debugged, display an alert dialog saying &ldquo;Find another way&rdquo; and quit.  1 2 3  if((this.getApplicationInfo().flags &amp; 2) != 0) { this.findanotherway(&#34;App is debuggable&#34;); }   Anti-root. Search for su in the PATH of the system.]]></description>
+</item>
+</channel>
+</rss>

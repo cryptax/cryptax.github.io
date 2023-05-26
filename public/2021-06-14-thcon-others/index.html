@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>THCon CTF 2021 - Crypto challenges - Cryptax&#39;s hand bag</title><meta name="Description" content="Cryptax&#39;s hand bag"><meta property="og:title" content="THCon CTF 2021 - Crypto challenges" />
+<meta property="og:description" content="RSA Internal Attacker - THCon 2021 Challenge description 1  I&#39;ve found this rsa implementation, it is quite strange. I have a public/private key and I&#39;ve also intercepted a ciphertext but infortunately it was not for me, so I can&#39;t read it. But I&#39;am really curious, can you decrypt it ? :)   2 files are provided:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  #!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cryptax.github.io/2021-06-14-thcon-others/" /><meta property="og:image" content="https://cryptax.github.io/logo.png"/><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="Cryptax" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cryptax.github.io/logo.png"/>
+
+<meta name="twitter:title" content="THCon CTF 2021 - Crypto challenges"/>
+<meta name="twitter:description" content="RSA Internal Attacker - THCon 2021 Challenge description 1  I&#39;ve found this rsa implementation, it is quite strange. I have a public/private key and I&#39;ve also intercepted a ciphertext but infortunately it was not for me, so I can&#39;t read it. But I&#39;am really curious, can you decrypt it ? :)   2 files are provided:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  #!"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cryptax.github.io/2021-06-14-thcon-others/" /><link rel="prev" href="https://cryptax.github.io/2019-12-1-tuctf/" /><link rel="next" href="https://cryptax.github.io/2023-03-25-spacial/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "THCon CTF 2021 - Crypto challenges",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cryptax.github.io\/2021-06-14-thcon-others\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/cryptax.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "THCon, CTF, 2021, Crypto","wordcount":  1578 ,
+        "url": "https:\/\/cryptax.github.io\/2021-06-14-thcon-others\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/cryptax.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "cryptax"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">THCon CTF 2021 - Crypto challenges</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cryptax</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1578 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;<span id="/2021-06-14-thcon-others/" class="leancloud_visitors" data-flag-title="THCon CTF 2021 - Crypto challenges">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#challenge-description">Challenge description</a></li>
+    <li><a href="#solving-the-challenge">Solving the challenge</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-challenge">The challenge</a></li>
+    <li><a href="#solving-the-challenge-1">Solving the challenge</a></li>
+    <li><a href="#find-the-shell-command">Find the shell command</a></li>
+    <li><a href="#executing-the-command">Executing the command</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="rsa-internal-attacker---thcon-2021">RSA Internal Attacker - THCon 2021</h1>
+<h2 id="challenge-description">Challenge description</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">I&#39;ve found this rsa implementation, it is quite strange. I have a public/private key and I&#39;ve also intercepted a ciphertext but infortunately it was not for me, so I can&#39;t read it. But I&#39;am really curious, can you decrypt it ? :)
+</code></pre></td></tr></table>
+</div>
+</div><p>2 files are provided:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">bytes_to_long</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span>
+
+<span class="k">def</span> <span class="nf">new_user</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+
+<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+<span class="n">e_a</span><span class="p">,</span> <span class="n">d_a</span> <span class="o">=</span> <span class="n">new_user</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="n">e_b</span><span class="p">,</span> <span class="n">d_b</span> <span class="o">=</span> <span class="n">new_user</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;THC2021{??????????????????????????????????????}&#34;</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">bytes_to_long</span><span class="p">(</span><span class="n">FLAG</span><span class="p">),</span> <span class="n">e_b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;The public modulus : </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Your key pair : (</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">e_a</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">d_a</span><span class="p">)</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Your boss public key : </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">e_b</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Intercepted message : </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output.txt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">The public modulus : 0x8d926c44899930f8f3fc3ea04cb9dfa7eb309b6d8e932b531007c4d8479e1dd227365087feeced8f854b1b54cc947182ee2241fe526c758e630b44e0c196ce8dc0995124f94755b0601d3454f89f178db2ffb3adeafcac2f49b656aace2acdb63afcd62a8847aadc55ca2452dff8c65ea5bfcfe03411f3b63a2bc4b244126259e2e845c68f8c1cd2d275bd2e344d35da542503c72f153ded14f766efecdfc98605e6963c4b1a7197de9e56b4b61ca1ab648265e6775819935a005a089eff04c27083d385e8d73ebf56b47f875c5fa9984e026914e1cbfc02205e75d02dc0da392700b536bf0fc8decd043736441e69fecc696b2127589f2ac9700e30c4dc88ef
+Your key pair : (0x8095, 0x21a31ccbce8117f468e9c26e3a404659d585ea166606c85ff192466b8dd4d9650b110addef35e3effdf8cb8710235cf5843e688e977be0d32842e0b4fa493f451ad8d77d35672696cf4373eaa0c0093a6a0baa348f790fc466be559bd90e788505b795026df6e991f6e8769565e06f472a445676e2c99240eccab25cd44433e8a083e66912c7a81c81c190470188c699c1a24dac441956b46aa364623f2c78c4ffca49e89f8a6f6edc51140e744f80a968fa80901fc91b88d491829b334542fd3ef460ddfa9a729d981b0ae9fa12bd0901c919972020b5f9e661b34a914fff85732e45718a2d216018507e7406aed4543096df76ca6fcfa4ab5dd21a84f162fd)
+Your boss public key : 0x22bb
+Intercepted message : 0x2118ee5b546b529c6b8d8fba1638f046006d7de2c10571d179af958f65d223a9a78df91daa5913f39f97d47681e1e10b8c58b6b462caf1fd56c683129ea732927cf55a06441cde5b743d00582569c9bbf43dab3d7b46ddbf03b358ca6ee075bafcc06165efa8592474bf78732dec4433502579338f2b925a922e74704cf19f7dff414a451fbc24b4ace4a9d8a072fb4259ebc8452941eb9f100f1df0cf19d5718088867a17d52d1c3f1fd5f92c9b9c55cbe528fbfd130879c14bde651a9e402f50b851c753e5915882b02a1136b43e015c6d4fd07e48aa05be08e9faf533a763f21d29a9b7fe8f355a8ffcbf11dc96b1069df4e302a3b310ecf39f25300bb375
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="solving-the-challenge">Solving the challenge</h2>
+<p>Reading <code>chall.py</code>, we see the program creates 2 RSA key pairs, for &ldquo;me&rdquo; and my boss, using the <strong>same modulus</strong> (n).</p>
+<p>By definition, RSA key pairs are created such as <code>e*d = 1 mod phi</code>:</p>
+<ul>
+<li>e is the public exponent</li>
+<li>d the corresponding private exponent</li>
+<li>phi is (p-1)(q-1) - actually we don&rsquo;t care so much to solve the exercise, although it&rsquo;s important for RSA! And p and q are 2 primes such that n = p*q (same we don&rsquo;t care).</li>
+</ul>
+<p>So, <code>e*d</code> is a multiple of phi + 1. This means we have an integer <code>k</code>, such that <code>e*d = k *phi + 1</code>.</p>
+<p>For our boss, we have only the public exponent (e_b). But if we have managed to compute phi, then compute the private exponent of our boss (d_b) is simple. Again, <code>e *d = 1 mod phi</code>, so <code>d = 1/e mod phi</code>, i.e d is the modular inverse of e (modulus phi).</p>
+<p>And once we know the private exponent, then it is game over to decrypt the intercepted message, we just use the standard RSA formula: <code>plaintext = ciphertext ^ d mod n</code>.</p>
+<p>So, <strong>the challenge boils down on finding phi</strong>. Actually, we can easily compute <code>k * phi</code>, but we have no idea what value <code>k</code> (an integer) has. So, we&rsquo;ll just try and check the decrypted ciphertext looks like a flag. All flags at THCon begin with <code>THCon21{</code>, so we&rsquo;ll check this. (IMHO, <code>chall.py</code> is misleading here as it mentions <code>THC2021{</code>. This should have been changed).</p>
+<p>In the end, we are very lucky, the solution arrives nearly immediately. I would have let the program run 5 minutes at most, before trying a more intelligent approach (common modulus attack etc).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+
+<span class="c1"># ----------------------</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mh">0x8d926c44899930f8f3fc3ea04cb9dfa7eb309b6d8e932b531007c4d8479e1dd227365087feeced8f854b1b54cc947182ee2241fe526c758e630b44e0c196ce8dc0995124f94755b0601d3454f89f178db2ffb3adeafcac2f49b656aace2acdb63afcd62a8847aadc55ca2452dff8c65ea5bfcfe03411f3b63a2bc4b244126259e2e845c68f8c1cd2d275bd2e344d35da542503c72f153ded14f766efecdfc98605e6963c4b1a7197de9e56b4b61ca1ab648265e6775819935a005a089eff04c27083d385e8d73ebf56b47f875c5fa9984e026914e1cbfc02205e75d02dc0da392700b536bf0fc8decd043736441e69fecc696b2127589f2ac9700e30c4dc88ef</span><span class="p">)</span>
+<span class="n">e_a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mh">0x8095</span><span class="p">)</span>
+<span class="n">d_a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mh">0x21a31ccbce8117f468e9c26e3a404659d585ea166606c85ff192466b8dd4d9650b110addef35e3effdf8cb8710235cf5843e688e977be0d32842e0b4fa493f451ad8d77d35672696cf4373eaa0c0093a6a0baa348f790fc466be559bd90e788505b795026df6e991f6e8769565e06f472a445676e2c99240eccab25cd44433e8a083e66912c7a81c81c190470188c699c1a24dac441956b46aa364623f2c78c4ffca49e89f8a6f6edc51140e744f80a968fa80901fc91b88d491829b334542fd3ef460ddfa9a729d981b0ae9fa12bd0901c919972020b5f9e661b34a914fff85732e45718a2d216018507e7406aed4543096df76ca6fcfa4ab5dd21a84f162fd</span><span class="p">)</span>
+<span class="n">e_b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mh">0x22bb</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mh">0x2118ee5b546b529c6b8d8fba1638f046006d7de2c10571d179af958f65d223a9a78df91daa5913f39f97d47681e1e10b8c58b6b462caf1fd56c683129ea732927cf55a06441cde5b743d00582569c9bbf43dab3d7b46ddbf03b358ca6ee075bafcc06165efa8592474bf78732dec4433502579338f2b925a922e74704cf19f7dff414a451fbc24b4ace4a9d8a072fb4259ebc8452941eb9f100f1df0cf19d5718088867a17d52d1c3f1fd5f92c9b9c55cbe528fbfd130879c14bde651a9e402f50b851c753e5915882b02a1136b43e015c6d4fd07e48aa05be08e9faf533a763f21d29a9b7fe8f355a8ffcbf11dc96b1069df4e302a3b310ecf39f25300bb375</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;n=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;e_a=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e_a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;d_a=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;e_b=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e_b</span><span class="p">))</span>
+
+<span class="c1"># ----------------------</span>
+<span class="c1"># e * d = 1 mod phi</span>
+<span class="c1"># so, e * d = k * phi + 1</span>
+<span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">kphi</span> <span class="o">=</span> <span class="p">(</span><span class="n">e_a</span> <span class="o">*</span> <span class="n">d_a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+    <span class="c1"># compute possible phi </span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">((</span><span class="n">e_a</span> <span class="o">*</span> <span class="n">d_a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">k</span>
+
+    <span class="c1"># d = 1/e mod phi</span>
+    <span class="n">d_b</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e_b</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span><span class="n">d_b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">flag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;THCon21&#39;</span><span class="p">):</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;k=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+        <span class="n">quit</span><span class="p">()</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The flag is <code>THCon21{coMm0n_m0duLus_wh1th_int3rn4l_aTt4ck3r}</code>.</p>
+<p>NB. I didn&rsquo;t flag this during the CTF, as I only played sporadically. A pity! ;-)</p>
+<h1 id="baby-sign">Baby sign</h1>
+<h2 id="the-challenge">The challenge</h2>
+<p>Nowadays even toddlers use rsa to sign: <code>nc server 11001</code> (where server was up during the CTF).</p>
+<p>And providing <code>server.py</code>, which is the program which runs on the server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">GCD</span><span class="p">,</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">bytes_to_long</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">SecureSigner</span><span class="p">():</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+		<span class="n">e</span> <span class="o">=</span> <span class="mh">0x10001</span>
+		<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">while</span> <span class="n">GCD</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+			<span class="n">q</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+			<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
+
+	<span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">signature</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">signature</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">message</span>
+
+
+
+<span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+	<span class="nb">print</span><span class="p">(</span>
+		<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">		1 - Sign an 8-bit integer
+</span><span class="s2">		2 - Execute command
+</span><span class="s2">		3 - Exit
+</span><span class="s2">		&#34;&#34;&#34;</span>
+		<span class="p">)</span>
+	<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Choice: &#34;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&#34;1&#34;</span><span class="p">:</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Integer to sign: &#34;</span><span class="p">))</span>
+			<span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Signature: </span><span class="si">{:d}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">m</span><span class="p">)))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;You can only sign 8-bit integers.&#34;</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;An error occured.&#34;</span><span class="p">)</span>
+			<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&#34;2&#34;</span><span class="p">:</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">cmd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Command: &#34;</span><span class="p">)</span>
+			<span class="n">m</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+			<span class="n">signature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Signature: &#34;</span><span class="p">))</span>
+			<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">signature</span><span class="p">):</span>
+				<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Wrong signature.&#34;</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;An error occured.&#34;</span><span class="p">)</span>
+			<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&#34;3&#34;</span><span class="p">:</span>
+		<span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Incorrect input.&#34;</span><span class="p">)</span>
+		<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="n">SecureSigner</span><span class="p">()</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Here are your parameters:</span><span class="se">\n</span><span class="s2"> - modulus n: </span><span class="si">{:d}</span><span class="se">\n</span><span class="s2"> - public exponent e: </span><span class="si">{:d}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+	
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">menu</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="solving-the-challenge-1">Solving the challenge</h2>
+<p>The server is able to:</p>
+<ol>
+<li>Sign integers below 256</li>
+<li>Execute a Unix command whose signature is correct. The user must provide the command, and its signature.</li>
+</ol>
+<p>For instance, we&rsquo;d like to execute <code>ls</code> on the server, to see where the flag is located, and then <code>cat</code> the flag file. The issue is that <code>ls</code> transformed to an integer (<code>bytes_to_long('ls'.encode())</code>) is far above 256. So, <em>we need to find a way to get the signature of bigger integers&hellip;</em></p>
+<p>We are able to do that because the server performs raw RSA signature.
+So, basically, let&rsquo;s say that if we want to sign integer <code>4</code>, this is actually <code>4^d mod n</code> (d being the private exponent), and this is <code>2^d * 2^d mod n</code>. So, we can also compute the signature of 4 (<code>s4</code>) by asking the signature of 2 (<code>s2</code>), and then <code>s4 = s2 * s2 mod n</code>. See <a href="https://crypto.stackexchange.com/questions/20085/which-attacks-are-possible-against-raw-textbook-rsa" target="_blank" rel="noopener noreffer ">here</a></p>
+<h2 id="find-the-shell-command">Find the shell command</h2>
+<p>The hardest part of the challenge is now to find a shell command whose prime factors are below 256.</p>
+<p>I compute prime factors for various shell commands. There is a nice shell command <code>factor</code> for that by the way!</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="k">for</span> c in <span class="s1">&#39;ls&#39;</span> <span class="s1">&#39;sh&#39;</span> <span class="s1">&#39;bash&#39;</span> <span class="s1">&#39;ll&#39;</span> <span class="s1">&#39; sh&#39;</span>
+<span class="k">do</span>
+    <span class="nv">integer</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&#34;%d&#34;</span> 0x<span class="sb">`</span><span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="nv">$c</span><span class="s2">&#34;</span> <span class="p">|</span> xxd -ps<span class="sb">`</span><span class="k">)</span>
+    <span class="nv">factors</span><span class="o">=</span><span class="k">$(</span>factor <span class="nv">$integer</span><span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;Command </span><span class="nv">$c</span><span class="s2"> -&gt; factors: </span><span class="nv">$factors</span><span class="s2">&#34;</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Unfortunately, neither <code>ls</code> nor <code>sh</code> work, because some of their factors are &gt; 256. <code>ll</code> is close but not working.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Command ls -&gt; factors: 27763: 27763
+Command sh -&gt; factors: 29544: 2 2 2 3 1231
+Command bash -&gt; factors: 1650553704: 2 2 2 3 3 22924357
+Command ll -&gt; factors: 27756: 2 2 3 3 3 257
+Command  sh -&gt; factors: 2126696: 2 2 2 11 11 13 13 13
+</code></pre></td></tr></table>
+</div>
+</div><p>The command <code> sh</code> (i.e starting with a space) should work.</p>
+<h2 id="executing-the-command">Executing the command</h2>
+<p>Once the command is found, we just need to apply the theory we identified earlier.</p>
+<p>My program below must be run in parallel with the real one on the remote server. My program tells me what to ask to the real one:</p>
+<ul>
+<li>It asks me to provide the value <code>n</code> that the real server displays</li>
+<li>It asks to provide the result of various signatures of ints</li>
+<li>Based on those values, it computes the correct signature for the shell command.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">isPrime</span>
+
+<span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">        simplified function to find primes (won&#39;t work in all cases!)
+</span><span class="s1">        we are only interested in primes &lt; 256
+</span><span class="s1">        In Shell, use # factor xxx
+</span><span class="s1">        &#39;&#39;&#39;</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">107</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">199</span><span class="p">,</span><span class="mi">211</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">229</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">251</span><span class="p">]</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">n</span>
+
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">current</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">current</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">//</span> <span class="n">p</span>
+                                <span class="n">factor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                                <span class="k">break</span>
+
+        <span class="n">factor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">factor</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39; sh&#39;</span>
+<span class="n">cmd_int</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+<span class="n">factor_list</span> <span class="o">=</span> <span class="n">factors</span><span class="p">(</span><span class="n">cmd_int</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Please provide n: &#34;</span><span class="p">))</span>
+
+<span class="n">sig</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factor_list</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please ask signature of int </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+        <span class="n">intermediate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;value: &#34;</span><span class="p">))</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">*</span> <span class="n">intermediate</span>
+
+<span class="n">sig</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">%</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please send command: &#39;</span><span class="si">{}</span><span class="s2">&#39;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Use this computed signature: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The signature is recognized (see below) and I get a shell on the remote server. And easily then the flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">		1 - Sign an 8-bit integer
+		2 - Execute command
+		3 - Exit
+		
+Choice: 2
+Command:  sh
+Signature: 41609626228993531674308423452763833896469702200570002126534943100863455927692030907187524746966991634244450965040800407545526148474306900123580404483596334993024977357851683651502221718086925851882951517245197834174887191621924133861437811355658364899236723602859660221594479159243377647935842532691897847973
+ls
+flag.txt
+server.py
+cat flag.txt
+THCon21{Textb00k_RS4_Mall3ab1l1ty}
+</code></pre></td></tr></table>
+</div>
+</div><p>The flag is <strong>THCon21{Textb00k_RS4_Mall3ab1l1ty}</strong>.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-06-14-thcon-others/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://cryptax.github.io/2021-06-14-thcon-others/" data-title="THCon CTF 2021 - Crypto challenges" data-via="@cryptax" data-hashtags="THCon,CTF,2021,Crypto"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://cryptax.github.io/2021-06-14-thcon-others/" data-hashtag="THCon"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://cryptax.github.io/2021-06-14-thcon-others/" data-title="THCon CTF 2021 - Crypto challenges"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://cryptax.github.io/2021-06-14-thcon-others/" data-title="THCon CTF 2021 - Crypto challenges"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://cryptax.github.io/2021-06-14-thcon-others/" data-title="THCon CTF 2021 - Crypto challenges"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/thcon/">THCon</a>,&nbsp;<a href="/tags/ctf/">CTF</a>,&nbsp;<a href="/tags/2021/">2021</a>,&nbsp;<a href="/tags/crypto/">crypto</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2019-12-1-tuctf/" class="prev" rel="prev" title="TUCTF 2019"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>TUCTF 2019</a>
+            <a href="/2023-03-25-spacial/" class="next" rel="next" title="Spacial TOTP (Insomni&#39;hack CTF 2013)">Spacial TOTP (Insomni'hack CTF 2013)<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cryptax</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

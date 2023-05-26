@@ -1,0 +1,79 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>2020 - Tag - Cryptax&#39;s hand bag</title>
+        <link>https://cryptax.github.io/tags/2020/</link>
+        <description>2020 - Tag - Cryptax&#39;s hand bag</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://cryptax.github.io/tags/2020/" rel="self" type="application/rss+xml" /><item>
+    <title>Bad Primes - Hack.Lu CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-28-badprimes/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-28-badprimes/</guid>
+    <description><![CDATA[Bad Primes  86 solves Easy Category: Crypto Author: midao Description : &ldquo;I thought I understood the RSA primitive but apparently I generated the primitive&rsquo;s primes too primitively&hellip; &quot; 193 points  Understanding the issue The challenge comes with Python code which implements RSA encryption/decryption.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  #!]]></description>
+</item>
+<item>
+    <title>Callboy - Hack.Lu CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-28-callboy/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-28-callboy/</guid>
+    <description><![CDATA[Callboy  207 solves Baby Category: Misc Author: p4ck3to Description : &ldquo;Have you ever called a Callboy? No!? Then you should definitely try it. To make it a pleasant experience for you, we have recorded a call with our Callboy to help you get started, so that there is no embarrassing silence between you.  PS: do not forget the to wrap flag{} around the secret &quot;
+ 127 points  An overview of network packets The file we download is a network packet capture.]]></description>
+</item>
+<item>
+    <title>Cyberwall - Cyber Security Rumble CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-30-cyberwall/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-30-cyberwall/</guid>
+    <description><![CDATA[Cyberwall  Category: web  &ldquo;We had problems with hackers, but now we got a enterprise firewall system build by a leading security company.&quot; with a link to http://chal.cybersecurityrumble.de:3812.
+Web page http://chal.cybersecurityrumble.de:3812 The source code of the page reveals password rootpw1337:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;!DOCTYPE html&gt; &lt;html lang=&#34;de&#34;&gt; &lt;head&gt; &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt; &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://cryptax.github.io/static/login.]]></description>
+</item>
+<item>
+    <title>Flagdroid - Hack.Lu CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-28-flagdroid/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-28-flagdroid/</guid>
+    <description><![CDATA[Flagdroid  147 solves 153 points Easy Category: Reverse Author: m0ney Text: &ldquo;This app won&rsquo;t let me in without a secret message. Can you do me a favor and find out what it is?&rdquo; Download file: an APK  Analysis of the app We decompile the application. The validation of the flag is done when you press the button check:
+1 2 3 4 5 6 7 8 9 10 11 12 13  public void onClick(View arg10) { TextView tvWrong = (TextView)MainActivity.]]></description>
+</item>
+<item>
+    <title>Hashfun - Cyber Security Rumble CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-31-hashfun/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-31-hashfun/</guid>
+    <description><![CDATA[Hashfun &ldquo;I guess there is no way to recover the flag&rdquo; and a Python program is provided:
+1 2 3 4 5 6 7 8 9 10  from secret import FLAG def hashfun(msg): digest = [] for i in range(len(msg) - 4): digest.append(ord(msg[i]) ^ ord(msg[i + 4])) return digest print(hashfun(FLAG)) # [10, 30, 31, 62, 27, 9, 4, 0, 1, 1, 4, 4, 7, 13, 8, 12, 21, 28, 12, 6, 60]   Understanding the algorithm So this is an alleged hash function.]]></description>
+</item>
+<item>
+    <title>Shakti CTF 2020</title>
+    <link>https://cryptax.github.io/2020-12-07-shakticon/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-12-07-shakticon/</guid>
+    <description><![CDATA[The overall intent for Shakti CTF is for beginners, learn what is a CTF and get women interested in the topic. Therefore, the &ldquo;easy&rdquo; 50 points challenges are really very very easy, and 100-point challenges are still *really easy (far easier than baby challenges at Hack.Lu CTF ;-). Everybody has to start one day ;P so I&rsquo;m okay with this rating as long as it remains consistent. Globally, this was the case, with the exception of a few challenges under/over rated.]]></description>
+</item>
+<item>
+    <title>Wheels n Whales - Cyber Security Rumble CTF 2020</title>
+    <link>https://cryptax.github.io/2020-11-01-whales/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-11-01-whales/</guid>
+    <description><![CDATA[Wheels n Whales  Category: Web  &ldquo;I&rsquo;ve heard that Whales and Wheels are the new hot thing. So a buddy of mine build a website where you can get your own. I think he hid an easter egg somewhere, but I can&rsquo;t get to it, can you help me?&quot;
+ There is a website that goes to http://chal.cybersecurityrumble.de:7780/ A file is provided: web.py  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69  import yaml from flask import redirect, Flask, render_template, request, abort from flask import url_for, send_from_directory, make_response, Response import flag app = Flask(__name__) EASTER_WHALE = {&#34;name&#34;: &#34;TheBestWhaleIsAWhaleEveryOneLikes&#34;, &#34;image_num&#34;: 2, &#34;weight&#34;: 34} @app.]]></description>
+</item>
+<item>
+    <title>Zeh - Cyber Security Rumble CTF 2020</title>
+    <link>https://cryptax.github.io/2020-10-31-zeh/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2020-10-31-zeh/</guid>
+    <description><![CDATA[Zeh *&ldquo;For the CSR we finally created a deutsche Programmiersprache! nc chal.cybersecurityrumble.de 65123&rdquo; and the following C program is provided:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  #define wenn if #define ansonsten else #define Zeichen char #define Zeiger * #define Referenz &amp; #define Ausgabe(s) puts(s) #define FormatAusgabe printf #define FormatEingabe scanf #define Zufall rand() #define istgleich = #define gleichbedeutend ==  nichts Hauptroutine(nichts) { Ganzzahl i istgleich Zufall; Ganzzahl k istgleich 13; Ganzzahl e; Ganzzahl Zeiger p istgleich Referenz i; FormatAusgabe(&#34;%d\n&#34;, i); fflush(stdout); FormatEingabe(&#34;%d %d&#34;, Referenz k, Referenz e); schleife(7) k istgleich bitrverschieb(Zeiger p, k % 3); k istgleich diskreteAddition(k, e); wenn(k gleichbedeutend 53225) Ausgabe(Fahne); ansonsten Ausgabe(&#34;War wohl nichts!]]></description>
+</item>
+</channel>
+</rss>

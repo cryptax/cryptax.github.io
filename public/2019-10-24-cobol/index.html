@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Cobol OTP - Hack.Lu CTF 2019 - Cryptax&#39;s hand bag</title><meta name="Description" content="Cryptax&#39;s hand bag"><meta property="og:title" content="Cobol OTP - Hack.Lu CTF 2019" />
+<meta property="og:description" content="Cobol OTP Category: Crypto Author: midao Level: easy Solves: 104
+Thanks to R. who actually flagged it :)
+Description To save the future you have to look at the past. Someone from the inside sent you an access code to a bank account with a lot of money. Can you handle the past and decrypt the code to save the future?
+Attached file A zip is provided with:
+ otp.cob: a program in Cobol out  1 2  Enter your message to encrypt: ï¿½ï¿½ï¿½y;dhuï¿½ï¿½Fï¿½]UjhCï¿½ï¿½-ï¿½1T`h&amp;ï¿½ï¿½Fï¿½1*T{_ï¿½ï¿½ï¿½p02J   Understanding the Cobol program We understand the Cobol program is performing XOR encryption using a key provided in a keyfille." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cryptax.github.io/2019-10-24-cobol/" /><meta property="og:image" content="https://cryptax.github.io/logo.png"/><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="Cryptax" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cryptax.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Cobol OTP - Hack.Lu CTF 2019"/>
+<meta name="twitter:description" content="Cobol OTP Category: Crypto Author: midao Level: easy Solves: 104
+Thanks to R. who actually flagged it :)
+Description To save the future you have to look at the past. Someone from the inside sent you an access code to a bank account with a lot of money. Can you handle the past and decrypt the code to save the future?
+Attached file A zip is provided with:
+ otp.cob: a program in Cobol out  1 2  Enter your message to encrypt: ï¿½ï¿½ï¿½y;dhuï¿½ï¿½Fï¿½]UjhCï¿½ï¿½-ï¿½1T`h&amp;ï¿½ï¿½Fï¿½1*T{_ï¿½ï¿½ï¿½p02J   Understanding the Cobol program We understand the Cobol program is performing XOR encryption using a key provided in a keyfille."/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cryptax.github.io/2019-10-24-cobol/" /><link rel="prev" href="https://cryptax.github.io/2020-10-30-cyberwall/" /><link rel="next" href="https://cryptax.github.io/2020-10-28-callboy/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cobol OTP - Hack.Lu CTF 2019",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cryptax.github.io\/2019-10-24-cobol\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/cryptax.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "hack.lu, CTF, 2019","wordcount":  768 ,
+        "url": "https:\/\/cryptax.github.io\/2019-10-24-cobol\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/cryptax.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "cryptax"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Cobol OTP - Hack.Lu CTF 2019</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cryptax</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;768 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;<span id="/2019-10-24-cobol/" class="leancloud_visitors" data-flag-title="Cobol OTP - Hack.Lu CTF 2019">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#attached-file">Attached file</a></li>
+    <li><a href="#understanding-the-cobol-program">Understanding the Cobol program</a></li>
+    <li><a href="#compililng-cobol">Compililng Cobol</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="cobol-otp">Cobol OTP</h1>
+<p>Category: Crypto
+Author: midao
+Level: easy
+Solves: 104</p>
+<p>Thanks to R. who actually flagged it :)</p>
+<h2 id="description">Description</h2>
+<p>To save the future you have to look at the past. Someone from the inside sent you an access code to a bank account with a lot of money. Can you handle the past and decrypt the code to save the future?</p>
+<h2 id="attached-file">Attached file</h2>
+<p>A zip is provided with:</p>
+<ul>
+<li>otp.cob: a program in Cobol</li>
+<li>out</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Enter your message to encrypt:
+ï¿½ï¿½ï¿½y;dhuï¿½ï¿½Fï¿½]UjhCï¿½ï¿½-ï¿½1T`h&amp;ï¿½ï¿½Fï¿½1*T{_ï¿½ï¿½ï¿½p02J
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="understanding-the-cobol-program">Understanding the Cobol program</h2>
+<p>We understand the Cobol program is performing XOR encryption using a key provided in a keyfille.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cobol" data-lang="cobol"><span class="c">      </span> <span class="kr">file-control</span><span class="p">.</span><span class="err">
+</span><span class="err"></span><span class="c">      </span>     <span class="kp">select</span> <span class="nv">key-file</span> <span class="kp">assign</span> <span class="kp">to </span><span class="s1">&#39;key.txt&#39;</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>We don&rsquo;t have the key file of course, but we know that flags begin with <code>flag{...}</code>.</p>
+<p>This means that the data in the key data will be at most 50 characters.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">       fd key-file.
+       01 key-data pic x(50).
+</code></pre></td></tr></table>
+</div>
+</div><p>This allocates two variables: ws-flag which contains 1 characters and ws-key with at most 50. Then we have ws-xor-len composed of at most 1 digit (so 0 to 9), and ws-ctr, a counter, one digit as well.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">       01 ws-flag pic x(1).
+       01 ws-key pic x(50).
+       ...
+       01 ws-xor-len pic 9(1) value 1.
+       77 ws-ctr pic 9(1).
+
+</code></pre></td></tr></table>
+</div>
+</div><p>In Cobol, the program instructions begin at <code>procedure division</code>.
+We read the key file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">       procedure division.
+           open input key-file.
+           read key-file into ws-key end-read.
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, we ask for the message to encrypt, and initialize the counter to 1.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">           display &#39;Enter your message to encrypt:&#39;.
+           move 1 to ws-ctr.
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, we loop 50 times (because the message has 50 characters) to encrypt each character.
+By the way, we check that indeed our encrypted message has 50 characters (actually 49 + \n).</p>
+<p>For each character, we read one character of the message to encrypt and put it in ws-parse.
+We also copy it on ws-flag which is the variable which will hold the encrypted character.
+Then, we call XOR on ws-flag using the i-th character of the key (using the counter ws-ctr).
+Finally we increment the counter.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">perform 50 times
+               call &#39;getchar&#39; end-call
+               move return-code to ws-parse
+               move ws-parse to ws-flag
+
+               call &#39;CBL_XOR&#39; using ws-key(ws-ctr:1) ws-flag by value
+               ws-xor-len end-call
+
+               display ws-flag with no advancing
+               add 1 to ws-ctr end-add
+           end-perform.
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="compililng-cobol">Compililng Cobol</h2>
+<p>If you want to try the program, on Linux you can compile it using <code>open-cobol</code> package:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$  cobc -free -x -o hack_otp otp.cob
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
+<p>We know that the first few characters of the encrypted message must correspond to plaintext <code>flag{</code>. As the <em>encryption</em> algorithm is XOR, we can recover the first few bytes of the key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; hex(0xa6 ^ ord(&#39;f&#39;))
+&#39;0xc0&#39;
+&gt;&gt;&gt; hex(0xd2 ^ ord(&#39;l&#39;))
+&#39;0xbe&#39;
+&gt;&gt;&gt; hex(0x13 ^ ord(&#39;a&#39;))
+&#39;0x72&#39;
+&gt;&gt;&gt; hex(0x96 ^ ord(&#39;g&#39;))
+&#39;0xf1&#39;
+&gt;&gt;&gt; hex(0x79 ^ ord(&#39;{&#39;))
+&#39;0x2&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>So, the first bytes of the key are 0xc0, 0xbe, 0x72, 0xf1, 0x02.</p>
+<p>We set this as a key, and decrypt the entire message in a Python interpreter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; from itertools import izip, cycle
+&gt;&gt;&gt; import string
+&gt;&gt;&gt; def xor(message,key):
+...     return &#39;&#39;.join(chr(ord(x) ^ ord(y)) for (x,y) in izip(message, cycle(key)))
+... 
+&gt;&gt;&gt; key=&#39;\xc0\xber\xf1\x02&#39;
+&gt;&gt;&gt; message=&#39;\xa6\xd2\x13\x96y;\x10dhu\x9f\xddF\x9f]\x17UjhC\x8f\x8c-\x921\x07T`h&amp;\x9f\xcdF\x871*T{\x04_\xa6\xeb\x06\xa4p0\x112J&#39;
+&gt;&gt;&gt; xor(message,key)
+&#39;flag{\xfb\xae\x16\x99w_c4n_\xd7\xeb\x18\x99AO2_c3\xc7\xea\x12\x99$_s4v3\xea\xea\t\xf5]fUtUr\xf0\xaf@\xbb&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>It doesn&rsquo;t work yet, because we miss characters for the key. We have only set 5 bytes but obviously it is not enough.</p>
+<p>We notice in the middle that we have something that prints out correctly: <code>fUtUr</code>, so this means that at some point we were correctly aligned with the key once again. As the message is 50 characters long, the key is likely to be a divider of 50. If 5 is not enough, then 10 probably.</p>
+<p>Slightly before <code>fUtUr</code>, we also see <code>s4v3</code>. We guess that in between we should have <code>_th3_</code> for <code>s4v3_th3_fUtUr</code>.</p>
+<p>With that, we recover the rest of the key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">beginning_key</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\xc0\xbe</span><span class="s1">r</span><span class="se">\xf1\x02</span><span class="s1">&#39;</span>
+<span class="n">guess</span><span class="o">=</span><span class="n">xor</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">40</span><span class="p">],</span> <span class="s1">&#39;_th3_&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">beginning_key</span><span class="o">+</span><span class="n">guess</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And then, we can decrypt the message with the correct 10 character long key and get the flag: <code>flag{N0w_u_c4n_buy_CO2_c3rts_&amp;_s4v3_th3_fUtUrE1!}</code></p>
+<p>Here is the Python program that solves the challenge</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip</span><span class="p">,</span> <span class="n">cycle</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">xor</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">^</span> <span class="nb">ord</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">cycle</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
+
+<span class="n">beginning_key</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\xc0\xbe</span><span class="s1">r</span><span class="se">\xf1\x02</span><span class="s1">&#39;</span>
+
+<span class="c1"># this is the hex contained in the file named out</span>
+<span class="n">ciphertext</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\xa6\xd2\x13\x96</span><span class="s1">y;</span><span class="se">\x10</span><span class="s1">dhu</span><span class="se">\x9f\xdd</span><span class="s1">F</span><span class="se">\x9f</span><span class="s1">]</span><span class="se">\x17</span><span class="s1">UjhC</span><span class="se">\x8f\x8c</span><span class="s1">-</span><span class="se">\x92</span><span class="s1">1</span><span class="se">\x07</span><span class="s1">T`h&amp;</span><span class="se">\x9f\xcd</span><span class="s1">F</span><span class="se">\x87</span><span class="s1">1*T{</span><span class="se">\x04</span><span class="s1">_</span><span class="se">\xa6\xeb\x06\xa4</span><span class="s1">p0</span><span class="se">\x11</span><span class="s1">2J&#39;</span>
+
+<span class="n">partial</span><span class="o">=</span><span class="n">xor</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span><span class="n">beginning_key</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">partial</span>
+
+<span class="c1"># guess rest of key</span>
+<span class="n">guess</span><span class="o">=</span><span class="n">xor</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">40</span><span class="p">],</span> <span class="s1">&#39;_th3_&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">beginning_key</span><span class="o">+</span><span class="n">guess</span>
+
+<span class="c1"># decrypt</span>
+<span class="nb">print</span> <span class="n">xor</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2019-10-24-cobol/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://cryptax.github.io/2019-10-24-cobol/" data-title="Cobol OTP - Hack.Lu CTF 2019" data-via="@cryptax" data-hashtags="hack.lu,CTF,2019"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://cryptax.github.io/2019-10-24-cobol/" data-hashtag="hack.lu"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://cryptax.github.io/2019-10-24-cobol/" data-title="Cobol OTP - Hack.Lu CTF 2019"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://cryptax.github.io/2019-10-24-cobol/" data-title="Cobol OTP - Hack.Lu CTF 2019"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://cryptax.github.io/2019-10-24-cobol/" data-title="Cobol OTP - Hack.Lu CTF 2019"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/hack.lu/">hack.lu</a>,&nbsp;<a href="/tags/ctf/">CTF</a>,&nbsp;<a href="/tags/2019/">2019</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-10-30-cyberwall/" class="prev" rel="prev" title="Cyberwall - Cyber Security Rumble CTF 2020"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Cyberwall - Cyber Security Rumble CTF 2020</a>
+            <a href="/2020-10-28-callboy/" class="next" rel="next" title="Callboy - Hack.Lu CTF 2020">Callboy - Hack.Lu CTF 2020<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cryptax</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

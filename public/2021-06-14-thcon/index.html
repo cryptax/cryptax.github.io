@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>draw.per - THCon 2021 - Cryptax&#39;s hand bag</title><meta name="Description" content="Cryptax&#39;s hand bag"><meta property="og:title" content="draw.per - THCon 2021" />
+<meta property="og:description" content="Draw APK - THCon 2021  14 solves 249 points  First steps As the challenge creator tells me this app is &ldquo;based on a Trojan Horse&rdquo; and it is &ldquo;not recommended to install it on a real smartphone&rdquo;, even if there is actually &ldquo;no malicious payload&rdquo;, I am very reluctant at first to test the app, even in an emulator.
+So, I start off with my favorite static analysis combination: DroidLysis and JEB." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cryptax.github.io/2021-06-14-thcon/" /><meta property="og:image" content="https://cryptax.github.io/logo.png"/><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="Cryptax" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cryptax.github.io/logo.png"/>
+
+<meta name="twitter:title" content="draw.per - THCon 2021"/>
+<meta name="twitter:description" content="Draw APK - THCon 2021  14 solves 249 points  First steps As the challenge creator tells me this app is &ldquo;based on a Trojan Horse&rdquo; and it is &ldquo;not recommended to install it on a real smartphone&rdquo;, even if there is actually &ldquo;no malicious payload&rdquo;, I am very reluctant at first to test the app, even in an emulator.
+So, I start off with my favorite static analysis combination: DroidLysis and JEB."/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cryptax.github.io/2021-06-14-thcon/" /><link rel="prev" href="https://cryptax.github.io/2023-04-22-drone/" /><link rel="next" href="https://cryptax.github.io/2020-10-30-cyberwall/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "draw.per - THCon 2021",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cryptax.github.io\/2021-06-14-thcon\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/cryptax.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "THCon, CTF, 2021, Android","wordcount":  948 ,
+        "url": "https:\/\/cryptax.github.io\/2021-06-14-thcon\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/cryptax.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "cryptax"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">draw.per - THCon 2021</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cryptax</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;948 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;<span id="/2021-06-14-thcon/" class="leancloud_visitors" data-flag-title="draw.per - THCon 2021">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#first-steps">First steps</a></li>
+    <li><a href="#dexcalibur-and-zip">Dexcalibur and Zip</a></li>
+    <li><a href="#dexcalibur-and-dex">Dexcalibur and Dex</a></li>
+    <li><a href="#extclass-code">ExtClass code</a></li>
+    <li><a href="#how-to-lose-time-silly">How to lose time, silly</a></li>
+    <li><a href="#back-on-track">Back on track</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#how-does-it-work">How does it work?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="draw-apk---thcon-2021">Draw APK - THCon 2021</h1>
+<ul>
+<li>14 solves</li>
+<li>249 points</li>
+</ul>
+<h2 id="first-steps">First steps</h2>
+<p>As the challenge creator tells me this app is &ldquo;based on a Trojan Horse&rdquo; and it is &ldquo;not recommended to install it on a real smartphone&rdquo;, even if there is actually &ldquo;no malicious payload&rdquo;, I am very reluctant at first to test the app, even in an emulator.</p>
+<p>So, I start off with my favorite static analysis combination: <a href="https://github.com/cryptax/droidlysis" target="_blank" rel="noopener noreffer ">DroidLysis</a> and <a href="https://www.pnfsoftware.com" target="_blank" rel="noopener noreffer ">JEB</a>. The results are disappointing, I spot several <em>&ldquo;suspicious&rdquo;</em> parts (use of <code>com.andrognito</code> for example) but they are False Positives.</p>
+<h2 id="dexcalibur-and-zip">Dexcalibur and Zip</h2>
+<p>I decide therefore to run the app in an Android emulator, instrumented with <a href="https://github.com/FrenchYeti/dexcalibur/" target="_blank" rel="noopener noreffer ">Dexcalibur</a>. I use the default set of hooks, and spawn the app. Nothing important happens until I click on the <em>Settings</em> menu. There, I notice the <strong>creation of a <code>files.zip</code></strong>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-dexcalibur-files.png"
+        data-srcset="/images/thcon21-dexcalibur-files.png, /images/thcon21-dexcalibur-files.png 1.5x, /images/thcon21-dexcalibur-files.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-dexcalibur-files.png"
+        title="/images/thcon21-dexcalibur-files.png" /></p>
+<p>I find this suspicious: apart if configuration elements are zipped (but why? storing them in shared preferences seems easier), I see no reason why the app would need to create a Zip file.</p>
+<p>I retrieve the zip file via ADB. It contains:</p>
+<ul>
+<li>ExtClass.enc: this file is obviously encrypted</li>
+<li>inf.enc: same, encrypted.</li>
+<li>theme.jpg: this file is a &hellip; PNG image. I don&rsquo;t know why eog (Eye of Gnome) refuses to open it, but Gimp has no problem to open it.</li>
+</ul>
+<p>It says we have been <em>pwned</em>. So, I am obviously in the right direction :)</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-pwned.png"
+        data-srcset="/images/thcon21-pwned.png, /images/thcon21-pwned.png 1.5x, /images/thcon21-pwned.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-pwned.png"
+        title="/images/thcon21-pwned.png" /></p>
+<h2 id="dexcalibur-and-dex">Dexcalibur and Dex</h2>
+<p>Then, I notice in Dexcalibur that a Dalvik Executable is loaded (highly suspicious):</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-dexcalibur-dex.png"
+        data-srcset="/images/thcon21-dexcalibur-dex.png, /images/thcon21-dexcalibur-dex.png 1.5x, /images/thcon21-dexcalibur-dex.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-dexcalibur-dex.png"
+        title="/images/thcon21-dexcalibur-dex.png" /></p>
+<p>I grab the DEX via ADB. It is a valid DEX file, that I immediately decompile. The code is simple, with a single class <code>ExtClass</code>, and methods such as <code>isInfected()</code> : exactly what I expect in a challenge.</p>
+<h2 id="extclass-code">ExtClass code</h2>
+<p>The image of the Zip is used by the method <code>changeWallpaper()</code>. It sets it as wallpaper.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeWallpaper</span><span class="o">(</span><span class="n">Context</span> <span class="n">arg7</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">WallpaperManager</span> <span class="n">wpm</span> <span class="o">=</span> <span class="n">WallpaperManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">arg7</span><span class="o">);</span>
+        <span class="n">Bitmap</span> <span class="n">bitmap</span> <span class="o">=</span> <span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">filesDir</span> <span class="o">+</span> <span class="s">&#34;/theme.jpg&#34;</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">wpm</span><span class="o">.</span><span class="na">setBitmap</span><span class="o">(</span><span class="n">bitmap</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I am interested in method <code>checkInf()</code>, which decrypts <code>inf.enc</code> file. As this file is small (48 bytes), it could very well hold the encrypted flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">String</span> <span class="nf">checkInf</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">filesDir</span> <span class="o">+</span> <span class="s">&#34;/inf.enc&#34;</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">SecretKeySpec</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SecretKeySpec</span><span class="o">(</span><span class="n">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;SHA-256&#34;</span><span class="o">).</span><span class="na">digest</span><span class="o">(</span><span class="s">&#34;y3t_@n0th3r_p@ssw0rd&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)),</span> <span class="s">&#34;AES&#34;</span><span class="o">);</span>
+            <span class="n">IvParameterSpec</span> <span class="n">iv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IvParameterSpec</span><span class="o">(</span><span class="s">&#34;@n0th3r_f1x3d_1v&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+            <span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;AES_256/CBC/PKCS7Padding&#34;</span><span class="o">);</span>
+            <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">iv</span><span class="o">);</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">Files</span><span class="o">.</span><span class="na">readAllBytes</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">0</span><span class="o">]))));</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I write the matching standalone Java code, but when I run it, it fails with no available provider for AES_256/CBC/PKCS7Padding.</p>
+<h2 id="how-to-lose-time-silly">How to lose time, silly</h2>
+<p>At this point thinking that if my computer does not have this provider, for sure Android phones and emulators have it, so I am going to hook the decryption method <code>doFinal</code> and display the decrypted text.</p>
+<p>I hook <code>doFinal</code> and ensure that it displays the decrypted result (<code>ret</code>).
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-dexcalibur-hook.png"
+        data-srcset="/images/thcon21-dexcalibur-hook.png, /images/thcon21-dexcalibur-hook.png 1.5x, /images/thcon21-dexcalibur-hook.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-dexcalibur-hook.png"
+        title="/images/thcon21-dexcalibur-hook.png" /></p>
+<p>Then, I spawn the malware (note each time, I have to uninstall it and re-install it, to run it clean):</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-dexcalibur-decrypted-dex.png"
+        data-srcset="/images/thcon21-dexcalibur-decrypted-dex.png, /images/thcon21-dexcalibur-decrypted-dex.png 1.5x, /images/thcon21-dexcalibur-decrypted-dex.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-dexcalibur-decrypted-dex.png"
+        title="/images/thcon21-dexcalibur-decrypted-dex.png" /></p>
+<p>I considered hooking directly <code>checkInf()</code>, except I can&rsquo;t with Dexcalibur because it is from dynamically loaded code and Dexcalibur does not find it. It is possible to write a Frida hook instead (without using Dexcalibur), but I&rsquo;m lazy and don&rsquo;t do it.</p>
+<p>So, I get the result of the decrypted text and re-build the file&hellip; except this is useless, because those bytes are not from <code>inf.enc</code> but the decrypted value of <code>ExtClass.enc</code> !</p>
+<p>And unfortunately, I register no other call to <code>doFinal()</code> for <code>inf.enc</code>&hellip; Dead end.</p>
+<h2 id="back-on-track">Back on track</h2>
+<p>I consider my Java decryption code and search on Internet why it does not find a provider for this algorithm and where I can find one.</p>
+<p>I bump into <a href="https://stackoverflow.com/questions/29232705/encrypt-text-to-aes-cbc-pkcs7padding" target="_blank" rel="noopener noreffer ">this page</a> which says that PKCS7 padding is not supported by Java, only PKCS5 (naming issue see the stackoverflow page). So, I simply change PKCS7 padding to PKCS5 in my code.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.StandardCharsets</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.MessageDigest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.Cipher</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.IvParameterSpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Decrypt</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&#34;./inf.enc&#34;</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+                <span class="n">SecretKeySpec</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SecretKeySpec</span><span class="o">(</span><span class="n">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;SHA-256&#34;</span><span class="o">).</span><span class="na">digest</span><span class="o">(</span><span class="s">&#34;y3t_@n0th3r_p@ssw0rd&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">Standa</span>
+<span class="n">rdCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)),</span> <span class="s">&#34;AES&#34;</span><span class="o">);</span>
+                <span class="n">IvParameterSpec</span> <span class="n">iv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IvParameterSpec</span><span class="o">(</span><span class="s">&#34;@n0th3r_f1x3d_1v&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+                <span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;AES/CBC/PKCS5Padding&#34;</span><span class="o">);</span>
+                <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">iv</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Solution: &#34;</span><span class="o">+</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">Files</span><span class="o">.</span><span class="na">readAllBytes</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">0</span><span class="o">])))));</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">exp</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Exception: &#34;</span><span class="o">+</span><span class="n">exp</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
+<p>Bingo.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">java Decrypt 
+Solution: THCon21{Dyn@m1c_c0d3_l0@d1ng_1s_$c@ry}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="how-does-it-work">How does it work?</h2>
+<p>When the end-user selects Settings, this starts <code>SettingsActivity</code>.
+At some point, this calls method <code>invoke</code> on the <code>SettingsActivity</code>.
+This calls a method named <code>executePayload</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"> <span class="kd">private</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">executePayload</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">ObjectRef</span> <span class="n">classname</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectRef</span><span class="o">();</span>
+        <span class="n">classname</span><span class="o">.</span><span class="na">element</span> <span class="o">=</span> <span class="s">&#34;com.example.extlib.ExtClass&#34;</span><span class="o">;</span>
+        <span class="n">ObjectRef</span> <span class="n">thedex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectRef</span><span class="o">();</span>
+        <span class="n">StringBuilder</span> <span class="n">v3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">File</span> <span class="n">v4</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getFilesDir</span><span class="o">();</span>
+        <span class="n">Intrinsics</span><span class="o">.</span><span class="na">checkNotNullExpressionValue</span><span class="o">(</span><span class="n">v4</span><span class="o">,</span> <span class="s">&#34;filesDir&#34;</span><span class="o">);</span>
+        <span class="n">thedex</span><span class="o">.</span><span class="na">element</span> <span class="o">=</span> <span class="n">v3</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">v4</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">()).</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;ExtClass.dex&#34;</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+        <span class="k">if</span><span class="o">((</span><span class="k">this</span><span class="o">.</span><span class="na">loadServerFiles</span><span class="o">())</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">integrityVerified</span><span class="o">(((</span><span class="n">String</span><span class="o">)</span><span class="n">thedex</span><span class="o">.</span><span class="na">element</span><span class="o">))))</span> <span class="o">{</span>
+            <span class="n">BuildersKt</span><span class="o">.</span><span class="na">runBlocking$default</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="o">((</span><span class="n">Function2</span><span class="o">)</span><span class="k">new</span> <span class="n">SettingsActivity</span><span class="o">.</span><span class="na">executePayload</span><span class="o">.</span><span class="na">1</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">thedex</span><span class="o">,</span> <span class="n">classname</span><span class="o">,</span> <span class="kc">null</span><span class="o">)),</span> <span class="n">1</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This method:</p>
+<ol>
+<li>Retrieves external files via <code>loadServerFiles()</code>. This downloads <code>files.zip</code> from a <a href="https://drive.google.com/uc?id=1nHhYCx1AXOmrE9L7DbTaA8QsroICYFG6&amp;authuser=0&amp;export=download" target="_blank" rel="noopener noreffer ">Google Drive</a>. Then, it unzips the file and decrypts the DEX. Note the secret key and IV are different from the one used to decrypt <code>inf.enc</code>.</li>
+<li>Checks the integrity of the external DEX. This consists in checking the SHA256 hash against the expected one.</li>
+<li>Calls <code>executePayload.1</code>. This will load the DEX (with <code>PathClassLoader</code>, something I did not detect with DroidLysis at the time of the challenge), call <code>initLib</code> from the dynamic class, check if the smartphone is infected with <code>isInfected</code> and finally modify the wallpaper.</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-06-14-thcon/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://cryptax.github.io/2021-06-14-thcon/" data-title="draw.per - THCon 2021" data-via="@cryptax" data-hashtags="THCon,CTF,2021,Android"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://cryptax.github.io/2021-06-14-thcon/" data-hashtag="THCon"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://cryptax.github.io/2021-06-14-thcon/" data-title="draw.per - THCon 2021"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://cryptax.github.io/2021-06-14-thcon/" data-title="draw.per - THCon 2021"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://cryptax.github.io/2021-06-14-thcon/" data-title="draw.per - THCon 2021"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/thcon/">THCon</a>,&nbsp;<a href="/tags/ctf/">CTF</a>,&nbsp;<a href="/tags/2021/">2021</a>,&nbsp;<a href="/tags/android/">Android</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023-04-22-drone/" class="prev" rel="prev" title="Drone and secret message (THCon CTF 2023)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Drone and secret message (THCon CTF 2023)</a>
+            <a href="/2020-10-30-cyberwall/" class="next" rel="next" title="Cyberwall - Cyber Security Rumble CTF 2020">Cyberwall - Cyber Security Rumble CTF 2020<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cryptax</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

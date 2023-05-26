@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>2019 - Tag - Cryptax&#39;s hand bag</title>
+        <link>https://cryptax.github.io/tags/2019/</link>
+        <description>2019 - Tag - Cryptax&#39;s hand bag</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://cryptax.github.io/tags/2019/" rel="self" type="application/rss+xml" /><item>
+    <title>Cobol OTP - Hack.Lu CTF 2019</title>
+    <link>https://cryptax.github.io/2019-10-24-cobol/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2019-10-24-cobol/</guid>
+    <description><![CDATA[Cobol OTP Category: Crypto Author: midao Level: easy Solves: 104
+Thanks to R. who actually flagged it :)
+Description To save the future you have to look at the past. Someone from the inside sent you an access code to a bank account with a lot of money. Can you handle the past and decrypt the code to save the future?
+Attached file A zip is provided with:
+ otp.cob: a program in Cobol out  1 2  Enter your message to encrypt: ï¿½ï¿½ï¿½y;dhuï¿½ï¿½Fï¿½]UjhCï¿½ï¿½-ï¿½1T`h&amp;ï¿½ï¿½Fï¿½1*T{_ï¿½ï¿½ï¿½p02J   Understanding the Cobol program We understand the Cobol program is performing XOR encryption using a key provided in a keyfille.]]></description>
+</item>
+<item>
+    <title>TUCTF 2019</title>
+    <link>https://cryptax.github.io/2019-12-1-tuctf/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2019-12-1-tuctf/</guid>
+    <description><![CDATA[I tried TU CTF.
+I only played 1 or 2 hours and flagged quite a lot: this is an easy CTF, good for beginners. See some very quick write-ups below.
+Unfortunately I can&rsquo;t remember the titles of the challenges.
+Challenge 1 We have a binary to decompile. I use Ghidra and locate a strange function called thisone
+The printFlag function decodes the flag.
+I write a program to mimic the decoding:]]></description>
+</item>
+</channel>
+</rss>

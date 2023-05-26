@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Bytecode - Tag - Cryptax&#39;s hand bag</title>
+        <link>https://cryptax.github.io/tags/bytecode/</link>
+        <description>Bytecode - Tag - Cryptax&#39;s hand bag</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://cryptax.github.io/tags/bytecode/" rel="self" type="application/rss+xml" /><item>
+    <title>pycoin - Hack.lu 2021</title>
+    <link>https://cryptax.github.io/2021-11-04-hacklu-pycoin/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>cryptax</author>
+    <guid>https://cryptax.github.io/2021-11-04-hacklu-pycoin/</guid>
+    <description><![CDATA[Pycoin - Hack.lu 2021 This is what we know:
+1 2 3 4 5 6 7  PYCOIN Sold: 92 times Type: rev Risk: Low Seller: tunn3l A friend gave me this and he says he can not reverse this... but this is just python?   and we get a .pyc file and a hint flag[5] == &quot;5&quot; .
+I unfortunately did not solve this challenge on time for the CTF but found it interesting (I got stuck trying to disassemble with dis and did not know xdis did the work).]]></description>
+</item>
+</channel>
+</rss>

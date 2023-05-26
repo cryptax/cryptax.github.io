@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Good old friend - THCon 2021 - Cryptax&#39;s hand bag</title><meta name="Description" content="Cryptax&#39;s hand bag"><meta property="og:title" content="Good old friend - THCon 2021" />
+<meta property="og:description" content="Good old friend The challenge provides an Android APK.
+Reversing the APK The main activity of this APK is party.thcon.y2021.level1.MainActivity. Its onCreate() method does the following:
+ Anti-debug. If the app is being debugged, display an alert dialog saying &ldquo;Find another way&rdquo; and quit.  1 2 3  if((this.getApplicationInfo().flags &amp; 2) != 0) { this.findanotherway(&#34;App is debuggable&#34;); }   Anti-root. Search for su in the PATH of the system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cryptax.github.io/2021-06-14-thcon-goodold/" /><meta property="og:image" content="https://cryptax.github.io/logo.png"/><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="Cryptax" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cryptax.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Good old friend - THCon 2021"/>
+<meta name="twitter:description" content="Good old friend The challenge provides an Android APK.
+Reversing the APK The main activity of this APK is party.thcon.y2021.level1.MainActivity. Its onCreate() method does the following:
+ Anti-debug. If the app is being debugged, display an alert dialog saying &ldquo;Find another way&rdquo; and quit.  1 2 3  if((this.getApplicationInfo().flags &amp; 2) != 0) { this.findanotherway(&#34;App is debuggable&#34;); }   Anti-root. Search for su in the PATH of the system."/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cryptax.github.io/2021-06-14-thcon-goodold/" /><link rel="prev" href="https://cryptax.github.io/2020-10-31-hashfun/" /><link rel="next" href="https://cryptax.github.io/2020-10-28-flagdroid/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Good old friend - THCon 2021",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cryptax.github.io\/2021-06-14-thcon-goodold\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/cryptax.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "THCon, CTF, 2021, Android, Native","wordcount":  735 ,
+        "url": "https:\/\/cryptax.github.io\/2021-06-14-thcon-goodold\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/cryptax.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "cryptax"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cryptax&#39;s hand bag"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Good old friend - THCon 2021</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cryptax</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;735 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;<span id="/2021-06-14-thcon-goodold/" class="leancloud_visitors" data-flag-title="Good old friend - THCon 2021">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#reversing-the-apk">Reversing the APK</a></li>
+    <li><a href="#reversing-the-native-library">Reversing the native library</a></li>
+    <li><a href="#decrypting">Decrypting</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="good-old-friend">Good old friend</h1>
+<p>The challenge provides an Android APK.</p>
+<h2 id="reversing-the-apk">Reversing the APK</h2>
+<p>The main activity of this APK is <code>party.thcon.y2021.level1.MainActivity</code>.
+Its <code>onCreate()</code> method does the following:</p>
+<ol>
+<li><strong>Anti-debug</strong>. If the app is being debugged, display an alert dialog saying &ldquo;Find another way&rdquo; and quit.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"> <span class="k">if</span><span class="o">((</span><span class="k">this</span><span class="o">.</span><span class="na">getApplicationInfo</span><span class="o">().</span><span class="na">flags</span> <span class="o">&amp;</span> <span class="n">2</span><span class="o">)</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">findanotherway</span><span class="o">(</span><span class="s">&#34;App is debuggable&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li><strong>Anti-root</strong>. Search for <code>su</code> in the <code>PATH</code> of the system. If it is not found, search for rooting apps or binaries such as <code>Superuser.apk</code>, <code>/system/xbin/daemonsu</code> etc. If either are found, display the alert window and quit.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"> <span class="k">if</span><span class="o">(</span><span class="n">thereissu</span> <span class="o">==</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">TAGS</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">Build</span><span class="o">.</span><span class="na">TAGS</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;test-keys&#34;</span><span class="o">)))</span> <span class="o">{</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">v4</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;/system/app/Superuser.apk&#34;</span><span class="o">,</span> <span class="s">&#34;/system/xbin/daemonsu&#34;</span><span class="o">,</span> <span class="s">&#34;/system/etc/init.d/99SuperSUDaemon&#34;</span><span class="o">,</span> <span class="s">&#34;/system/bin/.ext/.su&#34;</span><span class="o">,</span> <span class="s">&#34;/system/etc/.has_su_daemon&#34;</span><span class="o">,</span> <span class="s">&#34;/system/etc/.installed_su_daemon&#34;</span><span class="o">,</span> <span class="s">&#34;/dev/com.koushikdutta.superuser.daemon/&#34;</span><span class="o">};</span>
+            <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">7</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">v4</span><span class="o">[</span><span class="n">v1</span><span class="o">]).</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+
+<span class="o">...</span>
+ <span class="k">if</span><span class="o">(</span><span class="n">v2</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">findanotherway</span><span class="o">(</span><span class="s">&#34;Device is rooted&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Ask for a password and when the main check button is pressed, call a listener <code>b()</code>:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">this</span><span class="o">.</span><span class="na">checkbtn</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">b</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The listener calls <code>checkInput()</code> and displays &ldquo;Correct&rdquo; or &ldquo;Wrong&rdquo;:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">arg4</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">v1</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">v0</span><span class="o">;</span>
+        <span class="n">MainActivity</span> <span class="n">mainactivity</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">main</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">mainactivity</span><span class="o">.</span><span class="na">checkInput</span><span class="o">(</span><span class="n">mainactivity</span><span class="o">.</span><span class="na">password</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">v0</span> <span class="o">=</span> <span class="s">&#34;Correct!&#34;</span><span class="o">;</span>
+            <span class="n">v1</span> <span class="o">=</span> <span class="s">&#34;You can use this password to validate the challenge&#34;</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="n">v0</span> <span class="o">=</span> <span class="s">&#34;Wrong!&#34;</span><span class="o">;</span>
+            <span class="n">v1</span> <span class="o">=</span> <span class="s">&#34;Try again.&#34;</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">new</span> <span class="n">AlertDialog</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">mainactivity</span><span class="o">).</span><span class="na">setTitle</span><span class="o">(</span><span class="n">v0</span><span class="o">).</span><span class="na">setMessage</span><span class="o">(</span><span class="n">v1</span><span class="o">).</span><span class="na">setPositiveButton</span><span class="o">(</span><span class="s">&#34;OK&#34;</span><span class="o">,</span> <span class="kc">null</span><span class="o">).</span><span class="na">create</span><span class="o">().</span><span class="na">show</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The method <code>checkInput()</code> is native, and loaded from the library <code>native-lib</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"> <span class="kd">public</span> <span class="kd">static</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">loadLibrary</span><span class="o">(</span><span class="s">&#34;native-lib&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+<span class="kd">public</span> <span class="kd">native</span> <span class="kt">int</span> <span class="nf">checkInput</span><span class="o">(</span><span class="n">String</span> <span class="n">arg1</span><span class="o">)</span> <span class="o">{}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The argument to <code>checkInput</code> is the password the end-user supplies for verification.</p>
+<h2 id="reversing-the-native-library">Reversing the native library</h2>
+<p>So, we need to reverse the library.  If we unpack the APK, it is located in the <code>./lib</code> subdirectory, and we find a library for ARM and x86 architectures. I usually prefer ARM, but x86 is often decompiled better by decompilers.</p>
+<p>With JEB, I try to decompile the <code>armeabi-v7a</code> library. I focus on the exported function <code>Java_party_thcon_y2021_level1_MainActivity_checkInput</code>, which corresponds to the JNI for our native method <code>checkInput</code>.</p>
+<p>The decompilation is not perfect, but I understand the check routine performs AES CBC encryption with a fixed IV and key on the password, and checks that the encrypted result matches the expected one.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"> <span class="n">AES_init_ctx_iv</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">iv</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+    <span class="n">AES_CBC_encrypt_buffer</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="n">v15</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+    <span class="n">size_t</span> <span class="n">__n</span> <span class="o">=</span> <span class="p">(</span><span class="n">size_t</span><span class="p">)</span><span class="n">min</span><span class="p">(</span><span class="n">v15</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">v16</span> <span class="o">=</span> <span class="n">memcmp</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="mh">0x26FC0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="n">__n</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">v16</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">android_log_print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#34;MyLib&#34;</span><span class="p">,</span> <span class="s">&#34;FAILURE!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">android_log_print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#34;MyLib&#34;</span><span class="p">,</span> <span class="s">&#34;SUCCESS!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>So, we just need to located the IV, the key and the expected result.
+The expected result is easily located with JEB at 0x26FC0:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/thcon21-goodold-result.png"
+        data-srcset="/images/thcon21-goodold-result.png, /images/thcon21-goodold-result.png 1.5x, /images/thcon21-goodold-result.png 2x"
+        data-sizes="auto"
+        alt="/images/thcon21-goodold-result.png"
+        title="/images/thcon21-goodold-result.png" /></p>
+<p>It is <code>e47bc2dffaa645cb89a87780bb1619ef5daa2aadf4cda3ebd1884e64a2b43b68</code>.</p>
+<p>However, the key and IV are obscure with JEB&hellip;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">  <span class="n">VLD1</span><span class="mf">.64</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">v10</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)(</span><span class="n">v10</span> <span class="o">&gt;&gt;&gt;</span> <span class="mh">0x40</span><span class="n">X</span><span class="p">),</span> <span class="mi">159648</span><span class="p">);</span>
+    <span class="n">VST1</span><span class="mf">.64</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">v10</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)(</span><span class="n">v10</span> <span class="o">&gt;&gt;&gt;</span> <span class="mh">0x40</span><span class="n">X</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">iv</span><span class="p">);</span>
+    <span class="n">VLD1</span><span class="mf">.64</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">v10</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)(</span><span class="n">v10</span> <span class="o">&gt;&gt;&gt;</span> <span class="mh">0x40</span><span class="n">X</span><span class="p">),</span> <span class="mi">159664</span><span class="p">);</span>
+    <span class="n">VST1</span><span class="mf">.64</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">v10</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)(</span><span class="n">v10</span> <span class="o">&gt;&gt;&gt;</span> <span class="mh">0x40</span><span class="n">X</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">);</span>
+    <span class="n">aeabi_memclr8</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">v12</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">v8</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">v13</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v14</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">v12</span> <span class="o">*</span> <span class="mh">0x80000000</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span><span class="n">v12</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">:</span> <span class="n">v3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="n">v12</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">v8</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">v14</span> <span class="o">&lt;=</span> <span class="n">v13</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">v13</span> <span class="o">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)((</span><span class="kt">int</span><span class="p">)((</span><span class="n">v12</span> <span class="o">&amp;</span> <span class="mh">0x1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="o">&amp;</span><span class="nl">v5</span><span class="p">:</span> <span class="n">ptr0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v13</span><span class="p">);</span>
+            <span class="o">++</span><span class="n">v13</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>So, I head to Ghidra. As decompilers often process x86 better, I use the x86 library this time. In <code>AES_init_ctx_inv</code>, the first argument is a context structure, the second is the key (<code>local_28</code>), and the third is the IV (<code>local_38</code>).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">  <span class="n">AES_init_ctx_iv</span><span class="p">(</span><span class="n">aAStack1248</span><span class="p">,(</span><span class="n">uchar</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">local_28</span><span class="p">,(</span><span class="n">uchar</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">local_38</span><span class="p">);</span>
+  <span class="n">AES_CBC_encrypt_buffer</span><span class="p">(</span><span class="n">aAStack1248</span><span class="p">,</span><span class="n">auStack1056</span><span class="p">,</span><span class="n">uVar4</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>With Ghidra, the values for the key and IV are easily to find. They are hard-coded:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">  <span class="n">local_1c</span> <span class="o">=</span> <span class="mh">0x3c4fcf09</span><span class="p">;</span>
+  <span class="n">local_20</span> <span class="o">=</span> <span class="mh">0x8815f7ab</span><span class="p">;</span>
+  <span class="n">local_24</span> <span class="o">=</span> <span class="mh">0xa6d2ae28</span><span class="p">;</span>
+  <span class="n">local_28</span> <span class="o">=</span> <span class="mh">0x16157e2b</span><span class="p">;</span>
+  <span class="n">local_2c</span> <span class="o">=</span> <span class="mh">0xf0e0d0c</span><span class="p">;</span>
+  <span class="n">local_30</span> <span class="o">=</span> <span class="mh">0xb0a0908</span><span class="p">;</span>
+  <span class="n">local_34</span> <span class="o">=</span> <span class="mh">0x7060504</span><span class="p">;</span>
+  <span class="n">local_38</span> <span class="o">=</span> <span class="mh">0x3020100</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The IV is <code>000102030405060708090a0b0c0d0e0f</code>.
+The key is <code>2b7e151628aed2a6abf7158809cf4f3c</code>.</p>
+<h2 id="decrypting">Decrypting</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s1">&#39;2b7e151628aed2a6abf7158809cf4f3c&#39;</span><span class="p">)</span>
+<span class="n">iv</span> <span class="o">=</span>    <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s1">&#39;000102030405060708090a0b0c0d0e0f&#39;</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s1">&#39;e47bc2dffaa645cb89a87780bb1619ef5daa2aadf4cda3ebd1884e64a2b43b68&#39;</span><span class="p">)</span>
+
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
+<span class="n">plaintext</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This displays: <code>b'THCon21{C_1$_n3v3r_2_f@r}\x00\x00\x00\x00\x00\x00\x00'</code>. The flag is <strong>THCon21{C_1$_n3v3r_2_f@r}</strong>.</p>
+<p>Sadly, I did not flag this challenge on time, because of a typo in the key I never saw&hellip;</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-06-14-thcon-goodold/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://cryptax.github.io/2021-06-14-thcon-goodold/" data-title="Good old friend - THCon 2021" data-via="@cryptax" data-hashtags="THCon,CTF,2021,Android,Native"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://cryptax.github.io/2021-06-14-thcon-goodold/" data-hashtag="THCon"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://cryptax.github.io/2021-06-14-thcon-goodold/" data-title="Good old friend - THCon 2021"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://cryptax.github.io/2021-06-14-thcon-goodold/" data-title="Good old friend - THCon 2021"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://cryptax.github.io/2021-06-14-thcon-goodold/" data-title="Good old friend - THCon 2021"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/thcon/">THCon</a>,&nbsp;<a href="/tags/ctf/">CTF</a>,&nbsp;<a href="/tags/2021/">2021</a>,&nbsp;<a href="/tags/android/">Android</a>,&nbsp;<a href="/tags/native/">Native</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-10-31-hashfun/" class="prev" rel="prev" title="Hashfun - Cyber Security Rumble CTF 2020"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Hashfun - Cyber Security Rumble CTF 2020</a>
+            <a href="/2020-10-28-flagdroid/" class="next" rel="next" title="Flagdroid - Hack.Lu CTF 2020">Flagdroid - Hack.Lu CTF 2020<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cryptax</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
