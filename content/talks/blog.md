@@ -2,6 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
+date: "2022-12-31"
 ---
 
 # 2022

@@ -2,11 +2,15 @@
 title: "Memberships and awards"
 draft: false
 weight: 1
+date: "2023-06-01"
 tags:
 - program
 - committee
 - advisory board
 - chair
+- GreHack
+- Virus Bulletin
+- Nullcon
 ---
 
 # Program Committees

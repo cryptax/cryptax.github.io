@@ -8,6 +8,8 @@ tags:
 - CTF
 - 2023
 - Misc
+- GPS
+- ChatGPT
 ---
 
 ## Description

@@ -13,7 +13,6 @@ tags:
 - remix
 ---
 
-# Welcome
 
 ## Description
 

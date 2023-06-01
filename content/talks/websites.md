@@ -1,6 +1,7 @@
 ---
 title: "Websites: those I maintain"
 weight: 3
+date: "2023-06-01"
 ---
 
 # Websites

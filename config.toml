@@ -71,7 +71,7 @@ dateFormat = "2006-01-02"
   [params.home]
     [params.home.profile]
     enable = true
-    avatarURL = "/images/ghost-small.png"
+    avatarURL = "images/ghost.png"
     title = "Cryptax"
     subtitle = "CTF write-ups, mobile malware, IoT, crypto..."
     # whether to use typeit animation for subtitle

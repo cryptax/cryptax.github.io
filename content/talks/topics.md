@@ -2,6 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
+date: "2023-06-01"
 tags:
 - topic
 - mobile malware
@@ -14,6 +15,13 @@ tags:
 - iOS
 - Symbian
 - OpenBTS
+- reverse engineering
+- vulnerabilities
+- recon jet
+- jump rope
+- smart coffee
+- fitbit
+- timestamp
 ---
 
 # Mobile :(fa-solid fa-mobile):
