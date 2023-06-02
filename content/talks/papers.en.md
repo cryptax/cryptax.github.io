@@ -8,6 +8,7 @@ tags:
 - hackable
 - publication
 - academic
+date: 2023-06-02
 draft: false
 ---
 # Conferences & Journals
