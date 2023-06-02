@@ -2,6 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
+date: "2023-06-01"
 ---
 
 Conferences I spoke at:
@@ -32,7 +33,7 @@ Conferences I spoke at:
 - [NorthSec](https://nsec.io) 2021
 - Nuit du Hack 2015 2017
 - [Nullcon](https://nullcon.net) Webinar 2020
-- Pass The Salt 2018 2020
+- [Pass The Salt](https://pass-the-salt.org/) 2018 2020
 - PDPTA 2003
 - RSA Europe 2011
 - RSA US 2020
@@ -42,7 +43,7 @@ Conferences I spoke at:
 - [ShmooCon](https://www.shmoocon.org) 2011
 - [SSTIC](https://www.sstic.org) 2017
 - SISW 2002
-- Sthack 2019
+- [Sthack](https://sthack.fr/) 2019
 - [THCon](https://thcon.party) 2021 2023
 - [Troopers](https://www.troopers.de) 2018 2023
 - IEEE TrustCom 2015

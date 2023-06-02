@@ -2,6 +2,7 @@
 title: "Patents"
 draft: false
 weight: 1
+date: "2016-12-31"
 tags:
 - patents
 ---

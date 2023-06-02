@@ -2,11 +2,13 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
+date: "2023-06-01"
 tags:
 - training
 - workshop
 - Android
 - CTF
+- reverse engineering
 ---
 
 # Training / workshops on Android reverse engineering
