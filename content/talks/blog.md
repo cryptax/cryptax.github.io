@@ -2,8 +2,13 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2022-12-31"
+date: "2023-06-09"
 ---
+
+# 2023
+
+- [What's a CTF? Is it interesting? Will I enjoy it? Do I have the skills for a CTF?](https://cryptax.medium.com/whats-a-ctf-is-it-interesting-will-i-enjoy-it-do-i-have-the-skills-for-a-ctf-e11c680df5b7), June 8, 2023
+
 
 # 2022
 
