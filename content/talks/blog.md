@@ -2,17 +2,19 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2023-06-09"
+date: "2023-06-20"
 ---
 
 # 2023
 
+- [Reversing Flutter apps: Darts' Small Integers](https://medium.com/@cryptax/reversing-flutter-apps-darts-small-integers-b922d7fae7d9), June 20, 2023
+- [Dart's custom calling convention](https://medium.com/@cryptax/darts-custom-calling-convention-8aa96647dcc6), June 15, 2023
 - [What's a CTF? Is it interesting? Will I enjoy it? Do I have the skills for a CTF?](https://cryptax.medium.com/whats-a-ctf-is-it-interesting-will-i-enjoy-it-do-i-have-the-skills-for-a-ctf-e11c680df5b7), June 8, 2023
 
 
 # 2022
 
-- Virus Bulletin Conference 2022 [Day 1](https://cryptax.medium.com/virus-bulletin-conference-2022-day-1-8fab7fa4f7e8?source=user_profile---------2----------------------------), [Day2](https://cryptax.medium.com/virus-bulletin-conference-day-2-ca7fbe675744?source=user_profile---------1----------------------------), [Day 3](https://cryptax.medium.com/virus-bulletin-2022-day-3-ff5610f41db9?source=user_profile---------0----------------------------), October 2022
+- Virus Bulletin Conference 2022 [Day 1](https://cryptax.medium.com/virus-bulletin-conference-2022-day-1-8fab7fa4f7e8), [Day2](https://cryptax.medium.com/virus-bulletin-conference-day-2-ca7fbe675744), [Day 3](https://cryptax.medium.com/virus-bulletin-2022-day-3-ff5610f41db9), October 2022
 - [English accent for Frogs](https://cryptax.medium.com/english-accent-for-frogs-d496573c8a84), July 5, 2022
 - [Androscope](https://cryptax.medium.com/androscope-5ab588ec5b3), June 28, 2022
 - [Unpacking a JsonPacker-packed sample](https://cryptax.medium.com/unpacking-a-jsonpacker-packed-sample-4038e12119f5), June 27, 2022
