@@ -7,6 +7,8 @@ date: "2023-06-20"
 
 # 2023
 
+- [Inside the KangaPacker: the Kangaroo packer with native decryption](https://cryptax.medium.com/inside-kangapack-the-kangaroo-packer-with-native-decryption-3e7e054679c4), June 23, 2023
+- [Fortinet Reverses Flutter-base Android Malware Fluhorse](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse), June 21, 2023
 - [Reversing Flutter apps: Darts' Small Integers](https://medium.com/@cryptax/reversing-flutter-apps-darts-small-integers-b922d7fae7d9), June 20, 2023
 - [Dart's custom calling convention](https://medium.com/@cryptax/darts-custom-calling-convention-8aa96647dcc6), June 15, 2023
 - [What's a CTF? Is it interesting? Will I enjoy it? Do I have the skills for a CTF?](https://cryptax.medium.com/whats-a-ctf-is-it-interesting-will-i-enjoy-it-do-i-have-the-skills-for-a-ctf-e11c680df5b7), June 8, 2023
