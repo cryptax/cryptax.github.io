@@ -21,7 +21,7 @@ draft: false
 
 - *Hacking for Ideas*, [THCon](https://thcon.party) Keynote, Toulouse, April 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/THCon-2023) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=DdgH56EtGys) at 1:06:56.
 - Hacking a jump rope and/or a Coffee Machine:
-  - *Stay fit: hack a jump rope*, Troopers, Heidelberg, Germany, June 2023. [:(fa-brands fa-python): :(fa-solid fa-video): :(fa-solid-files-lines):](https://github.com/cryptax/talks/tree/master/Troopers23)
+  - *Stay fit: hack a jump rope*, Troopers, Heidelberg, Germany, June 2023. [:(fa-brands fa-python): :(fa-solid fa-video): :(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Troopers23)
   - *Hacking your Jump Rope or your Coffee Machine*, Insomnihack, Lausanne, Switzerland, March 2023. [:(fa-solid fa-file-lines): :(fa-brands fa-python):](https://github.com/cryptax/talks/tree/master/Insomnihack-2023)
 
 ## 2022
