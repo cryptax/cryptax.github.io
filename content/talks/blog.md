@@ -2,7 +2,54 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2023-06-20"
+date: "2023-06-29"
+tags:
+- fluhorse
+- kangapack
+- flutter
+- CTF
+- Dart
+- Androscope
+- BianLian
+- Joker
+- Banking trojan
+- Android botnet
+- Virus Bulletin
+- JsonPacker
+- Medusa
+- Magnus
+- GRIM
+- TAN
+- Moqhao
+- meterpreter
+- cowrie
+- diabete
+- honeypot
+- bitcoin
+- MobSF
+- Pithus
+- Spectre
+- Insomnihack
+- SSTIC
+- Ztorg
+- Oji
+- Mirai
+- SherlockDroid
+- Hacktivity
+- Nuit du Hack
+- IoT
+- Pokémon Go
+- Defcamp
+- Hack.lu
+- GreHack
+- RATP
+- Proguard
+- Alligator
+- iOS
+- Symbian
+- BlackHat
+- Zitmo
+- Hashdays
 ---
 
 # 2023
@@ -171,8 +218,8 @@ date: "2023-06-20"
 - [Hashdays Android Challenge: the Solution](http://blog.fortiguard.com/hashdays-android-challenge-the-solution/), November 23, 2012
 - [Hashdays Arduino Badge](http://blog.fortiguard.com/hashdays-arduino-badge/)   November 9, 2012
 - [Hashdays 2012 wrap-up](http://blog.fortiguard.com/hashdays-2012-wrap-up/)   November 7, 2012
-- [FortiGuard'sblog][Advanced Tools for Android Reverse Engineering](http://blog.fortiguard.com/advanced-tools-for-android-reverse-engineering/)   November 5, 2012
-- [Hashdays Android Challenge: Win a FortiGate](http://blog.fortiguard.com/hashdays-android-challenge-win-a-fortigate/)  <ahref="http://blog.fortiguard.com/), October 29, 2012
+- [Advanced Tools for Android Reverse Engineering](http://blog.fortiguard.com/advanced-tools-for-android-reverse-engineering/)   November 5, 2012
+- [Hashdays Android Challenge: Win a FortiGate](http://blog.fortiguard.com/hashdays-android-challenge-win-a-fortigate/) , October 29, 2012
 - [Hashdays challenge by Fortinet to begin  Oct 29, 2012](http://blog.fortiguard.com/hashdays-challenge-by-fortinet-to-begin--oct-29-2012/),  October 23, 2012
 - [Android/Fakemart's end: authors has been identified](http://blog.fortiguard.com/androidfakemarts-end-author-has-been-identified/)   October 19th, 2012
 - [Android malware distributed by malicious SMS in France](http://blog.fortiguard.com/android-malware-distributed-by-malicious-sms-in-france/)   September 21st, 2012.

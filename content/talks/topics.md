@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2023-06-01"
+date: "2023-06-29"
 tags:
 - topic
 - mobile malware
@@ -22,6 +22,8 @@ tags:
 - smart coffee
 - fitbit
 - timestamp
+- flutter
+- dart
 ---
 
 # Mobile :(fa-solid fa-mobile):
@@ -31,6 +33,7 @@ Mobile malware
 - Android/BianLian botnet [Virus Bulletin 2022](https://github.com/cryptax/talks/blob/master/VirusBulletin-2022/bianlian-vb2022.pdf)
 - Android/BrazKing: AMUSEC 2021
 - Android/Joker [BarbHack 2022](https://github.com/cryptax/talks/tree/master/BarbHack-2022)
+- Android/Fluhorse: [blog post](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse)
 - Android/Oji [BSides Oslo 2021](https://www.youtube.com/watch?v=6z1zrPZEKuM)
 - Cryptocurrencies [Sthack 2019](https://github.com/cryptax/talks/blob/master/Sthack-2019/currency-sthack.pdf)
 - iOS/PawnStorm [Insomnihack 2015](https://github.com/cryptax/talks/blob/master/Insomnihack-2015/iOS-insomnihack.pdf)
@@ -41,6 +44,7 @@ Mobile malware
 
 Android reverse engineering
 
+- Flutter and Dart: see [blog posts](./talks/blog/)
 - Dexcalibur, House, MobSF: [Virus Bulletin 2021](https://vblocalhost.com/uploads/VB2021-Apvrille.pdf)
 - Medusa: [BlackAlps 2022](https://www.blackalps.ch/ba-22/files/talks/BlackAlps22-Apvrille.pdf)
 - JEB, Radare2: [Virus Bulletin 2017](https://www.virusbulletin.com/conference/vb2017/abstracts/android-reverse-engineering-tools-not-usual-suspects)
@@ -58,7 +62,7 @@ Android vulnerabilities
 
 # Hacking IoT 
 
-- Connected Jump Rope
+- Connected Jump Rope: [Troopers 2023](https://github.com/cryptax/talks/tree/master/Troopers-2023)
 - Smart Coffee Machine: [Insomni'hack 2023](https://github.com/cryptax/talks/tree/master/Insomnihack-2023), [BSides Munich 2020](https://www.youtube.com/watch?v=EvRd3Z41Ff0)
 - Connected Glucose Sensor: [Pass The Salt 2020] [:(fa fa-book):](https://github.com/cryptax/talks/blob/master/PassTheSalt-2020/techreport.pdf)
 - Smart Toothbrush [SSTIC 2017](https://www.sstic.org/media/SSTIC2017/SSTIC-actes/ingnierie_inverse_dune_brosse__dents_connecte/SSTIC2017-Article-ingnierie_inverse_dune_brosse__dents_connecte-apvrille.pdf%22)
