@@ -25,7 +25,10 @@ In addition, the badge was featuring 2 challenges. Similar to CTF-challenges, wh
 The badge featured a battleship game. You play the game against the computer, select where to hide ships, and try to find computer ships before computer finds yours.
 
 ![Battleship game splash page](/images/troopers23-battleship-welcome.jpg)
+*Battleship game splash page**
+
 ![Fire at guessed locations and try to sink your opponent's ships](/images/troopers23-battleship-play.jpg)
+*Fire at guessed locations, and try to sink your opponent's ships*
 
 The [source code of the game](/source/battleship.c) is given to participants.
 
@@ -146,10 +149,12 @@ The methodology is the following:
 3. If there is a computer ship at that location, we repeatedly fire at that location. After more than 14 hits at the same location, you should see the round overflow:
 
 [Round overflow](/images/troopers23-battleship-round.jpg)
+*Round overflow*
 
 4. We continue to hit the same location, and at some point (after 18th hit), we should finally overflow the state and get in the desired FLAG state and get our flag!
 
 [We got the token!](/images/troopers23-battleship-flag.jpg)
+*We got the token!*
 
 ### Conclusion
 
@@ -157,7 +162,7 @@ I loved this challenge! The fact it can be solved directly from the badge is an 
 
 ## U-Boot
 
-Another challenge suggested "have you tried to restart the badge"? 
+Another challenge suggested *"have you tried to restart the badge?"*
 The name of the challenge suggested there would be something to see during the boot phase. 
 
 I connected to the serial port of the badge with `picocom -b 112500 /dev/ttyUSB0`, and re-started the badge.
