@@ -149,7 +149,7 @@ The methodology is the following:
 3. If there is a computer ship at that location, we repeatedly fire at that location. After more than 14 hits at the same location, you should see the round overflow:
 
 ![Round overflow](/images/troopers23-battleship-round.jpg)
-*Round overflow*
+*Notice the round overflow: exploit under progress!*
 
 4. We continue to hit the same location, and at some point (after 18th hit), we should finally overflow the state and get in the desired FLAG state and get our flag!
 
