@@ -14,11 +14,14 @@ tags:
 - picocom
 ---
 
-Troopers conference is known for its fabulous hardware badges. This year, we were given an ESP32-base badge. In an workshop, we could solder a Shitty-Addon with colored LEDs and a connector for a remote control.
+**Troopers** conference is known for its fabulous hardware badges. This year, we were given an ESP32-base badge. In an workshop, we could solder a Shitty-Addon with colored LEDs and a connector for a remote control.
 
 ![Troopers 23 badge](/images/troopers23-badge.jpg)
 
 In addition, the badge was featuring 2 challenges. Similar to CTF-challenges, when solved, the challenges would give you a *token*, you'd submit the token on a local troopers website, and get raffle tickets after a given number of points.
+
+- **Battleship**: an exploit challenge
+- **U-Boot**: a serial port challenge
 
 ## Battleship
 
