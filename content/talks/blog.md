@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2023-06-29"
+date: "2023-07-10"
 tags:
 - fluhorse
 - kangapack
@@ -50,10 +50,12 @@ tags:
 - BlackHat
 - Zitmo
 - Hashdays
+- SOVA
 ---
 
 # 2023
 
+- [Eyes eon Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
 - [Inside the KangaPacker: the Kangaroo packer with native decryption](https://cryptax.medium.com/inside-kangapack-the-kangaroo-packer-with-native-decryption-3e7e054679c4), June 23, 2023
 - [Fortinet Reverses Flutter-base Android Malware Fluhorse](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse), June 21, 2023
 - [Reversing Flutter apps: Darts' Small Integers](https://medium.com/@cryptax/reversing-flutter-apps-darts-small-integers-b922d7fae7d9), June 20, 2023
