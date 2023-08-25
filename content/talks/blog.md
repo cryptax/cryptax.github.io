@@ -55,7 +55,7 @@ tags:
 
 # 2023
 
-- [Eyes eon Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
+- [Eyes on Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
 - [Inside the KangaPacker: the Kangaroo packer with native decryption](https://cryptax.medium.com/inside-kangapack-the-kangaroo-packer-with-native-decryption-3e7e054679c4), June 23, 2023
 - [Fortinet Reverses Flutter-base Android Malware Fluhorse](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse), June 21, 2023
 - [Reversing Flutter apps: Darts' Small Integers](https://medium.com/@cryptax/reversing-flutter-apps-darts-small-integers-b922d7fae7d9), June 20, 2023
@@ -295,16 +295,16 @@ tags:
 - [John Doe's Credentials](http://blog.fortinet.com/john-does-credentials/), November 16th 2009.
 - [Targeted Spam: an Unfair Blow to Security](http://blog.fortinet.com/targeted-spam-an-unfair-blow-to-security/), November 5th 2009.
 - [When Your Phe Becomes Your Worst Enemy](http://blog.fortinet.com/when-your-phe-becomes-your-worst-enemy/), October 27th 2009.
-- [Keep your phe healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
+- [Keep your phone healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
 - [Transmitter.C is not Yxes.E](http://blog.fortinet.com/transmitter-c-is-not-yxes-e/), August 26th 2009.
 - [Symbian Certificates or How SymbOS/Yxes got Signed](http://blog.fortinet.com/symbian-certificates-or-how-symbosyxes-got-signed/), August 4th 2009.
-- [SymbOS/Yxes or downloading customized ctent](http://blog.fortinet.com/symbosyxes-or-downloading-customized-malware/), July 21st 2009.
-- [Detecting spyware for iPhes](http://blog.fortinet.com/detecting-spyware-for-iphes/), July 16th 2009.
+- [SymbOS/Yxes or downloading customized content](https://web.archive.org/web/20101017081929/http://blog.fortinet.com/symbosyxes-or-downloading-customized-malware/), July 21st 2009.
+- [Detecting spyware for iPhones](https://web.archive.org/web/20140918125934/http://blog.fortinet.com/post/detecting-spyware-for-iphones), July 16th 2009.
 - [Friendly' spam: A trick for managing unwanted emails from family, friends](http://blog.fortinet.com/friendly-spam/) , June 25 2009.
-- June 9th, 2009, [Trash CRC32](http://blog.fortinet.com/trash-crc32)
+- June 9th, 2009, [Trash CRC32](https://web.archive.org/web/20130606131119/http://blog.fortinet.com/trash-crc32/)
 - April 21, 2009, [2D Codes: Lowering the "bar" for mobile threats ?](http://blog.fortinet.com/2d-codes-lowering-the-bar-for-mobile-threats/)
-- April 13, 2009, [Attacking stamps for fun and profit ?](http://blog.fortinet.com/attacking-stamps-for-fun-and-profit/)
-- March 9, 2009, [Flocker virus writer's name found via Google? Or privacy issue?](http://blog.fortinet.com/flocker-virus-writers-name-found-via-google/)
+- April 13, 2009, [Attacking stamps for fun and profit ?](https://web.archive.org/web/20090918175111/http://blog.fortinet.com/attacking-stamps-for-fun-and-profit/)
+- March 9, 2009, [Flocker virus writer's name found via Google? Or privacy issue?](https://web.archive.org/web/20091101045541/http://blog.fortinet.com/flocker-virus-writers-name-found-via-google/)
 - February 23, 2009, [A cryptographer's eye  antivirus analysis](http://blog.fortinet.com/a-cryptographers-eye--antivirus-analysis/)
 
 
