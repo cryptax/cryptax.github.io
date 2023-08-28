@@ -147,7 +147,7 @@ draft: false
 - *Mobile Malware in Practice*, Insomni'Hack, Geneva, Switzerland, March 4, 2011, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Insomnihack-2011/mobilemalware-insomnihack2011-apvrille.pdf)
 - A. Apvrille, K. Yang, *Defeating mTANs for profit*: 
   - ShmooCon 2011, Washington DC, USA, January 28-30 2011, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Shmoocon-2011/zitmo-slides.pdf)
-  - Virus Bulletin, pp. 6-10, March 2011 [:(fa-solid fa-link):](https://www.virusbulletin.com/virusbulletin/2011/03/defeating-mtans-profit-part-one)
+  - Virus Bulletin, pp. 6-10, March 2011 [:(fa-solid fa-link):](https://www.virusbulletin.com/virusbulletin/2011/03/defeating-mtans-profit-part-one) and [part two](https://www.virusbulletin.com/virusbulletin/2011/04/defeating-mtans-profit-part-two)
 - *OpenBTS for dummies v0.5*,  April 2011, [:(fa-solid fa-book):](https://vdocuments.net/openbts-for-dummies-5584622bf2505.html)
 
 
