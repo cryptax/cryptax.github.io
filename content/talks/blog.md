@@ -257,9 +257,9 @@ tags:
 - [Android/Smspacem under the microscope](http://blog.fortinet.com/android-smspacem-under-the-microscope/), May 30, 2011.
 - [Airpush... pushes the envelope](http://blog.fortinet.com/airpush-pushes-the-envelope/), May 17, 2011.
 - [iPhe Tracking](http://blog.fortinet.com/iphe-tracking), April 21, 2011.
-- [Mobile Malware Statistics](http://blog.fortinet.com/mobile-malware-statistics), March 28, 2011.
+- [Mobile Malware Statistics](https://web.archive.org/web/20110501225722/http://blog.fortinet.com/mobile-malware-statistics), March 28, 2011.
 - [How Android/Fake10086 selectively blocks SMS- step by step](http://blog.fortinet.com/how-androidfake10086-selectively-blocks-sms-step-by-step/), March 10, 2011.
-- [Android/DroidDream uses two vulnerabilities](http://blog.fortinet.com/android-droiddream-uses-two-vulnerabilities/), March 3, 2011.
+- [Android/DroidDream uses two vulnerabilities](https://web.archive.org/web/20110307092250/http://blog.fortinet.com/android-droiddream-uses-two-vulnerabilities), March 3, 2011.
 - [Hacking Mobile Phe Statistics](http://blog.fortinet.com/hacking-mobile-phe-statistics/), March 1, 2011.
 - [What's new in Zitmo.B?](https://blog.fortinet.com/whats-new-in-zitmo-b), February 23, 2011.
 - [ShmooC 2011 Debriefing](http://blog.fortinet.com/shmooc-2011-debriefing/), February 9, 2011.
