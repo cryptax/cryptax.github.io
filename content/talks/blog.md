@@ -160,8 +160,8 @@ tags:
 
 - [Hacktivity 2015](http://blog.fortinet.com/post/hacktivity-2015)  October 14, 2015
 - [CryptoGirl  StageFright: A Detailed Explanation](http://blog.fortinet.com/post/cryptogirl--stagefright-a-detailed-explanati)   August 25, 2015
-- [StageFright, Telegram Stage-Left & WhatsApp Stage-Right](http://blog.fortinet.com/post/stagefright-telegram-stage-left-whatsapp-stage-right)  August 14, 2015
-- [Locker, an Android ransomware full of surprises](http://blog.fortinet.com/post/locker-an-android-ransomware-full-of-surprises)  August 11, 2015
+- [StageFright, Telegram Stage-Left & WhatsApp Stage-Right](https://web.archive.org/web/20151030053824/http://blog.fortinet.com/post/stagefright-telegram-stage-left-whatsapp-stage-right)  August 14, 2015
+- [Locker, an Android ransomware full of surprises](https://web.archive.org/web/20151031200835/http://blog.fortinet.com/post/locker-an-android-ransomware-full-of-surprises)  August 11, 2015
 - [Want Everybody to Know You're Flirting? This App is For You!](http://blog.fortinet.com/post/want-everybody-to-know-you-re-flirting-this-app-is-for-you)  July 25, 2015
 - [Insurance Fraud via Internet of Things](http://blog.fortinet.com/post/insurance-fraud-via-internet-of-things)July 9, 2015
 - [Nuit du Hack 2k15](http://blog.fortinet.com/post/nuit-du-hack-2k15)  June 25, 2015
@@ -177,9 +177,9 @@ tags:
 # 2014
 
 - [Inside Hack.Lu 2014](http://blog.fortinet.com/post/inside-hack-lu-2014)  November 10, 2014
-- [Android Emmental, Adding Cheese in Emmental Holes](http://blog.fortinet.com/post/android-emmental-adding-cheese-in-emmental-holes)  October 30, 2014
+- [Android Emmental, Adding Cheese in Emmental Holes](https://web.archive.org/web/20141204161642/http://blog.fortinet.com/post/android-emmental-adding-cheese-in-emmental-holes)  October 30, 2014
 - [Inside BlackHat Europe 2014](http://blog.fortinet.com/post/inside-blackhat-europe-2014)  October 29, 2014
-- [0wning Emmental](http://blog.fortinet.com/post/0wning-emmental)  October 20, 2014
+- [0wning Emmental](https://web.archive.org/web/20141024015842/http://blog.fortinet.com/post/0wning-emmental)  October 20, 2014
 - [Android Packers Talk at Hacktivity](http://blog.fortinet.com/post/android-packers-talk-at-hacktivity)  October 9, 2014
 - [My Day Unbricking a Friend's Phe](http://blog.fortinet.com/post/my-day-unbricking-a-friend-s-phe)  September 17, 2014
 - [Want everybody to know you're flirting? this app is for you!](http://blog.fortinet.com/post/want-everybody-to-know-you-re-flirting-this-app-is-for-you)  July 25, 2014
