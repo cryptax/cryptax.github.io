@@ -55,7 +55,7 @@ tags:
 
 # 2023
 
-- [Eyes eon Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
+- [Eyes on Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
 - [Inside the KangaPacker: the Kangaroo packer with native decryption](https://cryptax.medium.com/inside-kangapack-the-kangaroo-packer-with-native-decryption-3e7e054679c4), June 23, 2023
 - [Fortinet Reverses Flutter-base Android Malware Fluhorse](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse), June 21, 2023
 - [Reversing Flutter apps: Darts' Small Integers](https://medium.com/@cryptax/reversing-flutter-apps-darts-small-integers-b922d7fae7d9), June 20, 2023
@@ -160,8 +160,8 @@ tags:
 
 - [Hacktivity 2015](http://blog.fortinet.com/post/hacktivity-2015)  October 14, 2015
 - [CryptoGirl  StageFright: A Detailed Explanation](http://blog.fortinet.com/post/cryptogirl--stagefright-a-detailed-explanati)   August 25, 2015
-- [StageFright, Telegram Stage-Left & WhatsApp Stage-Right](http://blog.fortinet.com/post/stagefright-telegram-stage-left-whatsapp-stage-right)  August 14, 2015
-- [Locker, an Android ransomware full of surprises](http://blog.fortinet.com/post/locker-an-android-ransomware-full-of-surprises)  August 11, 2015
+- [StageFright, Telegram Stage-Left & WhatsApp Stage-Right](https://web.archive.org/web/20151030053824/http://blog.fortinet.com/post/stagefright-telegram-stage-left-whatsapp-stage-right)  August 14, 2015
+- [Locker, an Android ransomware full of surprises](https://web.archive.org/web/20151031200835/http://blog.fortinet.com/post/locker-an-android-ransomware-full-of-surprises)  August 11, 2015
 - [Want Everybody to Know You're Flirting? This App is For You!](http://blog.fortinet.com/post/want-everybody-to-know-you-re-flirting-this-app-is-for-you)  July 25, 2015
 - [Insurance Fraud via Internet of Things](http://blog.fortinet.com/post/insurance-fraud-via-internet-of-things)July 9, 2015
 - [Nuit du Hack 2k15](http://blog.fortinet.com/post/nuit-du-hack-2k15)  June 25, 2015
@@ -177,9 +177,9 @@ tags:
 # 2014
 
 - [Inside Hack.Lu 2014](http://blog.fortinet.com/post/inside-hack-lu-2014)  November 10, 2014
-- [Android Emmental, Adding Cheese in Emmental Holes](http://blog.fortinet.com/post/android-emmental-adding-cheese-in-emmental-holes)  October 30, 2014
+- [Android Emmental, Adding Cheese in Emmental Holes](https://web.archive.org/web/20141204161642/http://blog.fortinet.com/post/android-emmental-adding-cheese-in-emmental-holes)  October 30, 2014
 - [Inside BlackHat Europe 2014](http://blog.fortinet.com/post/inside-blackhat-europe-2014)  October 29, 2014
-- [0wning Emmental](http://blog.fortinet.com/post/0wning-emmental)  October 20, 2014
+- [0wning Emmental](https://web.archive.org/web/20141024015842/http://blog.fortinet.com/post/0wning-emmental)  October 20, 2014
 - [Android Packers Talk at Hacktivity](http://blog.fortinet.com/post/android-packers-talk-at-hacktivity)  October 9, 2014
 - [My Day Unbricking a Friend's Phe](http://blog.fortinet.com/post/my-day-unbricking-a-friend-s-phe)  September 17, 2014
 - [Want everybody to know you're flirting? this app is for you!](http://blog.fortinet.com/post/want-everybody-to-know-you-re-flirting-this-app-is-for-you)  July 25, 2014
@@ -257,9 +257,9 @@ tags:
 - [Android/Smspacem under the microscope](http://blog.fortinet.com/android-smspacem-under-the-microscope/), May 30, 2011.
 - [Airpush... pushes the envelope](http://blog.fortinet.com/airpush-pushes-the-envelope/), May 17, 2011.
 - [iPhe Tracking](http://blog.fortinet.com/iphe-tracking), April 21, 2011.
-- [Mobile Malware Statistics](http://blog.fortinet.com/mobile-malware-statistics), March 28, 2011.
+- [Mobile Malware Statistics](https://web.archive.org/web/20110501225722/http://blog.fortinet.com/mobile-malware-statistics), March 28, 2011.
 - [How Android/Fake10086 selectively blocks SMS- step by step](http://blog.fortinet.com/how-androidfake10086-selectively-blocks-sms-step-by-step/), March 10, 2011.
-- [Android/DroidDream uses two vulnerabilities](http://blog.fortinet.com/android-droiddream-uses-two-vulnerabilities/), March 3, 2011.
+- [Android/DroidDream uses two vulnerabilities](https://web.archive.org/web/20110307092250/http://blog.fortinet.com/android-droiddream-uses-two-vulnerabilities), March 3, 2011.
 - [Hacking Mobile Phe Statistics](http://blog.fortinet.com/hacking-mobile-phe-statistics/), March 1, 2011.
 - [What's new in Zitmo.B?](https://blog.fortinet.com/whats-new-in-zitmo-b), February 23, 2011.
 - [ShmooC 2011 Debriefing](http://blog.fortinet.com/shmooc-2011-debriefing/), February 9, 2011.
@@ -295,16 +295,16 @@ tags:
 - [John Doe's Credentials](http://blog.fortinet.com/john-does-credentials/), November 16th 2009.
 - [Targeted Spam: an Unfair Blow to Security](http://blog.fortinet.com/targeted-spam-an-unfair-blow-to-security/), November 5th 2009.
 - [When Your Phe Becomes Your Worst Enemy](http://blog.fortinet.com/when-your-phe-becomes-your-worst-enemy/), October 27th 2009.
-- [Keep your phe healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
+- [Keep your phone healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
 - [Transmitter.C is not Yxes.E](http://blog.fortinet.com/transmitter-c-is-not-yxes-e/), August 26th 2009.
 - [Symbian Certificates or How SymbOS/Yxes got Signed](http://blog.fortinet.com/symbian-certificates-or-how-symbosyxes-got-signed/), August 4th 2009.
-- [SymbOS/Yxes or downloading customized ctent](http://blog.fortinet.com/symbosyxes-or-downloading-customized-malware/), July 21st 2009.
-- [Detecting spyware for iPhes](http://blog.fortinet.com/detecting-spyware-for-iphes/), July 16th 2009.
+- [SymbOS/Yxes or downloading customized content](https://web.archive.org/web/20101017081929/http://blog.fortinet.com/symbosyxes-or-downloading-customized-malware/), July 21st 2009.
+- [Detecting spyware for iPhones](https://web.archive.org/web/20140918125934/http://blog.fortinet.com/post/detecting-spyware-for-iphones), July 16th 2009.
 - [Friendly' spam: A trick for managing unwanted emails from family, friends](http://blog.fortinet.com/friendly-spam/) , June 25 2009.
-- June 9th, 2009, [Trash CRC32](http://blog.fortinet.com/trash-crc32)
+- June 9th, 2009, [Trash CRC32](https://web.archive.org/web/20130606131119/http://blog.fortinet.com/trash-crc32/)
 - April 21, 2009, [2D Codes: Lowering the "bar" for mobile threats ?](http://blog.fortinet.com/2d-codes-lowering-the-bar-for-mobile-threats/)
-- April 13, 2009, [Attacking stamps for fun and profit ?](http://blog.fortinet.com/attacking-stamps-for-fun-and-profit/)
-- March 9, 2009, [Flocker virus writer's name found via Google? Or privacy issue?](http://blog.fortinet.com/flocker-virus-writers-name-found-via-google/)
+- April 13, 2009, [Attacking stamps for fun and profit ?](https://web.archive.org/web/20090918175111/http://blog.fortinet.com/attacking-stamps-for-fun-and-profit/)
+- March 9, 2009, [Flocker virus writer's name found via Google? Or privacy issue?](https://web.archive.org/web/20091101045541/http://blog.fortinet.com/flocker-virus-writers-name-found-via-google/)
 - February 23, 2009, [A cryptographer's eye  antivirus analysis](http://blog.fortinet.com/a-cryptographers-eye--antivirus-analysis/)
 
 

@@ -313,7 +313,7 @@ curl --silent -XPOST --unix-socket /var/run/docker.sock -H 'Content-Type: applic
 
 The script gives a link to [this page](https://zwischenzugs.com/2015/06/24/the-most-pointless-docker-command-ever/) which explains how to run a Docker container with full root capabilities, using `--privileged`, `--net=host`, `--pid=host`, `--ipc=host` and mounting `/`.
 
-# Solutions to protect your 
+# Solutions to protect your computer
 
 *Added on March 28, 2023*
 
