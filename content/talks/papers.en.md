@@ -19,6 +19,7 @@ draft: false
 
 ## 2023
 
+- *The Mobile Malware Maze*, [BruCON](https://brucon.org) Keynote, Mechelen, Belgium, September 2023. *To appear*.
 - *Hacking for Ideas*, [THCon](https://thcon.party) Keynote, Toulouse, April 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/THCon-2023) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=DdgH56EtGys) at 1:06:56.
 - Hacking a jump rope and/or a Coffee Machine:
   - *Stay fit: hack a jump rope*, Troopers, Heidelberg, Germany, June 2023. [:(fa-brands fa-python): :(fa-solid fa-video): :(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Troopers23)
