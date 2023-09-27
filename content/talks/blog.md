@@ -171,7 +171,7 @@ tags:
 - [Insomni'Hack iOS challenges](http://blog.fortinet.com/post/insomni-hack-ios-challenges)  March 26, 2015
 - [Insomni'hack CTF write up](http://blog.fortinet.com/post/insomni-hack-ctf-write-up)  March 25, 2015
 - [Insomni'hack 2015](http://blog.fortinet.com/post/insomni-hack-2015)  March 23, 2015
-- [Investigating  PawnStorm for iPhone](http://blog.fortinet.com/post/investigating--pawn-storm-for-iphe)  February 13, 2015
+- [Investigating  PawnStorm for iPhone](http://blog.fortinet.com/post/investigating--pawn-storm-for-iphone)  February 13, 2015
 - [Aggressive Riskware Installati  Amaz Kindle (and Android)](http://blog.fortinet.com/post/aggressive-riskware-installati--amaz-kindle-and-android) January 12, 2015
 
 # 2014
@@ -291,10 +291,10 @@ tags:
 
 
 - [Duh's not malicious, dude!](http://blog.fortinet.com/duhs-not-malicious-dude/), December 10th 2009.
-- [Securing your jailbroken iPhe](http://blog.fortinet.com/securing-your-jailbroken-iphe), December 2nd 2009.
+- [Securing your jailbroken iPhone](https://web.archive.org/web/20091211231130/http://blog.fortinet.com/securing-your-jailbroken-iphone/), December 2nd 2009.
 - [John Doe's Credentials](http://blog.fortinet.com/john-does-credentials/), November 16th 2009.
 - [Targeted Spam: an Unfair Blow to Security](http://blog.fortinet.com/targeted-spam-an-unfair-blow-to-security/), November 5th 2009.
-- [When Your Phe Becomes Your Worst Enemy](http://blog.fortinet.com/when-your-phe-becomes-your-worst-enemy/), October 27th 2009.
+- [When Your Phe Becomes Your Worst Enemy](https://web.archive.org/web/20121021125714/http://blog.fortinet.com/when-your-phone-becomes-your-worst-enemy/), October 27th 2009.
 - [Keep your phone healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
 - [Transmitter.C is not Yxes.E](http://blog.fortinet.com/transmitter-c-is-not-yxes-e/), August 26th 2009.
 - [Symbian Certificates or How SymbOS/Yxes got Signed](https://web.archive.org/web/20091223022033/http://blog.fortinet.com/symbian-certificates-or-how-symbosyxes-got-signed), August 4th 2009.
