@@ -267,9 +267,9 @@ tags:
 
 # 2010
 
-- [Hidden feature in Android spyware](http://blog.fortinet.com/hidden-feature-in-android-spyware), November 12, 2010.
+- [Hidden feature in Android spyware](https://web.archive.org/web/20101115041405/http://blog.fortinet.com/hidden-feature-in-android-spyware/), November 12, 2010.
 - [Symbian malware and Internet Access Points](http://blog.fortinet.com/symbian-malware-and-internet-access-points/), November 4, 2010.
-- [Zitmo Follow Up: From Spyware to Malware](http://blog.fortinet.com/zitmo-follow-up-from-spyware-to-malware/), September 28, 2010.
+- [Zitmo Follow Up: From Spyware to Malware](https://web.archive.org/web/20101103002603/http://blog.fortinet.com/zitmo-follow-up-from-spyware-to-malware/), September 28, 2010.
 - [Zeus In The Mobile (Zitmo): Online Banking's Two Factor Authenticati Defeated](http://blog.fortinet.com/zeus-in-the-mobile-zitmo-line-bankings-two-factor-authenticati-defeated/)-   , September 27, 2010
 - [You can't judge a book by its cover](http://blog.fortinet.com/you-cant-judge-a-book-by-its-cover), September 7, 2010.
 - [iPhe 4 / iPad: the Keys Out of Pris](http://blog.fortinet.com/iphe-4-ipad-the-keys-out-of-pris/), August 5, 2010.
@@ -282,7 +282,7 @@ tags:
 - [Airport flight schedule crash (unharmful)](http://blog.fortinet.com/airport-flight-schedule-crash-unharmful/), May 25, 2010.
 - [WinCE/Terdial or impunity for dialers](http://blog.fortinet.com/winceterdial-or-impunity-for-dialers/), May 17, 2010.
 - [No, the iPad is NOT hacked](http://blog.fortinet.com/no-the-ipad-is-not-hacked/), May 3, 2010.
-- [Reversing the Symbian Enoriv malware](http://blog.fortinet.com/reversing-the-symbian-enoriv-malware/), April 13th 2010.
+- [Reversing the Symbian Enoriv malware](https://web.archive.org/web/20100901000000*/http://blog.fortinet.com/reversing-the-symbian-enoriv-malware/), April 13th 2010.
 - [SymbOS/Yxes goes versi 2](http://blog.fortinet.com/symbosyxes-goes-versi-2/), March 4th 2010.
 - [10 Predictis for Mobile Malware in 2010](http://blog.fortinet.com/10-predictis-for-mobile-malware-in-2010/), January 28th 2010.
 - [Malicious Transfer of IM3 funds: the Return](http://blog.fortinet.com/malicious-transfers-of-im3-funds-the-return/), January 26th 2010.
@@ -297,7 +297,7 @@ tags:
 - [When Your Phe Becomes Your Worst Enemy](http://blog.fortinet.com/when-your-phe-becomes-your-worst-enemy/), October 27th 2009.
 - [Keep your phone healthy: H1N1 vs. SymbOS/Yxes](http://blog.fortinet.com/keep-your-phe-healthy-h1n1-vs-symbosyxes/), October 13th 2009.
 - [Transmitter.C is not Yxes.E](http://blog.fortinet.com/transmitter-c-is-not-yxes-e/), August 26th 2009.
-- [Symbian Certificates or How SymbOS/Yxes got Signed](http://blog.fortinet.com/symbian-certificates-or-how-symbosyxes-got-signed/), August 4th 2009.
+- [Symbian Certificates or How SymbOS/Yxes got Signed](https://web.archive.org/web/20091223022033/http://blog.fortinet.com/symbian-certificates-or-how-symbosyxes-got-signed), August 4th 2009.
 - [SymbOS/Yxes or downloading customized content](https://web.archive.org/web/20101017081929/http://blog.fortinet.com/symbosyxes-or-downloading-customized-malware/), July 21st 2009.
 - [Detecting spyware for iPhones](https://web.archive.org/web/20140918125934/http://blog.fortinet.com/post/detecting-spyware-for-iphones), July 16th 2009.
 - [Friendly' spam: A trick for managing unwanted emails from family, friends](http://blog.fortinet.com/friendly-spam/) , June 25 2009.
