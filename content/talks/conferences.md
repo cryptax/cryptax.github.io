@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2023-06-01"
+date: "2023-09-27"
 ---
 
 Conferences I spoke at:
@@ -13,6 +13,7 @@ Conferences I spoke at:
 - [BlackAlps](https://blackalps.ch) 2018 2019 2022
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
+- [BruCON](https://brucon.org) 2023
 - [BSides Munich 2020](https://2020.bsidesmunich.org)
 - [BSides Oslo](https://bsidesoslo.no) 2021
 - CARO Workshop 2014
