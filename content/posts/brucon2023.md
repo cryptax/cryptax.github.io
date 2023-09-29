@@ -15,10 +15,11 @@ tags:
 - XOR
 - DNS
 ---
+# BruCON 2023 CTF
 
 Many challenges, many flags in this CTF. I detail those I flagged or worked on with other team mates. Our team happily ranked 6th / 64.
 
-# Forensics: Rexer
+## Forensics: Rexer
 
 This is what the challenge says:
 
@@ -44,9 +45,9 @@ Then, I had to re-assemble those characters from the 3rd line `\2OREO\9{\8\6\4\4
 
 I liked this challenge.
 
-# Steganography
+## Steganography
 
-## Hidden in Brucon
+### Hidden in Brucon
 
 *"It appears a flag has hidden itself inside the brucon logo, can you retrieve it?"*
 A file named `brucon.jpg` is provided.
@@ -60,7 +61,7 @@ brucon.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segm
 
 Flag: `TOREON{4lw4Ys_CHeck_MEt4Dat4}`
 
-## Hidden inside the House
+### Hidden inside the House
 
 ```
 One day, I got an email from a friend containing a picture. He never said why he sent me the photo, but all he said is he might need the file later. I wonder if there's more to this picture?
@@ -91,7 +92,7 @@ b'TOREON{f0r3Ns1c5}'
 
 The flag is `TOREON{f0r3Ns1c5}`. 
 
-## You Are Significant
+### You Are Significant
 
 The title of this challenge makes me think about something around Least Significant Bit (LSB) or most significant one. We are provided with a file, `flag.png`. 
 
@@ -124,7 +125,7 @@ b4,rgba,lsb,xy      .. text: "?$?%N%^U^&?$"
 
 The flag is `TOREON{5t3g4n0gr4PHy}`.
 
-## One Call Away
+### One Call Away
 
 This time, we had to find a flag in a YouTube video.
 The first step was to download the video, using in my case a browser extension ("YouTube 4K Downloader").
@@ -143,9 +144,9 @@ Then the audio is very much about texting someone so that s/he calls back. The r
 The final flag is `TOREONCLLBAK`. We didn't flag it immediately because we tried lower case...
 
 
-# PLC
+## PLC
 
-## The Secret Ingredient
+### The Secret Ingredient
 
 This is an OT challenge where we interact with a real PLC. We are asked to "get the PLC program and rescue the company secret located in datablock 23". The IP address of the PLC is `35.232.66.239:102`.
 
@@ -212,7 +213,7 @@ bytearray(b'pp\x01\x01\x05\n\x00\x17\x00\x00\x00\x8e\x00\x00\x00\x00\x03J\x12\xa
 
 The description was asking for a *UUID* as flag, but that was an error. I could have searched for a long time, fortunately I tried *"CRIMINAL_HOPS"* by pure luck and that was the flag. The organizers explained that in other CTFs they were asking for the UUID and that this was an error.
 
-## PLC: Rerouting the brew
+### PLC: Rerouting the brew
 
 In this second PLC challenge, we are now asked: *"Manipulate the outlow of the pressure tank by setting the PLC outputs 2,4 and 6. Verify the changes by verifying the datablock 42."*.
 
@@ -265,9 +266,9 @@ if __name__ == "__main__":
 
 
 
-# Web
+## Web
 
-## Web: Baby LFI
+### Web: Baby LFI
 
 The description says: *"Local File Inclusions are so cool! Can you get the flag at /flag.txt?"* and leads to a web page which shows this piece of PHP code:
 
@@ -285,15 +286,15 @@ Warning: include_once(): Failed opening 'flag.txt' for inclusion (include_path='
 
 They tell me that the file `flag.txt` is not found in the same directory as `index.php`. Actually, the description said to try `/flag.txt`, so that's what I tried http://URL/?flag=/flag.txt and got the flag `FLAG={Th4tW4s34444sy!}`. Yes, that was easy indeed.
 
-## Web: Beginner LFI
+### Web: Beginner LFI
 
 Very similar to Baby LFI, this one says *"That last one was a bit too easy. Let's see if you can get past my filters! Can you get the flag at /flag.txt?"*
 
 I probably did not understand what additional security there was, because the same request, http://URL/?flag=/flag.txt flagged: `FLAG={R3curs1v3Ch3cksAr3N33ded!}`
 
-# DNS
+## DNS
 
-## Do Not Search 1
+### Do Not Search 1
 
 This DNS challenge says: *"Do Not Search for the answer in brucon-ctf1.be."*. 
 
@@ -321,7 +322,7 @@ brucon-ctf1.be.		1121	IN	TXT	"TORFLAG:602C0CC369C134E25861F335EC1F290E"
 
 The flag is `TORFLAG:602C0CC369C134E25861F335EC1F290E`. The flag format wasn't fixed in this CTF.
 
-## Do Not Search 3
+### Do Not Search 3
 
 Same, but you need to search for `brucon-ctf3.be`. Actually the same solution worked again: `dig brucon-ctf3.be txt` and revealed the flag: `TORFLAG.ECCBC87E4B5CE2FE28308FD9F2A7BAF3` (without trailing dot at the end).
 
@@ -330,7 +331,7 @@ Same, but you need to search for `brucon-ctf3.be`. Actually the same solution wo
 brucon-ctf3.be.		13774	IN	CNAME	TORFLAG.ECCBC87E4B5CE2FE28308FD9F2A7BAF3.
 ```
 
-## Do Not Search 2
+### Do Not Search 2
 
 Find information on `brucon-ctf2.be`, but this time `txt` did not provide the flag. This information was in the TXT record:
 
@@ -354,7 +355,7 @@ brucon-ctf2.be.		4303	IN	MX	10 mail.brucon-ctf2.be.
 
 The flag did not have the trailing dot: `TORFLAG.BC3C1A70072998AFA42892CF9F880DB4`.
 
-# Crypto: Dragon's Crib
+## Crypto: Dragon's Crib
 
 Our team spent considerable time on this challenge, which only provided 50 points in the end. True, it was easier than I had expected, but still I think it deserved more points.
 
@@ -406,11 +407,11 @@ Actually [this other website](http://cribdrag.com) does the same but easier to u
 
 
 
-# CTI
+## CTI
 
 Those were several challenges on Critical Infrastructure. For all of them, we had a common pcap and smbp file
 
-## Find the PDF
+### Find the PDF
 
 This challenge asked *"Find the PDF document file name within the network packet capture"*. 
 
@@ -423,7 +424,7 @@ MDTM 20230901120136 Architecture Dossier-BruCON Brewery V2.0.pdf
 ...
 ```
 
-## Which subnet
+### Which subnet
 
 *"Which subnet from the enterprise domain network exfiltrates the PDF document?"*
 
@@ -437,7 +438,7 @@ In the end, I asked an organizer who made me understand he wasn't expecting a *t
 
 We see the PDF is exfiltrated from a workstation in the Marketing subnet. *Marketing* was the flag.
 
-## Devices
+### Devices
 
 *"How many devices did communicate with the PLC"*
 
@@ -451,7 +452,7 @@ In ModBus we have communications between 192.168.174.242 and
 
 To be honest, when I flagged I hadn't understood this at all, and tried 1, then 2 and happily got the flag with answer `3`...
 
-## Mac Addy
+### Mac Addy
 
 *"What is the MAC address of the PLC?"*
 
@@ -462,7 +463,7 @@ I solved this one by looking at the file `GRC_known_good.smbp` first. It's an XM
 ```
 So, then I looked for `192.168.174.242` in Wireshark and found its MAC address: `00:80:f4:0e:8d:13`. This was the flag.
 
-# CTI Architecture
+## CTI Architecture
 
 For those challenges, we were given a 9-page PDF titled "BruCON Brewery Architecture Dossier". [PDF](/source/CTF_Architecture_Dossier-BruCON_Brewery_V2.0.pdf).
 
@@ -478,7 +479,7 @@ While those challenges were interesting, I regret that the solution was too much
 
 
 
-# My opinion
+## My opinion
 
 Positive aspects:
 
