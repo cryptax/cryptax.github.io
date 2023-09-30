@@ -11,7 +11,7 @@ tags:
 
 # BruCON 2023 CTF
 
-Many challenges, many flags in this CTF. I detail those I flagged or worked on with other team mates. 
+Many challenges, many flags in this CTF.
 
 ![](/images/brucon2023-ctf.png)
 
