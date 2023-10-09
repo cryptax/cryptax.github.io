@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2023-09-27"
+date: "2023-10-09"
 ---
 
 Conferences I spoke at:
@@ -10,7 +10,7 @@ Conferences I spoke at:
 - [AMUSEC 2021](https://www.cirm-math.fr/Schedule/screen_display.php?id_renc=2653)
 - AREA 41 2016
 - [Barbhack](https://barbhack.fr) 2020 2022
-- [BlackAlps](https://blackalps.ch) 2018 2019 2022
+- [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
 - [BruCON](https://brucon.org) 2023

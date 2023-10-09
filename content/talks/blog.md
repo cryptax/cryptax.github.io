@@ -308,8 +308,3 @@ tags:
 - February 23, 2009, [A cryptographer's eye  antivirus analysis](http://blog.fortinet.com/a-cryptographers-eye--antivirus-analysis/)
 
 
-
-# Podcast
-
-- [Sécurité des objets connectés](https://www.nolimitsecu.fr/securite-objets-connectes-axelle-apvrille/), sur NoLimitSecu, October 30, 2016. In French.
-
