@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2023-10-09
+date: 2023-10-24
 draft: false
 ---
 # Conferences & Journals
@@ -20,7 +20,7 @@ draft: false
 ## 2023
 
 - *Unraveling the Challenges of Reverse Engineering Flutter Applications*, [BlackAlps](https://blackalps.ch), Yverdon-les-Bains, Switzerland, November 3, 2023. *To appear*
-- *The Mobile Malware Maze*, [BruCON](https://brucon.org) Keynote, Mechelen, Belgium, September 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BruCON-2023/brucon2023.pdf)
+- *The Mobile Malware Maze*, [BruCON](https://brucon.org) Keynote, Mechelen, Belgium, September 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BruCON-2023/brucon2023.pdf) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=jCiI52OvtSA)
 - *Hacking for Ideas*, [THCon](https://thcon.party) Keynote, Toulouse, April 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/THCon-2023) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=DdgH56EtGys) at 1:06:56.
 - Hacking a jump rope and/or a Coffee Machine:
   - *Stay fit: hack a jump rope*, Troopers, Heidelberg, Germany, June 2023. [:(fa-brands fa-python): :(fa-solid fa-video): :(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Troopers23)
