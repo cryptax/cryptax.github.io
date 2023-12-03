@@ -10,9 +10,9 @@ tags:
 - Python
 ---
 
-*Advent of Code* is a coding competition, with one new challenge per day during December.
+*Advent of Code* is a coding competition, with one new challenge per day during December. I'll update this post every time I have time to solve some challenges.
 
-**SPOILER ALERT** in this post!
+As it would be a long (and boring?) post to include all the details of my code, I'll just highlight the important points or things I learned doing it. **SPOILER ALERT** though: don't read this post if you're doing the challenge yourself.
 
 # Advent of Code - December 1st
 
@@ -27,55 +27,30 @@ a1b2c3d4e5f -> 15
 treb7uchet -> 77
 ```
 
-My solution in Python. It's certainly not the best solution, but it works:
+This is not very difficult, I wrote it in Python, I just paid attention to the fact I wanted *neat code*, if possible re-usable, and not a *quick and dirty* solution.
+
+So, first of all, we want logs, so as to debug the code when necessary:
 
 ```python
-#!/usr/bin/env python3
 import logging
 
 log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
 logging.basicConfig(format = log_format, level = logging.INFO)
 logger = logging.getLogger()
-
-def get_calibration_value(s: str) -> int:
-    length = len(s)
-    for c in s:
-        if c.isdigit():
-            value = c
-            break
-
-    for c in reversed(s):
-        if c.isdigit():
-            value = value+c
-            break
-    logger.debug(f'input={s} value={value}')
-    return int(value)
-
-def test():
-    test = ['1abc2', 'pqr3stu8vwx', 'a1b2c3d4e5f', 'treb7uchet' ]
-    expected = [ 12, 38, 15, 77 ]
-    for t in range(0, len(test)):
-        value = get_calibration_value(test[t])
-        if value != expected[t]:
-            logger.error(f'Error for {t}: value={value}, expected={expected[t]}')
-        else:
-            logger.debug(f'[+] test #{t} ok')
-
-def parse_file(filename='input.txt') -> int:
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
-    total = 0
-    for line in lines:
-        value = get_calibration_value(line)
-        total = total + value
-    logger.debug(total)
-    return total
-
-if __name__ == '__main__':
-    test()
-    logger.info(f'Total={parse_file()}')
 ```
+
+Also, I used Python type hints. In a small project such as this one, it's over-kill, but I like the idea in recent Python program because it clarifies input arguments.
+
+```python
+def get_calibration_value(s: str) -> int:
+```
+
+There are many ways to solve this task, and at second thought, I didn't use the best one. Basically, what I do is parse each line, first from left to right until I find a digit (`isdigit()`), and then from right to left using `reversed(s)` and `isdigit()`.
+
+I coded a test function to verify my calibration values matched the expected ones. Certainly not "necessary", but IMHO a good thing to do.
+
+Finally, I parsed each line of the input file using `readlines()`.
+
 
 I read on [Mastodon a much more elegant solution with *awk*](https://chaos.social/@root42/111505305360222320)
 
@@ -85,79 +60,25 @@ awk '{gsub(/[a-z]*/,""); num = substr($0,0,1)substr($0,length,1); sum += num } E
 
 ## Task 2
 
-In this second task, we have to handle numbers which can be spelt with letters like 'one'. Stupidly, I struggled on this one, handling incorrectly the parse from the right.
+In this second task, we have to handle numbers which can be spelt with letters like 'one'. Stupidly, I struggled on this one:
+
+- Pay attention that something like `oneight` must be transformed as `1ight`
+- And **also** do it correctly from right to left: `oneight` is now transformed `on8`
+
+The test values contained `sixteen` but if you `grep` the input file, notice every number was been `one` and `nine`. So, we can simplify the algorithm.
+
+From left to right, the idea is to stop as soon as you find a digit, or if `line[pos:]` starts with one of the texts between `one` and `nine`. You need to parse manually the line and increment a position index (`pos`). If you spot a text, be sure to increment the index by the length of the text.
+
+From right to left, the idea is exactly the same, except you're going to parse the line from the last character to the beginning.
+
+On Internet, I found a very short solution in Python. It works, it's short, but it's ugly to read:
 
 ```python
-#!/usr/bin/env python3
-import re
-import logging
+f = lambda str, dir: min((str[::dir].find(num[::dir])%99, i) for i, num in enumerate(
+    '1 2 3 4 5 6 7 8 9 one two three four five six seven eight nine'.split()))[1]%9+1
 
-log_format = "%(asctime)s - %(levelname)s - %(message)s" 
-logging.basicConfig(format = log_format, level = logging.DEBUG)
-logger = logging.getLogger()
-
-def count_left(line: str) -> int:
-    index = 0
-    while index < len(line):
-        logger.debug(f'index={index} {line[index:]}')
-        if line[index].isdigit():
-            return int(line[index])
-
-        texts = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ]
-        for j in range(0, len(texts)):
-            if line[index:].startswith(texts[j]):
-                return j
-
-        index = index + 1
-    logger.error(f'left: we havent found anything: {line}')
-    quit()
-
-
-def count_right(line: str) -> int:
-    index = len(line) - 1
-    while index >= 0:
-        logger.debug(f'index={index} {line[index:]}')
-        if line[index].isdigit():
-            return int(line[index])
-
-        texts = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ]
-        for j in range(0, len(texts)):
-            if line[index:].startswith(texts[j]):
-                return j
-        index = index -1
-    logger.error(f'right: we havent found anything: {line}')
-    quit()
-    
-        
-def parse_file(filename='input.txt') -> int:
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
-    total = 0
-    for line in lines:
-        left = count_left(line.strip())
-        right = count_right(line.strip())
-        total = total + int(f'{left}{right}')
-    logger.debug(total)
-    return total
-
-def test():
-    test = ['two1nine', 'eighttwothree', 'abcone2threexyz', 'xtwone3four', '4nineeightseven2', 'zoneight234' ]
-    expected = [ 29, 83, 13, 24, 42, 14 ]
-    for t in range(0, len(test)):
-        left = count_left(test[t])
-        right = count_right(test[t])
-        value = int(f'{left}{right}')
-        if value != expected[t]:
-            logger.error(f'Error for {t}: value={value}, expected={expected[t]}')
-        else:
-            logger.debug(f'[+] test #{t} ok')
-
-if __name__ == '__main__':
-    #test()
-    logger.info(parse_file())
+print(sum(10*f(x, 1) + f(x, -1) for x in open('input.txt')))
 ```
-
 
 # Advent of Code - December 2nd
 
@@ -169,36 +90,28 @@ In the second task, we have to say the minimum of cubes possible for each color 
 
 ## Task 1
 
+To retrieve the ID of the game, I used a simple regex:
+
 ```python
-#!/usr/bin/env python3
-import logging
-import re
-
-log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
-logging.basicConfig(format = log_format, level = logging.INFO)
-logger = logging.getLogger()
-
 def get_id(line: str) -> int:
     match = re.search(r'Game ([0-9]+)', line)
     return int(match.group(1))
+```
 
+To count the number of cubes of a given color on a given line, we need to find *all* matches, so it's a `findall`:
+
+```python
 def get_color_count(line: str, color: str) -> int:
     m = re.findall(f'([0-9]+) {color}', line)
     count = 0
     for i in m:
         count = count + int(i)
     return count
+```
 
-def parse_file(filename='input2.txt') -> int:
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
-    sum = 0
-    for line in lines:
-        id = get_id(line)
-        # get that each round has a correct amount of cubes
-        rounds = line.split(';')
-        correct = True
+Then, we parse each line of the file. A game is subdivided in what I called "rounds". We check that we don't have more 12 red, 13 green and 14 blue in each round.
+
+```python
         for r in rounds:
             red = get_color_count(r, 'red')
             blue = get_color_count(r, 'blue')
@@ -207,67 +120,17 @@ def parse_file(filename='input2.txt') -> int:
                 logger.debug(f'id={id} incorrect round={r}')
                 correct = False
                 break
-        if correct:
-            sum = sum + id
-    return sum
-
-if __name__ == '__main__':
-    logger.info(f'Total={parse_file()}')
-
 ```
 
 ## Task 2
 
+The minimum number of cubes for a given color consists in the *maximum* of cubes across all rounds of a given line. So, basically, I implemented a function that split each round of a line (using `line.split(';')`) and kept the maximum values for each count of cubes for a given line.
+
 ```python
-#!/usr/bin/env python3
-import logging
-import re
-
-log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
-logging.basicConfig(format = log_format, level = logging.INFO)
-logger = logging.getLogger()
-
-def get_id(line: str) -> int:
-    match = re.search(r'Game ([0-9]+)', line)
-    return int(match.group(1))
-
-def get_color_count(line: str, color: str) -> int:
-    m = re.findall(f'([0-9]+) {color}', line)
-    count = 0
-    for i in m:
-        count = count + int(i)
-    return count
-
-def get_power(line: str) -> int:
-    rounds = line.split(';')
-    max_red = 0
-    max_green = 0
-    max_blue = 0
-    for r in rounds:
-        red = get_color_count(r, 'red')
-        blue = get_color_count(r, 'blue')
-        green = get_color_count(r, 'green')
-        if red > max_red:
-            max_red = red
-        if blue > max_blue:
-            max_blue = blue
-        if green > max_green:
-            max_green = green
-    logger.debug(f'red={max_red} green={max_green} blue={max_blue}')
-    return max_red * max_blue * max_green
-    
-
-def parse_file(filename='input2.txt') -> int:
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
-    sum = 0
-    for line in lines:
-        id = get_id(line)
-        power = get_power(line)
-        sum = sum + power
-    return sum
-
-if __name__ == '__main__':
-    logger.info(f'Total={parse_file()}')
+for r in rounds:
+  red = get_color_count(r, 'red')
+  blue = get_color_count(r, 'blue')
+  green = get_color_count(r, 'green')
+  if red > max_red:
+    max_red = red
 ```
