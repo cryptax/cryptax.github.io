@@ -139,7 +139,7 @@ for r in rounds:
 
 ## 3.1
 
-We get a file with numbers and miscellaneous characters. We must add all numbers who have a misc characters just next to the numbers, let that be left, right, up, down or in diagonal. (`.` does not count as a character).
+We get a file with numbers and miscellaneous characters. We must add all numbers who have a misc characters just next to the numbers, let that be left, right, up, down or in diagonal. Character `.` does not count as a character).
 
 What a pain!
 
@@ -246,6 +246,8 @@ def has_nearby_character(data: str, index: int, LINE_LEN: int) -> bool:
 
 To summarize, despite a simple description, this exercise was painful to implement and to debug (and not very interesting IMHO).
 
+> Lessons Learned: it's documented, but pay attention: `re.search()` only returns the first occurence.
+
 ## 3.2
 
 In this new task, you have to multiple numbers which are around a star `*`, whether those numbers are above, below, left, right or diagonally. The task is slightly less difficult than the first one, the main difficulty consisting in correctly implementing how to search for a number at a given position.
@@ -333,5 +335,145 @@ def get_number(data: str, offset: int, LINE_LEN: int) -> int:
 	return int(data[begin_offset: end_offset+1])
 ```
 
+# Advent of Code - December 4
+
+## 4.1
+
+The task consists in help count points for a game. There are winning numbers (like lotery), and on the other side, cards with numbers that the elf owns. We have to count the amount of winning numbers the elf has. The score for the game is then doubled for each subsequent winning number e.g 1 winning number = 1 point, 2 winning = 2 points, 3 winning = 4 points etc.
+
+This task is *way* easier than on December 3 and I coded it rather quickly.
+
+Lines are formatted as such:
+
+```
+Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+```
+
+For each line, we want to retrieve the winning numbers (on the left) and the cards the elf has (on the right). For that, I spot the position of `:` (beginning of winning numbers) and `|` (end of winning numbers, beginning of cards of the elf).
+
+I create an array using `split()`. As there are sometimes multiple spaces that would generate empty entries in the array (`['86', '', '6']`), I use a Python trick to remove the spaces: `' '.join(array.split())`: this splits the array, then re-assembles each entry with a single space.
+
+Then, basically, the task is completed.
+
+```python
+def process(filename='input4.txt') -> int:
+    f = open(filename, 'r')
+    lines = f.readlines()
+    f.close()
+
+    total = 0
+    for line in lines:
+        begin = line.find(':') + 1
+        separator = line.find('|')
+        winning = ' '.join(line[begin:separator].split()).split(' ')
+        cards = ' '.join(line[separator+1:].replace('\n','').split()).split(' ')
+        logger.debug(f'winning={winning}')
+        logger.debug(f'cards={cards}')
+
+        count = 0
+        for w in winning:
+            if w in cards:
+                count = count + 1
+        if count > 0:
+            total = total + 2**(count -1)
+            logger.debug(f'count={count} value={2**(count-1)} total={total}')
+    logger.info(f'Total={total}')
+```
+
+### Other solutions
+
+I saw a few other solutions on the net. Overall, I'm pretty happy with mine which is both short and easy to understand. 
+
+To count the number of winning numbers, I read a solution which uses `set.intersection`.
+
+In **Bash**, this one-liner solution is fantastic:
+
+```bash
+
+cat input4.txt | cut -d: -f2 | tr -d '|' | xargs -I {} sh -c "echo {} | tr ' ' '\n' | sort | uniq -d | wc -l " | awk '$1>0 {print 2^($1-1)}' | paste -sd+ - | bc
+```
+
+I didn't know command `paste`: it merges lines of files.
 
 
+## 4.2
+
+### Description
+
+This is the description of the task:
+
+>you win copies of the scratchcards below the winning card equal to the number of matches. So, if card 10 were to have 5 matching numbers, you would win one copy each of cards 11, 12, 13, 14, and 15.
+>Copies of scratchcards are scored like normal scratchcards and have the same card number as the card they copied. So, if you win a copy of card 10 and it has 5 matching numbers, it would then win a copy of the same cards that the original card 10 won: cards 11, 12, 13, 14, and 15. This process repeats until none of the copies cause you to win any more cards. (Cards will never make you copy a card past the end of the table.)
+
+### Example
+
+```
+Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
+Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
+Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
+Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
+```
+
+- Card 1 has four matching numbers, so you win one copy each of the next four cards: cards 2, 3, 4, and 5.
+- Your original card 2 has two matching numbers, so you win one copy each of cards 3 and 4.
+- Your copy of card 2 also wins one copy each of cards 3 and 4.
+- Your four instances of card 3 (one original and three copies) have two matching numbers, so you win four copies each of cards 4 and 5.
+- Your eight instances of card 4 (one original and seven copies) have one matching number, so you win eight copies of card 5.
+- Your fourteen instances of card 5 (one original and thirteen copies) have no matching numbers and win no more cards.
+- Your one instance of card 6 (one original) has no matching numbers and wins no more cards.
+- Once all of the originals and copies have been processed, you end up with 1 instance of card 1, 2 instances of card 2, 4 instances of card 3, 8 instances of card 4, 14 instances of card 5, and 1 instance of card 6. In total, this example pile of scratchcards causes you to ultimately have 30 scratchcards!
+
+### Solution
+
+This second task is a bit more complex than the first one but still easier than the day before :)
+The complexity is not to forget to process new cards you won.
+I thought I'd have to use recursivity, but it didn't turn out to be necessary.
+
+I chose to keep an array of cards I had. At the beginning, I have exactly 1 card of each.
+
+```python
+cards = [ 1 ] * len(lines)
+```
+
+We re-use the way to get the array of winning numbers, numbers and to count the number of wins.
+This time, I made a function to count wins:
+
+```python
+def count_wins(winning: list[str], numbers: list[str]) -> int:
+    count = 0
+    for w in winning:
+            if w in numbers:
+                count = count + 1
+    return count
+```	
+
+Then, we need to implement the amount of cards we win. When we have several copies of the current card, we are going to win n=number of copies cards for the next cards:
+
+```python
+count = count_wins(winning, numbers)
+logger.debug(f'Card {card_no} has {count} wins')
+for i in range(0, count):
+    if card_no + i < len(lines):
+        logger.debug(f'Winning card {card_no+i+1}')
+        cards[card_no+i] = cards[card_no+i] + cards[card_no-1]
+```
+
+Then, we merely have to count all cards we have:
+
+```python
+total = 0
+for c in cards:
+    total = total + c
+```	
+
+> Lessons learned: type hinting for an array is `list[int]` for example. If you need to copy an array and copies have a different life, then use `a.copy()`. I actually didn't have to use that.
+
+### Other solutions
+
+There's another fabulous Bash one-liner for this task that I found on Internet:
+
+```
+cat /tmp/input4.txt | cut -d: -f2 | tr -d '|' | xargs -I {} sh -c "echo {} | tr ' ' '\n' | sort | uniq -d | wc -l " | cat -n | xargs | awk '{ for (i = 1; i < NF; i = i + 2) { copies[$i] = $(i + 1); vals[$i] = 0 } } { for (i = 1; i <= NF/2; i++) { counter=0; for (j = i + 1; counter < copies[i] && copies[i] > 0; j++) { counter++; vals[j] = vals[j] + 1 + vals[i] } } } { for(i=1;i<=NF/2;i++) { print vals[i] } print NF/2 }' | paste -sd+ - | bc
+```
