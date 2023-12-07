@@ -477,3 +477,362 @@ There's another fabulous Bash one-liner for this task that I found on Internet:
 ```
 cat /tmp/input4.txt | cut -d: -f2 | tr -d '|' | xargs -I {} sh -c "echo {} | tr ' ' '\n' | sort | uniq -d | wc -l " | cat -n | xargs | awk '{ for (i = 1; i < NF; i = i + 2) { copies[$i] = $(i + 1); vals[$i] = 0 } } { for (i = 1; i <= NF/2; i++) { counter=0; for (j = i + 1; counter < copies[i] && copies[i] > 0; j++) { counter++; vals[j] = vals[j] + 1 + vals[i] } } } { for(i=1;i<=NF/2;i++) { print vals[i] } print NF/2 }' | paste -sd+ - | bc
 ```
+# Advent of Code - December 5th
+
+## 5.1
+
+The description of the day's task is long, but the task in itself isn't too difficult.
+
+The first step is to read the input file:
+
+- Read the seed line, which is handled differently from the other maps.
+- Be able to detect the beginning of a map
+- Be able to read a "dst src len" range
+
+The implementation is quite appropriate with Python.
+
+### Read seed line
+
+```python
+def get_seed_list(line: str) -> list[int]:
+    assert(line.startswith('seeds:')), f'this is not a seed line: {line}'
+    seeds = [ int(x) for x in line[len('seeds: '):].split(' ') ]
+    logger.debug(f'seeds={seeds}')
+    return seeds
+```	
+
+### Reading the maps
+
+I'm quite happy with my implementation which basically uses "pointers" on various map arrays: `array` is the pointer, and it will point at `seed_to_soil`, `soil_to_fertilizer` etc depending on the context.
+
+We have a few empty lines that I just skip with `if not lines[...].isdigit()`.
+
+```python
+def get_maps(lines: list[str]):
+    array = []
+    tags = { 'seed-to-soil' : seed_to_soil,
+             'soil-to-fertilizer' : soil_to_fertilizer,
+             'fertilizer-to-water' : fertilizer_to_water,
+             'water-to-light' : water_to_light,
+             'light-to-temperature' : light_to_temperature,
+             'temperature-to-humidity' : temperature_to_humidity,
+             'humidity-to-location' : humidity_to_location }
+    
+    for line_num in range(1, len(lines)):
+        for k in tags.keys():
+            if lines[line_num].startswith(k):
+                array = tags[k]
+                break
+        if not lines[line_num][0].isdigit():
+            next
+        else:
+            tab = lines[line_num].strip().split(' ')
+            array.append([ int(x) for x in tab ])
+```
+
+### Computing destination value
+
+This is straight forward. I'll just keep in mind the type hint for a list of lists is for example `list[list[int]]` :)
+
+```python
+def get_dst(map : list[list[int]], value: int) -> int:
+    for m in map:
+        logger.debug(f'dst={m[0]} src={m[1]} len={m[2]}')
+        if value >= m[1]  and value < (m[1] + m[2]):
+            dst = m[0] + value - m[1]
+            logger.debug(f'src_value={value} -> dst_value={dst}')
+            return dst
+    return value
+```	
+
+### Putting it together
+
+Finally, you just need to compute the location for each seed and keep the minimum location
+
+```python
+    for s in seeds:
+        soil = get_dst(seed_to_soil, s)
+        fertilizer = get_dst(soil_to_fertilizer, soil)
+        water = get_dst(fertilizer_to_water, fertilizer)
+        light = get_dst(water_to_light, water)
+        temperature = get_dst(light_to_temperature, light)
+        humidity = get_dst(temperature_to_humidity, temperature)
+        location = get_dst(humidity_to_location, humidity)
+        logger.info(f'seed={s} is at location={location}')
+        if location < min_location:
+            min_location = location
+```
+
+## 5.2
+
+The difference in this second task is that the seed line should be considered as `basenum len`, i.e you'll have seed `basenum`, `basenum +1` ... until you have len elements.
+
+This is a very small algorithmic change... but with the real input file, there is a *huge* difference: we are going to have **huge ranges** of seeds to test.
+
+```
+seeds: 3082872446 316680412 2769223903 74043323 
+```
+
+Impossible to memorize all seeds in an array: too much memory. That's not a big issue, because we don't really need to store the array, a loop parsing each seed is fine.
+
+The biggest issue is that there's still lots of seeds to compute the location for.
+Python is not performance driven: I could have modified the algorithm to use threads, or to compute seed range intersections.
+Instead, I just decided to use an another programming language and fell back to C.
+
+My implementation follows the same logic. See the [full source code at the end of the page](#d5t2_code). 
+
+It runs, unoptimized, on my host on 7 minutes 43. I'm disappointed, I read a similar implementation on Java (but using Hash maps) which runs in ~3 minutes.
+
+| `gcc d5t2.c -o d5t2` | 7 min 43 |
+| **Optimized**: `gcc -O3 ...` | 2 min 20 |
+| Java | 3 min 30 |
+
+> Lessons Learned: (1) I already knew that, but Python is really bad for performances. (2) Compiler optimizations have a strong impact on performances too.
+
+
+# Appendix
+
+## Full code of day 5 task 2 {#d5t2_code}
+
+```c
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+// -------------- TYPES ----------------
+struct pair {
+  unsigned long base;
+  unsigned long range;
+};
+
+struct mapping {
+  long int dst;
+  long int src;
+  long int len;
+};
+
+#define LEVEL LOG_INFO
+
+typedef enum {
+  LOG_DEBUG,
+  LOG_INFO,
+  LOG_WARNING,
+  LOG_ERROR } LOG_LEVEL;
+
+// --------------- GLOBALS -------------
+#define MAP_LEN 100
+
+struct pair seed_list[30];
+struct mapping seed_to_soil[MAP_LEN];
+struct mapping soil_to_fertilizer[MAP_LEN];
+struct mapping fertilizer_to_water[MAP_LEN];
+struct mapping water_to_light[MAP_LEN];
+struct mapping light_to_temperature[MAP_LEN];
+struct mapping temperature_to_humidity[MAP_LEN];
+struct mapping humidity_to_location[MAP_LEN];
+struct mapping *map = NULL;
+int *map_len = NULL;
+int nb_seed = 0, nb2soil = 0, nb2fertilizer = 0, nb2water = 0, nb2light = 0, nb2temp = 0, nb2hum = 0, nb2loc = 0;
+
+#define LOGMSG(lvl, fmt, ...) logger(lvl, __func__, fmt, __VA_ARGS__);
+
+// ---------------- LOGS -----------------------
+void logger(LOG_LEVEL lvl, const char *funcname, char *fmt, ...) {
+  if (lvl >= LEVEL) {
+    const char *level_str;
+    switch (LEVEL) {
+    case LOG_DEBUG:
+      level_str = "DEBUG";
+      break;
+    case LOG_INFO:
+      level_str = "INFO";
+      break;
+    case LOG_WARNING:
+      level_str = "WARNING";
+      break;
+    case LOG_ERROR:
+      level_str = "ERROR";
+    default:
+      level_str = "UNKNOWN";
+    }
+    va_list arglist;
+    va_start( arglist, fmt );
+    printf("[%s][%10s()]: ", level_str, funcname);
+    vprintf( fmt, arglist );
+    va_end( arglist );
+  }
+}
+
+// ---------------- SEED PAIRS ---------------
+void parse_seed_list(struct pair *list, int nb) {
+  int i;
+  for (i=0; i<nb;i++) {
+    LOGMSG(LOG_DEBUG, "base=%20ld range=%20ld\n", list[i].base, list[i].range);
+  }
+}
+ 
+int get_seed_list(char *line, struct pair *seed_list, int max) {
+  char *token = NULL;
+  int nb = 0;
+  unsigned long base, range;
+
+  assert(seed_list != NULL);
+
+  /* initialize token split */
+  token = strtok(&line[7], " ");
+  assert(token != NULL);
+  base = atol(token);
+
+  while ((token = strtok(NULL, " ")) != NULL) {
+    if (base == 0) {
+      base = atol(token);
+    } else {
+      assert(nb <= max);
+      seed_list[nb].range = atol(token);
+      seed_list[nb].base = base;
+      base = 0;
+      nb++;
+    }
+  }
+  
+  return nb;
+}
+
+// -------------------- MAPS ------------------
+long int get_dst(struct mapping *map, int max, long value) {
+  int i;
+  assert(value >= 0);
+  for (i=0; i< max; i++) {
+    if (value >= map[i].src && value < (map[i].src + map[i].len)) {
+      long int dst = map[i].dst + value - map[i].src;
+      if (dst < 0) {
+	LOGMSG(LOG_ERROR, "dst=%ld src=%ld len=%ld value=%ld -> dst=%ld\n", map[i].dst, map[i].src, map[i].len, dst);
+	assert(dst >= 0);
+      }
+      return dst;
+    }
+  }
+  LOGMSG(LOG_DEBUG, "Value not found=%ld - mapping to same value\n", value);
+  return value;
+}
+
+int read_mapping(struct mapping *array, int index, char *line) {
+  if (isdigit(line[0]) == 0) {
+    return -1;
+  }
+  char *token = strtok(line, " ");
+  assert(token != NULL);
+  array[index].dst = atol(token);
+  token = strtok(NULL, " ");
+  array[index].src = atol(token);
+  token = strtok(NULL, " ");
+  array[index].len = atol(token);
+  LOGMSG(LOG_DEBUG, "dst=%15ld src=%15ld len=%15ld\n", array[index].dst, array[index].src, array[index].len);
+  return 1;
+}
+
+int parse_map(char *line) {
+  const char *tags[] = { "seed-to-soil",
+    "soil-to-fertilizer",
+    "fertilizer-to-water",
+    "water-to-light",
+    "light-to-temperature",
+    "temperature-to-humidity",
+    "humidity-to-location" };
+  struct mapping *maps[] = { &seed_to_soil[0],
+    &soil_to_fertilizer[0],
+    &fertilizer_to_water[0],
+    &water_to_light[0],
+    &light_to_temperature[0],
+    &temperature_to_humidity[0],
+    &humidity_to_location[0] };
+  int *lens[] = { &nb2soil,
+    &nb2fertilizer,
+    &nb2water,
+    &nb2light,
+    &nb2temp,
+    &nb2hum,
+    &nb2loc };
+  int i;
+
+  for (i = 0; i<7; i++) {
+    if (memcmp(tags[i], line, strlen(tags[i])) == 0) {
+      LOGMSG(LOG_DEBUG, "Map is %s\n", tags[i]);
+      map = maps[i];
+      map_len = lens[i];
+      return 1;
+    }
+  }
+  return 0;
+}
+
+void parse_file(char *filename) {
+  FILE *fp = NULL;
+  char *line = NULL;
+  ssize_t read;
+  size_t len;
+
+  /* parse the file */
+  fp = fopen(filename, "r");
+  while ((read = getline(&line, &len, fp)) != -1) {
+    /* remove \n */
+    line[strcspn(line, "\n")] = 0;
+    
+    if (memcmp("seeds: ", line, 7) == 0) {
+      /* process seed line */
+      nb_seed = get_seed_list(line, seed_list, 30);
+      parse_seed_list(seed_list, nb_seed);
+    } else if (parse_map(line) == 0) {
+      /* this is a line with dst src len */
+      if (map != NULL) {
+	assert(*map_len < MAP_LEN);
+	read_mapping(map, *map_len, line);
+	(*map_len)++;
+      }
+    }
+  }
+  fclose(fp);
+  if (line) free(line);
+}
+
+
+void process(char *filename) {
+  LOGMSG(LOG_INFO, "Parsing %s\n", filename);
+  parse_file(filename);
+
+  /* get location */
+  int i = 0;
+  long j;
+  long min_location = -1;
+  for (i=0; i<nb_seed; i++) {
+    for (j=seed_list[i].base; j<seed_list[i].base+seed_list[i].range; j++) {
+      long value = get_dst(seed_to_soil, nb2soil, j);
+      value = get_dst(soil_to_fertilizer, nb2fertilizer, value);
+      value = get_dst(fertilizer_to_water, nb2water, value);
+      value = get_dst(water_to_light, nb2light, value);
+      value = get_dst(light_to_temperature, nb2temp, value);
+      value = get_dst(temperature_to_humidity, nb2hum, value);
+      value = get_dst(humidity_to_location, nb2loc, value);
+      LOGMSG(LOG_DEBUG, "seed=%15ld --> location=%15ld\n", j, value);
+      if (min_location == -1 || value < min_location) {
+	min_location = value;
+	LOGMSG(LOG_DEBUG, "Updating min_location: %ld\n", min_location);
+      }
+    }
+  }
+  LOGMSG(LOG_INFO, "Minimum location=%ld\n", min_location);
+}
+
+int main(int argc, char **argv) {
+  if (argc == 2) {
+    process(argv[1]);
+  } else {
+    process("input5.txt");
+  }
+}
+```
+
+
