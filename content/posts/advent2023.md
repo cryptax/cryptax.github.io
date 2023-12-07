@@ -2,7 +2,7 @@
 layout: post
 title: "Advent of Code 2023"
 author: cryptax
-date: 2023-12-02
+date: 2023-12-07
 tags:
 - Advent
 - Code
@@ -632,6 +632,78 @@ foreach my $chunk (@chunks) {
 my $minStart = min map { $_->[0] } @$ranges;
 print "Min start: $minStart\n";
 ```
+# Advent of Code - December 6
+
+## 6.1
+
+This task is really simple. You must compute how many times you can beat a race record.
+A race consists of a given duration. If you hold the charge button during x ms, you'll have a speed of x mm per ms. But of course, the time you spend charging (at the beginning) is time you can't move.
+
+So, the formula to compute the distance is `hold*(duration-hold)`.
+
+You get an input with several race durations and their corresponding record.
+You must compute how many times you can beat the record, and multiply those values.
+
+As the input is small, I hard coded it:
+```c
+struct race {
+  int duration;
+  int distance;
+};
+
+struct race input[] = { { 47, 282 }, {70, 1079}, {75, 1147}, {66, 1062}};
+```
+
+I brute forced all hold lengths, removing 0 (if you don't hold, you don't move, no way to win), same if you hold during nearly all the time. Obviously the best distances are going to be somewhere in the middle.
+
+```c
+#define COMPUTE_DISTANCE(hold, duration) (hold*(duration-hold))
+
+int beat_record() {
+  int race_index;
+  int result = 1;
+  for (race_index = 0; race_index < 4; race_index++) {
+    int hold;
+    int beat_record = 0;
+    for (hold = 1; hold < input[race_index].duration -1; hold++) {
+      if (COMPUTE_DISTANCE(hold, input[race_index].duration) > input[race_index].distance)
+	beat_record++;
+    }
+    printf("race[%d]: %d ways to beat record\n", race_index, beat_record);
+    result = result * beat_record;
+  }
+  return result;
+}
+```
+
+On Internet, several solved the equation where
+
+```
+hold * (duration - hold) = distance
+-hold^2 + duration*hold - distance = 0
+```
+
+The solution is:
+
+1. Compute  `d = sqrt(time^2 - 4 * distance)`
+2. Range where we beat: `(time -d)/2 < hold < (time + d)/2`
+
+As the brute force program works immediately (no lag), I feel personally this is overkill ;)
+
+## 6.2
+
+This second task is nearly the same thing expect there is a single race with large values:
+
+```c
+struct race input = { 47707566, 282107911471062 };
+```
+
+We do the same, except we're going to use `unsigned long long int` (actually we could have used smaller).
+
+My initial solution did not work. I couldn't see the solution. After a while, I noticed my input was bad ;-(
+
+The only goal of this second task is to have people deal with long integers.
+
 
 # Appendix
 
