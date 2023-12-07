@@ -583,12 +583,55 @@ My implementation follows the same logic. See the [full source code at the end o
 
 It runs, unoptimized, on my host on 7 minutes 43. I'm disappointed, I read a similar implementation on Java (but using Hash maps) which runs in ~3 minutes.
 
+| Implementation | Time to solution |
+| -------------- | ---------------- |
 | `gcc d5t2.c -o d5t2` | 7 min 43 |
 | **Optimized**: `gcc -O3 ...` | 2 min 20 |
 | Java | 3 min 30 |
 
 > Lessons Learned: (1) I already knew that, but Python is really bad for performances. (2) Compiler optimizations have a strong impact on performances too.
 
+Alternatives: [this implementation in Perl runs **super fast**](https://topaz.github.io/paste/#XQAAAQCZBgAAAAAAAAA6nMjJFMpQu0F8vIUYE8mlPji8DyQkFpThIAFfXA1uKGMODfR8qSzU2hkIZRiADH0kfb2NH1c1SEcTc67ExT0Awc+mO45muq8KALPHQSSdwr/rgLF92VWY1pIMDxaXOl7f67pWJiSI05R5nN7Zz2urm2GQFNOFpWmSr5MYB0+ybOEtN+bt3Q6Ss2gI8+g1JCdXwZgoXUYOrJL7lcI0AVNk84SddSYeshj4gEIkOl4I2qfW78wJz1cVSiDoWmAuGtPTmbEIMOeOLhkmV6toZPRuTyWTo68eVPkHH2nQGnbnfV17q9XWAva+IDeVkeKhRYEQEx7BtGsOafxKfgqGCoPC5pfU+nFs9zXL6ZlH8rYSceOIljUjY309Ie+tIPC9ObtP6tU5XYeLMI4Ml2jHlmdJap5U4MWd6x1DC2EUN/lY+16+gqopbaQIzobbIueyzQ5EdgYJu+Sg3/Fy+2P1rFNDvMzoms7SIVVue44A2oXlg1iwz/6OP/FrmyzfjdLRiecA27L42dKdJX9qsP3F2iwwFwcWI+/Hdq+fJ3VkPNhXt7i6s0Vu1JqzuiznolUE7w1ufoeVLsymWUnuAnQGVZqdnMfCTlKlG2nSwVkgrEEnZXd0DpLayzZEjt93v4LXDIrAGRYmn4JOs1wyz6oyx1l8Sk27uLdH1lM0swq5+KmM8k5n0rc9gA4O9Nh2dw1YKmgTAEGCb3etFSWXs3EvWbDR6FXBLM3h/2Fg8wA=)
+
+```perl
+
+my $ranges = \@seedsRanges;
+foreach my $chunk (@chunks) {
+    my ($type, $map) = @$chunk;
+    my @nextRanges;
+    foreach my $line (@$map) {
+        last unless @$ranges;
+        my ($dest, $src, $len) = @$line;
+        my @nopeRanges;
+        foreach my $range (@$ranges) {
+            my ($pos, $plen) = @$range;
+            if ($pos + $plen < $src) {
+                push @nopeRanges, [$pos, $plen];
+            } elsif ($pos >= $src + $len) {
+                push @nopeRanges, [$pos, $plen];
+            } else {
+                my $start = max($pos, $src);
+                my $end = min($pos + $plen, $src + $len);
+                my $newPos = $dest + $start - $src;
+                my $newLen = $end - $start;
+                push @nextRanges, [$newPos, $newLen];
+                if ($pos < $src) {
+                    push @nopeRanges, [$pos, $src - $pos];
+                }
+                if ($pos + $plen > $src + $len) {
+                    push @nopeRanges, [$src + $len, $pos + $plen - $src - $len];
+                }
+            }
+        }
+        $ranges = \@nopeRanges;
+    }
+    push @nextRanges, @$ranges;
+    $ranges = \@nextRanges;
+}
+
+my $minStart = min map { $_->[0] } @$ranges;
+print "Min start: $minStart\n";
+```
 
 # Appendix
 
