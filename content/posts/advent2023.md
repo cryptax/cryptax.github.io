@@ -704,6 +704,127 @@ My initial solution did not work. I couldn't see the solution. After a while, I 
 
 The only goal of this second task is to have people deal with long integers.
 
+# Advent of Code - December 7
+
+Today, it's implementation of a Poker game. You have to rank hands, and then produce a result which is rank * bid for each hand.
+
+## 7.1
+
+I implemented the task in C, but it would have worked well in Python too.
+My algorithm uses 3 "tricks".
+
+1. To detect a hand's type (one pair, two pairs, full house etc), we can actually count the number of similar cards for each of the 5 cards, and then sum all counts. The sum will be 5 for 5 different cards, 7 for one pair, 9 for 2 pairs etc.
+
+```c
+int  get_type(const char *cards) {
+ int i, j;
+  int total = 0;
+  int count[5] = { 1, 1, 1, 1, 1};
+  for (i = 0; i< 5; i++) {
+    for (j = 0; j <5; j++) {
+      if (i !=j && cards[i] == cards[j]
+	count[i] = count[i] + 1;
+    }
+  }
+
+  for (i=0; i<5; i++) {
+    total = total + count[i];
+  }
+  
+  return total;
+}
+```
+
+2. I do not implement hand comparison, but decided to implement a strict hand value algorithm. If we want it to match priorities, we have to basically represent the hand in a different base. There are 13 different card values, from 2 (value=0) to Ace (value=12), so we'll express the hand in base 13. The highest power is for hand type (one pair, two pairs etc). Then the first card, then the second, down to the last card on the right.
+
+```c
+double get_value(const char *cards) {
+  int hand_type;
+  int value;
+  int i;
+
+  hand_type = get_type(cards);
+  value = 0;
+  for (i=0; i<5; i++) {
+    value = value + get_card_value(cards[i]) * pow(13, 4-i);
+  }
+  value += hand_type * pow(13, 5);
+  return value;
+}
+```
+
+3. The rank of hand can simply be computed by counting the number of other handsthat have a lower value that the current one.
+
+```c
+void rank_hands() {
+  int i,j;
+  for (i=0; i<nb; i++) {
+    hands[i].rank = 1;
+    for (j=0; j<nb; j++) {
+      if (hands[j].value < hands[i].value)
+	hands[i].rank = hands[i].rank + 1;
+    }
+  }
+}
+```
+
+The function `get_card_value()` simply maps a card to its value: 2 has value 0, up to Ace with value 12.
+
+Then, basically, the work is done:
+
+1. Read each line (hand) and get the cards and the bid
+2. Compute the value of the hand
+3. Compute winnings: sum of all rank * bid for each hand.
+
+## 7.2
+
+The second task introduces the notion of Joker. Letter `J` is no longer for `Jack` but for `Joker` and can replace any other card. This can help achieve a hand of higher type, but to balance that the value of the Jack is set to 0.
+
+Computing the type of a hand is more complex. I chose to compute the type of each possible hand by replacing the Joker with one of the other cards.
+
+We have to take into account to special hands:
+
+- The case where all cards are Jokers. This is the highest type.
+- The case where there are no Jokers at all: we use the previous hand type algorithm.
+
+```c
+int get_type(const char* cards){
+  int i, j, k, total;
+  int max = 0;
+  
+  if (memcmp(cards, "JJJJJ", 5) == 0)
+    return FIVEKIND;
+  
+  for (i=0; i<5; i++) {
+    if (cards[i] == 'J') {
+      for (j=0; j<5; j++) {
+	if (i != j && cards[j] != 'J') {
+	  /* replace jokers by a non-joker existing card */
+	  char replace_by = cards[j];
+	  char joker_hand[5];
+	  memcpy(joker_hand, cards, 5);
+	  for (k=0; k<5; k++) {
+	    if (joker_hand[k] == 'J') {
+		joker_hand[k] = replace_by;
+	      }
+	  }
+	  total = get_raw_type(joker_hand);
+	  if (total > max) {
+	    max = total;
+	  }
+	}
+      }
+    }
+  }
+  if (max == 0) {
+    /* we had no joker at all */
+    max = get_raw_type(cards);
+  }
+  return max;
+}
+```
+
+The implementation of the computation of hand value changes slightly because J now means 0, but overall the idea is the same.
 
 # Appendix
 
