@@ -872,6 +872,64 @@ I adapted the solution to my own code and got the result in 0.1 second :)
 
 > Lessons learned: math.lcm uses a variable number of arguments. This is marked as `lcm(* integers)`. In my case, I had a list of exit step counts for all A nodes, and wanted to supply this to lcm. The solution is very simply `lcm(*tab)`.  This will actually take each element of the tab and supply it as an argument to lcm.
 
+# December 9 - Mirage Maintenance
+
+In task 1, you have to predict next number in a sequence, and in task 2 the previous number.
+
+## 9.1 
+
+I implemented this rather naively and it works just fine.
+
+The first problem is to implement correctly the function that computes the differences of a history line. I thought I'd need recursivity, did that, got it wrong, and actually not use recursivity.
+
+
+
+```python
+def get_differences(history):
+    result = []
+    current = history
+    result.append(history)
+    while not is_end(current):
+        diff = []
+        # compute differences
+        for n in range(0, len(current)-1):
+            diff.append(current[n+1] - current[n])
+        result.append(diff)
+        current = diff
+    return result
+```
+
+- Don't forget to add the "input history" line to the list of difference tables.
+- As each new difference line has one item less than its father, we only got to `len(current)-1`
+
+Computing the extrapolation is a matter of using the correct indexes.
+
+```python
+def extrapolate(diffs):
+    diffs[-1].append(0)
+    for i in range(len(diffs)-2, -1, -1):
+        diffs[i].append(diffs[i][-1] + diffs[i+1][-1])
+    return diffs[0][-1]
+```
+
+- We start from the last tab of differences and work our way back to the top, hence a negative range step.
+- We add the new value at the end of the table, so there are lots of `tab[-1]` which is a convenient way in Python to mention the last item.
+
+## 9.2
+
+Once you have understood how to extrapolate the first number, the implementation, based on task 1, is not difficult. In my code, I just modified the extrapolation function. 
+
+- Instead of appending a new item, you have to insert it at the beginning of the table, so `insert(0, value)`.
+
+```python
+def extrapolate_backwards(diffs):
+    diffs[-1].insert(0, 0)
+    for i in range(len(diffs)-2, -1, -1):
+        diffs[i].insert(0, diffs[i][0] - diffs[i+1][0])
+    return diffs[0][0]
+```
+
+> Lessons Learned: (1) I had forgotten that `sum(tab)` sums all the elements of a table. That's useful. (2) To test if all elements of a table are Zeroes, I should have used `set(tab) == {0}`, because set remove redundancies, so it they are all zeroes, that's `{0}`.
 
 
 # Appendix
