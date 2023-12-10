@@ -632,7 +632,7 @@ foreach my $chunk (@chunks) {
 my $minStart = min map { $_->[0] } @$ranges;
 print "Min start: $minStart\n";
 ```
-# Advent of Code - December 6
+# December 6 - Race with charger
 
 ## 6.1
 
@@ -704,7 +704,7 @@ My initial solution did not work. I couldn't see the solution. After a while, I 
 
 The only goal of this second task is to have people deal with long integers.
 
-# Advent of Code - December 7
+# December 7 - Poker
 
 Today, it's implementation of a Poker game. You have to rank hands, and then produce a result which is rank * bid for each hand.
 
@@ -825,6 +825,54 @@ int get_type(const char* cards){
 ```
 
 The implementation of the computation of hand value changes slightly because J now means 0, but overall the idea is the same.
+
+#  December 8 - Graph
+
+The day's task consists in walking in a graph.
+
+## 8.1
+
+We start at a node 'AAA' and need to know how many steps there are to reach 'ZZZ'.
+The description of the task was not very clear to me, I somehow thought we had to make our own way in the graph, but that's not the case: we are meant to follow instructions written as the first line of the input file. Those instructions say when to turn left or right. If by the end of the instructions we haven't found the exit, then we loop on intrusctions.
+
+Reading the file is easy:
+
+1. The instructions are the first line.
+2. Then, there is an empty line
+3. The graph starts on the 3rd line and consists of the node and where Left or Right leads to. We can easily read each line with a regexp: `re.findall(r"[A-Z]{3}"`. Note that if you want to input the test file, you'll have to add digit characters to the regexp.
+4. We populate the graph (a dict) with a tuple: `graph[tag] = (left, right)`
+
+Then, we basically follow the instructions of the graph until we find the exit:
+
+```python
+def follow(instructions: str, graph):
+    step = 0
+    node = 'AAA'
+    while node != 'ZZZ':
+        if instructions[step % len(instructions)] == 'L':
+            node = graph[node][0]
+        elif instructions[step % len(instructions)] == 'R':
+            node = graph[node][1]
+        else:
+            logger.error(f"Bad instructions: step={step}")
+            quit()
+        step = step + 1
+```
+
+## 8.2
+
+In this second step, we start at nodes that finish with an 'A' and want to count steps for all nodes to have a trailing 'Z' (simultaneoulsy). I modified the Python program and coded that naively, but it takes "forever".
+
+To solve the task, I used 2 hints:
+
+1. I was told that C or any other language wouldn't solve the issue.
+2. I was told the graph was *very special* and read this excellent [blog post](https://advent-of-code.xavd.id/writeups/2023/day/8/) which explains the solution.
+
+I adapted the solution to my own code and got the result in 0.1 second :)
+
+> Lessons learned: math.lcm uses a variable number of arguments. This is marked as `lcm(* integers)`. In my case, I had a list of exit step counts for all A nodes, and wanted to supply this to lcm. The solution is very simply `lcm(*tab)`.  This will actually take each element of the tab and supply it as an argument to lcm.
+
+
 
 # Appendix
 
