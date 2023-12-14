@@ -1015,6 +1015,155 @@ My code worked, and from what I read only few people did it with combinations. H
 
 > Lessons learned: we can compute combinations using `from itertools import combinations`. 
 
+# December 14 - Parabolic Deflector Dish
+
+## 14.1
+
+In the day's task, we have a plaform which contains rolling rocks `O`, solid rocks that do not roll `#` (cube rocks) and spaces `.`. We tilt the platform North, having all rocks roll to North. The task explains how to compute the weight of the platform for Northern springs: basically the most northern round rocks have the most weight.
+
+Reading the input is pretty simple: we just read each line of the input, and remove `\n`: `[ list(l.strip()) for l in lines ]`.
+
+When we roll North, it's easier to work on columns. We implement a function that computes how the column rolls North.
+
+First, we get indexes of all rolling rocks. Then for all rolling rock, we have it roll towards lower indexes as much as possible (as long as we meet `.`). When we have the final position of the rock, we place the rock in its new position.
+
+```python
+def roll_column(column):
+    rolling_rocks = [i for i in range(len(column)) if column[i] == 'O']
+    for r in rolling_rocks:
+        index = r 
+        while True:
+            if index - 1 >=0 and column[index-1] == '.':
+                index = index - 1
+            else:
+                break
+        if index != r:
+            column[index] = 'O'
+            column[r] = '.'
+```
+
+Note that I am working on an array of array, not an array of strings because strings are immutable in Python, and I want to be able to modify each element of the table when the case occurs.
+
+We roll north each column,
+
+```python
+    total = 0
+    for c in range(0, len(platform[0])):
+        column = column0 = [ i[c] for i in platform ]
+        roll_column(column)
+        print(''.join(column))
+        total += weight(column)
+    print(f'total weight={total}')
+```
+Then we compute the weight with no difficulty:
+
+```python
+def weight(column):
+    weight = 0
+    for i in range(0, len(column)):
+        if column[i] == 'O':
+            weight += len(column)-i
+    return weight
+```
+
+There is a far nicer solution explained in this [video](https://www.youtube.com/watch?v=WCVOBKUNc38).
+
+> Lessons learned:
+> 1. Instead of stripping input lines, I can simply use `open(file).read().splitlines()`
+> 2. To get columns of a matrix, I can use `zip(*platform)`:  `platform = list(map(''.join, zip(*platform)))`
+> 3. To sort elements, we can split them on the hard rocks, and then sort O and .
+
+## 14.2
+
+As expected, in the second step we roll in all directions: south, west and east.
+
+### South
+
+Rolling North and South work on columns. Rolling West and East work on rows.
+Also, the difference between rolling North and South, is that for South, we *increment* indexes as much as we can, but we must pay attention to start with rocks which are down South first, i.e we process first rocks with the highest indexes, down to lower ones. For that, we can parse indexes using `reversed()`.
+
+```python
+def roll_south(column):
+    rolling_rocks = [i for i in range(len(column)) if column[i] == 'O']
+    for r in reversed(rolling_rocks):
+        index = r 
+        while True:
+            if index + 1 < len(column) and column[index+1] == '.':
+                index = index + 1
+            else:
+                break
+        if index != r:
+            column[index] = 'O'
+            column[r] = '.'
+```
+
+A *cycle* consists in rolling North, then West, then South, then East. We are meant to compute numerous cycles and then compute the weight of the platform.
+
+When we perform cycles, we must pay attention to one thing: our platform is in the array `platform`. We compute columns to roll South... but the result will be in `column`, not in `platform`.
+
+```python
+    for c in range(0, len(platform[0])):
+        column = [ i[c] for i in platform ]
+        roll_south(column)
+```
+
+So, we have to update `platform` accordingly to the moves we noticed in the columns:
+
+```python
+        for i in range(0, len(platform)):
+            platform[i][c] = column[i]
+```
+
+For example for North:
+
+```python
+    for c in range(0, len(platform[0])):
+        column = [ i[c] for i in platform ] # column c
+        roll_north(column)
+        # update platform
+        for i in range(0, len(platform)):
+            platform[i][c] = column[i]
+```
+
+### East and West
+
+Rolling East or West uses lines we said. West decrements indexes, so it's like North, but for rows. East increments indexes, so it's like South:
+
+```python
+    # west
+    for l in platform:
+        roll_north(l)
+```
+
+### Weight
+
+Then is no difference in the way to compute weight:
+
+```python
+    for c in range(0, len(platform[0])):
+        column = [ i[c] for i in platform ]
+        total += weight(column)
+```
+
+### Nb of cycles
+
+We are expected to count weight after an enormous amount of cycles: `1000000000`. But we see with the example that after a while the weight evolves only a little, and finally doesn't evolve at all. For example, with the size of the test platform, we get to the expected result with only `10000` cycles.
+
+The real platform is bigger, so its weight will take longer to settle down.
+
+- Weight: 86104 for 10000 cycles
+- Weight: 86073 for 100000 cycles
+
+The issue is that computing 100000 cycles already takes 10 minutes on my laptop.
+We're obviously going to need at least 10 times more, which is starting to be long.
+
+The curve takes longer and longer to modify, so let's say we need 1000000 cycles, we probably will have a weight between 86073-(86104-86073)=86042 and 86073. Indeed, 86042 is too low input, and 86073 is too high.
+
+At this stage, I'm all in for a nasty solution: bruteforce the result. I submit 86055... but this time it no longer tells me if it's too low or too high and I need to wait 5 minutes.
+
+I feel like I'm going to wait. See you tomorrow.
+
+
 
 # Appendix
 
@@ -1260,5 +1409,6 @@ int main(int argc, char **argv) {
   }
 }
 ```
+
 
 
