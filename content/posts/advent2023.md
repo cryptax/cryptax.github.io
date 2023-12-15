@@ -254,6 +254,18 @@ As mentioned in Real Python, `zip` is also particularly interesting when you wan
 
 Note that it's possible to zip iterables of different lengths.
 
+## Underscore
+
+There are more [uses of underscore](https://www.datacamp.com/tutorial/role-underscore-python) that I had ever imagined.
+
+Basically, in `[dict() for _ in range(256)]` the underscore acts as an "unnamed" variable. 
+
+It can also used to ignore values:
+
+```
+a, _, b = (1,2,3)
+a, *_,b = (1,2,3,4)
+```
 
 
 ## Misc
@@ -281,11 +293,12 @@ if (n := len(a)) > 10:
 | Day         | Link  |
 | ----------- | ----- |
 | Day 1 Task 1 | [Awk often produces very short solutions](https://chaos.social/@root42/111505305360222320) |
-| Day 3  | Bash one-liner: `cat input4.txt | cut -d: -f2 | tr -d '|' | xargs -I {} sh -c "echo {} | tr ' ' '\n' | sort | uniq -d | wc -l " | awk '$1>0 {print 2^($1-1)}' | paste -sd+ - | bc`. The command `paste` merges lines of files |
+| Day 3  | Bash one-liner: `cat input4.txt \| cut -d: -f2 \| tr -d '\|' \| xargs -I {} sh -c "echo {} \| tr ' ' '\n' \| sort \| uniq -d \| wc -l " \| awk '$1>0 {print 2^($1-1)}' \| paste -sd+ - \| bc`. The command `paste` merges lines of files |
 | Day 4 Task 2 | `cat /tmp/input4.txt | cut -d: -f2 | tr -d '|' | xargs -I {} sh -c "echo {} | tr ' ' '\n' | sort | uniq -d | wc -l " | cat -n | xargs | awk '{ for (i = 1; i < NF; i = i + 2) { copies[$i] = $(i + 1); vals[$i] = 0 } } { for (i = 1; i <= NF/2; i++) { counter=0; for (j = i + 1; counter < copies[i] && copies[i] > 0; j++) { counter++; vals[j] = vals[j] + 1 + vals[i] } } } { for(i=1;i<=NF/2;i++) { print vals[i] } print NF/2 }' | paste -sd+ - | bc` |
 | Day 5 Task 2 | [Super fast Perl implementation](https://topaz.github.io/paste/#XQAAAQCZBgAAAAAAAAA6nMjJFMpQu0F8vIUYE8mlPji8DyQkFpThIAFfXA1uKGMODfR8qSzU2hkIZRiADH0kfb2NH1c1SEcTc67ExT0Awc+mO45muq8KALPHQSSdwr/rgLF92VWY1pIMDxaXOl7f67pWJiSI05R5nN7Zz2urm2GQFNOFpWmSr5MYB0+ybOEtN+bt3Q6Ss2gI8+g1JCdXwZgoXUYOrJL7lcI0AVNk84SddSYeshj4gEIkOl4I2qfW78wJz1cVSiDoWmAuGtPTmbEIMOeOLhkmV6toZPRuTyWTo68eVPkHH2nQGnbnfV17q9XWAva+IDeVkeKhRYEQEx7BtGsOafxKfgqGCoPC5pfU+nFs9zXL6ZlH8rYSceOIljUjY309Ie+tIPC9ObtP6tU5XYeLMI4Ml2jHlmdJap5U4MWd6x1DC2EUN/lY+16+gqopbaQIzobbIueyzQ5EdgYJu+Sg3/Fy+2P1rFNDvMzoms7SIVVue44A2oXlg1iwz/6OP/FrmyzfjdLRiecA27L42dKdJX9qsP3F2iwwFwcWI+/Hdq+fJ3VkPNhXt7i6s0Vu1JqzuiznolUE7w1ufoeVLsymWUnuAnQGVZqdnMfCTlKlG2nSwVkgrEEnZXd0DpLayzZEjt93v4LXDIrAGRYmn4JOs1wyz6oyx1l8Sk27uLdH1lM0swq5+KmM8k5n0rc9gA4O9Nh2dw1YKmgTAEGCb3etFSWXs3EvWbDR6FXBLM3h/2Fg8wA=)
 | Day 8 | [Blog post explaining the solution](https://advent-of-code.xavd.id/writeups/2023/day/8/) |
 | Day 14 | [Video explaining the solution](https://www.youtube.com/watch?v=WCVOBKUNc38) |
+| Day 15 | [This solution](https://topaz.github.io/paste/#XQAAAQDfAQAAAAAAAAAzHIoib6poHLpewxtGE3pTrRdzrponK6uH8J9SK+z3MPZ140TRLBu/IWrE4WwdeK2eATuamUeQIKu6RSuS/hh1AgNBsKNPQgVKQhKQjyrhIhpbyO5mmMFXxRukuGJYELN09QZHZyt3cyt1BS/5MBszPnK6vNMyrfI2FAT647NxZevHNnv3kQHxPtTtslxTfRfFStCDCljxdQQyPiOitKrzF2TE749eSXSBC2DXgDSbkgv0hPB7qo8YuEZ+g3V5WiG+iYMaJpqsK53FlhpIgQWCvlLuQFjyc/38RDk4oaKYZkzBhdHCpTs62DOyD1llR/BpMDdX+x9Ot36AAGJYaRiI82tWVi2234+ZvddY1S/z0h1pNOd7by30qQ7+u/tLgjtwoN+Yv2cejvsBBmXuPIFX54aI//ZMg7w=) uses the [match statement](https://docs.python.org/3/tutorial/controlflow.html#tut-match), which is like C's switch |
 
 # C
 
