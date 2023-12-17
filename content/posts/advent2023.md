@@ -12,7 +12,7 @@ tags:
 
 *Advent of Code* is a coding competition, with one new challenge per day during December. I started writing the core of my own solutions, then I realized this wouldn't be very interesting because (1) my own code is often very naive compared to the best ones, (2) the article was starting to get very long.
 
-Instead, I will focus only on things I *learned* or *experienced* doing the challenges.
+Instead, I will focus only on things I *learned* or already knew but *experienced* doing the challenges.
 I've been doing my implementations in Python and in C, but also read other solutions (mostly posted on Reddit) and have often been amazed by one-liners or very performant implementations.
 
 # Python
@@ -195,8 +195,6 @@ def get_maps(lines: list[str]):
     array = tags[k]
 ```
 
-
-> Lessons learned: math.lcm uses a variable number of arguments. This is marked as `lcm(* integers)`. In my case, I had a list of exit step counts for all A nodes, and wanted to supply this to lcm. The solution is very simply `lcm(*tab)`.  This will actually take each element of the tab and supply it as an argument to lcm.
 
 ## Unpacking operators
 

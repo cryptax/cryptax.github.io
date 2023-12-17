@@ -46,6 +46,7 @@ Mobile malware
 Android reverse engineering
 
 - Flutter and Dart: [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf) and see [blog posts](./talks/blog/)
+- Kavanoz: [blog post](https://cryptax.medium.com/bad-zip-and-new-packer-for-android-bianlian-5bdad4b90aeb)
 - Dexcalibur, House, MobSF: [Virus Bulletin 2021](https://vblocalhost.com/uploads/VB2021-Apvrille.pdf)
 - Medusa: [BlackAlps 2022](https://www.blackalps.ch/ba-22/files/talks/BlackAlps22-Apvrille.pdf)
 - JEB, Radare2: [Virus Bulletin 2017](https://www.virusbulletin.com/conference/vb2017/abstracts/android-reverse-engineering-tools-not-usual-suspects)
@@ -65,7 +66,7 @@ Android vulnerabilities
 
 - Connected Jump Rope: [Troopers 2023](https://github.com/cryptax/talks/tree/master/Troopers-2023)
 - Smart Coffee Machine: [Insomni'hack 2023](https://github.com/cryptax/talks/tree/master/Insomnihack-2023), [BSides Munich 2020](https://www.youtube.com/watch?v=EvRd3Z41Ff0)
-- Connected Glucose Sensor: [Pass The Salt 2020] [:(fa fa-book):](https://github.com/cryptax/talks/blob/master/PassTheSalt-2020/techreport.pdf)
+- Connected Glucose Sensor: [:(fa fa-book):](https://github.com/cryptax/talks/blob/master/PassTheSalt-2020/techreport.pdf)
 - Smart Toothbrush [SSTIC 2017](https://www.sstic.org/media/SSTIC2017/SSTIC-actes/ingnierie_inverse_dune_brosse__dents_connecte/SSTIC2017-Article-ingnierie_inverse_dune_brosse__dents_connecte-apvrille.pdf%22)
 - Recon Jet Smart glasses [DefCamp 2016](https://github.com/cryptax/talks/blob/master/DefCamp-2016/iot-malware.pdf)
 - Fitbit Flex
