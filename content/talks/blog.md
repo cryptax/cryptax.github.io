@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2023-12-14"
+date: "2023-12-19"
 tags:
 - fluhorse
 - kangapack
@@ -51,10 +51,13 @@ tags:
 - Zitmo
 - Hashdays
 - SOVA
+- WyrmSpy
+- Colander
 ---
 
 # 2023
 
+- [Organizing malware analysis with Colander: example on Android/WyrmSpy](https://cryptax.medium.com/organizing-malware-analysis-with-colander-example-on-android-wyrmspy-1f3ec30ae33b), December 18, 2023
 - [Bad ZIP and new package for Android/BianLian](https://cryptax.medium.com/bad-zip-and-new-packer-for-android-bianlian-5bdad4b90aeb), December 14, 2023
 - [Eyes on Android/S.O.V.A botnet sample](https://cryptax.medium.com/eyes-on-android-s-o-v-a-botnet-sample-fb5ed332d08), July 7, 2023
 - [Inside the KangaPacker: the Kangaroo packer with native decryption](https://cryptax.medium.com/inside-kangapack-the-kangaroo-packer-with-native-decryption-3e7e054679c4), June 23, 2023
