@@ -33,6 +33,15 @@ Along with logging, I appreciate the f-strings notations where the variable to o
 
 - [f-strings doc](http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf)
 
+## Comparison
+
+It's actually possible to write several comparisons like:
+
+```python
+if 1 < len < max_value:
+	...
+```
+
 ## Type hints
 
 Type hints are very probably over-kill for Advent of Code challenges, but coming from C, I like to use type hints as much as possible. 
@@ -94,6 +103,7 @@ You cannot *assign* to a tuple.
 
 ## Sets
 
+To initialize a set: `a = set()`
 
 A set does not have redundancies. 
 
@@ -139,6 +149,29 @@ If you need to rule out some values, consider using `filter`: `filter(function, 
 
 ```python
 groups_tab = list(filter(None, groups.split('.'))) # remove empty groups
+```
+
+## Priority queue
+
+```python
+from heapq import heappush, heappop
+```
+
+A heap queue, also known as *priority queue*, will also keep the lowest value first:
+
+```python
+>>> from heapq import heappop, heappush
+>>> pq = [(10, 'start')]
+>>> heappush(pq, (2, 'test'))
+>>> pq
+[(2, 'test'), (10, 'start')]
+>>> heappush(pq, (4, 'ajdkajdal'))
+>>> pq
+[(2, 'test'), (10, 'start'), (4, 'ajdkajdal')]
+>>> heappop(pq)
+(2, 'test')
+>>> pq
+[(4, 'ajdkajdal'), (10, 'start')]
 ```
 
 ## Regex
