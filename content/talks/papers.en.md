@@ -17,6 +17,11 @@ draft: false
 *By default, if no author name is mentioned, I'm the sole author*.
 {{< /admonition >}}
 
+## 2024
+
+- *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, *to appear*.
+
+
 ## 2023
 
 - *Unraveling the Challenges of Reverse Engineering Flutter Applications*, [BlackAlps](https://blackalps.ch), Yverdon-les-Bains, Switzerland, November 3, 2023. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf) [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/ReverseEngineeringFlutter.pdf)
