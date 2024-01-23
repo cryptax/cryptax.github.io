@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spacial TOTP (Insomni'hack CTF 2013)"
+title: "Spatial TOTP (Insomni'hack CTF 2013)"
 author: cryptax
 date: 2023-03-25
 tags:
