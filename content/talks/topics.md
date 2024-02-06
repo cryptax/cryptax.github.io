@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2023-11-03"
+date: "2024-02-06"
 tags:
 - topic
 - mobile malware
@@ -35,6 +35,7 @@ Mobile malware
 - Android/Joker [BarbHack 2022](https://github.com/cryptax/talks/tree/master/BarbHack-2022)
 - Android/Fluhorse: [blog post](https://www.fortinet.com/blog/threat-research/fortinet-reverses-flutter-based-android-malware-fluhorse)
 - Android/MoneyMonger [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf)
+- Android/Phoenix: [blog post](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3)
 - Android/Oji [BSides Oslo 2021](https://www.youtube.com/watch?v=6z1zrPZEKuM)
 - Cryptocurrencies [Sthack 2019](https://github.com/cryptax/talks/blob/master/Sthack-2019/currency-sthack.pdf)
 - iOS/PawnStorm [Insomnihack 2015](https://github.com/cryptax/talks/blob/master/Insomnihack-2015/iOS-insomnihack.pdf)

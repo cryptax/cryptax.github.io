@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2023-11-03
+date: 2024-02-06
 draft: false
 ---
 # Conferences & Journals
@@ -19,6 +19,7 @@ draft: false
 
 ## 2024
 
+- *The Accessibility Abyss: Navigating Android Malware Waters*, Insomnihack, Lausanne, Switzerland, April 2024, *to appear*.
 - *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, *to appear*.
 
 

@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2023-12-19"
+date: "2024-02-05"
 tags:
 - fluhorse
 - kangapack
@@ -53,7 +53,12 @@ tags:
 - SOVA
 - WyrmSpy
 - Colander
+- phoenix
 ---
+
+# 2024
+
+- [Reverse engineering of Android/Phoenix](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3), February 6, 2024
 
 # 2023
 
