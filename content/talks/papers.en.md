@@ -101,7 +101,7 @@ draft: false
 
 ## 2016 
 
-- *Infecting Internet of Things*, DefCamp, Bucharest, Romania, November 2016 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/DefCamp-2016/iot-malware-defcamp2016.pdf)
+- *Infecting Internet of Things*, DefCamp, Bucharest, Romania, November 2016 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/DefCamp-2016/iot-malware.pdf)
 - *Mobile Applications: a Backdoor into Internet of Things?*, Virus Bulletin Conference, Denver, USA, October 2016 [:(fa-solid fa-file-pdf):](https://www.virusbulletin.com/conference/vb2016/abstracts/mobile-applications-backdoor-internet-things)
 - *Reversing Internet of Things from mobile applications*: 
    - Insomni'hack, Geneva, March 2016 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Insomnihack-2016/mobileiot-insomnihack.pdf)
