@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-02-08"
+date: "2024-02-09"
 tags:
 - fluhorse
 - kangapack
@@ -58,6 +58,7 @@ tags:
 
 # 2024
 
+- [A simple infostealer for beginners](https://cryptax.medium.com/a-simple-infostealer-for-beginners-baf7cca590b0), February 9, 2024
 - [Android/Phoenix authors, claims, sample identification and trends](https://cryptax.medium.com/android-phoenix-authors-claims-sample-identification-and-trends-f199cbc9901d), February 8, 2024
 - [Reverse engineering of Android/Phoenix](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3), February 6, 2024
 
