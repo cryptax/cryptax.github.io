@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-02-09"
+date: "2024-02-19"
 tags:
 - fluhorse
 - kangapack
@@ -54,10 +54,13 @@ tags:
 - WyrmSpy
 - Colander
 - phoenix
+- SpyNote
 ---
 
 # 2024
 
+- [Android/SpyNote bypasses Restricted Settings and breaks many RE Tools](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38), February 19, 2024
+- [Android/SpyNote moves to Crypto Currencies](https://www.fortinet.com/blog/threat-research/android-spynote-moves-to-crypto-currencies), February 15, 2024
 - [A simple infostealer for beginners](https://cryptax.medium.com/a-simple-infostealer-for-beginners-baf7cca590b0), February 9, 2024
 - [Android/Phoenix authors, claims, sample identification and trends](https://cryptax.medium.com/android-phoenix-authors-claims-sample-identification-and-trends-f199cbc9901d), February 8, 2024
 - [Reverse engineering of Android/Phoenix](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3), February 6, 2024
