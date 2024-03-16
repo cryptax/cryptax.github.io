@@ -2,12 +2,16 @@
 layout: post
 title: "Nullcon Berlin CTF 2024"
 author: cryptax
-date: 2024-03-15
+date: 2024-03-16
 tags:
 - Nullcon
 - CTF
 - 2024
 - Hardware
+- EEPROM
+- Arduino
+- Resistor
+- Diode
 ---
 
 # HackMe Hardware Challenges - Nullcon Berlin CTF 2024
@@ -24,11 +28,13 @@ The PCB we are given does not work as such: the screen does not light up and the
 
 As the screen does not light up, there has to be a power issue. From VCC, we notice there is a Diode, U14, which is in the wrong direction, thus blocking current.
 
-![](/images/nullcon24-tofix1.png)
+![Diode U14 is in the wrong direction](/images/nullcon24-tofix1.png)
+*Diode U14 is in the wrong direction*
 
 We let the current pass by simply bypassing the diode. I solder a wire from VCC to the other end of U14.
 
-![](/images/nullcon24-fixed1.png)
+![Simply bypassing the diode with a wire](/images/nullcon24-fixed1.png)
+*Simply bypassing the diode with a wire*
 
 ### Fix 2
 
@@ -36,23 +42,25 @@ We notice that the track by U17 has been (intentionally) cut by the organizers ;
 We just need to solder that again.
 
 ![](/images/nullcon24-tofix2.png)
+*The track is cut. We've got to fix that*
 
 ### Fix 3
 
-The same also occurs on a track below the screen: intentionally cut, you just need to add solder. I forgot to take a picture.
+The same also occurs on a track below the screen: intentionally cut, you just need to add solder. It shows on the photo below (Fix 4 - U15 if I read correctly), just left of the resistor.
 
 ### Fix 4
 
 A resistor was marked `?` and needed to be removed. I didn't have any scissors, so I did it the caveman-way: heated up one end of the soldering while pushing with a screwdriver from beneath to get the resistor out of its socket. Fortunately, an organizer gave me a hand, because my procedure wasn't very safe...
 
 ![](/images/nullcon24-resistor.png)
-
+*Disconnected the resistor*
 
 ### Flag
 
 Once all those fixes are done, you can power the device using a USB-TTL, and the screen lights up :) You might also have to turn a potentiometer to see the message which gives you the first flag `LCD`.
 
 ![](/images/nullcon24-contrast.png)
+*Use the potentionmeter to adjust screen's contrast*
 
 The screen shows several menus, each one consisting in the next challenges to unlock.
 
@@ -123,7 +131,7 @@ u1=aYfl=FcAb2DDZcQtWav64rLGwVl=@
 
 The flag is `LOW ON MEMORY`.
 
-> I had forgotten to take my Hydrabus to Nullcon CTF. Lesson learned: never go to a CTF without your Hydrabus! However, I really enjoyed dumping the EEPROM using a basic Arduino Nano.
+> I had forgotten to take my [Hydrabus](https://hydrabus.com) to Nullcon CTF. Lesson learned: never go to a CTF without your Hydrabus! However, I really enjoyed dumping the EEPROM using a basic Arduino Nano.
 
 ## HackMe Dump memory 2 (2 solves)
 
@@ -244,7 +252,7 @@ It will be easier if the EEPROM is dumped in an aligned format, and that's what 
 0x0040:   @ [ E o = 1 s f l P ; > v O B 7 
 ```
 
-It is at the end of the EEPROM. See image below.
+It is at the end of the EEPROM. See image below. The flag is `ORANGE`, who is a sponsor of the board.
 
 ![](/images/nullcon24-hiddeninplain.png)
 
