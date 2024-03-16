@@ -45,6 +45,8 @@ The same also occurs on a track below the screen: intentionally cut, you just ne
 
 A resistor was marked `?` and needed to be removed. I didn't have any scissors, so I did it the caveman-way: heated up one end of the soldering while pushing with a screwdriver from beneath to get the resistor out of its socket. Fortunately, an organizer gave me a hand, because my procedure wasn't very safe...
 
+![](/images/nullcon24-resistor.png)
+
 
 ### Flag
 
@@ -242,8 +244,9 @@ It will be easier if the EEPROM is dumped in an aligned format, and that's what 
 0x0040:   @ [ E o = 1 s f l P ; > v O B 7 
 ```
 
-It is at the end of the EEPROM.
-
+It is at the end of the EEPROM. See image below.
 
 ![](/images/nullcon24-hiddeninplain.png)
+
+> This step does not really involve computer science skills, it's more like cross-words. I wouldn't have completed it without hints, as the initial description does not suggest any particular direction.
 
