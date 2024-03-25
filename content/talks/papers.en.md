@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2024-02-06
+date: 2024-03-25
 draft: false
 ---
 # Conferences & Journals
@@ -19,8 +19,8 @@ draft: false
 
 ## 2024
 
-- *The Accessibility Abyss: Navigating Android Malware Waters*, Insomnihack, Lausanne, Switzerland, April 2024, *to appear*.
-- *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, *to appear*.
+- *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, *to appear*.
+- *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf), *video to appear*.
 
 
 ## 2023
@@ -206,6 +206,7 @@ draft: false
 
 ## MISC Magazine
 
+- *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
 - *Utilisation malveillante de l'API d'accessibilité sur Android*, MISC no. 122, Juillet 2022, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-122/utilisation-malveillante-de-l-api-d-accessibilite-sur-android)
 - *Rançon sur téléphone mobile : les entrailles d'Android/Koler*, [MISC](http://www.miscmag.com/fr/), no. 107, January-February 2020 
 - *Analyse de la sécurité d'un capteur de glucose*, MISC, no. 106, November-December 2019

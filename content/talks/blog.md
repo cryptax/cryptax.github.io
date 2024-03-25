@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-02-19"
+date: "2024-03-25"
 tags:
 - fluhorse
 - kangapack
@@ -59,6 +59,8 @@ tags:
 
 # 2024
 
+- [Phishing attempt on French e-tolls](https://cryptax.medium.com/phishing-attempt-on-french-e-tolls-280fe2cf2c6a), March 21, 2024
+- [What makes a good CTF challenge?](https://cryptax.medium.com/what-makes-a-good-ctf-challenge-7bf4bf4fa112), March 18, 2024
 - [Android/SpyNote bypasses Restricted Settings and breaks many RE Tools](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38), February 19, 2024
 - [Android/SpyNote moves to Crypto Currencies](https://www.fortinet.com/blog/threat-research/android-spynote-moves-to-crypto-currencies), February 15, 2024
 - [A simple infostealer for beginners](https://cryptax.medium.com/a-simple-infostealer-for-beginners-baf7cca590b0), February 9, 2024

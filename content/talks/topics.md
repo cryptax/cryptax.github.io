@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2024-02-06"
+date: "2024-03-25"
 tags:
 - topic
 - mobile malware
@@ -37,6 +37,8 @@ Mobile malware
 - Android/MoneyMonger [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf)
 - Android/Phoenix: [blog post](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3)
 - Android/Oji [BSides Oslo 2021](https://www.youtube.com/watch?v=6z1zrPZEKuM)
+- Android/SpyNote [blog post](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38)
+- Android/WyrmSpy [blog post](https://cryptax.medium.com/organizing-malware-analysis-with-colander-example-on-android-wyrmspy-1f3ec30ae33b)
 - Cryptocurrencies [Sthack 2019](https://github.com/cryptax/talks/blob/master/Sthack-2019/currency-sthack.pdf)
 - iOS/PawnStorm [Insomnihack 2015](https://github.com/cryptax/talks/blob/master/Insomnihack-2015/iOS-insomnihack.pdf)
 - iOS/AdThief: [Virus Bulletin 2014](https://www.virusbtn.com/virusbulletin/archive/2014/08/vb201408-AdThief)
@@ -46,7 +48,7 @@ Mobile malware
 
 Android reverse engineering
 
-- Flutter and Dart: [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf) and see [blog posts](./talks/blog/)
+- Flutter and Dart: [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf), [Nullcon 2024](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf) and see [blog posts](./talks/blog/)
 - Kavanoz: [blog post](https://cryptax.medium.com/bad-zip-and-new-packer-for-android-bianlian-5bdad4b90aeb)
 - Dexcalibur, House, MobSF: [Virus Bulletin 2021](https://vblocalhost.com/uploads/VB2021-Apvrille.pdf)
 - Medusa: [BlackAlps 2022](https://www.blackalps.ch/ba-22/files/talks/BlackAlps22-Apvrille.pdf)
