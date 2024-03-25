@@ -2,7 +2,7 @@
 title: "CTF, CrackMe and other challenges"
 draft: false
 weight: 2
-date: "2023-06-01"
+date: "2024-03-16"
 tags:
 - challenge
 - crackme
@@ -31,6 +31,7 @@ I designed a few crackme if you feel like trying:
 
 I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
 
+- Nullcon Berlin CTF 2024: 2 (with Soudure au Beurre)
 - BruCON CTF 2023: 6 (with Soudure au Beurre)
 - THCon CTF 2023: 11
 - Insomni'hack CTF 2023: 12 (with Soudure Au Beurre)
