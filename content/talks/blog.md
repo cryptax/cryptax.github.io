@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-03-25"
+date: "2024-04-08"
 tags:
 - fluhorse
 - kangapack
@@ -59,6 +59,7 @@ tags:
 
 # 2024
 
+- [Testing Restricted Settings of Android 13 on an emulator](https://cryptax.medium.com/testing-restricted-settings-of-android-13-on-an-emulator-72692da7bca4), April 4, 2024
 - [Phishing attempt on French e-tolls](https://cryptax.medium.com/phishing-attempt-on-french-e-tolls-280fe2cf2c6a), March 21, 2024
 - [What makes a good CTF challenge?](https://cryptax.medium.com/what-makes-a-good-ctf-challenge-7bf4bf4fa112), March 18, 2024
 - [Android/SpyNote bypasses Restricted Settings and breaks many RE Tools](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38), February 19, 2024
@@ -103,7 +104,7 @@ tags:
 - [A blind try of MobSF over a suspicious Android sample](https://cryptax.medium.com/blind-try-of-mobsf-over-a-suspicious-android-sample-7fe7368a4804), May 26, 2021
 - [A native packer for Android/Moqhao](https://cryptax.medium.com/a-native-packer-for-android-moqhao-6362a8412fe1), May 19, 2021
 - [Android/Oji worm fake COVID 19 vaccine registration campaign](https://cryptax.medium.com/android-oji-worm-fake-covid-19-vaccine-registration-campaign-80b6f9c79abe), May 3, 2021
-- [Android/Flubot: preparing for a new campaign?](https://cryptax.medium.com/android-flubot-preparing-for-a-new-campaign-2f7563fc6c063), March 29, 2021
+- [Android/Flubot: preparing for a new campaign?](https://cryptax.medium.com/android-flubot-preparing-for-a-new-campaign-2f7563fc6c06), March 29, 2021
 - [Quark on an Android malware: how good was it? My opinion!](https://cryptax.medium.com/quark-on-an-android-malware-how-good-was-it-my-opinion-510ae647efb0), February 9, 2021
 - [An apparently benign app distribution scheme which has all it takes to turn (very) ugly](https://cryptax.medium.com/an-apparently-benign-app-distribution-scheme-which-has-all-it-takes-to-turn-very-ugly-f733be528535), February 2, 2021
 
