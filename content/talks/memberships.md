@@ -2,7 +2,7 @@
 title: "Memberships and awards"
 draft: false
 weight: 1
-date: "2023-06-01"
+date: "2024-04-11"
 tags:
 - program
 - committee
@@ -11,10 +11,12 @@ tags:
 - GreHack
 - Virus Bulletin
 - Nullcon
+- BlackAlps
 ---
 
 # Program Committees
 
+- BlackAlps since 2024
 - Nullcon since 2018
 - GreHack 2016 - 2018, 2020 - 2023. I was  PC co-chair of GreHack 2019.
 - Virus Bulletin conference, reviewer since 2016
