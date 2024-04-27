@@ -7,6 +7,7 @@ tags:
 - Insomnihack
 - CTF
 - 2023
+- 2024
 - virus
 - ethics
 - Docker
@@ -15,6 +16,7 @@ tags:
 *Actually, you're not that welcome... ;-) You'll understand why.*
 
 Update March 28, 2023. Solutions to protect your computer.
+Update April 27, 2024. How they did the Welcome challenge in 2024.
 
 # Description of the challenge
 
@@ -344,4 +346,9 @@ Yet, I profoundly **disagree with the ethics** in this case.
 > **Every time you create a "funny" malware, you play cyber-criminals game and help them infect your mother's laptop, your father's laptop, your aunt's laptop etc**.
 > I am pretty sure any Anti-Virus analyst will back me on this one.
 
+# Insomni'hack CTF 2024
 
+I was happy to see they changed the title of the "Welcome" challenge in 2024 to a humoristic title "(Not so) welcome".
+At least, I know they heard my opinion (even if they didn't fully agree), and it's great they did something about it! Kudos!
+
+![](/images/ins24-welcome.png)
