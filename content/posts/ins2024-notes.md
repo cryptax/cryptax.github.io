@@ -14,6 +14,8 @@ tags:
 In this challenge at Insomni'hack CTF, you get an *Android application* (apk) to analyze. Had to look at that, obviously :wink:.
 The challenge was solved as team work with 2 other team mates from *Soudure au Beurre*.
 
+*Update April 20, 2024: PKCS7 and PKCS5 are basically the same. Corrected the explanation.*
+
 ## Understanding the Android application
 
 In this challenge, you get an Android application. I decompile it to find a pretty simple application with 2 classes: `MainActivity` and `Part1`.
@@ -138,7 +140,7 @@ So, I go on and implement a bruteforce program. I use Java to be able to re-use 
 
 1. The Android code builds the AES key with `SecretKeySpec secretKeySpec0 = new SecretKeySpec(s1.getBytes(), "AES/ECB/PKCS7Padding");`. This does not work in "pure" Java, padding and block mode should not be specified in the `SecretKeySpec`. It's a bit surprising this works on Android. 	`SecretKeySpec sks = new SecretKeySpec(s1.getBytes("UTF-8"), "AES");`
 
-2. Java complains it does not have any PKCS7 padding provider. [The answer is here](https://stackoverflow.com/questions/10193567/java-security-nosuchalgorithmexceptioncannot-find-any-provider-supporting-aes-e), PKCS7 shouldn't be used but PKCS5. Same, a bit surprising this works on Android. Actually, as the encrypted note is 32-bytes long, we won't even need any padding at all... 
+2. Java complains it does not have any PKCS7 padding provider. But [PKCS7 is basically the same as PKCS5](https://en.wikipedia.org/wiki/Padding_(cryptography)#:~:text=PKCS%235%20padding%20is%20identical,number%20a%20byte%20can%20contain.), so we can use PKCS5... actually we don't even padding in this particular case because the encrypted note is 32-byte long.... 
 
 I compile the program, and run it on `rockyou32.txt`. The solution is output in the blink of the eye:
 

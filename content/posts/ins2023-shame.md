@@ -15,8 +15,8 @@ tags:
 
 *Actually, you're not that welcome... ;-) You'll understand why.*
 
-Update March 28, 2023. Solutions to protect your computer.
-Update April 27, 2024. How they did the Welcome challenge in 2024.
+- Update March 28, 2023. Solutions to protect your computer.
+- Update April 27, 2024. How they did the Welcome challenge in 2024.
 
 # Description of the challenge
 
