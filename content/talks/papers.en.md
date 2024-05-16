@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2024-03-25
+date: 2024-05-16
 draft: false
 ---
 # Conferences & Journals
@@ -19,8 +19,9 @@ draft: false
 
 ## 2024
 
-- *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, *to appear*.
-- *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf), *video to appear*.
+- *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, *to appear*.
+- *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2024/accessibility.pdf), [:(fa-solid fa-video):](https://www.youtube.com/watch?v=4TBs5crrnh8)
+- *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf),[:(fa-solid fa-video):](https://www.youtube.com/watch?v=JNoEUPlgcZk)
 
 
 ## 2023
