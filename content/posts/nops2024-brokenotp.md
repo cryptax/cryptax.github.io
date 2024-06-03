@@ -75,7 +75,7 @@ So, if we do `''.__dir__()`, `''` is of type `str` and we call its `__dir__()` f
 
 The fifth element of the output (arrays start at 0 in Python) is `__getattribute__`.
 
-```
+```python
 g = e(''.__dir__()[4].strip('_')[:7])
 g = e('__getattribute__'.strip('_')[:7])
 g = e('getattribute'[:7])
@@ -85,7 +85,7 @@ g = eval('getattr') # g will be the getattr function
 
 Similarly `b = g(BLACK, PURPLE(BLACK)[92])` is transformed as follows:
 
-```
+```python
 b = g(BLACK, PURPLE(BLACK)[92]) # replace each variable
 b = getattr(__builtins__, dir(__builtins__)[92])
 ```
@@ -133,7 +133,7 @@ r = g(_i(d(t[1])), d(t[4]))
 
 We work out what `s` is doing step by step:
 
-```
+```python
 s = lambda: getattr(__builtins__, 'round')(getattr(_i(d(t[0])), 'time')()) + int.from_bytes(secret.encode())
 s = lambda: round(getattr(_i(d(t[0])), 'time')()) + int.from_bytes(secret.encode())
 s = lambda: round(getattr(_i('time'), 'time')()) + int.from_bytes(secret.encode())
@@ -143,14 +143,14 @@ It gets the current time, rounds it up, and adds the flag transformed into an in
 
 As expected, `r` is going to deal with randomness:
 
-```
+```python
 r = getattr(_i('random'), 'seed')
 r = random.seed()
 ```
 
 We can check it with the interpreter: `r` is the `seed()` function of the random module.
 
-```
+```python
 >>> r
 <bound method Random.seed of <random.Random object at 0x55a96b067650>>
 ```
@@ -158,7 +158,7 @@ We can check it with the interpreter: `r` is the `seed()` function of the random
 r = g(_i(d(t[1])), d(t[4]))
 
 
-```
+```python
 >>> t = ['74696d65', '72616e646f6d', '5f5f696d706f72745f5f', '726f756e64', '73656564']
 ```
 
@@ -284,7 +284,8 @@ m = 'SENDMETHEFLAGINEEDI'
 
 # MSG^OTP ^MSG
 otp = bytes(x ^ y for x, y in zip(bytes.fromhex(motp), m.encode()))
-# KEY ^OTP) ^OTP 
+# KEY ^OTP)
+^OTP 
 f = bytes(x ^ y for x, y in zip(bytes.fromhex(kotp), otp))
 print(f)
 ```
