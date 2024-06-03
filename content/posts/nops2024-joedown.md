@@ -62,5 +62,4 @@ At some point, in the same vein as arguments, I finally got the idea to chain co
 
 ![](/images/nops2024-joeflag.png)
 
-
 Though not very technical, this challenge was *fun*, and I could have thought of the solution faster.
