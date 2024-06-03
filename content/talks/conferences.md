@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2023-10-09"
+date: "2024-05-31"
 ---
 
 Conferences I spoke at:
@@ -14,7 +14,7 @@ Conferences I spoke at:
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
 - [BruCON](https://brucon.org) 2023
-- [BSides Munich 2020](https://2020.bsidesmunich.org)
+- [BSides Munich](https://2020.bsidesmunich.org) 2020
 - [BSides Oslo](https://bsidesoslo.no) 2021
 - CARO Workshop 2014
 - [CCCC](https://www.cyberhagen.com) 2020
@@ -26,14 +26,14 @@ Conferences I spoke at:
 - Hack.Lu 2013 2014 2015 2016 2018 2019
 - [Hacktivity](https://hacktivity.com/en) 2013 2015
 - Hashdays 2012
-- [Insomni'hack](https://insomnihack.ch) 2011 2012 2014 2015 2016 2017 2018 2019 2023
+- [Insomni'hack](https://insomnihack.ch) 2011 2012 2014 2015 2016 2017 2018 2019 2023 2024
 - ISSE 2002
 - USENIX [LISA 2004](https://www.usenix.org/legacy/events/lisa04/)
 - [Mundo Hacker](https://mundohackerday.com/) 2021
 - [NoHat](https://nohat.it) 2020
 - [NorthSec](https://nsec.io) 2021
 - Nuit du Hack 2015 2017
-- [Nullcon](https://nullcon.net) Webinar 2020
+- [Nullcon](https://nullcon.net) Webinar 2020 2024
 - [Pass The Salt](https://pass-the-salt.org/) 2018 2020
 - PDPTA 2003
 - RSA Europe 2011
