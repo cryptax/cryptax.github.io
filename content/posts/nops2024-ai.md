@@ -442,6 +442,6 @@ However, 2 issues drove me crazy:
 1. The servers weren't answering very well. Sometimes, you'd wait for a long time to connect and be cut out before you got the answer. 
 2. Worse: the **lower/upper case issues were a real struggle** and that part wasn't interesting. The interesting part was to bypass the restrictions, not to have to cope with a silly AI which is unable to copy/paste correctly a password. Perhaps all flags should have been lowercase, and this could have been added to the description, so that we didn't have to struggle on this issue.
 
-Because of those reasons, I had to spend quite **lots of time** on the AI challenges and felt they could have been **worth more than their 100 points**. For example, an easy challenge such as [Just Read]() was solved *293 times and was worth 120 points*. The AI challenges were solved *117, 81 and 68 times for only 100 points*.
+Because of those reasons, I had to spend quite **lots of time** on the AI challenges and felt they could have been **worth more than their 100 points**. For example, an easy challenge such as [Just Read](https://cryptax.github.io/nops2024-justread/) was solved *293 times and was worth 120 points*. The AI challenges were solved *117, 81 and 68 times for only 100 points*.
 
 
