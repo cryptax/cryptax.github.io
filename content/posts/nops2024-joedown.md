@@ -18,23 +18,27 @@ This challenge from the *Misc* category was saying: "Is it me or there is a stra
 
 ## Solution
 
+### Joining the Server
+
 I went on the Discord server of the CTF, and found a guy named "Joe Dohn". I sent him a message, and immediately he replied by inviting me to a private Discord server. Actually, Joe is not real person but a bot.
 
 ![](/images/nops2024-joeserver.png)
 
 This private server has 2 channels: a general channel, and one dedicated to conversation with me.
+
+### Commands
+
 Quickly, on the dedicated channel, Joe gives me the list of commands he understands:
 
 ![](/images/nops2024-allcommands.png)
 
-Whenever you issue one of these commands, the result appears in the general channel.
+Whenever you issue one of these commands, the result appears in the **general** channel.
+For example, `!cat` display an image of a cat on the general channel.
 
-- `!roll` rolls a dice
-- `!toss` tosses a coin
-- `!cat` displays a cat image
-- `!fox` displays a fox image
 
 ![](/images/nops2024-rolltoss.png)
+
+### Struggling for a strategy
 
 I struggled there for quite a long time, investigating several possibilities:
 
@@ -44,9 +48,11 @@ I struggled there for quite a long time, investigating several possibilities:
 - Was there something hidden in the cat/fox images?
 - Etc
 
-Whenever a team got the flag, a mention would be written in the general channel, so when that happened, I inspected what commands that person had issued. It didn't tell me much... 
+Whenever a *team got the flag*, a mention would be written in the general channel, so when that happened, I inspected what commands that person had issued. It didn't tell me much... 
 
-A team mate noticed that some teams flagged when nothing had appeared on the general channel for a long time. So, we deduced that we had rather something to do on the private dedicated channel.
+A team mate noticed that some teams flagged when nothing had appeared on the general channel for a long time. So, we deduced that we had rather something to do on the **private dedicated channel**.
+
+### The private channel
 
 There was a `!send_secret` command, but of course Joe would tell his secret. 
 
@@ -57,6 +63,8 @@ I started by looking for potentially hidden commands: `/help`, `!code`, `!say se
 I also sent several messages with the `!send_msg` command. It was clear Joe got the message but didn't care. 
 
 ![](/images/nops2024-joemsg.png)
+
+### Happy End
 
 At some point, in the same vein as arguments, I finally got the idea to chain commands, and I tried `!send_msg !send_secret cryptax`. And I received the flag :)
 

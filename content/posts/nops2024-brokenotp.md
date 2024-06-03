@@ -62,7 +62,7 @@ The obfuscated line boils down to getting the `eval()` builtin function. [Eval i
 
 This is `getattr(__builtins__, bytes(['e','v','a','l']).decode())`
 
-### __dir__ and dir
+### `__dir__` and dir
 
 The [dir() function](https://docs.python.org/3/library/functions.html#dir) returns "the list of names in the current local scope. [..] If the object has a method named __dir__)_, this method will be called and must return the list of attributes."
 
@@ -288,6 +288,8 @@ otp = bytes(x ^ y for x, y in zip(bytes.fromhex(motp), m.encode()))
 f = bytes(x ^ y for x, y in zip(bytes.fromhex(kotp), otp))
 print(f)
 ```
+
+## Happy End
 
 The output is `N0PS{0tP_k3Y_r3u53}`.
 
