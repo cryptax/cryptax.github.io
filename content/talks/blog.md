@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-05-31"
+date: "2024-07-11"
 tags:
 - fluhorse
 - kangapack
@@ -59,6 +59,7 @@ tags:
 
 # 2024
 
+- [On the security of Google Secrets](https://cryptax.medium.com/on-the-security-of-google-secrets-0a8ed75647be), July 11, 2024
 - [Inside Sinchat Flutter riskware](https://cryptax.medium.com/inside-sinchat-flutter-riskware-797cc2046237), May 25, 2024
 - [Testing Restricted Settings of Android 13 on an emulator](https://cryptax.medium.com/testing-restricted-settings-of-android-13-on-an-emulator-72692da7bca4), April 4, 2024
 - [Phishing attempt on French e-tolls](https://cryptax.medium.com/phishing-attempt-on-french-e-tolls-280fe2cf2c6a), March 21, 2024
