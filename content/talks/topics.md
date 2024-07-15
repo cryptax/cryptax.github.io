@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2024-03-25"
+date: "2024-07-15"
 tags:
 - topic
 - mobile malware
@@ -38,6 +38,7 @@ Mobile malware
 - Android/Phoenix: [blog post](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3)
 - Android/Oji [BSides Oslo 2021](https://www.youtube.com/watch?v=6z1zrPZEKuM)
 - Android/SpyNote [blog post](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38)
+- Android/TangleBot [blog post](https://cryptax.medium.com/untangling-android-tanglebot-38a52cd8f420)
 - Android/WyrmSpy [blog post](https://cryptax.medium.com/organizing-malware-analysis-with-colander-example-on-android-wyrmspy-1f3ec30ae33b)
 - Cryptocurrencies [Sthack 2019](https://github.com/cryptax/talks/blob/master/Sthack-2019/currency-sthack.pdf)
 - iOS/PawnStorm [Insomnihack 2015](https://github.com/cryptax/talks/blob/master/Insomnihack-2015/iOS-insomnihack.pdf)
