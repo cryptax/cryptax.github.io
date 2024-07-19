@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-07-15"
+date: "2024-07-19"
 tags:
 - fluhorse
 - kangapack
@@ -60,6 +60,7 @@ tags:
 
 # 2024
 
+- [Dart shifts to standard calling convention](https://cryptax.medium.com/dart-shifts-to-standard-calling-convention-26dc65f8d15a), July 19, 2024
 - [Untangling Android/TangleBot](https://cryptax.medium.com/untangling-android-tanglebot-38a52cd8f420), July 12, 2024
 - [On the security of Google Secrets](https://cryptax.medium.com/on-the-security-of-google-secrets-0a8ed75647be), July 11, 2024
 - [Inside Sinchat Flutter riskware](https://cryptax.medium.com/inside-sinchat-flutter-riskware-797cc2046237), May 25, 2024
