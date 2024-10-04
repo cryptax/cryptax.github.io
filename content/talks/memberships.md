@@ -2,7 +2,7 @@
 title: "Memberships and awards"
 draft: false
 weight: 1
-date: "2024-04-11"
+date: "2024-10-04"
 tags:
 - program
 - committee
@@ -26,6 +26,6 @@ tags:
 
 # Awards
 
-- [Peter Szord Award](https://www.virusbulletin.com/conference/peter-szor-award/): I was nominated for this award in 2016.
+- [Peter Szord Award](https://www.virusbulletin.com/conference/peter-szor-award/): I was finalist for this award in 2016 and in 2024.
 - [Android Security Acknowledgements](https://source.android.com/devices/tech/security/overview/acknowledgements.html) in 2014.
 

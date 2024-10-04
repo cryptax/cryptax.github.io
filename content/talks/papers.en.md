@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2024-09-12
+date: 2024-10-04
 draft: false
 ---
 # Conferences & Journals
@@ -20,7 +20,7 @@ draft: false
 ## 2024
 
 - *Reversing Flutter with Blutter and Radare2*, [Hack.lu](https://2024.hack.lu/agenda/) Luxembourg, October 2024 and [GreHack](https://grehack.fr/2024/workshops#main), Grenoble, France, November 2024. *to appear*.
-- *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, *to appear*.
+- *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2024/flutter.pdf)
 - *Reversing Dart AOT snapshots*, [Phrack](http://www.phrack.org/issues/71/11.html#article) Magazine, Volume 0x10, Issue 0x47, Phile 0x0B of 0x11, August 2024. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Phrack-71/README.md)
 - *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2024/accessibility.pdf), [:(fa-solid fa-video):](https://www.youtube.com/watch?v=4TBs5crrnh8)
 - *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf),[:(fa-solid fa-video):](https://www.youtube.com/watch?v=JNoEUPlgcZk)
