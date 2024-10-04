@@ -62,6 +62,7 @@ tags:
 
 # 2024
 
+- [Arguments descriptor arrays in Dart](https://cryptax.medium.com/arguments-description-arrays-in-dart-c61daa217414), September 19, 2024
 - [Using AI-assisted decompilation of Radare2](https://medium.com/@cryptax/using-ai-assisted-decompilation-of-radare2-e81a882863c9), September 17, 2024
 - [Dart shifts to standard calling convention](https://cryptax.medium.com/dart-shifts-to-standard-calling-convention-26dc65f8d15a), July 19, 2024
 - [Untangling Android/TangleBot](https://cryptax.medium.com/untangling-android-tanglebot-38a52cd8f420), July 12, 2024
