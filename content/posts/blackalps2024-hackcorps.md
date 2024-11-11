@@ -11,15 +11,15 @@ tags:
 - Namespace
 ---
 
-# HackCorps Warm Up
+## HackCorps Warm Up
 
-## Description
+### Description
 
 Serge the accountant inadvertently opened an infected file on his workstation. After investigation by the SOC team, the file was found to contain malware designed to extract confidential information. The SOC team asked you to help them investigate the incident. The SOC has found a folder (C:\exfiltr) but cannot recover its contents.
 
 + we get a file `exfiltr.7z`
 
-## Solution
+### Solution
 
 We unzip the file. There are 3 directories named 0, 1 and 2. Each of them contains text files.
 For example this is `./0/1.txt`:
@@ -41,15 +41,15 @@ In directory `1`, a user named *serge* is trying to login.
 
 In directory `2`, we get the flag.
 
-![](/images/blackalps24-corpsflag.png]
+![](/images/blackalps24-corpsflag.png)
 
-## Conclusion
+### Conclusion
 
 It was easy, but I'm always in favor for a few easy challenges :)
 
-# Docker challenges: Hidden Secrets
+## Docker challenges: Hidden Secrets
 
-## Description
+### Description
 
 Hidden secrets in docker containers. There are three flags. The flags are not dependent to each other. Docker Secrets 1: Find and submit the FLAG_FILE
 
@@ -60,7 +60,7 @@ SSH on 22/tcp
 
 - docker-secrets.ctf.blackalps.ch
 
-## Solution for flag 1
+### Solution for flag 1
 
 *This challenge was solved by a team mate, FdlSifu, and I helped a little.*
 
@@ -126,7 +126,7 @@ First, we notice the root password `PleaseLetMeIn` to log onto the host with SSH
 We log in:
 
 ```
- ssh -o PubkeyAuthentication=no -o PasswordAuthentication=yes root@10.159.0.37
+$ ssh -o PubkeyAuthentication=no -o PasswordAuthentication=yes root@10.159.0.37
 root@10.159.0.37's password: 
 Welcome to Alpine!
 
@@ -142,10 +142,12 @@ Enjoy!
 
 We see the `docker-secret` runs with PID 1. So, we investigate `/proc/1/` and find `/proc/1/root/run/secrets/flag`:
 
+```
 75a91491c843:/proc/1/root/run/secrets# cat flag 
 BA24{m0uNt_n@m3spaCe_rOck5}
+```
 
-## Solution for flag 2
+### Solution for flag 2
 
 The Docker challenges have another flag, they say it is related to the *hostname*. So, we need to find the hostname of the docker secret container.
 
@@ -157,7 +159,7 @@ The `nsenter` is particularly useful to inspect namespaces and other containers.
 BA24{D1d_U_Kn0w_@bout_UTS_n@Mspac3}
 ```
 
-## Conclusion
+### Conclusion
 
 Interesting challenge! I knew Docker containers were not secure towards one another, but had never experienced with that.
 
