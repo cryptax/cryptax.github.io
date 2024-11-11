@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "BlackAlps 2024 CTF HackCorps Warmup"
+title: "BlackAlps 2024 CTF"
 author: cryptax
 date: 2024-11-10
 tags:
