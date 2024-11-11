@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2024-10-15
+date: 2024-11-11
 draft: false
 ---
 # Conferences & Journals
@@ -20,6 +20,7 @@ draft: false
 ## 2024
 
 - *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, *to appear*.
+- *R2AI*, [BlackAlps](https://blackalps.ch), Yverdon les Bains, November 2024, Lightning Talk [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BlackAlps-2024/r2ai.pdf)
 - *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2024/flutter.pdf)
 - *Reversing Dart AOT snapshots*, [Phrack](http://www.phrack.org/issues/71/11.html#article) Magazine, Volume 0x10, Issue 0x47, Phile 0x0B of 0x11, August 2024. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Phrack-71/README.md)
 - *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2024/accessibility.pdf), [:(fa-solid fa-video):](https://www.youtube.com/watch?v=4TBs5crrnh8)

@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2024-05-31"
+date: "2024-11-11"
 ---
 
 Conferences I spoke at:
@@ -10,7 +10,7 @@ Conferences I spoke at:
 - [AMUSEC 2021](https://www.cirm-math.fr/Schedule/screen_display.php?id_renc=2653)
 - AREA 41 2016
 - [Barbhack](https://barbhack.fr) 2020 2022
-- [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023
+- [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
 - [BruCON](https://brucon.org) 2023
@@ -23,7 +23,7 @@ Conferences I spoke at:
 - EICAR 2010 2012
 - [GreHack](https://grehack.fr) 2013 2017
 - Hack in Paris 2015
-- Hack.Lu 2013 2014 2015 2016 2018 2019
+- Hack.Lu 2013 2014 2015 2016 2018 2019 2024
 - [Hacktivity](https://hacktivity.com/en) 2013 2015
 - Hashdays 2012
 - [Insomni'hack](https://insomnihack.ch) 2011 2012 2014 2015 2016 2017 2018 2019 2023 2024
@@ -49,4 +49,4 @@ Conferences I spoke at:
 - [Troopers](https://www.troopers.de) 2018 2023
 - IEEE TrustCom 2015
 - [UYBHYS](https://www.unlockyourbrain.bzh/) 2020
-- [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022
+- [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022 2024
