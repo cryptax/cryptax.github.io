@@ -2,7 +2,7 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
-date: "2024-09-12"
+date: "2024-11-11"
 tags:
 - training
 - workshop
@@ -13,7 +13,7 @@ tags:
 
 # Training / workshops on Android reverse engineering
 
-- 1.5 hours at [Hack.lu](https://2024.hack.lu) and [GreHack](https://grehack.fr) *to appear*: *Reversing Flutter with Blutter and Radare2* October and November 2024.
+- 1.5 hours at [Hack.lu](https://2024.hack.lu) *Reversing Flutter with Blutter and Radare2* October 2024.
 - 16 hours at [RingZer0](https://ringzer0.training) in August 2021, February 2022, February 2023 and March 2024
 - 12 hours at [Nullcon Goa 2021](https://nullcon.net/nullcon-goa-2021/training/reverse-engineering-of-android-malware/)  in September 2021
 - 3 hours at NorthSec, in May 2021 (online) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=z6DO09y9r8w) - title: *Reverse Android malware for the Smart and Lazy*
