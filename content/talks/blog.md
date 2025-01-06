@@ -2,10 +2,11 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2024-09-19"
+date: "2025-01-06"
 tags:
 - r2ai
 - AI
+- decai
 - fluhorse
 - kangapack
 - flutter
@@ -59,6 +60,11 @@ tags:
 - SpyNote
 - TangleBot
 ---
+
+# 2025
+
+- [Cracking my own crackme with r2ai](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe), January 6, 2025.
+
 
 # 2024
 
