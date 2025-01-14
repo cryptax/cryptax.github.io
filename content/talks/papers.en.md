@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2024-11-11
+date: 2025-01-14
 draft: false
 ---
 # Conferences & Journals
@@ -17,10 +17,14 @@ draft: false
 *By default, if no author name is mentioned, I'm the sole author*.
 {{< /admonition >}}
 
+## 2025
+
+- To be announced :)
+
 ## 2024
 
 - *R2AI*, [BlackAlps](https://blackalps.ch), Yverdon les Bains, November 2024, Lightning Talk [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BlackAlps-2024/r2ai.pdf)
-- *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2024/flutter.pdf)
+- *Android Flutter Malware*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2024/programme/), Dublin, Ireland, October 2024, [:(fa-solid fa-file-lines):](https://www.virusbulletin.com/uploads/pdf/conference/vb2024/slides/Slides-Android-Flutter-malware.pdf) [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2024/flutter.pdf) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=K9Ekxo-K_QY)
 - *Reversing Dart AOT snapshots*, [Phrack](http://www.phrack.org/issues/71/11.html#article) Magazine, Volume 0x10, Issue 0x47, Phile 0x0B of 0x11, August 2024. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Phrack-71/README.md)
 - *The Accessibility Abyss: Navigating Android Malware Waters*, [Insomnihack](https://insomnihack.ch), Lausanne, Switzerland, April 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2024/accessibility.pdf), [:(fa-solid fa-video):](https://www.youtube.com/watch?v=4TBs5crrnh8)
 - *The Complexity of Reversing Flutter Applications*, [Nullcon](https://nullcon.net/berlin-2024/speaker-the-complexity-of-reversing-flutter-applications), Berlin, Germany, March 2024, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Nullcon-2024/nullcon24-apvrille-flutter.pdf),[:(fa-solid fa-video):](https://www.youtube.com/watch?v=JNoEUPlgcZk)
@@ -209,7 +213,7 @@ draft: false
 
 ## MISC Magazine
 
-- *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, *to appear*.
+- *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-136/android-fluhorse-le-malware-qui-defie-les-desassembleurs)
 - *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
 - *Utilisation malveillante de l'API d'accessibilité sur Android*, MISC no. 122, Juillet 2022, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-122/utilisation-malveillante-de-l-api-d-accessibilite-sur-android)
 - *Rançon sur téléphone mobile : les entrailles d'Android/Koler*, [MISC](http://www.miscmag.com/fr/), no. 107, January-February 2020 
