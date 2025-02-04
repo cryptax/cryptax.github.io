@@ -2,7 +2,7 @@
 title: "CTF, CrackMe and other challenges"
 draft: false
 weight: 2
-date: "2024-11-08"
+date: "2025-01-14"
 tags:
 - challenge
 - crackme
@@ -31,6 +31,8 @@ I designed a few crackme if you feel like trying:
 
 I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
 
+
+- Xmas Root Me 2024: 150
 - BlackAlps CTF 2024: 5 (with Soudure à la Raclette)
 - NOPS CTF 2024: 14
 - Nullcon Berlin CTF 2024: 2 (with Soudure au Beurre)

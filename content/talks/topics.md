@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2024-07-15"
+date: "2025-01-14"
 tags:
 - topic
 - mobile malware
@@ -24,6 +24,8 @@ tags:
 - timestamp
 - flutter
 - dart
+- AI
+- r2ai
 ---
 
 # Mobile :(fa-solid fa-mobile):
@@ -65,8 +67,14 @@ Android vulnerabilities
 - Spectre: [Pass The Salt 2018](https://2018.pass-the-salt.org/files/talks/05-spectre.pdf)
 - Hide [BlackHat Europe 2014](https://github.com/cryptax/talks/blob/master/BlackHatEurope-2014/eu-14-Apvrille-HideAndroidApplicationsInImages-wp.pdf)
 
+# IoT
 
-# Hacking IoT 
+Artificial Intelligence and malware
+
+- AI assisted decompilation: [blog](https://cryptax.medium.com/using-ai-assisted-decompilation-of-radare2-e81a882863c9), and [blog](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe)
+
+
+Hacking IoT 
 
 - Connected Jump Rope: [Troopers 2023](https://github.com/cryptax/talks/tree/master/Troopers-2023)
 - Smart Coffee Machine: [Insomni'hack 2023](https://github.com/cryptax/talks/tree/master/Insomnihack-2023), [BSides Munich 2020](https://www.youtube.com/watch?v=EvRd3Z41Ff0)
