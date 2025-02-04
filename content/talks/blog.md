@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-01-06"
+date: "2025-02-04"
 tags:
 - r2ai
 - AI
@@ -63,6 +63,7 @@ tags:
 
 # 2025
 
+- [Analyzing ELF/Sshdinjector.A!tr with a Human and Artificial Analyst](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst), February 4, 2025.
 - [Cracking my own crackme with r2ai](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe), January 6, 2025.
 
 
