@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-02-04"
+date: "2025-02-06"
 tags:
 - r2ai
 - AI

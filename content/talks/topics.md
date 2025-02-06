@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-01-14"
+date: "2025-02-06"
 tags:
 - topic
 - mobile malware
@@ -71,7 +71,7 @@ Android vulnerabilities
 
 Artificial Intelligence and malware
 
-- AI assisted decompilation: [blog](https://cryptax.medium.com/using-ai-assisted-decompilation-of-radare2-e81a882863c9), and [blog](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe)
+- AI assisted decompilation: [blog](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst), [blog](https://cryptax.medium.com/using-ai-assisted-decompilation-of-radare2-e81a882863c9), and [blog](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe)
 
 
 Hacking IoT 
