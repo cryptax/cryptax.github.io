@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-02-06"
+date: "2025-02-13"
 tags:
 - r2ai
 - AI
@@ -64,7 +64,7 @@ tags:
 
 # 2025
 
-- Reversing a Prometei botnet binary with r2 and AI [Part One](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab), February 7, 2025
+- Reversing a Prometei botnet binary with r2 and AI [Part One](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab), February 7, 2025, [Part Two](https://cryptax.medium.com/reversing-an-unpacked-prometei-binary-with-r2-and-ai-part-two-8b7e6c0fb0d4), February 11,  *Part Three* to come.
 - [Analyzing ELF/Sshdinjector.A!tr with a Human and Artificial Analyst](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst), February 4, 2025.
 - [Cracking my own crackme with r2ai](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe), January 6, 2025.
 

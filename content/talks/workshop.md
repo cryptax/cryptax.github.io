@@ -2,17 +2,19 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
-date: "2024-11-11"
+date: "2025-02-13"
 tags:
 - training
 - workshop
 - Android
 - CTF
+- radare2
 - reverse engineering
 ---
 
 # Training / workshops on Android reverse engineering
 
+- 1 hour open-style workshop at [SHL](https://shl.contact) on *Reversing with Radare2*, beginner session, February 13, 2025.
 - 1.5 hours at [Hack.lu](https://2024.hack.lu) *Reversing Flutter with Blutter and Radare2* October 2024.
 - 16 hours at [RingZer0](https://ringzer0.training) in August 2021, February 2022, February 2023 and March 2024
 - 12 hours at [Nullcon Goa 2021](https://nullcon.net/nullcon-goa-2021/training/reverse-engineering-of-android-malware/)  in September 2021
