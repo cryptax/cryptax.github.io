@@ -14,7 +14,7 @@ tags:
 
 This challenge consists in a jackpot gain. To get the flag, we need to win and get a balance of 100000 CHF (we're in Switzerland). The game is available remotely (`nc wol.insomnihack.ch 7777`) and a local ELF x86-64 binary copy is provided (but without the flag).
 
-> I didn't personally flag this challenge, but worked on it and enjoyed it. Another team mate flagged it before me :)
+> I didn't personally flag this challenge, but worked on it and enjoyed it. Another team mate flagged it :)
 > Then, a few days later, I looked at it more in depth, and found an even quicker way to flag.
 
 ## The game
@@ -273,7 +273,7 @@ I wrote an *Expect* script:
 - Then, I always select the star as my lucky token. I'll probably lose, it doesn't matter because as I said, even if we lose, we win ;-) I could have selected another lucky token, it wouldn't change anything.
 - Finally, I don't stack my gain, because I don't need that to win.
 
-```expect
+```bash
 #!/usr/bin/expect -f
 
 set timeout 10
@@ -477,8 +477,12 @@ function test() { nc wol.insomnihack.ch 7777 <<<$'1\n-101\n1\nN\n' > wol/${1}.ou
 ```
 
 I hope you'll appreciate the beautiful one-liner he did! `<<<$'1\n-101\n1\nN\n'` is a here-string.
+
+
 This will actually send 1 for the initial bet, -101 for the exclusive bet, 1 for the selected token and `N` so as not to stack wins. 
 The rest of the line just loops 1,000 times on sending this output to the server.
+
+
 While his strategy could have been improved (use bet -100000, and select a token different from 1 to maximize chances), statistically speaking, he has lots of chances to flag.
 
 ## Conclusion
