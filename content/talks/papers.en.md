@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-02-13
+date: 2025-03-20
 draft: false
 ---
 # Conferences & Journals
@@ -19,7 +19,7 @@ draft: false
 
 ## 2025
 
-- *Malware analysis with R2AI*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. To come.
+- *Malware analysis with R2AI*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf)
 
 ## 2024
 
