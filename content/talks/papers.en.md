@@ -19,7 +19,7 @@ draft: false
 
 ## 2025
 
-- *Malware analysis with R2AI*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf), [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 (to appear).
+- *Malware analysis with R2AI*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf), *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 (to appear),  *malware analysis with r2ai* [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 (to appear).
 - *Analyzing a shellcode with r2ai*, [PagedOut](https://pagedout.institute), vol. 6, March 2025, [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_006.pdf)
 
 ## 2024
@@ -214,6 +214,7 @@ draft: false
 
 ## MISC Magazine
 
+- *Analyse de malware assistée par intelligence artificielle*, MISC no. 139, Mai/Juin 2025, to appear.
 - *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-136/android-fluhorse-le-malware-qui-defie-les-desassembleurs)
 - *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
 - *Utilisation malveillante de l'API d'accessibilité sur Android*, MISC no. 122, Juillet 2022, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-122/utilisation-malveillante-de-l-api-d-accessibilite-sur-android)
