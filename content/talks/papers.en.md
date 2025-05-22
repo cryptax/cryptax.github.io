@@ -221,7 +221,7 @@ draft: false
 
 ## MISC Magazine
 
-- *Analyse de malware assistée par intelligence artificielle*, MISC no. 139, Mai/Juin 2025, to appear.
+- *Analyse de malware assistée par intelligence artificielle*, MISC no. 139, Mai/Juin 2025, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-139/analyse-de-malware-assistee-par-intelligence-artificielle)
 - *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-136/android-fluhorse-le-malware-qui-defie-les-desassembleurs)
 - *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
 - *Utilisation malveillante de l'API d'accessibilité sur Android*, MISC no. 122, Juillet 2022, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-122/utilisation-malveillante-de-l-api-d-accessibilite-sur-android)
