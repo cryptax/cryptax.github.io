@@ -16,6 +16,7 @@ tags:
 
 # Program Committees
 
+- BSides Montreal since 2025.
 - BlackAlps since 2024.
 - Nullcon since 2018 (excepted 2025)
 - Nullcon Berlin 2025
