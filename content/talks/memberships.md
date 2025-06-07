@@ -2,7 +2,7 @@
 title: "Memberships and awards"
 draft: false
 weight: 1
-date: "2025-05-12"
+date: "2025-06-05"
 tags:
 - program
 - committee
@@ -12,11 +12,12 @@ tags:
 - Virus Bulletin
 - Nullcon
 - BlackAlps
+- BSides Montreal
 ---
 
 # Program Committees
 
-- BSides Montreal since 2025.
+- BSides Montreal 2025
 - BlackAlps since 2024.
 - Nullcon since 2018 (excepted 2025)
 - Nullcon Berlin 2025

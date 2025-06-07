@@ -2,13 +2,15 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-02-06"
+date: "2025-06-07"
 tags:
 - topic
 - mobile malware
 - Android
 - spectre
 - IoT
+- Linux
+- IoT malware
 - medical malware
 - cryptocurrency
 - cluster
@@ -71,7 +73,13 @@ Android vulnerabilities
 
 Artificial Intelligence and malware
 
-- AI assisted decompilation: [blog](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst), [blog](https://cryptax.medium.com/using-ai-assisted-decompilation-of-radare2-e81a882863c9), and [blog](https://cryptax.medium.com/cracking-my-own-crackme-with-r2ai-5629bcc7d5fe)
+- AI assisted decompilation: [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574)
+- Linux/Devura.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
+- Linux/RudeDevil.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
+- Linux/Sshdinjector [blog](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst) ...
+- Linux/Shellcode_ConnectBack.H!tr: [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
+- Linux/Ladvix.E [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
+- Linux/Prometei.B [blog](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
 
 
 Hacking IoT 

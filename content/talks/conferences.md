@@ -13,7 +13,8 @@ Conferences I spoke at:
 - [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
-- [BruCON](https://brucon.org) 2023
+- [BruCON](https://brucon.org) 2023 2025
+- [BSides Kristiansand](https://bsideskrs.no) 2025
 - [BSides Munich](https://2020.bsidesmunich.org) 2020
 - [BSides Oslo](https://bsidesoslo.no) 2021
 - CARO Workshop 2014
@@ -21,6 +22,7 @@ Conferences I spoke at:
 - [Confidence](http://2010.confidence.org.pl) 2010
 - [DefCamp](https://def.camp) 2016
 - EICAR 2010 2012
+- ElbSides 2025
 - [GreHack](https://grehack.fr) 2013 2017
 - Hack in Paris 2015
 - Hack.Lu 2013 2014 2015 2016 2018 2019 2024
@@ -31,7 +33,7 @@ Conferences I spoke at:
 - USENIX [LISA 2004](https://www.usenix.org/legacy/events/lisa04/)
 - [Mundo Hacker](https://mundohackerday.com/) 2021
 - [NoHat](https://nohat.it) 2020
-- [NorthSec](https://nsec.io) 2021
+- [NorthSec](https://nsec.io) 2021 2025
 - Nuit du Hack 2015 2017
 - [Nullcon](https://nullcon.net) Webinar 2020 2024
 - [Pass The Salt](https://pass-the-salt.org/) 2018 2020
