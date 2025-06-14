@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-05-22
+date: 2025-06-14
 draft: false
 ---
 # Conferences & Journals
@@ -19,7 +19,7 @@ draft: false
 
 ## 2025
 
-- *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, to appear.
+- *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf)
 
 *Malware analysis with AI-assistance*:
 
