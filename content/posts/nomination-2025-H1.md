@@ -37,5 +37,5 @@ Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, p
 
 Personal achievements I'd like to highlight:
 
-- Axelle Apvrille and Daniel Nakov, *Malware analysis assited by AI with R2AI* [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574)
-- Original [N0PS CTF](https://n0ps.re) writeup for [Looney Droid](https://pico.masdescrocodiles.fr/static/uploads/BD/2025-06-picon0psctf.png) :(fa-solid fa-file-pdf):
+- Axelle Apvrille and Daniel Nakov, *Malware analysis assited by AI with R2AI*  [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574)
+- Original [N0PS CTF](https://n0ps.re) writeup for [Looney Droid :(fa-solid fa-file-pdf):](https://pico.masdescrocodiles.fr/static/uploads/BD/2025-06-picon0psctf.png)
