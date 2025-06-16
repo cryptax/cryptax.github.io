@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2024-11-11"
+date: "2025-06-15"
 ---
 
 Conferences I spoke at:
