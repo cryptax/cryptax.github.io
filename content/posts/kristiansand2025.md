@@ -26,7 +26,21 @@ When we power on the badge, it blinks, and then nothing happens.
 
 ## Connecting the USB port
 
-> TODO: lsusb
+```
+$ lsusb
+...
+Bus 003 Device 014: ID 2e8a:0005 MicroPython Board in FS mode
+$ dmesg
+...
+[249846.706904] usb 3-3: new full-speed USB device number 14 using xhci_hcd
+[249847.009429] usb 3-3: New USB device found, idVendor=2e8a, idProduct=0005, bcdDevice= 1.00
+[249847.009438] usb 3-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[249847.009441] usb 3-3: Product: Board in FS mode
+[249847.009443] usb 3-3: Manufacturer: MicroPython
+[249847.009445] usb 3-3: SerialNumber: e6614103e7175d36
+[249847.079980] cdc_acm 3-3:1.0: ttyACM0: USB ACM device
+
+```
 
 We connect to the serial: `picocom /dev/ttyACM0`. If we connect it sufficiently quickly at boot, we see the following messages:
 
@@ -41,32 +55,52 @@ We can connect to that SSID, and head to the embedded website http://192.168.4.1
  
 We are greeted with a CTF website. The welcome page gives us an Easy Flag, `DUCK_xxx`, that we capture on the flags page.
 
-> TODO: show the welcome page with the flag
+![](/images/kristiansand25-welcomepage.png)
 
 There are several other flags to get: comms, credits etc.
-I hack around a little on the comms page and see that pressing the button actually triggers an action on `/trigger_XXX`. The credits page doesn't give me more valuable information.
+I hack around a little on the comms page and see that pressing the button actually triggers an action on `/trigger_interface`. The credits page doesn't give me more valuable information.
+
+```
+Starting async server on 0.0.0.0:80...
+GET / 200
+PATH: duckLogo.png
+GET /style.css 200
+GET /static/duckLogo.png 200
+GET /favicon.ico 404
+GET /comms 200
+PATH: duckLogo.png
+GET /style.css 200
+GET /static/duckLogo.png 200
+GET /trigger_interface 200
+```
 
 ## MicroPython REPL
 
-As this is **RP2040**, I want to download the firmware. I try to with [`picotool`](https://github.com/raspberrypi/pico-sdk), but it tells me the chip is not in DFU mode... and that there is actually a *MicroPython* firmware running on it.
+As this is **RP2040**, I want to download the firmware. I try to with [`picotool`](https://github.com/raspberrypi/pico-sdk), but it tells me the chip is not in DFU mode, that I am on the *MicroPython* firmware.
 
 So, easier, I decide to connect to the MicroPython REPL
 
 - `picocom /dev/ttyACM0`
 - then hit enter until you see the MicroPython prompt `>>>`
 
+```
+MicroPython v1.23.0 on 2024-06-02; Raspberry Pi Pico W with RP2040
+Type "help()" for more information.
+>>> 
+```
+
 I list files onboard:
 
 ```
->>> import
 >>> os.listdir()
+['.micropico', '.vscode', 'apConfig.json', 'config.json', 'configManager.py', 'constants.py', 'contributors.json', 'encrypted_db.json', 'flagManager.py', 'helpers.py', 'images', 'js', 'ledManager.py', 'main.py', 'microdot', 'neopixel.py', 'networkManager.py', 'scanManager.py', 'serialManager.py', 'static', 'templates', 'tinydb', 'utemplate']
+
 ```
 
-> TODO: show what we have onboard
 
 I decide to download all those files with [mpremote](https://pypi.org/project/mpremote/)
 
-`mpremote connecmpremote connect /dev/ttyACM0 fs cp :main.py`
+`mpremote connect /dev/ttyACM0 fs cp :main.py`
 
 It works great, so I script it in Bash to download all the other files.
 
