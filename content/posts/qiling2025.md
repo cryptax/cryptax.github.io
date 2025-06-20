@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ph0wn Labs #3"
+title: "Ph0wn Labs #3: Qiling Workshop"
 author: cryptax
 date: 2025-06-20
 tags:
@@ -170,7 +170,7 @@ This is the part that modifies user input (first argument). The modification is 
 |           0x1400011fe      ba22000000     mov edx, 0x22              ; '\"' ; 34 ; int64_t arg2
 |           0x140001203      488d4c2468     lea rcx, [var_68h]         ; int64_t arg1
 |           0x140001208      e8f3fdffff     call decode
-
+```
 I use [r2ai](https://github.com/radareorg/r2ai) to understand the decode function with Claude Sonnet 3.5
 
 ```
