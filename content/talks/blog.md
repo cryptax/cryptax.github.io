@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-07-04"
+date: "2025-07-10"
 tags:
 - r2ai
 - AI
@@ -65,6 +65,8 @@ tags:
 
 # 2025
 
+
+- [Catching Smarter Mice with Even Smarter Cats](https://www.fortinet.com/blog/threat-research/catching-smarter-mice-with-even-smarter-cats), July 10, 2025
 - [Malware W32/SkyAI uses AI? So do I.](https://cryptax.medium.com/w32-skyai-uses-ai-so-do-i-d33f04d63534), July 4, 2025.
 - Reversing a Prometei botnet binary with r2 and AI [Part One](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab), February 7, 2025, [Part Two](https://cryptax.medium.com/reversing-an-unpacked-prometei-binary-with-r2-and-ai-part-two-8b7e6c0fb0d4), February 11,  [Part Three on communication protocol](https://cryptax.medium.com/communication-with-a-prometei-c2-part-three-8f9c76ff9ac0) February 18, 2025.
 - [Analyzing ELF/Sshdinjector.A!tr with a Human and Artificial Analyst](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst), February 4, 2025.
