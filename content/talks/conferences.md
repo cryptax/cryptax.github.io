@@ -9,7 +9,7 @@ Conferences I spoke at:
 
 - [AMUSEC 2021](https://www.cirm-math.fr/Schedule/screen_display.php?id_renc=2653)
 - AREA 41 2016
-- [Barbhack](https://barbhack.fr) 2020 2022
+- [Barbhack](https://barbhack.fr) 2020 2022 2025
 - [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
@@ -38,6 +38,7 @@ Conferences I spoke at:
 - [Nullcon](https://nullcon.net) Webinar 2020 2024
 - [Pass The Salt](https://pass-the-salt.org/) 2018 2020
 - PDPTA 2003
+- r2con 2025
 - RSA Europe 2011
 - RSA US 2020
 - SAR-SSI 2010
@@ -50,5 +51,5 @@ Conferences I spoke at:
 - [THCon](https://thcon.party) 2021 2023
 - [Troopers](https://www.troopers.de) 2018 2023
 - IEEE TrustCom 2015
-- [UYBHYS](https://www.unlockyourbrain.bzh/) 2020
+- [UYBHYS](https://www.unlockyourbrain.bzh/) 2020 2025
 - [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022 2024

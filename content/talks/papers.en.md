@@ -28,6 +28,7 @@ draft: false
 - A. Apvrille, D. Nakov, *Malware analysis assisted by AI with R2AI*, ArXiv, April 14, 2025, *academic-style paper, quality & speed comparison* [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574),
 - *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
+- *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025, *to appear* **fr**
 
 ## 2024
 
