@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-06-07"
+date: "2025-08-29"
 tags:
 - topic
 - mobile malware
@@ -80,6 +80,7 @@ Artificial Intelligence and malware
 - Linux/Shellcode_ConnectBack.H!tr: [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
 - Linux/Ladvix.E [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
 - Linux/Prometei.B [blog](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
+- Linux/Trigona [blog](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52)
 
 
 Hacking IoT 
