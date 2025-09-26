@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-08-29"
+date: "2025-09-26"
 tags:
 - topic
 - mobile malware
@@ -28,6 +28,7 @@ tags:
 - dart
 - AI
 - r2ai
+- mcp
 ---
 
 # Mobile :(fa-solid fa-mobile):
@@ -73,6 +74,7 @@ Android vulnerabilities
 
 Artificial Intelligence and malware
 
+- Ghidra MCP [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
 - AI assisted decompilation: [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574)
 - Linux/Devura.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
 - Linux/RudeDevil.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
