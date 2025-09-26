@@ -21,7 +21,7 @@ The **ICS Hacking Village** at [**BruCON 2025**](https://brucon.org) was offerin
 where water flow in Hacktopia city was malfunctioning because of a 
 cyber attack.
 
-![](/images/brucon25-ics-village.jpg)
+![](/images/brucon2025-ics-village.jpg)
 
 The goal of the challenge was to stop the overflow in a water tower
 and re-open water from a secondary water tank for water to 
@@ -30,13 +30,9 @@ flow again in the building.
 Each participant was supplied with a control box consisting of a **M5 Core** connecting to a few sensors, buttons, potentiometers, and connected to 
 a water tank. We were not allowed to hack physically with the hardware.
 
-## Stage 1
+## Stage 1: Sensor
 
-At first, we just had an ICS image.
-
-![](/images/brucon2025-initial.jpg)
-
-Playing a bit with buttons, I see that the blue and red buttons change the color of the screen and talk about "watch ur shadow". 
+At first, we just had an ICS image. Playing a bit with buttons, I see that the blue and red buttons change the color of the screen and talk about "watch ur shadow". 
 
 ![](/images/brucon2025-red.jpg)
 ![](/images/brucon2025-blue.jpg)
@@ -48,7 +44,7 @@ a hidden button appears on the screen of the M5.
 ![](/images/brucon2025-light.jpg)
 
 
-## Stage 2
+## Stage 2: OSINT
 
 I hit the button. We get to another screen which shows a message in Russian, a PIN pad, the image of a *sandworm* and a logo I do not recognize. The organizers tell us this is kind of an **OSINT challenge** and we have to find out more about who's this organisation.
 
@@ -62,7 +58,7 @@ I search the net for ICS attacks and "sandworm", possibly related to water facil
 
 ![](/images/brucon2025-apt44.png)
 
-## Stage 3
+## Stage 3: Water System
 
 We get access to the water system of Hacktopia. From the challenge description, I know I must first solve the overflow in the water tower. Using the potentiometers, I see I can open/close valves. I reduce the overflow in the water to 0, and that issue is solved.
 
