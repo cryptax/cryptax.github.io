@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-06-14
+date: 2025-09-15
 draft: false
 ---
 # Conferences & Journals
@@ -19,13 +19,13 @@ draft: false
 
 ## 2025
 
-- *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf)
+- *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf) [:(fa-solid fa-video):](https://youtu.be/Rh58r9fMfBA?si=bvITS6AbIdrG7Vnu)
 
 *Malware analysis with AI-assistance*:
 
-- *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025, *to appear* **fr**
+- *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BarbHack-2025/r2ai.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/pBPEaJhp6cunWSKFpBUDTgPt4) **fr**
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
-- *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
+- *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) [:(fa-solid fa-video):](https://www.youtube.com/live/PmG_NcXUPmc?si=Po1gipGibuYSVI_X&t=14170)
 - A. Apvrille, D. Nakov, *Malware analysis assisted by AI with R2AI*, ArXiv, April 14, 2025, *academic-style paper, quality & speed comparison* [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574),
 - *Analyzing a shellcode with r2ai*, [PagedOut](https://pagedout.institute), vol. 6, March 2025, [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_006.pdf)
 - *Malware analysis with r2ai*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. *r2ai and decai* [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf), 
