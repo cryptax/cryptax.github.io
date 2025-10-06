@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-08-25"
+date: "2025-10-06"
 tags:
 - r2ai
 - AI
@@ -63,10 +63,12 @@ tags:
 - Prometei
 - SkyAI
 - Trigona
+- Rust
 ---
 
 # 2025
 
+- [Rust in your disassembler](https://cryptax.medium.com/rust-in-your-disassembler-1aa700c3b041), October 6, 2025.
 - [Linux/Trigona analysis with AI](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52), August 25, 2025.
 - [r2ai with lmstudio and gpt-oss](https://cryptax.medium.com/r2ai-with-lmstudio-and-gpt-oss-08efa5ea2476), August 19, 2025.
 - [Catching Smarter Mice with Even Smarter Cats](https://www.fortinet.com/blog/threat-research/catching-smarter-mice-with-even-smarter-cats), July 10, 2025
