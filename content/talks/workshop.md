@@ -2,7 +2,7 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
-date: "2025-09-02"
+date: "2025-09-26"
 tags:
 - training
 - workshop
@@ -10,12 +10,14 @@ tags:
 - CTF
 - radare2
 - reverse engineering
+- r2ai
+- mcp
 ---
 
 # Training / workshops on Android reverse engineering
 
 - 1 hour open-style workshop at [SHL](https://shl.contact) on *Reversing Rust with R2ai*, October 21, 2025 (to appear).
-- 4 hours at [BruCON 2025](https://www.brucon.org/) on *Reverse engineering with r2ai and GhidraMCP*, September 2025 (to appear).
+- 4 hours at [BruCON 2025](https://www.brucon.org/) on *Reverse engineering with r2ai and GhidraMCP*, September 2025 .[:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/BruCON-2025)
 - 1 hour open-style workshop at [SHL](https://shl.contact) on *Embedded programming and CTF challenges*, April 1, 2025.
 - 1 hour open-style workshop at [SHL](https://shl.contact) on *Reversing with Radare2*, beginner session, February 13, 2025.
 - 1.5 hours at [Hack.lu](https://2024.hack.lu) *Reversing Flutter with Blutter and Radare2* October 2024.
