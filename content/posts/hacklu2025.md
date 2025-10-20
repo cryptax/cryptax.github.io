@@ -22,7 +22,6 @@ Conclusion: this was less stressful than other CTFs, and I was both able to play
 
 All challenges at Hack.Lu were organized like if they were items in an IKEA shop, including their names.
 
-![](/images/hacklu2025-manual1.png)
 
 - **MANUAL**: I flagged this crypto challenge entirely with ChatGPT. I didn't even need to understand it. That's disappointing. It's a big issue with CTF challenges now... 
 - **ZIGBAKVAM**: ChatGPT helped me a little craft my extraction script, but as it got it wrong, I ended up doing the work and flagging by myself. Good. Self pride.
