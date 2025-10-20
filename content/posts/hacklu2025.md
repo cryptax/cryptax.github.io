@@ -733,5 +733,5 @@ They will attempt to follow the instruction manual using pieces you provide, for
 
 ## Conclusion
 
-- **I enjoyed working only on a few challenges of the CTF**. Sure, that's not a way to win, but it was fun for me, and that's what I am after + looking at 4 challenges, and solving 3 is a good rate :smile:
+- **I enjoyed working only on a few challenges of the CTF**. Sure, that's not a way to win, but it was fun for me, and that's what I am after + looking at 4 challenges, and solving 3 is a good rate :smile: It was less stressful, and I enjoyed both the CTF *and my week-end*.
 - **AI is an issue to CTFs**. When I say so, some people immediately argue "it's a tool". Yes, yes, it is! I do like AI for plenty of things, but nevertheless, in my opinion, it's going to kill the sould of CTFs if we don't work out for new solutions, new challenges etc. I'll blog on that one day.
