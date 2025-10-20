@@ -17,17 +17,18 @@ tags:
 
 # Hack.lu CTF 2025
 
-I played this CTF in a different way: very relaxed, only looked at 4 challenges I was interested in, solved 3 ;P and nearly 4... Did not even peek at the other challenges.
-Conclusion: this was less stressful than other CTFs, and I was both able to play, learn... and enjoy the week-end.
-
-All challenges at Hack.Lu were organized like if they were items in an IKEA shop, including their names.
+I played this CTF in a different way: very relaxed, only looked at 4 challenges I was interested in, solved 3 ;P and nearly 4... Did not even peek at the other challenges (see [Conclusion](#conclusion) about that).
 
 
-- **MANUAL**: I flagged this crypto challenge entirely with ChatGPT. I didn't even need to understand it. That's disappointing. It's a big issue with CTF challenges now... 
-- **ZIGBAKVAM**: ChatGPT helped me a little craft my extraction script, but as it got it wrong, I ended up doing the work and flagging by myself. Good. Self pride.
-- **GISSNINGSLEK**: I should have flagged this one much quicker, if I had read correctly a 20 line Bash script. Hmmm. Instead, I went in complex tech with r2ai, r2mcp and ChatGPT. And finally found the solution. This writeup is a journey into how things often happen in CTFs when you're a bit too tired and not so wise.
+![](/images/hacklu2025-manual1.png)
 
-Finally, the last challenge I worked with a team mate was the OSINT challenge **GISSAPLATSER**. 
+All challenges at Hack.Lu were organized like if they were items in an IKEA shop, including their names:
+
+- [**MANUAL**](#manual-crypto---flagged-with-no-skill): I flagged this crypto challenge entirely with ChatGPT. I didn't even need to understand it. That's disappointing. It's a big issue with CTF challenges now... 
+- [**ZIGBAKVAM**](#zigbakvam-misc): ChatGPT helped me a little craft my extraction script, but as it got it wrong, I ended up doing the work and flagging by myself. Good. Self pride.
+- [**GISSNINGSLEK**](#gissningslek-misc): I should have flagged this one much quicker, if I had read correctly a 20 line Bash script. Hmmm. Instead, I went in complex tech with r2ai, r2mcp and ChatGPT. And finally found the solution. This writeup is a journey into how things often happen in CTFs when you're a bit too tired and not so wise.
+
+Finally, the last challenge I worked with a team mate was the OSINT challenge [**GISSAPLATSER**](#gissaplatser). 
 
 
 ## ZIGBAKVAM (misc)
