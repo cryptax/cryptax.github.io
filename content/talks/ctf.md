@@ -31,6 +31,7 @@ I designed a few crackme if you feel like trying:
 
 I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
 
+- Hack.Lu 2025: 189 (pic0wn, 2 players)
 - BSides Kristiansand 2025 Badge CTF: **1**
 - N0PS CTF 2025: 77 (pic0wn)
 - Xmas Root Me 2024: 150
