@@ -7,9 +7,12 @@ tags:
 - Hack.lu
 - CTF
 - 2025
-- Python
-- Bytecode
-- Reverse
+- Crypto
+- OSINT
+- Bash
+- ZigBee
+- r2ai
+- r2mcp
 ---
 
 # Hack.lu CTF 2025
@@ -18,6 +21,8 @@ I played this CTF in a different way: very relaxed, only looked at 4 challenges 
 Conclusion: this was less stressful than other CTFs, and I was both able to play, learn... and enjoy the week-end.
 
 All challenges at Hack.Lu were organized like if they were items in an IKEA shop, including their names.
+
+![](/images/hacklu2025-manual1.png)
 
 - **MANUAL**: I flagged this crypto challenge entirely with ChatGPT. I didn't even need to understand it. That's disappointing. It's a big issue with CTF challenges now... 
 - **ZIGBAKVAM**: ChatGPT helped me a little craft my extraction script, but as it got it wrong, I ended up doing the work and flagging by myself. Good. Self pride.
@@ -28,11 +33,11 @@ Finally, the last challenge I worked with a team mate was the OSINT challenge **
 
 ## ZIGBAKVAM (misc)
 
-This challenge was dealing with **ZigBee**. That's interesting with regards to Ph0wn's usual topics, so I looked into it (and solved it :smile").
+This challenge was dealing with **ZigBee**. That's interesting with regards to Ph0wn's usual topics, so I looked into it (and solved it :smile:).
 
 You are given a `challenge.pcap`. 
 
-### Wasting time with WHAD
+### How I tried to use WHAD, when that wasn't useful at all
 
 Initially, I wanted to use [WHAD](https://github.com/whad-team/whad-client/) over the pcap, because WHAD is such a great tool to work with BLE, ZigBee and other protocols of that sort. 
 
@@ -43,7 +48,7 @@ wplay --flush challenge.pcap zigbee | wanalyze
 [!] Unsupported PCAP file (DLT: 230)
 ```
 
-Some AI tells me this means "the packet capture file uses a data link type (DLT) that the tool cannot process. DLT 230 corresponds to DLT_LINUX_SLL, which is a "cooked" capture format used by Linux for capturing on multiple interfaces, often resulting in a loss of complete layer 2 information like MAC addresses".
+Some AI tells me this means *"the packet capture file uses a data link type (DLT) that the tool cannot process. DLT 230 corresponds to DLT_LINUX_SLL, which is a "cooked" capture format used by Linux for capturing on multiple interfaces, often resulting in a loss of complete layer 2 information like MAC addresses"*. So be it.
 
 ChatGPT creates a first script to fix the pcap, and I run my command again:
 
@@ -163,12 +168,12 @@ I check that the values of that Bitmap8 field are printable, and they are. So, t
 
 I explain to ChatGPT what to do, and ask it to generate the script for me. Either my explanations were poor, or ChatGPT is weak, but I never got a working script. However, I got the "template" which uses scapy.
 
-The issue with ChatGPT's script was that
+The issue with ChatGPT's script:
 
 1. It wasn't retrieving the command byte correctly, hence never finding that 0x10 command packet. The command is at `payload[4]` not `payload[0]` as it thought...
 2. It had written complex (faulty) code to get the bitmap field of the packet, when it was so simple just to take the *last* byte of the packet...
 
-Instead of explaining to ChatGPT what to fix, I did it myself :wink:.
+**Instead of explaining to ChatGPT what to fix, I did it myself** :wink:.
 
 ```python
 from scapy.all import rdpcap, conf
@@ -287,7 +292,7 @@ done
 ### r2ai, because I can't help it
 
 I use [r2ai](https://github.com/radareorg/r2ai/) to decompile `readflag`.
-The `readflag` binary is very straight forward, and actually there is nothing interesting to exploit about it.
+The `readflag` binary is very straight forward, and actually there is nothing interesting to exploit about it: it does what it says: read the flag.
 
 ```c
 int main(int argc, char **argv, char **envp) {
@@ -502,7 +507,6 @@ The **solution is going to be disappointing**: I gave `server.py` to ChatGPT, an
 
 ChatGPT told me it's a hidden permutation problem.
 
-![](/images/hacklu2025-manual1.png)
 ![](/images/hacklu2025-manual2.png)
 
 Then, it gave me a script that worked without flaw and indeed revealed the flag after 257 attempts.
