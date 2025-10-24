@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-10-06
+date: 2025-10-24
 draft: false
 ---
 # Conferences & Journals
@@ -19,6 +19,8 @@ draft: false
 
 ## 2025
 
+
+- *Wall-E: sueur, fils et plastique fondu*, 9600bauds, Issue no 1, Oct 2025 [:(fa-solid fa-file-lines):](https://ghspace.fr/eZine.html) **fr**
 - *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf) [:(fa-solid fa-video):](https://youtu.be/Rh58r9fMfBA?si=bvITS6AbIdrG7Vnu)
 
 *Malware analysis with AI-assistance*:
