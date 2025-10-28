@@ -3,7 +3,6 @@ title: "Publication list"
 weight: 5
 tags:
 - conferences
-- journals
 - misc
 - hackable
 - publication
@@ -11,7 +10,9 @@ tags:
 date: 2025-10-28
 draft: false
 ---
-# Conferences & Journals
+# Conferences
+
+This page lists articles published and presented at industrial or academic conferences + keynotes. For journals, magazines, e-Zines, [go to the magazine page](./magazines.md).
 
 {{< admonition note >}}
 *By default, if no author name is mentioned, I'm the sole author*.
@@ -19,19 +20,14 @@ draft: false
 
 ## 2025
 
-
-- *Wall-E: sueur, fils et plastique fondu*, 9600bauds, Issue no 1, Oct 2025 [:(fa-solid fa-file-lines):](https://ghspace.fr/eZine.html) **fr**
 - *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf) [:(fa-solid fa-video):](https://youtu.be/Rh58r9fMfBA?si=bvITS6AbIdrG7Vnu)
 
 *Malware analysis with AI-assistance*:
 
 - *Crack Rust with r2ai*, [R2CON](https://rada.re/con/2025/), online, October 2025 [:(fa-solid fa-video):](https://youtu.be/XFiSfU-1E7I?si=dT9zWBx3PC5wH3hY)
-- *The Linux Trigona Ransomware*, [PagedOut](https://pagedout.institute), vol. 7, October 2025, page 66 [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_007.pdf)
 - *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BarbHack-2025/r2ai.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/pBPEaJhp6cunWSKFpBUDTgPt4) **fr**
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
 - *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) [:(fa-solid fa-video):](https://www.youtube.com/live/PmG_NcXUPmc?si=Po1gipGibuYSVI_X&t=14170)
-- A. Apvrille, D. Nakov, *Malware analysis assisted by AI with R2AI*, ArXiv, April 14, 2025, *academic-style paper, quality & speed comparison* [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574),
-- *Analyzing a shellcode with r2ai*, [PagedOut](https://pagedout.institute), vol. 6, March 2025, [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_006.pdf)
 - *Malware analysis with r2ai*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. *r2ai and decai* [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf), 
 
 ## 2024
@@ -80,8 +76,6 @@ draft: false
   - *Pique curiosity, not diabetic fingers*, Pass The Salt, July 2020 (virtual edition), [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/PassTheSalt-2020/glucose-pts2020.pdf)
   - *Capteur de glycémie connecté : les interdits*, Barbhack, August 2020 **fr**, 
   - *Hacking de capteur de glycémie connecté*, UYBHYS, November 2020 (online) [:(fa-solid fa-video): - starts at 54'45](https://www.youtube.com/watch?v=c2ouqPSfgHw)
-
-- T. Goodspeed, A. Apvrille, *NFC exploitation with the RF430RFL152 and 'TAL152*, PoC || GTFO, [volume](https://www.alchemistowl.org/pocorgtfo/pocorgtfo20.pdf), 20:03.
 
 - *Medical malware on Android* (all talks are on the same topic, but with different samples analyzed)
   - SecSea, June 2020 (virtual edition) [:(fa-solid fa-video):](https://www.youtube.com/watch?v=n4YPM53igdw)
@@ -136,16 +130,13 @@ draft: false
   - Hacktivity, October 2015 [:(fa-solid fa-video):](https://www.youtube.com/watch?v=Df6b3WNkHCU) 
 - L. Apvrille, A. Apvrille, *Identifying Unknown Android Malware with Feature Extractions and Classification Techniques*, IEEE TrustCom, Helsinki, Finland, 20-22 August 2015 [see here](http://perso.telecom-paristech.fr/~apvrille/research_publications.html#conferences)
 - *Pawn Storm: What's Up on iOS devices?*, Insomni'hack, Geneva, March 2015, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Insomnihack-2015/iOS-insomnihack.pdf)
-- A. Apvrille, L .Apvrille, *SherlockDroid: a Research Assistant to Spot Unknown Malware in Android Marketplaces*, Journal in Computer Virology and Hacking Techniques, vol. 11, no. 39, pages 1-11, 2015. [DOI](http://dx.doi.org/10.1007/s11416-015-0245-z)
+
 
 ## 2014
 
 - A. Apvrille, L. Apvrille, *SherlockDroid: an Inspector for Android Marketplaces*, Hack.Lu, Luxembourg, October 21-24 2014, [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/Hack.Lu-2014/sherlock-submitted-hacklu2014.pdf) [:(fa-solid fa-file-lines):](http://archive.hack.lu/2014/sherlock-slides.pdf)
 - A. Apvrille, A. Albertini, *Hide Android Applications in Images*, BlackHat Europe, Amsterdam, NL, October 2014, 16-17 [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/BlackHatEurope-2014/eu-14-Apvrille-HideAndroidApplicationsInImages-wp.pdf) [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/BlackHatEurope/eu-14-Apvrille-HideAndroidApplicationsInImages.pdf)
-- *Inside the iOS/AdThief malware*, Virus Bulletin, August 2014, [:(fa-solid fa-link):](https://www.virusbtn.com/virusbulletin/archive/2014/08/vb201408-AdThief), [:(fa-solid fa-file-pdf):](https://www.virusbtn.com/pdf/magazine/2014/vb201408-AdThief.pdf)
-- A. Apvrille, R. Nigam, *Obfuscation in Android malware and how to fight back*, 
-  - 8th International [CARO Workshop](http://2014.caro.org), May 15-16, Florida, USA.
-  - Virus Bulletin, July 2014 [:(fa-solid fa-file-pdf):](https://www.virusbtn.com/pdf/magazine/2014/vb201407-Android-obfuscation.pdf)
+- A. Apvrille, R. Nigam, *Obfuscation in Android malware and how to fight back*, 8th International [CARO Workshop](http://2014.caro.org), May 15-16, Florida, USA
 - *Playing Hide and Seek with Dalvik Executables*, Insomni'Hack, March 2014 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Hack.Lu-2014/hidex-insomni.pdf) 
 
 
@@ -162,10 +153,8 @@ draft: false
 - *Guns and Smoke to Defeat Mobile Malware*, Hashdays, Lucerne, Switzerland, November 2-3 2012.  [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/Hashdays-2012/hashdays-presented.pdf)
 - A. Apvrille, G. Lovet, *An Attacker's Day into Virology: Human vs Computer*, BlackHat Europe, Amsterdam, The Netherlands, March 14-16 2012, [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/BlackHatEurope-2012/medical-bheu12.pdf) [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/BlackHatEurope-2012/medical-bheu12-slides.pdf)
 - *Android Reverse Engineering Tools*, Insomni'Hack 2012, Geneva, Switzerland, March 2, 2012  [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Insomnihack-2012/insomnidroid.pdf)
-- A. Apvrille, T. Strazzere, *Reducing the Window of Opportunity for Android Malware*:
-  - in Proceedings of the 21st [EICAR](http://www.eicar.org/conference/) Annual Conference, pp. 131-149, Lisbon, Portugal, May 7-8, 2012 [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/EICAR-2012/findroid-eicar2012.pdf) [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/EICAR-2-12/slidesdroid-eicar2012.pdf)
-  - in Journal in Computer Virology 2021, [:(fa-solid fa-link):](http://www.springerlink.com/openurl.asp?genre=article&id=doi:10.1007/s11416-012-0162-3), DOI: 10.1007/s11416-012-0162-3
-- *Symbian worm Yxes: towards mobile botnets?*, Journal in Computer Virology, 2012, [:(fa-solid fa-link):](http://www.springerlink.com/openurl.asp?genre=article&id=doi:10.1007/s11416-012-0163-2), DOI: 10.1007/s11416-012-0163-2
+- A. Apvrille, T. Strazzere, *Reducing the Window of Opportunity for Android Malware* in Proceedings of the 21st [EICAR](http://www.eicar.org/conference/) Annual Conference, pp. 131-149, Lisbon, Portugal, May 7-8, 2012 [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/EICAR-2012/findroid-eicar2012.pdf) [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/EICAR-2-12/slidesdroid-eicar2012.pdf)
+  
 
 
 ## 2011
@@ -173,9 +162,7 @@ draft: false
 - *Cryptography for Mobile Malware Obfuscation*, RSA Europe, London, UK, October 2011. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/RSAEurope-2011/NMS-305-Apvrille-Revised.pdf)[:(fa-solid fa-laptop):](http://youtu.be/Tcm6J_B-b_g)
 - *An OpenBTS GSM Replication Jail for Mobile Malware*, Virus Bulletin Conference, pp. 86-94, Barcelona, Spain, October 2011. [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/VirusBulletin-2011/VB2011-Apvrille.pdf) [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/VirusBulletin-2011/openbts-vb2011-slides.pdf) [:(fa-solid fa-laptop):](http://youtu.be/0Ud1vlcPnCA). Copyright is held by Virus Bulletin Ltd but made available on this site for personal use free of charge by permission of Virus Bulletin.
 - *Mobile Malware in Practice*, Insomni'Hack, Geneva, Switzerland, March 4, 2011, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Insomnihack-2011/mobilemalware-insomnihack2011-apvrille.pdf)
-- A. Apvrille, K. Yang, *Defeating mTANs for profit*: 
-  - ShmooCon 2011, Washington DC, USA, January 28-30 2011, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Shmoocon-2011/zitmo-slides.pdf)
-  - Virus Bulletin, pp. 6-10, March 2011 [:(fa-solid fa-link):](https://www.virusbulletin.com/virusbulletin/2011/03/defeating-mtans-profit-part-one) and [part two](https://www.virusbulletin.com/virusbulletin/2011/04/defeating-mtans-profit-part-two)
+- A. Apvrille, K. Yang, *Defeating mTANs for profit*, ShmooCon 2011, Washington DC, USA, January 28-30 2011, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Shmoocon-2011/zitmo-slides.pdf)
 - *OpenBTS for dummies v0.5*,  April 2011, [:(fa-solid fa-book):](https://vdocuments.net/openbts-for-dummies-5584622bf2505.html)
 
 
@@ -187,26 +174,16 @@ draft: false
 - *The Four Horsemen*, CONFidence Krakow, Poland, May 24-26, 2010 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Confidence-2010/FourHorsemen-CONFIDENCE2010-Apvrille.pdf)
 
 
-## 2006
-
-- L. Apvrille, P. de Saqui-Sannes, R. Pacalet et A. Apvrille, Un environnement de conception de systèmes distribués basé sur UML, Annals of Telecommunications, Vol. 61, n 11/12, pp. 1347-1368, Nov. 2006 [abstract](http://www.annales-des-telecommunications.com/documents/Nov06.htm#A2035)
-
 
 ## 2005
 
-- L. Apvrille, P. de Saqui-Sannes, A. Apvrille, Une méthodologie de conception des systèmes distribués basée sur UML, Actes de la 5ème conférence sur les nouvelles technologies de la répartition [NOTERE'05](http://w3.uqo.ca/notere05), p 217-214, Gatineau, QC, Canada, 29 ao&ucirc;t - 1er septembre 2005.
-- A. Apvrille, M. Pourzandi, Secure Software Development by Example, [IEEE Security & Privacy](http://www.computer.org/portal/site/security/), vol. 3, no. 4, July/August, 2005, pp. 10-17. [:(fa-solid fa-link):](http://www.computer.org/portal/site/security/menuitem.6f7b2414551cb84651286b108bcd45f3/index.jsp?&pName=security_level1_article&TheCat=1015&path=security/v3n4&file=apvrille.xml)
+- L. Apvrille, P. de Saqui-Sannes, A. Apvrille, Une méthodologie de conception des systèmes distribués basée sur UML, Actes de la 5ème conférence sur les nouvelles technologies de la répartition [NOTERE'05](http://w3.uqo.ca/notere05), p 217-214, Gatineau, QC, Canada, 29 aout - 1er septembre 2005.
 - A. Apvrille, D. Gordon, DigSig novelties, [Libre Software Meeting](https://www.rencontresmondiales.org/), Security Topic, July 4-9 2005 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/LSM-2005/DigSig-novelties.pdf)
 
 
 ## 2004
 
-- A. Apvrille, M. Pourzandi, XML Distributed Security Policy for Clusters, Computers & Security Journal (COSE91), Elsevier, vol. 23, no. 8, pp 649-658, December 2004 - [abstract](http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6V8G-4DTKNHM-2&_user=10&_handle=B-WA-A-W-AW-MsSAYZA-UUA-AAUCDDVDWC-AAUBBCCCWC-YAWZVZAUA-AW-U&_fmt=summary&_coverDate=12%2F01%2F2004&_rdoc=6&_orig=browse&_srch=%23toc%235870%232004%23999769991%23537379%21&_cdi=5870&view=c&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=5223992bd60a2466ab80e832067735b1)
-- A. Apvrille, M. Pourzandi, *Trusted Computing in Linux: status*, Linux World magazine, Vol. 2, No. 12, December 2004
 - A. Apvrille, D. Gordon, S. Hallyn, M. Pourzandi, V. Roy, DigSig: Runtime Authentication of Binaries at the Kernel Level, in the Proceedings of the 18th Large Installation System Administration Conference [LISA](http://www.usenix.org/events/lisa04/), pp. 59-66, Atlanta, November 14-19 2004 [:(fa-solid fa-link):](https://www.usenix.org/legacy/events/lisa04/tech/apvrille.html)
-- M. Pourzandi, A. Apvrille, *Setting up Virtual Security Zones in a Linux Cluster*, [Linux Journal](https://www.linuxjournal.com), Issue 126, October 2004 [html](https://www.linuxjournal.com/article/6803)
-- A. Apvrille, M. Pourzandi, D. Gordon, V. Roy, *Stop Malicious Code Execution at Kernel-Level*, Linux World magazine, Vol. 2, No. 1, January 2004.
-
 
 ## 2003
 
@@ -219,38 +196,4 @@ draft: false
 - A. Apvrille, J. Hughes, A Time Stamped Virtual WORM System, SEcurit&eacute; de la Communication ur Internet workshop (SECI'02), Tunis, Tunisia, September 2002, [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/tree/master/SECI-2002/TimeStampedVWORM-ApvrilleHughes-SECI-2002.pdf)
 - *Programmation sécurisée sous Java : retour d'expérience*, OSSIR RESIST, September 2002, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/Resist-2002/ProgSecurite-RESIST-French-Sept2002.pdf)
 - *L'horodatage sécurisé : état de l'art et applications*, OSSIR RESIST, June 2002. [:(fa-solid fa-file-lines):](https://www.ossir.org/resist/supports/cr/2002/apvrille.pdf)
-
-
-
-# Diamond Editions **fr**
-
-## MISC Magazine
-
-- *Analyse de malware assistée par intelligence artificielle*, MISC no. 139, Mai/Juin 2025, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-139/analyse-de-malware-assistee-par-intelligence-artificielle)
-- *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-136/android-fluhorse-le-malware-qui-defie-les-desassembleurs)
-- *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
-- *Utilisation malveillante de l'API d'accessibilité sur Android*, MISC no. 122, Juillet 2022, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-122/utilisation-malveillante-de-l-api-d-accessibilite-sur-android)
-- *Rançon sur téléphone mobile : les entrailles d'Android/Koler*, [MISC](http://www.miscmag.com/fr/), no. 107, January-February 2020 
-- *Analyse de la sécurité d'un capteur de glucose*, MISC, no. 106, November-December 2019
-- *Rétro-ingénierie d'applications Android avec Androguard*, MISC, no. 92,  July 2017, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/MISC/MISC-092/Retro-ingenierie-d-applications-Android-avec-Androguard)
-- *Les objets connectés peuvent-ils être infectés?*, MISC, Hors Série no. 15 : Sécurité des objects connectés. [:(fa-solid fa-cart-shopping):](https://boutique.ed-diamond.com/en-kiosque/1247-misc-hs-15.html)
-- *Analyse de la sécurité d'un bracelet sportif*, MISC no. 87, p. 76, Septembre-Octobre 2016
-- L. Apvrille, A. Apvrille, P. Bogossian, Retour d'expérience sur quelques épreuves de Hack.lu 2013, MISC, no. 73, p. 50-86, May-June 2014. [:(fa-solid fa-cart-shopping):](http://boutique.ed-diamond.com/misc/567-misc-73.htm)
-- *Détenu virus mobile : nous avons les moyens de vous faire parler !* MISC, Hors série, no. 5, p. 80, April - May 2012
-- *Le virus Symbian RommWar à la loupe*, MISC, no. 46, p. 42-49, November-December 2009. [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/MISC/misc-046/le-virus-symbian-rommwar-a-la-loupe)
-- *La sécurité des Wikis*, MISC, no. 44, p. 76-82, July-August 2009
-- *Conception et architecture de la bibliothèque cryptographique d'OpenSSL*, MISC, no. 32, p. 52-60, July-August 2007
-- *Protéger les messages applicatifs avec XML Security ou PKCS*, MISC no 25, May-June 2006.
-- *Des erreurs dans mon code sécurisé, où ça ?!*, MISC, no. 16-17, November 2004 - January 2005
-- *L'ASN.1 par l'exemple dans les certificats X.509*, MISC, no. 15, September - October 2004
-- A. Apvrille, M. Pourzandi, *Protéger un réseau de machines distribuées contre un débordement de buffer... d'un seul coup*, MISC, no. 7, May-June 2003
-
-## Hackable Magazine
-
-- *Piloter sa cafetière connectée*, [Hackable](https://connect.ed-diamond.com/hackable) no. 33, April-June 2020 [:(fa-solid fa-cart-shopping):](https://boutique.ed-diamond.com/en-kiosque/1527-hackable-magazine-33.html)
-- *Fabriquez votre T-shirt interactif avec un Lilypad Arduino* Hackable, no. 21, p. 96,  November-December 2017 [:(fa-solid fa-cart-shopping):](https://boutique.ed-diamond.com/en-kiosque/1280-hackable-magazine-21.html)
-- A. Apvrille, L. Apvrille, *Ventilation controlée par des framboises*, Hackable, no. 11, p. 32, March-April 2016. [:(fa-solid fa-link):](http://www.hackable.fr/?p=767)
-- A. Apvrille, L. Apvrille, *Contrôler sa chaudière à distance avec un Raspberry Pi*, Hackable, no.8, p.60, September-October 2015
-
-
 
