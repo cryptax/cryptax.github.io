@@ -8,7 +8,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-10-24
+date: 2025-10-28
 draft: false
 ---
 # Conferences & Journals
@@ -25,7 +25,7 @@ draft: false
 
 *Malware analysis with AI-assistance*:
 
-- *Crack Rust with r2ai*, [R2CON](https://rada.re/con/2025/), online, October 2025, *to appear*.
+- *Crack Rust with r2ai*, [R2CON](https://rada.re/con/2025/), online, October 2025 [:(fa-solid fa-video):](https://youtu.be/XFiSfU-1E7I?si=dT9zWBx3PC5wH3hY)
 - *The Linux Trigona Ransomware*, [PagedOut](https://pagedout.institute), vol. 7, October 2025, page 66 [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_007.pdf)
 - *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BarbHack-2025/r2ai.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/pBPEaJhp6cunWSKFpBUDTgPt4) **fr**
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 

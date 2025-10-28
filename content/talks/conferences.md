@@ -38,7 +38,7 @@ Conferences I spoke at:
 - [Nullcon](https://nullcon.net) Webinar 2020 2024
 - [Pass The Salt](https://pass-the-salt.org/) 2018 2020
 - PDPTA 2003
-- r2con 2025
+- r2con [2025](https://radare.org/con/2025)
 - RSA Europe 2011
 - RSA US 2020
 - SAR-SSI 2010
