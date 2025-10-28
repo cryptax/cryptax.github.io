@@ -12,9 +12,9 @@ tags:
 date: 2025-10-28
 draft: false
 ---
-# Anything that gets published but is not a conference or conference proceedings
+# Journals, magazines, e-Zines etc
 
-Academic journals, magazines, e-Zines...
+Anything that gets published but is not a conference or conference proceedings: Academic journals, magazines, e-Zines...
 
 {{< admonition note >}}
 *By default, if no author name is mentioned, I'm the sole author*.
@@ -34,7 +34,7 @@ Academic journals, magazines, e-Zines...
 
 ## Virus Bulletin
 
-*Those are the articles published in the magazine, not the conference*. For the conference, see the [paper page](./papers.en.md).
+*Those are the articles published in the magazine, not the conference*. For the conference, see [this page](./papers).
 
 - *Inside the iOS/AdThief malware*, Virus Bulletin, August 2014, [:(fa-solid fa-link):](https://www.virusbtn.com/virusbulletin/archive/2014/08/vb201408-AdThief), [:(fa-solid fa-file-pdf):](https://www.virusbtn.com/pdf/magazine/2014/vb201408-AdThief.pdf)
 - A. Apvrille, R. Nigam, *Obfuscation in Android malware and how to fight back*, Virus Bulletin, July 2014 [:(fa-solid fa-file-pdf):](https://www.virusbtn.com/pdf/magazine/2014/vb201407-Android-obfuscation.pdf)

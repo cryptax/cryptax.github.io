@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-09-26"
+date: "2025-10-28"
 tags:
 - topic
 - mobile malware
@@ -74,15 +74,15 @@ Android vulnerabilities
 
 Artificial Intelligence and malware
 
-- Ghidra MCP [:(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
-- AI assisted decompilation: [:(fa-solid fa-file-pdf):](https://arxiv.org/pdf/2504.07574)
-- Linux/Devura.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
-- Linux/RudeDevil.A!tr [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
-- Linux/Sshdinjector [blog](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst) ...
-- Linux/Shellcode_ConnectBack.H!tr: [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
-- Linux/Ladvix.E [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
-- Linux/Prometei.B [blog](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
-- Linux/Trigona [blog](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52)
+- Ghidra MCP [BruCON 2025](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
+- AI-assisted decompilation: [arXiv 2025](https://arxiv.org/pdf/2504.07574)
+- Linux/Devura.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
+- Linux/RudeDevil.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
+- Linux/Sshdinjector [:(fa-solid fa-link):](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst) ...
+- Linux/Shellcode_ConnectBack.H!tr: [NorthSec 2025](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) 
+- Linux/Ladvix.E [BSides Kristiansand 2025](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
+- Linux/Prometei.B [:(fa-solid fa-link):](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
+- Linux/Trigona [:(fa-solid fa-link):](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52)
 
 
 Hacking IoT 

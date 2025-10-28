@@ -12,7 +12,7 @@ draft: false
 ---
 # Conferences
 
-This page lists articles published and presented at industrial or academic conferences + keynotes. For journals, magazines, e-Zines, [go to the magazine page](./magazines.md).
+This page lists articles published and presented at industrial or academic conferences + keynotes. For journals, magazines, e-Zines, [go to the magazine page](./magazines).
 
 {{< admonition note >}}
 *By default, if no author name is mentioned, I'm the sole author*.
@@ -28,7 +28,7 @@ This page lists articles published and presented at industrial or academic confe
 - *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BarbHack-2025/r2ai.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/pBPEaJhp6cunWSKFpBUDTgPt4) **fr**
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
 - *Linux and IoT malware analysis with r2ai*, [NorthSec](https://nsec.io), Montreal, Canada, May 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/NorthSec-2025/r2ai.pdf) [:(fa-solid fa-video):](https://www.youtube.com/live/PmG_NcXUPmc?si=Po1gipGibuYSVI_X&t=14170)
-- *Malware analysis with r2ai*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025. *r2ai and decai* [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf), 
+- *Malware analysis with r2ai*, [Insomni'hack](https://insomnihack.ch/talks/malware-analysis-with-r2ai/), Lausanne, Switzerland, March 14, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Insomnihack-2025/r2ai.pdf)
 
 ## 2024
 
