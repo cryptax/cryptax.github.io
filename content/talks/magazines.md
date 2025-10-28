@@ -1,5 +1,5 @@
 ---
-title: "Publication list: magazines and e-Zines"
+title: "Journals, magazines and e-Zines"
 weight: 5
 tags:
 - misc
@@ -51,11 +51,12 @@ Academic journals, magazines, e-Zines...
 - *Wall-E: sueur, fils et plastique fondu*, **9600 bauds**, Issue no 1, Oct 2025 [:(fa-solid fa-file-lines):](https://ghspace.fr/eZine.html) **fr**
 - *The Linux Trigona Ransomware*, [**PagedOut**](https://pagedout.institute), vol. 7, October 2025, page 66 [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_007.pdf)
 - *Analyzing a shellcode with r2ai*, [PagedOut](https://pagedout.institute), vol. 6, March 2025, [:(fa-solid fa-file-pdf):](https://pagedout.institute/download/PagedOut_006.pdf)
+- *Reversing Dart AOT snapshots*, [**Phrack**](http://www.phrack.org/issues/71/11.html#article) Magazine, Volume 0x10, Issue 0x47, Phile 0x0B of 0x11, August 2024. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Phrack-71/README.md)
 - T. Goodspeed, A. Apvrille, *NFC exploitation with the RF430RFL152 and 'TAL152*, **PoC || GTFO**, [volume](https://www.alchemistowl.org/pocorgtfo/pocorgtfo20.pdf), 20:03. (2020)
 
 
 I am the editor of the [Ph0wn Mag eZine](https://github.com/ph0wn/writeups/tree/master/ph0wnmag). 
-In Ph0wn Mag, Issue no 1, November 2023 [:(fa-lines fa-file-pdf):](https://github.com/ph0wn/writeups/blob/master/ph0wnmag/issue-01/ph0wnmag.pdf), These articles were written by me:
+In Ph0wn Mag, Issue no 1, November 2023 [:(fa-solid fa-file-pdf):](https://github.com/ph0wn/writeups/blob/master/ph0wnmag/issue-01/ph0wnmag.pdf), These articles were written by me:
 
 - *Rest DHT*, 
 - *Arkanoid*, 
@@ -68,7 +69,7 @@ In Ph0wn Mag, Issue no 1, November 2023 [:(fa-lines fa-file-pdf):](https://githu
 - Phil242 and Cryptax, *HydraJet 1*
 - Phil242 and Cryptax, *Spacial TOTP*
 
-In Issue no 2, November 2024, [:(fa-lines fa-file-pdf):](https://github.com/ph0wn/writeups/blob/master/ph0wnmag/issue-02/ph0wnmag-issue-02.pdf):
+In Issue no 2, November 2024, [:(fa-solid fa-file-pdf):](https://github.com/ph0wn/writeups/blob/master/ph0wnmag/issue-02/ph0wnmag-issue-02.pdf):
 
 - *Nullcon Berlin CTF 2024 HackMe Hardware Challenge*
 - *Race Roller*
