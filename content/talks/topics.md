@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-10-28"
+date: "2025-11-27"
 tags:
 - topic
 - mobile malware
@@ -29,6 +29,7 @@ tags:
 - AI
 - r2ai
 - mcp
+- BPF
 ---
 
 # Mobile :(fa-solid fa-mobile):
@@ -83,6 +84,8 @@ Artificial Intelligence and malware
 - Linux/Ladvix.E [BSides Kristiansand 2025](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
 - Linux/Prometei.B [:(fa-solid fa-link):](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
 - Linux/Trigona [:(fa-solid fa-link):](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52)
+- Linux/Bpfdoor [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/pbf.pdf)
+- Linux/Symbiote [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/pbf.pdf) 
 
 
 Hacking IoT 
