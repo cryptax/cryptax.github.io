@@ -7,7 +7,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-10-28
+date: 2025-11-27
 draft: false
 ---
 # Conferences
@@ -20,10 +20,12 @@ This page lists articles published and presented at industrial or academic confe
 
 ## 2025
 
+- *McPico - MCP Client for the Terminal*, [BlackAlps](https://blackalps.ch), Rump session, Yverdon-les-Bains, Switzerland, November 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BlackAlps-2025/rump.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/755841)
 - *Malware, Meet AI: Friend or Foe?*, Elbsides, Keynote, June 13, [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/Elbsides-2025/keynote.pdf) [:(fa-solid fa-video):](https://youtu.be/Rh58r9fMfBA?si=bvITS6AbIdrG7Vnu)
 
 *Malware analysis with AI-assistance*:
 
+- *Analyse de malware avec r2ai et MCP, Linux/Symbiote et BPFDoor en 2025*, Cyb'Air, Salon de Provence, France, November 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/CybAir-2025/bpf.pdf) **fr**
 - *Crack Rust with r2ai*, [R2CON](https://rada.re/con/2025/), online, October 2025 [:(fa-solid fa-video):](https://youtu.be/XFiSfU-1E7I?si=dT9zWBx3PC5wH3hY)
 - *Décompiler des binaires malveillants pour Linux avec r2ai*, [Barb'hack](https://barbhack.fr), Toulon, France, August 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BarbHack-2025/r2ai.pdf) [:(fa-solid fa-video):](https://asciinema.org/a/pBPEaJhp6cunWSKFpBUDTgPt4) **fr**
 - *Malware analysis with r2ai*, [BSides Kristiansand](https://bsideskrs.no/), Kristiansand, Norway, June 6, 2025 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
