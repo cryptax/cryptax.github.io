@@ -245,6 +245,7 @@ void drawScene(void) {
         __stack_chk_fail();
     }
 }
+```
 
 > By the way, we have no doubt this function is specifically written for the challenge, because Radare2 (and Ghidra) displays the source filename: `blackalps25.ino`.
 
