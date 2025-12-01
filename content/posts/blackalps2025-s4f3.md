@@ -2,7 +2,7 @@
 layout: post
 title: "BlackAlps 2025 CTF - s4f3"
 author: cryptax
-date: 2025-11-27
+date: 2025-12-01
 tags:
 - BlackAlps
 - CTF
@@ -22,7 +22,7 @@ With [Phil242](https://phil242.wordpress.com/), we concentrated on this interest
 
 ## Description
 
-![](/images/blacksalps25-s4f3.png)
+![](/images/blackalps25-s4f3.png)
 
 A binary `challenge.elf` is provided.
 
