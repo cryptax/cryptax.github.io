@@ -146,9 +146,36 @@ Unfortunately, it's very long, so we need to find another trick.
 
 ### Linearity
 
-The key observation is that the work() function is linear over GF(2): it only does XORs and shifts. 
+The key observation is that the `work()` function is linear over GF(2): it only does XORs and shifts. 
 
-This means that each update of gift_state can be written as a matrix multiplication `x_next = M * x` where M is a 192×192 binary matrix. 
+This means that each update of `gift_state` can be written as a matrix multiplication `x_next = M * x` where M is a 192×192 binary matrix. 
 
-Once we see it that way, we don’t need to simulate billions of steps anymore. Instead, we can jump ahead by computing an exponentiation of M:
+Let's note x_1 the first gift_state. We have:
+
+- `x_2 = M * x_1`
+- `x_3 = M * x_2`
+- etc
+
+This can be written differently: `x_3 = M * x_2 = M *  M * x_1 = M² * x_1`.
+Consequently, to compute `x_1337133713371337133713371337133713371337`, we no longer need to simulate 1337133713371337133713371337133713371337 steps, we can compute an exponentiation `M^1337133713371337133713371337133713371337`. 
+
+### Fast exponentiation
+
+`1337133713371337133713371337133713371337` is a large integer, but that's not really the issue: big int libraries such as numpy know how to handle such integers (and more) without any problem.
+
+However, computing `M^1337133713371337133713371337133713371337` can be speeded up by using [*fast exponentiation*, also known as *exponentiation by squaring*](https://en.wikipedia.org/wiki/Exponentiation_by_squaring).
+
+Basically, the algorithm consists in computing M powered to powers of 2, and perform multiplications only when needed. This reduces the number of multiplications to perform quite dramatically. So, now, we can reasonably compute `M^1337133713371337133713371337133713371337`
+
+```python
+def matpow(M, k):
+    R = np.eye(n, dtype=np.uint8)
+    A = M.copy()
+    while k > 0:
+        if k & 1:
+            R = matmul(R, A)
+        A = matmul(A, A)
+        k >>= 1
+    return R
+```
 
