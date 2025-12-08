@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-10-06"
+date: "2025-12-08"
 tags:
 - r2ai
 - AI
@@ -68,6 +68,7 @@ tags:
 
 # 2025
 
+- [New eBPF filters for Symbiote and BPFDoor Malware](https://www.fortinet.com/blog/threat-research/new-ebpf-filters-for-symbiote-and-bpfdoor-malware), December 2, 2025.
 - [Rust in your disassembler](https://cryptax.medium.com/rust-in-your-disassembler-1aa700c3b041), October 6, 2025.
 - [Linux/Trigona analysis with AI](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52), August 25, 2025.
 - [r2ai with lmstudio and gpt-oss](https://cryptax.medium.com/r2ai-with-lmstudio-and-gpt-oss-08efa5ea2476), August 19, 2025.

@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-11-27"
+date: "2025-12-08"
 tags:
 - topic
 - mobile malware
@@ -36,6 +36,7 @@ tags:
 
 Mobile malware
 
+
 - Android/BianLian botnet [Virus Bulletin 2022](https://github.com/cryptax/talks/blob/master/VirusBulletin-2022/bianlian-vb2022.pdf)
 - Android/BrazKing: AMUSEC 2021
 - Android/Joker [BarbHack 2022](https://github.com/cryptax/talks/tree/master/BarbHack-2022)
@@ -43,6 +44,7 @@ Mobile malware
 - Android/MoneyMonger [BlackAlps 2023](https://github.com/cryptax/talks/blob/master/BlackAlps-2023/flutter.pdf)
 - Android/Phoenix: [blog post](https://cryptax.medium.com/reverse-engineering-of-android-phoenix-b59693c03bd3)
 - Android/Oji [BSides Oslo 2021](https://www.youtube.com/watch?v=6z1zrPZEKuM)
+- Android/SpyLoan [Virus Bulletin 2024 :(fa-solid fa-file-pdf):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2024/flutter.pdf)
 - Android/SpyNote [blog post](https://cryptax.medium.com/android-spynote-bypasses-restricted-settings-breaks-many-re-tools-8791b3e6bf38)
 - Android/TangleBot [blog post](https://cryptax.medium.com/untangling-android-tanglebot-38a52cd8f420)
 - Android/WyrmSpy [blog post](https://cryptax.medium.com/organizing-malware-analysis-with-colander-example-on-android-wyrmspy-1f3ec30ae33b)
@@ -75,6 +77,7 @@ Android vulnerabilities
 
 Artificial Intelligence and malware
 
+- Decomping Rust with AI [RadareCon 2025](https://youtu.be/XFiSfU-1E7I?si=dT9zWBx3PC5wH3hY), [:(fa-solid fa-link):](https://cryptax.medium.com/rust-in-your-disassembler-1aa700c3b041)
 - Ghidra MCP [BruCON 2025](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
 - AI-assisted decompilation: [arXiv 2025](https://arxiv.org/pdf/2504.07574)
 - Linux/Devura.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
@@ -84,8 +87,8 @@ Artificial Intelligence and malware
 - Linux/Ladvix.E [BSides Kristiansand 2025](https://github.com/cryptax/talks/blob/master/BSidesKristiansand-2025/r2ai.pdf) 
 - Linux/Prometei.B [:(fa-solid fa-link):](https://cryptax.medium.com/reversing-a-prometei-botnet-binary-with-r2-and-ai-part-one-3cdb3dc6ffab)
 - Linux/Trigona [:(fa-solid fa-link):](https://cryptax.medium.com/linux-trigona-analysis-with-r2ai-3e2bd1815e52)
-- Linux/Bpfdoor [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/pbf.pdf)
-- Linux/Symbiote [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/pbf.pdf) 
+- Linux/Bpfdoor [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/bpf.pdf) [:(fa-solid fa-link):](https://www.fortinet.com/blog/threat-research/new-ebpf-filters-for-symbiote-and-bpfdoor-malware)
+- Linux/Symbiote [CybAir 2025](https://github.com/cryptax/talks/blob/master/Cybair-2025/bpf.pdf) [:(fa-solid fa-link):](https://www.fortinet.com/blog/threat-research/new-ebpf-filters-for-symbiote-and-bpfdoor-malware)
 
 
 Hacking IoT 
