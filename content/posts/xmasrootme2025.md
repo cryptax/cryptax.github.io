@@ -324,7 +324,7 @@ Unfortunately, it's very long, so we need to find another trick.
 
 ### Linearity
 
-The key observation is that the `work()` function is linear over GF(2): it only does XORs and shifts. 
+The key observation is that the `work()` function is *linear over GF(2)*: it only does XORs and shifts. 
 
 This means that each update of `gift_state` can be written as a matrix multiplication `x_next = M * x` where M is a 192×192 binary matrix. 
 
@@ -357,6 +357,96 @@ def matpow(M, k):
     return R
 ```
 
+### Building the matrix
+
+We are going to build a matrix M[x,y] where
+
+- M[x,y] = 1 means that new gift_state[x] = old gift_state[y].
+- M[x,y] = 0 means that new gift_state[x] is not related to old gift_state[y].
+
+With the following code, we have the first gift_state which is an XOR of selected old bits. 
+
+```python
+for t in self.instructions:
+            s ^= self.gift_state[t-1]
+```		
+
+So, we can put 1 in M[0, t-1].
+
+Then, for the other rows, notice that the code shifts all gift_state to the right:
+
+```python
+self.gift_state = [s] + self.gift_state[:-1]
+```
+
+So, for the matrix:
+
+```python
+for i in range(1, n):
+    M[i, i-1] = 1
+```
+
+
+### Solution
+
+```python
+import numpy as np
+
+instructions = [192,191,190,189,187,183,178,174,173,171,170,167,166,165,162,160,159,158,157,155,
+149,148,147,146,143,139,137,135,131,130,123,119,117,116,115,113,111,110,109,108,106,105,102,100,
+99,94,93,90,89,85,81,75,74,73,72,71,70,69,68,67,65,64,63,60,58,57,55,54,51,50,47,45,44,41,40,
+39,38,37,32,30,29,25,24,23,22,20,19,18,16,14,12,10,9,7,5,4,3,2]
+
+gift_state = [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1]
+
+n = len(gift_state)
+
+# we build the matrix
+M = np.zeros((n, n), dtype=np.uint8)
+
+for t in instructions:
+    M[0, t-1] = 1
+
+for i in range(1, n):
+    M[i, i-1] = 1
+
+# @ is matrix multiplication in numpy
+# multiply with a vector
+def matvec(M, v):
+    return (M @ v) % 2
+
+# multiply 2 matrix
+def matmul(A, B):
+    return (A @ B) % 2
+
+# fast exponentiation: M^k
+def matpow(M, k):
+    R = np.eye(n, dtype=np.uint8)
+    A = M.copy()
+    while k > 0:
+        if k & 1:
+            R = matmul(R, A)
+        A = matmul(A, A)
+        k >>= 1
+    return R
+
+REQUIRED_WORK = 1337133713371337133713371337133713371337
+
+# Compute M^REQUIRED_WORK
+Mk = matpow(M, REQUIRED_WORK)
+
+# Apply to initial state
+initial = np.array(gift_state, dtype=np.uint8)
+final = matvec(Mk, initial)
+
+# Decode flag
+bits = ''.join(str(int(b)) for b in final)
+flag = int(bits, 2).to_bytes(24, 'little').decode()
+
+print(flag)
+```
+
+The flag is `RM{ThX_4_th3_h3lP_;)_:)}`
 
 ## X-Mas Assistant Day 5
 
