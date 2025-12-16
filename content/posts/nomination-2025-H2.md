@@ -33,7 +33,7 @@ Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, p
 | Best **AI** talk | Pancake, *Vibe Reversing*, [r2con](https://radare.org/con/2025/) |
 | Best **Hacking** paper | N. Seriot, *Print to Play*, [PagedOut](https://pagedout.institute/download/PagedOut_007.pdf) e-Zine, page 38 |
 | Best **new tool** for reverse engineering :(fa-solid fa-wrench): | [r2mcp](https://github.com/radareorg/radare2-mcp) |
-| Best **not-so-new tool** I learned to use during H1 2025 :(fa-solid fa-wrench): | [polybar](https://github.com/polybar/polybar) |
+| Best **not-so-new tool** I learned to use during H2 2025 :(fa-solid fa-wrench): | [polybar](https://github.com/polybar/polybar) |
 | Best conference **food** :(fa-solid fa-utensils): | [UYBHYS](https://www.unlockyourbrain.bzh/) |
 | Best **CTF challenge** | [Xmas Root-Me Challenge Day 03](https://ctf.xmas.root-me.org/challenges) |
 
