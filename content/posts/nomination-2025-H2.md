@@ -28,7 +28,7 @@ Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, p
 
 | Category                        | Nominated               |
 | ------------------------------- | ----------------------- |
-| Best **security talk** talk |  W. Beukema, [Trust me, I'm a shortcut: new lnk abuse methods](https://blackalps.ch/ba-25/talks.php#44) |
+| Best **security** talk |  W. Beukema, [Trust me, I'm a shortcut: new lnk abuse methods](https://blackalps.ch/ba-25/talks.php#44) |
 | Best **malware research** paper | T. Letailleur, [LinkPro: eBPF rootkit analysis](https://www.synacktiv.com/en/publications/linkpro-ebpf-rootkit-analysis) |
 | Best **AI** talk | Pancake, *Vibe Reversing*, [r2con](https://radare.org/con/2025/) |
 | Best **hacking** paper | N. Seriot, *Print to Play*, [PagedOut](https://pagedout.institute/download/PagedOut_007.pdf) e-Zine, page 38 |
@@ -37,4 +37,4 @@ Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, p
 | Best conference **food** :(fa-solid fa-utensils): | [UYBHYS](https://www.unlockyourbrain.bzh/) |
 | Best **CTF challenge** | [Xmas Root-Me Challenge Day 03](https://ctf.xmas.root-me.org/challenges) |
 
-There were many runner-ups: lots of excellent material to digest at [r2con](https://radare.org/con/2025/) or in [PagedOut](https://pagedout.institute/download/PagedOut_007.pdf), an [technical blog post by NVISO on Frida](https://blog.nviso.eu/2025/10/14/patching-android-arm64-library-initializers-for-easy-frida-instrumentation-and-debugging/)...
+There were many runner-ups: lots of excellent material to digest at [r2con](https://radare.org/con/2025/) or in [PagedOut](https://pagedout.institute/download/PagedOut_007.pdf), a [technical blog post by NVISO on Frida](https://blog.nviso.eu/2025/10/14/patching-android-arm64-library-initializers-for-easy-frida-instrumentation-and-debugging/)...
