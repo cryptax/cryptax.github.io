@@ -21,7 +21,7 @@ tags:
 - npm
 ---
 
-Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, papers, challenges (etc) for the first half of 2025. Nothing more than that. Okay?
+Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, papers, challenges (etc) for the second half of 2025. Nothing more than that. Okay?
 
 # H2 2025
 
