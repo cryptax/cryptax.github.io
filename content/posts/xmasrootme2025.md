@@ -639,3 +639,259 @@ Then, on the web interface, we press "Claim the Flag" and get it.
 ![](/images/xmas2025-day5-flag.png)
 
 The flag is `RM{N0_S3cr3t_C4n_B3_H1dd3n_0n_Ch41n}`.
+
+## X-Mas List Day 6
+
+### Description
+
+```
+Root-Me's volunteers have prepared their wish lists to Father Christmas, nevertheless it seems that some lists with, specific requests, are only accessible to Father Christmas himself. However, a jealous elf, unhappy about not being able to prepare all the gifts has decided to try to get access no matter what. Unfortunately he did not succeed, which is why he's requesting for your help.
+
+The only thing the elf managed is to get a network capture of when Father Christmas logged onto the app where the lists are stored.
+
+Now it's your turn to help the elf and find a way to access the restricted lists, they might even hide something you're looking for.
+```
+
+We are given an ELF 64 executable `listviewer` and a pcap `dump.pcapng`. We can also launch our own instance for the challenge.
+
+### A peek in the PCAP
+
+The PCAP shows TCP packets between 172.21.0.1 and 172.21.0.2. There are only TCP packets. One of the pcaps shows the string "ListViewer 1.0" in its data. Other pcaps have hexstring as data. The data does not have any immediate meaning, probably encrypted.
+
+![](/images/xmas2025-day6-data2.png)
+
+### Launching ListViewer
+
+The executable is a GTK executable with a screen where we provide the address, port, username and password to login the server. At first, we don't have any credentials, so we can create an account.
+
+![](/images/xmas2025-day6-runviewer.png)
+
+When logged in, we see several lists. We view all lists (e.g the "exploit" list), but there is no interesting information, except the last list, Mika, is not viewable because we don't have permission to access. Interesting ;)
+
+![](/images/xmas2025-day6-lists.png)
+![](/images/xmas2025-day6-exploit.png)
+
+> We probably want to read this unaccessible list, as Father Christmas. To do so, we must understand how the software communicates with the server.
+
+### Reversing ListViewer
+
+
+I use [r2ai](https://github.com/radareorg/r2ai) to reverse the main functions of `listviewer`.
+
+The `main` handles the GTK calls for the login/connect screen. This is not really important for us, except it gives us the address of the connect function - 0x3500 - and the function to view lists, 0x3160. Also, we see the binary uses OpenSSL for crypto.
+
+```c
+OPENSSL_init_crypto(0xc, 0);
+OPENSSL_init_crypto(2, 0);
+..
+gtk_grid_attach(login_grid, username_entry, 1, 2, 1, 1);
+gtk_grid_attach(login_grid, password_label, 0, 3, 1, 1);
+gtk_grid_attach(login_grid, password_entry, 1, 3, 1, 1);
+gtk_grid_attach(login_grid, register_checkbox, 0, 4, 2, 1);
+GtkWidget *connect_button = gtk_button_new_with_label("Connect");
+g_signal_connect_data(connect_button, "clicked", 0x3500, NULL, NULL, 0);
+..
+GtkWidget *refresh_button = gtk_button_new_with_label("Refresh");
+GtkWidget *view_button = gtk_button_new_with_label("View selected list");
+    
+g_signal_connect_data(refresh_button, "clicked", 0x3b00, NULL, NULL, 0);
+g_signal_connect_data(view_button, "clicked", 0x3160, NULL, NULL, 0);
+```
+
+A function, in 0x2ca0, handles the communication with the server. It uses a TCP socket and obviously encrypts data with AES ECB.
+
+```c
+    char *key = (char*)0x6284;
+    ...
+    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+    
+    if (!ctx) {
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, 1, format_string, encryption_failed_message);
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return -1;
+    }
+    
+    if (!EVP_EncryptInit_ex(ctx, EVP_aes_128_ecb(), NULL, key, NULL)) {
+        EVP_CIPHER_CTX_free(ctx);
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, 1, format_string, encryption_failed_message);
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return -1;
+    }
+    
+    EVP_CIPHER_CTX_set_padding(ctx, 1);
+    
+    if (!EVP_EncryptUpdate(ctx, output_buffer, &output_len, data, data_len)) {
+        EVP_CIPHER_CTX_free(ctx);
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, 1, format_string, encryption_failed_message);
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return -1;
+    }
+    
+    int temp_len = output_len;
+    if (!EVP_EncryptFinal_ex(ctx, output_buffer + temp_len, &output_len)) {
+        EVP_CIPHER_CTX_free(ctx);
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, 1, format_string, encryption_failed_message);
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return -1;
+    }
+    
+    temp_len += output_len;
+    EVP_CIPHER_CTX_free(ctx);
+```
+
+> This is the alleged C code that AI works out. Remember it may be incorrect, but for now, this is pretty helpful and explicit.
+
+After this encryption, the code converts the binary string to a hexstring. The comments are from the AI:
+
+```c
+   // Convert binary data to hex string
+    char *src = output_buffer;
+    char *dst = hex_buffer;
+    for (int i = 0; i < temp_len; i++) {
+        unsigned char byte = *src++;
+        unsigned char hi = (byte >> 4) & 0xF;
+        unsigned char lo = byte & 0xF;
+        
+        *dst++ = hi > 9 ? hi + 'a' - 10 : hi + '0';
+        *dst++ = lo > 9 ? lo + 'a' - 10 : lo + '0';
+    }
+    *dst = 0;
+```
+
+Finally, communication occurs - on the socket.
+
+```c
+    if (send(socket_fd, newline, 1, 0) <= 0) {
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, 1, format_string, send_failed_message);
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return -1;
+    }
+```
+
+And then, we read incoming data from the server. We won't detail it, but it's the opposite: convert hexstring to binary, then decrypt with AES ECB.
+
+> Issue. We don't have the key. The variable is stored at 0x6284, but the value is filled dynamically.
+
+We have a look at the login/connect function at 0x3500. It opens a socket to communicate with the server:
+
+```c
+    if (getaddrinfo(server_str, port_buf, &(struct addrinfo){
+        .ai_family = 0, 
+        .ai_socktype = 1,
+        .ai_flags = 0x20
+    }, &result) != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(errno));
+        void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, "%s", "Unable to connect or handshake with server.");
+        gtk_dialog_run(dialog);
+        gtk_widget_destroy(dialog);
+        return 0;
+    }
+
+    for (struct addrinfo *p = result; p != NULL; p = p->ai_next) {
+        sock_fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
+        if (sock_fd < 0) continue;
+
+        if (connect(sock_fd, p->ai_addr, p->ai_addrlen) < 0) {
+            perror("connect");
+            close(sock_fd);
+            continue;
+        }
+```
+
+> This code was obtained with `r2ai -d` with Claude 3.7
+
+Then, it reads on the socket and expects the header `ListViewer v1.0`. The AI doesn't decompile that very well (ListViewer is truncated in `ListView` + `er v1.0`) but it's understandable:
+
+```c
+ if (memcmp(recv_buffer, "ListView", 8) != 0 || memcmp(recv_buffer + 8, "er v1.0", 7) != 0) {
+            fwrite("Unexpected handshake header\n", 1, 28, stderr);
+            close(sock_fd);
+            freeaddrinfo(result);
+            void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, "%s", "Handshake with server failed.");
+            gtk_dialog_run(dialog);
+            gtk_widget_destroy(dialog);
+            return 0;
+        }
+```
+
+Then, the binary decrypts the *session key*. That's the key that will be used for AES ECB! This key is sent by the server in an encrypted form, via AES [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode).
+
+```c
+ ctx = EVP_CIPHER_CTX_new();
+        if (!ctx) {
+            fwrite("Session key decrypt failed\n", 1, 27, stderr);
+            close(sock_fd);
+            freeaddrinfo(result);
+            void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, "%s", "Handshake with server failed.");
+            gtk_dialog_run(dialog);
+            gtk_widget_destroy(dialog);
+            return 0;
+        }
+
+        if (!EVP_DecryptInit_ex(ctx, EVP_aes_128_gcm(), NULL, NULL, NULL) ||
+            !EVP_CIPHER_CTX_ctrl(ctx, 9, 0xC, NULL) ||
+            !EVP_DecryptInit_ex(ctx, NULL, NULL, (unsigned char*)0x4320, (unsigned char*)0x4330) ||
+            !EVP_DecryptUpdate(ctx, decrypt_buffer, &output_len, recv_buffer, 0x10) ||
+            !EVP_CIPHER_CTX_ctrl(ctx, 0x11, 0x10, decrypt_buffer) ||
+            !EVP_DecryptFinal_ex(ctx, decrypt_buffer + output_len, &output_len)) {
+            EVP_CIPHER_CTX_free(ctx);
+            fwrite("Session key decrypt failed\n", 1, 27, stderr);
+            close(sock_fd);
+            freeaddrinfo(result);
+            void *dialog = gtk_message_dialog_new(*(void**)0x62f0, 3, 3, "%s", "Handshake with server failed.");
+            gtk_dialog_run(dialog);
+            gtk_widget_destroy(dialog);
+            return 0;
+        }
+```
+
+The AES GCM key is hard coded at 0x4330, and the IV at 0x4320. In AES GCM, the IV is 12 bytes long, and the key 16 bytes.
+
+```
+[0x00003500]> px 12 @ 0x4320
+- offset -  2021 2223 2425 2627 2829 2A2B 2C2D 2E2F  0123456789ABCDEF
+0x00004320  baa0 6370 0231 c94c a161 8c6c      	     ..cp.1.L.a.l
+[0x00003500]> px 16 @ 0x4330
+- offset -  3031 3233 3435 3637 3839 3A3B 3C3D 3E3F  0123456789ABCDEF
+0x00004330  f919 81d6 bcb8 72f4 3431 9841 8615 2197  ......r.41.A..!.
+```
+
+Wait! There's a little trick after this decryption. The binary is XORing the decrypted buffer with 0xABABABAB.
+
+```c
+*(int*)0x6284 = *(int*)decrypt_buffer ^ 0xABABABAB;
+*(int*)(0x6284 + 4) = *(int*)(decrypt_buffer + 4) ^ 0xABABABAB;
+*(int*)(0x6284 + 8) = *(int*)(decrypt_buffer + 8) ^ 0xABABABAB;
+*(int*)(0x6284 + 12) = *(int*)(decrypt_buffer + 12) ^ 0xABABABAB;
+```
+
+> Note the address: 0x6284. This is the address for the AES ECB key.
+
+After key setup, we notice commands the server understands. Obviously, to register, we must send a string `REGISTER username password` to the server. This string is AES ECB encrypted with the session key.
+
+```c
+    if (gtk_toggle_button_get_active(*(void**)0x62c0)) {
+            snprintf(message_buffer, 0x400, "REGISTER %s %s", username, password);
+        } else {
+            snprintf(message_buffer, 0x400, "LOGIN %s %s", username, password);
+        }
+```
+
+There is also a `LOGIN` command, and in the binary we also spot a `LIST` command to display a given list.
+
+### Communicate with the server
+
+We put it together and write a Python program that:
+
+1. Connects to the server
+2. Checks it receives the ListViewer string ("handshake" string)
+3. Compute the session key
+4. Send our encrypted commands: let's try with a registration of a new user.
+
+We use the Crypto.Cipher Python package from pycryptodome. The implementation is not difficult, but ... **it does not work**! The server answers an error all the time.
+
