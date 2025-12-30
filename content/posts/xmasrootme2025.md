@@ -884,14 +884,416 @@ After key setup, we notice commands the server understands. Obviously, to regist
 
 There is also a `LOGIN` command, and in the binary we also spot a `LIST` command to display a given list.
 
-### Communicate with the server
+### Fail
 
 We put it together and write a Python program that:
 
 1. Connects to the server
+
+```
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((HOST, PORT))
+```
+
 2. Checks it receives the ListViewer string ("handshake" string)
+
+```python
+expected = b'ListViewer v1.0'
+hs = s.recv(len(expected))
+if not hs.startswith(expected):
+    logger.error(f'[-] Handshake error. Received: {hs}')
+    s.close()
+    quit()
+```
+
 3. Compute the session key
+
+```python
+    ciphertext = encrypted_data[:16]  # Encrypted session key
+    auth_tag = encrypted_data[16:32]   # GCM authentication tag
+    cipher = AES.new(gcm_key, AES.MODE_GCM, nonce=gcm_iv)
+    try:
+        decrypted_key = cipher.decrypt_and_verify(ciphertext, auth_tag)
+        k = strxor(decrypted_key, b'\xab'* 16)
+	return k
+    except ValueError as e:
+    	logger.error(f"GCM authentication failed: {e}")
+        quit()
+```
+
 4. Send our encrypted commands: let's try with a registration of a new user.
 
-We use the Crypto.Cipher Python package from pycryptodome. The implementation is not difficult, but ... **it does not work**! The server answers an error all the time.
+```python
+def encrypt_cmd(session_key, cmd):
+    logger.debug(f"session_key={session_key.hex()} cmd={cmd}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    ct = cipher.encrypt(pad(cmd.encode(), 16))
+    logger.debug(f"encrypted={binascii.hexlify(ct)}")
+    return binascii.hexlify(ct)
+```
+
+
+
+We use the Crypto.Cipher Python package from pycryptodome.
+
+```python
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+import binascii
+```
+
+**It does not work**! The server answers an error all the time.
+
+Instead of trying to communicate with the server, I decide to try and decrypt the messages in the PCAP. It's exactly the same logic, except we don't need all the socket stuff.
+
+Same thing: it doesn't work, and I am unable to decrypt messages.
+
+```python
+def decrypt_cmd(session_key, ct):
+    logger.debug(f"session_key={session_key.hex()} ct={ct}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    pt = cipher.decrypt(binascii.unhexlify(ct))
+    logger.debug(f"pt={pt}")
+    return unpad(pt, 16).decode(errors="ignore")
+```
+
+I do read the handshake correctly, and get a correct session key as the AES CGM function `decrypt_and_verify` does not throw any exception.
+
+> We'll see afterwards that this is however not exactly the correct session key.
+
+### Fixing the session key
+
+I chose to reverse the function with Ghidra this time, to get another point of view.
+The decompiled code is very cranky. It gives the impression that the XOR is done on the decrypted text + on its length.
+
+```c
+DAT_00106294 = 1;
+pt_len = local_46c;
+uStack_464 = pt;
+uStack_45c = local_470;
+register0x00001208 = 0xabababab;
+_ababab = 0xabababababababab;
+register0x0000120c = 0xabababab;
+auVar1._4_8_ = pt;
+auVar1._0_4_ = local_46c;
+auVar1._12_4_ = local_470;
+_ababab = _ababab ^ auVar1;
+```
+
+> I messed around with r2ai, Ghidra, r2 on this part, and in the end, asked a friend who had solved it for a hint.
+
+After the XOR, the key is rotated left:
+
+```python
+decrypted_key = cipher.decrypt_and_verify(ciphertext, auth_tag)
+k = strxor(decrypted_key, b'\xab'* 16)
+logging.debug(f'decrypted_key={decrypted_key} k={k}')
+session_key = k[12:16] + k[0:12]
+```
+
+### Decrypting the PCAP packets
+
+I get the data from the PCAP packets. They can be extracted automatically with tshark.
+
+```
+tshark -r dump.pcapng \                 
+  -Y "tcp.payload && (ip.src == 163.172.66.212 || ip.dst == 163.172.66.212)" \
+  -T fields -e tcp.payload
+```
+
+Pay attention that this produces a hexstring, where really the TCP packet has binary data, so we must do an initial `unhexlify` to convert to binary data.
+
+Then I fix my code for the session key. Finally, my script works, and reveals the password for Father Christmas!
+
+
+```
+$ python3 staticsolve.py
+[INFO] Static Solve
+[DEBUG] len_data=32
+[DEBUG] decrypted_key=b'oN\xcb(G\xa3\x9d\xc4\x8d\x8d\xa1\xac\x0e\xd3\x93\xfd' k=b'\xc4\xe5`\x83\xec\x086o&&\n\x07\xa5x8V'
+[DEBUG] session_key len=16
+[INFO] [+] session key = a5783856c4e56083ec08366f26260a07
+[DEBUG] session_key=a5783856c4e56083ec08366f26260a07 ct=b'81e0994c037dffdd8c4ef6e242234cd303ab364c58ae20eb15703cbecec5bf10bc710b2c5
+74db81d23434836f24d8224db9dfff7095a8f6743033d65e854c82e'
+[DEBUG] pt=b'LOGIN fatherchristmas hOa84ONoAu8MfmPZzNK7Zpr43hCOGqD\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b'
+```
+
+So, we have valid credentials: `fatherchristmas:hOa84ONoAu8MfmPZzNK7Zpr43hCOGqD`.
+
+
+```python
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+import logging
+import binascii
+
+KEY = bytes.fromhex(
+    "f9 19 81 d6 bc b8 72 f4 34 31 98 41 86 15 21 97"
+)
+IV = bytes.fromhex(
+    "ba a0 63 70 02 31 c9 4c a1 61 8c 6c"
+)
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="[%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+def encrypt_cmd(session_key, cmd):
+    logger.debug(f"session_key={session_key.hex()} cmd={cmd}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    ct = cipher.encrypt(pad(cmd.encode(), 16))
+    logger.debug(f"encrypted={binascii.hexlify(ct)}")
+    # Return ASCII hex bytes terminated by newline (protocol expects newline)
+    return binascii.hexlify(ct) + b"\n"
+
+def decrypt_cmd(session_key, ct):
+    logger.debug(f"session_key={session_key.hex()} ct={ct}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    pt = cipher.decrypt(binascii.unhexlify(ct))
+    logger.debug(f"pt={pt}")
+    return unpad(pt, 16).decode(errors="ignore")
+
+def strxor(a, b):
+    return bytes(x ^ y for x, y in zip(a, b))
+
+def get_session_key(encrypted_data):
+    logger.debug(f"len_data={len(encrypted_data)}")
+    gcm_key = bytes([
+        0xf9, 0x19, 0x81, 0xd6, 0xbc, 0xb8, 0x72, 0xf4,
+        0x34, 0x31, 0x98, 0x41, 0x86, 0x15, 0x21, 0x97
+    ])
+    
+    # Hardcoded IV/nonce (at 0x4320, 12 bytes for GCM)
+    gcm_iv = bytes([
+        0xba, 0xa0, 0x63, 0x70, 0x02, 0x31, 0xc9, 0x4c,
+        0xa1, 0x61, 0x8c, 0x6c
+    ])
+    
+    # Split the received data
+    ciphertext = encrypted_data[:16]  # Encrypted session key
+    auth_tag = encrypted_data[16:32]   # GCM authentication tag
+    cipher = AES.new(gcm_key, AES.MODE_GCM, nonce=gcm_iv)
+    try:
+        decrypted_key = cipher.decrypt_and_verify(ciphertext, auth_tag)
+        k = strxor(decrypted_key, b'\xab'* 16)
+        logging.debug(f'decrypted_key={decrypted_key} k={k}')
+        # strange 4-byte shift
+        session_key = k[12:16] + k[0:12]
+        logging.debug(f'session_key len={len(session_key)}')
+        return session_key
+    except ValueError as e:
+        logger.error(f"GCM authentication failed: {e}")
+        quit()
+
+    return None
+
+data = [
+    "4c6973745669657765722076312e303dd1840258faa1d1508c3740b6c89f643115c07d6005cbc65f247b27ce01fa12",
+    "3831653039393463303337646666646438633465663665323432323334636433303361623336346335386165323065623135373033636265636563356266313062633731306232633537346462383164323334333438333666323464383232346462396466666637303935613866363734333033336436356538353463383265"
+]
+
+# Receive handshake
+logger.info('Static Solve')
+expected = b'ListViewer v1.0'
+hs = binascii.unhexlify(data[0])[:len(expected)]
+if not hs.startswith(expected):
+    logger.error(f'[-] Handshake error. Received: {hs}')
+    s.close()
+    quit()
+    
+# Receive session key
+encrypted_data = binascii.unhexlify(data[0])[len(expected):]
+session_key = get_session_key(encrypted_data)
+logger.info(f'[+] session key = {session_key.hex()}')
+
+# Decrypt response
+resp_hex = binascii.unhexlify(data[1].strip())
+decrypt_cmd(session_key, resp_hex)
+```
+
+### Reading Mika's list
+
+At this point, we can login as Father Christmas and read Mika's list. I did it with a Python program.
+
+```
+$ python3 solve.py
+2025-12-30 00:21:32,272 [INFO] [+] Connected to dyn-01.xmas.root-me.org:19967
+2025-12-30 00:21:32,304 [INFO] [+] session key = a5b72a271f5ec76dd8797c60bd06bf4f
+2025-12-30 00:21:32,326 [INFO] [+] Command LOGIN fatherchristmas hOa84ONoAu8MfmPZzNK7Zpr43hCOGqD sent
+2025-12-30 00:21:32,346 [INFO] List response: OK: Christmas list for Mika
+Items:
+- Nishacid's resignation letter
+- A list of all the flags in Root-Me so that I can finally be the best
+- RM{Sh1t_3nCrypT10n_H0h0h0_Y0u_G0t_Th3_L1sT:}
+```
+
+The flag is `RM{Sh1t_3nCrypT10n_H0h0h0_Y0u_G0t_Th3_L1sT:}`.
+
+My script:
+
+```python
+import socket
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+import logging
+import binascii
+
+HOST = "dyn-01.xmas.root-me.org"
+PORT = 19967
+USERNAME = "fatherchristmas"
+PASSWORD = "hOa84ONoAu8MfmPZzNK7Zpr43hCOGqD"
+LISTNAME = "Mika"
+
+KEY = bytes.fromhex(
+    "f9 19 81 d6 bc b8 72 f4 34 31 98 41 86 15 21 97"
+)
+IV = bytes.fromhex(
+    "ba a0 63 70 02 31 c9 4c a1 61 8c 6c"
+)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+def encrypt_cmd(session_key, cmd):
+    logger.debug(f"session_key={session_key.hex()} cmd={cmd}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    ct = cipher.encrypt(pad(cmd.encode(), 16))
+    logger.debug(f"encrypted={binascii.hexlify(ct)}")
+    # Return ASCII hex bytes terminated by newline (protocol expects newline)
+    return binascii.hexlify(ct) + b"\n"
+
+def decrypt_cmd(session_key, ct):
+    logger.debug(f"session_key={session_key.hex()} ct={ct}")
+    cipher = AES.new(session_key, AES.MODE_ECB)
+    pt = cipher.decrypt(binascii.unhexlify(ct))
+    logger.debug(f"pt={pt}")
+    return unpad(pt, 16).decode(errors="ignore")
+
+def strxor(a, b):
+    return bytes(x ^ y for x, y in zip(a, b))
+
+def get_session_key(encrypted_data):
+    logger.debug(f"len_data={len(encrypted_data)}")
+    gcm_key = bytes([
+        0xf9, 0x19, 0x81, 0xd6, 0xbc, 0xb8, 0x72, 0xf4,
+        0x34, 0x31, 0x98, 0x41, 0x86, 0x15, 0x21, 0x97
+    ])
+    
+    # Hardcoded IV/nonce (at 0x4320, 12 bytes for GCM)
+    gcm_iv = bytes([
+        0xba, 0xa0, 0x63, 0x70, 0x02, 0x31, 0xc9, 0x4c,
+        0xa1, 0x61, 0x8c, 0x6c
+    ])
+    
+    # Split the received data
+    ciphertext = encrypted_data[:16]  # Encrypted session key
+    auth_tag = encrypted_data[16:32]   # GCM authentication tag
+    cipher = AES.new(gcm_key, AES.MODE_GCM, nonce=gcm_iv)
+    try:
+        decrypted_key = cipher.decrypt_and_verify(ciphertext, auth_tag)
+        k = strxor(decrypted_key, b'\xab'* 16)
+        logging.debug(f'decrypted_key={decrypted_key} k={k}')
+        # strange 4-byte shift
+        session_key = k[12:16] + k[0:12]
+        logging.debug(f'session_key len={len(session_key)}')
+        return session_key
+    except ValueError as e:
+        logger.error(f"GCM authentication failed: {e}")
+        quit()
+
+    return None
+
+def send_cmd(sock, session_key, cmd):
+    """Encrypt `cmd`, send it, read a newline-terminated hex response and decrypt it.
+
+    Returns the decrypted plaintext string, or None on error.
+    """
+    encrypted = encrypt_cmd(session_key, cmd)
+    logger.debug(f"Sending: {encrypted}")
+    try:
+        sock.sendall(encrypted)
+    except Exception as e:
+        logger.error(f"Send failed: {e}")
+        return None
+
+    resp_hex = b""
+    while True:
+        b = sock.recv(1)
+        if not b:
+            break
+        resp_hex += b
+        if b == b"\n":
+            break
+
+    logger.debug(f"Received hex: {resp_hex}")
+    if not resp_hex:
+        return None
+
+    try:
+        return decrypt_cmd(session_key, resp_hex.strip())
+    except Exception as e:
+        logger.error(f"Decrypt failed: {e}")
+        return None
+
+# Connect
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((HOST, PORT))
+logger.info(f'[+] Connected to {HOST}:{PORT}')
+
+# Receive handshake
+expected = b'ListViewer v1.0'
+hs = s.recv(len(expected))
+if not hs.startswith(expected):
+    logger.error(f'[-] Handshake error. Received: {hs}')
+    s.close()
+    quit()
+    
+# Receive session key
+encrypted_data = s.recv(32)
+session_key = get_session_key(encrypted_data)
+logger.info(f'[+] session key = {session_key.hex()}')
+
+# Register
+# cmd = f'REGISTER {USERNAME} {PASSWORD}'
+# encrypted_cmd = encrypt_cmd(session_key, cmd)
+# resp = send_cmd(s, session_key, cmd)
+# logger.info(f'[+] Command {cmd} sent')
+# logger.debug(f'Register response: {resp}')
+# if not resp or resp.startswith('ERROR'):
+#     logger.error(f'[-] Registration failed: {resp}')
+#     s.close()
+#     quit()
+
+# Login
+cmd = f'LOGIN {USERNAME} {PASSWORD}'
+encrypted_cmd = encrypt_cmd(session_key, cmd)
+resp = send_cmd(s, session_key, cmd)
+logger.info(f'[+] Command {cmd} sent')
+logger.debug(f'Login response: {resp}')
+
+if not resp or not resp.startswith('OK:'):
+    logger.error(f'[-] Login failed: {resp}')
+    s.close()
+    quit()
+
+# Request list
+resp = send_cmd(s, session_key, f'LIST {LISTNAME}')
+if resp is None:
+    logger.error('[-] Failed to retrieve list')
+else:
+    logger.info(f'List response: {resp}')
+
+s.close()
+```
+
+### Conclusion
+
+This challenge was lovely. I enjoyed (1) the implementation of listviewer with GTK, (2) using AES GCM, and (3) the solution is quite clear. It's just a pity that that session key shift decompiles so poorly, but that's not the author's fault ;-)
+
+Thanks for designing this one!
 
