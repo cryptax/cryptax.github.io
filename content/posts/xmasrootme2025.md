@@ -2,8 +2,8 @@
 layout: post
 title: "XMas Root Me 2025"
 author: cryptax
-date: 2026-01-01
-draft: true
+date: 2026-01-13
+draft: false
 tags:
 - rootme
 - 2025

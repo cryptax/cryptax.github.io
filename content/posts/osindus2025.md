@@ -2,7 +2,7 @@
 layout: post
 title: "OSINT Industries Christmas 2025 CTF"
 author: cryptax
-date: 2025-12-26
+date: 2026-01-13
 tags:
 - OSINT
 - CTF
