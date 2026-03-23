@@ -2,13 +2,14 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2025-11-21"
+date: "2026-03-26"
 ---
 
 Conferences I spoke at:
 
 - [AMUSEC 2021](https://www.cirm-math.fr/Schedule/screen_display.php?id_renc=2653)
 - AREA 41 2016
+- [Auvergn'hack](https://www.auvergnhack.fr/) 2026
 - [Barbhack](https://barbhack.fr) 2020 2022 2025
 - [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024 2025
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
@@ -49,7 +50,7 @@ Conferences I spoke at:
 - [SSTIC](https://www.sstic.org) 2017
 - SISW 2002
 - [Sthack](https://sthack.fr/) 2019
-- [THCon](https://thcon.party) 2021 2023
+- [THCon](https://thcon.party) 2021 2023 2026
 - [Troopers](https://www.troopers.de) 2018 2023
 - IEEE TrustCom 2015
 - [UYBHYS](https://www.unlockyourbrain.bzh/) 2020 2025

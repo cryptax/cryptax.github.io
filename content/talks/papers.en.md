@@ -7,7 +7,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2025-11-27
+date: 2026-03-23
 draft: false
 ---
 # Conferences
@@ -17,6 +17,11 @@ This page lists articles published and presented at industrial or academic confe
 {{< admonition note >}}
 *By default, if no author name is mentioned, I'm the sole author*.
 {{< /admonition >}}
+
+## 2026
+
+- D. Cauquil, A. Apvrille, *Chain of Thought F's everybody*, [THCon](https://thcon.party/program/), May 2026 *to appear*
+
 
 ## 2025
 

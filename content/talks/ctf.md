@@ -2,7 +2,7 @@
 title: "CTF, CrackMe and other challenges"
 draft: false
 weight: 2
-date: "2025-11-27"
+date: "2026-03-23"
 tags:
 - challenge
 - crackme
@@ -31,6 +31,7 @@ I designed a few crackme if you feel like trying:
 
 I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
 
+- Insomni'hack 2026: 21 (with Soudure au Beurre)
 - BlackAlps 2025: 8 (with Soudure au Beurre)
 - Hack.Lu 2025: 189 (pic0wn, 2 players)
 - BSides Kristiansand 2025 Badge CTF: **1**
@@ -38,11 +39,11 @@ I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au B
 - Xmas Root Me 2024: 150
 - BlackAlps CTF 2024: 5 (with Soudure à la Raclette)
 - NOPS CTF 2024: 14
-- Nullcon Berlin CTF 2024: 2 (with Soudure au Beurre)
+- Nullcon Berlin CTF 2024: **2** (with Soudure au Beurre)
 - BruCON CTF 2023: 6 (with Soudure au Beurre)
 - THCon CTF 2023: 11
 - Insomni'hack CTF 2023: 12 (with Soudure Au Beurre)
-- GreHack CTF 2022: 1 (with Soudure Au Beurre)
+- GreHack CTF 2022: **1** (with Soudure Au Beurre)
 - Hack.lu CTF 2021: 89
 - Bambi CTF 2021 (attack & defense): 46
 - Hack.lu CTF 2020: 81
