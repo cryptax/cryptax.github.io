@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2025-12-08"
+date: "2026-04-13"
 tags:
 - r2ai
 - AI
@@ -64,7 +64,16 @@ tags:
 - SkyAI
 - Trigona
 - Rust
+- opencode
+- agent
+- skills
+
 ---
+
+# 2026
+
+- [Agent & skills setup for Insomni'hack CTF](https://medium.com/@cryptax/agent-skills-setup-for-insomnihack-ctf-c7c2b3c2e0f3), April 13, 2026.
+
 
 # 2025
 
