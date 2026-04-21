@@ -21,6 +21,7 @@ Why should I spend *human brains and time* on something which was generated in s
 
 > No, you won't know for which conference I did that 😉
 > **Yes, I am still reviewing submissions with my own brains**. I am just *asking the agent to do some initial triage*. I still have to verify classification of my agent. But it's quicker that way (see results section).
+> For confidentiality, I used a **local LLM**, served by [**LM Studio**](https://lmstudio.ai) to review.
 
 ## Setup
 
@@ -261,8 +262,8 @@ The final part, "Check", was important because otherwise the LLM kept giving me 
 
 Through screenshots, you may have noticed I used different LLMs (this is frequent when working with AI).
 
-- **Free LLMs are perfect for this**. I got excellent results with **MiniMax M2.5, freely available from OpenCode. Token usage isn't high** for reviewing.
-- **Local LLMs are an excellent option for confidentiality**. You may have noticed **Qwen 3.6** in some screenshots, which was served by a local Ollama server.
+- **Free LLMs are perfect for this**. I got excellent results with **MiniMax M2.5, freely available from OpenCode. Token usage isn't high** for reviewing. This is a good choice when the article has already been presented and is therefore public.
+- **Local LLMs are an excellent option for confidentiality**. You may have noticed **Qwen 3.6** in some screenshots, which was served by a local LM Studio server.
 
 
 ## Conclusion
