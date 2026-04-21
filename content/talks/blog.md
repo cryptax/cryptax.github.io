@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2026-04-13"
+date: "2026-04-21"
 tags:
 - r2ai
 - AI
@@ -72,6 +72,7 @@ tags:
 
 # 2026
 
+- [Reviewing the AI-generated submissions with AI](https://cryptax.github.io/posts/reviewing-ai-generated-submissions-with-ai/), April 21, 2026.
 - [Agent & skills setup for Insomni'hack CTF](https://medium.com/@cryptax/agent-skills-setup-for-insomnihack-ctf-c7c2b3c2e0f3), April 13, 2026.
 
 
