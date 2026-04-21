@@ -7,6 +7,8 @@ draft: false
 tags:
 - AI
 - Review
+- OpenCode
+- Agent
 ---
 
 # Reviewing the AI-generated submissions with AI
