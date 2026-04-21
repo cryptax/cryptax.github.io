@@ -1,0 +1,100 @@
+{{- define "content" -}}
+    {{- $params := .Scratch.Get "params" -}}
+    {{- $profile := .Site.Params.home.profile -}}
+    {{- $posts := .Site.Params.home.posts -}}
+    {{- $limit := $posts.paginate | default 3 -}}
+
+    <style>
+        /* Let the home page break out of the theme's default (narrow) content width
+           so the two columns have more room. The theme sets .page { max-width: 800px; width: 60%; }
+           so we override both. */
+        .page.home {
+            max-width: min(95vw, 1400px);
+            width: 90%;
+        }
+        .home-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .home-columns > .home-column {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+        .home-column-title {
+            margin-top: 0;
+            border-bottom: 1px solid var(--global-border-color, #e5e5e5);
+            padding-bottom: 0.3rem;
+        }
+        .home-column-more {
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+        @media screen and (max-width: 960px) {
+            .page.home {
+                max-width: 100%;
+            }
+            .home-columns {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+
+    <div class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
+        {{- /* Profile */ -}}
+        {{- if ne $profile.enable false -}}
+            {{- partial "home/profile.html" . -}}
+        {{- end -}}
+
+        {{- /* Content */ -}}
+        {{- if .Content -}}
+            <div class="single">
+                <div class="content" id="content">
+                    {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                </div>
+            </div>
+        {{- end -}}
+
+        {{- /* Two-column summary: Blog + Write-ups */ -}}
+        {{- if ne $posts.enable false -}}
+            {{- $blog := where .Site.RegularPages "Section" "posts" -}}
+            {{- $writeups := where .Site.RegularPages "Section" "writeups" -}}
+            {{- if .Site.Params.page.hiddenFromHomePage -}}
+                {{- $blog = where $blog "Params.hiddenfromhomepage" false -}}
+                {{- $writeups = where $writeups "Params.hiddenfromhomepage" false -}}
+            {{- else -}}
+                {{- $blog = where $blog "Params.hiddenfromhomepage" "!=" true -}}
+                {{- $writeups = where $writeups "Params.hiddenfromhomepage" "!=" true -}}
+            {{- end -}}
+            {{- $blog = $blog | first $limit -}}
+            {{- $writeups = $writeups | first $limit -}}
+
+            <div class="home-columns">
+                <div class="home-column">
+                    <h2 class="home-column-title">Blog</h2>
+                    {{- if $blog -}}
+                        {{- range $blog -}}
+                            {{- .Render "summary" -}}
+                        {{- end -}}
+                    {{- else -}}
+                        <p><em>No blog posts yet.</em></p>
+                    {{- end -}}
+                    <p class="home-column-more"><a href="/posts/">More blog posts &rarr;</a></p>
+                </div>
+                <div class="home-column">
+                    <h2 class="home-column-title">Write-ups</h2>
+                    {{- if $writeups -}}
+                        {{- range $writeups -}}
+                            {{- .Render "summary" -}}
+                        {{- end -}}
+                    {{- else -}}
+                        <p><em>No write-ups yet.</em></p>
+                    {{- end -}}
+                    <p class="home-column-more"><a href="/writeups/">More write-ups &rarr;</a></p>
+                </div>
+            </div>
+        {{- end -}}
+    </div>
+{{- end -}}

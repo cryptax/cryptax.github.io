@@ -1,0 +1,29 @@
+# Hugo build output
+/public/
+/.hugo_build.lock
+/resources/_gen
+
+# Editor / OS backup and swap files
+*~
+*.bak
+*.orig
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Editor / IDE config
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Node / package manager artifacts (for theme deps)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Local env / secret files
+.env
+.env.local

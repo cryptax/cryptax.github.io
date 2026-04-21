@@ -14,7 +14,7 @@ In a prior life, I used to implement *cryptographic algorithms and security prot
 
 - **Linux** Mint. I like *Debian* too.
 - [**FVWM**](https://www.fvwm.org) Window Manager. It's old, but lightweight, fast and very customizable.
-- [**Alpine**](https://en.wikipedia.org/wiki/Alpine_(email_client)) to read my emails. Same, it's old but lightweight and very easy to backup emails.
+- I was recently forced out from [**Alpine**](https://en.wikipedia.org/wiki/Alpine_(email_client)) to read my emails, and now use **Thunderbird**.
 - **Emacs** is my favorite editor. I used *Visual Studio Code* for a couple of months... and came back to Emacs in the end.
 
 
@@ -23,6 +23,7 @@ Gosh, do you only like *old tools*? Hmm... often, but *not all the time*! :wink:
 - **Docker** is a great invention!
 - I love **Markdown**, and most of the time that's what I use to write documents, and then transform them using [Pandoc](https://pandoc.org). My research slides are written using direct *LaTeX / Beamer* though, especially because I need TikZ figures all the time.
 - I used to like very much *ZFS* (on Solaris), but its support on Linux was problematic. Since then, I switched to **LVM** and like it very much.
+- I'm currently testing [**Warp Terminal**](https://warp.dev) which looks pretty good.
 - I never really used IRC and prefer **Discord**.
 - I'm always on the look out for *new tools* which really help, as long as they are not too heavy. Feel free to share.
 
