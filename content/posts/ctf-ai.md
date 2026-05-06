@@ -13,6 +13,8 @@ tags:
 
 ## Myth #1: "CTF players hate AI because it spoils CTFs"
 
+*Reality: this is not the opinion of the majority of CTF players*
+
 ![](/images/ctf2026-destroyed.png)
 
 "AI has destroyed CTFs" - this kind of message is frequent on the net.
@@ -33,24 +35,34 @@ However, in a [feedback form of Ph0wn CTF 2026](https://github.com/ph0wn/writeup
 
 ![](/images/ctf2026-flag.png)
 
-It seems AI is rather an issue for **challenge creators** who (1) hate to see their hard work be solved by AI in seconds, (2) don't understand teams who solve without understanding the challenge, (3) don't like to spend time hardening their challenge towards AI or (4) are unsure what's the best option to do so.
+It seems AI is rather an issue for **challenge creators** who
 
-> Conclusion: 80% of CTF players see no issue with using AI over CTF challenges. They welcome the technology and want to learn about it. Challenge creators are more reluctant, partly discouraged or helpless faced to machines.
+1. Hate to see their hard work be solved by AI in seconds,
+2. Don't understand teams who solve without understanding the challenge,
+3. Don't like to spend time hardening their challenge towards AI or (4) are unsure what's the best option to do so.
+
+> Conclusion: **80% of CTF players see no issue with using AI** over CTF challenges. They welcome the technology and want to learn about it. Challenge creators are more reluctant, partly discouraged or helpless faced to machines.
 
 ## Myth #2: "Solving with AI requires no skills"
+
+*Reality: AI requires different skills*
 
 People often show contempt towards players who solve with AI. A little like *Scripts Kiddies* for hackers.
 
 In reality, while some challenges are solved with no glory, several challenges require (1) a good prompt, (2) human guidance, (3) a good AI setup with tailored agents, skills, scripts.
 
 Ph0wn feedback demonstrates this point: in a question, the feedback form asked how much AI helped for each challenge.
-The responses show very different results. **In absolutely all challenges, we had some teams report "AI did not help", while other teams reported it helped**. Sometimes, the answers are opposites. For example, for Sploosh Kaboom 2 challenges, 1 team reported an entirely automatic solve with AI, while 3 teams said AI did not help at all.
+The responses show very different results.
+
+**In absolutely all challenges, we had some teams report "AI did not help", while other teams reported it helped**. Sometimes, the answers are opposites. For example, for Sploosh Kaboom 2 challenges, 1 team reported an entirely automatic solve with AI, while 3 teams said AI did not help at all.
 
 ![](/images/ctf2026-aihelp.png)
 
-> Conclusion: **AI does not help all teams the same way**. It would be unfair to see AI does not give a strong advantage to teams, but it would be equally unfair to claim teams who flag with AI demonstrate no intelligence of their own.
+> Conclusion: **AI does not help all teams the same way**. It would be unfair to see AI does not give a strong advantage to teams, but it would be equally unfair to claim teams who flag with AI demonstrate no intelligence 💡 of their own.
 
 ## Myth #3: "CTFs are Pay to Win"
+
+*Reality: very few CTF players will pay to win*
 
 Some teams very probably use AI better than others, or have a better setup. Better setup... is that about AI subscription? Does a large AI subscription give unfair advantage to the team? For sure, it helps.
 
@@ -58,16 +70,18 @@ Ph0wn feedback forms tend to prove that most CTF players do not have costly setu
 
 ![](/images/ctf2026-aisetup.png)
 
-*But* this is probably different in more competitve CTFs like Insomni'hack CTF, where it seemed that nearly all teams had access to a paid subscription, sometimes "unlimited plans". Discussing with a few teams though, I haven't heard yet of any CTF which purchases an AI plan **only for the CTFs**. Most of the time, they are re-using a subscription they have from their work, from a friend, or from access to in-house AI servers.
+*But* this is probably **different in more competitve CTFs** like Insomni'hack CTF, where it seemed that nearly all teams had access to a paid subscription, sometimes "unlimited plans". Discussing with a few teams though, I haven't heard yet of any CTF which purchases an AI plan **only for the CTFs**. Most of the time, they are re-using a subscription they have from their work, from a friend, or from access to in-house AI servers.
 
 ## There is a discrepancy between what CTF players say publicly and what they do
 
 Publicly, CTF players "hate AI", "never use AI", "use it responsibly", "only for side questions" etc.
 From organizers view or an external visitor, **AI is on all screens**, many (if not most) teams use it intensively.
 
+![](/images/ctf2026-lie.png)
+
 I think *it's not a blatant lie*, but more a cognitive biais: **we convince ourselves our brains did the hard part**, it's above us to humanly admit we were **lazy** and that it's the opposite, *AI did most of the job* (AI can't talk and say we lied). Lack of proof.
 
-![](/images/ctf2026-lie.png)
+
 
 
 
@@ -100,6 +114,7 @@ I think *it's not a blatant lie*, but more a cognitive biais: **we convince ours
 | Shaming of teams who supply fake AI flag | Organization | Is it really ethical to shame? |
 | Challenge instructions by video  | Technical    | File size |
 | Inject prompt to convince AI not to solve | Technical | Needs to be fine tuned. Only works for a couple of months.  |
+| Injecting a prompt that suggest something is illegal | Technical | See PagedOut magazine. Tried but abandonned for Ph0wn because we couldn't make it work |
 | Inject false lead that slows AI  | Technical    | Does not affect all teams - Ph0wn 2026 "Ancient Stories", Hack10 |
 | Insert easy fake flag and hope AI stops on it | Technical | Does not work all the time |
 | Inject prompt in polyglot        | Technical  | Contemplated for Ph0wn 2026. Used at RITSEC 2026 |
@@ -133,7 +148,7 @@ After [our talk at THCon, with Damien Cauquil](https://thcon.party/events/#chain
 - Blocking AI or not? People have different ideas on the questions, both being perfectly valid opinions. On one side, some participants say they no longer want to participate in CTFs where AI is permitted. On the other side, others say hackers have always had access to all tools, and AI is one of the tools to learn to use.
 
 
-## References
+## References 📚
 
 CTFs and AI talks:
 
@@ -161,18 +176,18 @@ User feedback:
 
 Tools:
 
-- CAI wins the NeuroGrid CTF: European-built CAI (CyberSecurity AI) sets a new global benchmark, November 25, 2025 [link](https://news.aliasrobotics.com/cai-wins-the-neurogrid-ctf-european-built-cai-cybersecurity-ai-sets-a-new-global-benchmark/)
-- Yuwen Zou, Jia Liu, Wenjun Fan, CTFAgent: An LLM-powered Agent for CTF Challenge Solving, Journal of Information Security and Applications, [DOI](https://doi.org/10.1016/j.jisa.2025.104305)
+- CAI wins the NeuroGrid CTF: European-built CAI (CyberSecurity AI) sets a new global benchmark, November 25, 2025 [🔗](https://news.aliasrobotics.com/cai-wins-the-neurogrid-ctf-european-built-cai-cybersecurity-ai-sets-a-new-global-benchmark/)
+- Yuwen Zou, Jia Liu, Wenjun Fan, CTFAgent: An LLM-powered Agent for CTF Challenge Solving, Journal of Information Security and Applications, [DOI 🔗](https://doi.org/10.1016/j.jisa.2025.104305)
 
-Challenges solved with AI (at least parts):
+CTF write-ups, solved with AI (at least parts):
 
-- Cryptax, Drone and secret message, THCon CTF 2023 [🔗](https://cryptax.github.io/thcon2023-drone/)
-- Cryptax, MANUAL (crypto) - flagged with no skill, Hack.Lu CTF 2025 [🔗](https://cryptax.github.io/hacklu2025/#manual-crypto---flagged-with-no-skill)
-- Cryptax, AI: Ask for It, Double Protection 1 and 2, N0PS CTF 2024 [🔗](https://cryptax.github.io/nops2024-ai/)
-- Cryptax, Xmas Root Me CTF 2025 [🔗](https://cryptax.github.io/xmasrootme2025/)
+- Cryptax, *Drone and secret message*, THCon CTF 2023 [🔗](https://cryptax.github.io/thcon2023-drone/)
+- Cryptax, *MANUAL (crypto) - flagged with no skill*, Hack.Lu CTF 2025 [🔗](https://cryptax.github.io/hacklu2025/#manual-crypto---flagged-with-no-skill)
+- Cryptax, *AI: Ask for It, Double Protection 1 and 2*, N0PS CTF 2024 [🔗](https://cryptax.github.io/nops2024-ai/)
+- Cryptax, *Xmas Root Me CTF 2025* [🔗](https://cryptax.github.io/xmasrootme2025/)
 
 Misc:
 
-- CSAW'25, Agentic Automated CTF, July-October 2025 [🔗](https://www.csaw.io/agentic-automated-ctf)
-- 🔗 Peter Whiting, Piracy as Proof of Personhood, PagedOut #7, page 9 [pdf](https://pagedout.institute/download/PagedOut_007.pdf)
+- CSAW'25, *Agentic Automated CTF*, July-October 2025 [🔗](https://www.csaw.io/agentic-automated-ctf)
+- Peter Whiting, *Piracy as Proof of Personhood*, PagedOut #7, page 9 [🔗 ](https://pagedout.institute/download/PagedOut_007.pdf)
 - Write-ups for challenges, Ph0wn Mag #3 [🔗](https://github.com/ph0wn/writeups/tree/master/ph0wnmag/issue-03)
