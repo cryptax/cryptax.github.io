@@ -2,7 +2,7 @@
 layout: post
 title: "THCon 2026 - Forensics Challenges"
 author: cryptax
-date: 2026-5-08
+date: 2026-05-08
 tags:
 - THCon
 - CTF
