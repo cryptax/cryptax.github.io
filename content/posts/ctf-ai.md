@@ -17,7 +17,7 @@ tags:
 
 - *Re-phrased first paragraph. In particular, replaced the title "Myth #1 CTF players hate AI [..]" with "CTF players hate AI [..]: True or False?" because I found my title was too biaised. It did not express fairly enough the reality.*
 - *Added a paragraph on my (current) opinion.*
-- *Added references to [foreman](https://github.com/palkeo/foreman) and [Kabir](https://kabir.au/blog/the-ctf-scene-is-dead)*
+- *Added references to [foreman](https://github.com/palkeo/foreman), [Kabir](https://kabir.au/blog/the-ctf-scene-is-dead) and [Sthack CTF](https://sthack.fr/editions/2026/ctf.html)*
 
 ## My opinion, in short
 
@@ -194,6 +194,7 @@ Feedbacks from CTFs:
 - 🔗 [CTF and AI at BSidesSF 2026](https://blog.includesecurity.com/2026/04/ctfs-in-the-ai-era/)
 - [FEED26] Feedback from Ph0wn 2026 [🔗](https://github.com/ph0wn/writeups/tree/master/2026/feedback), in French.
 - 🔗 [39C3, "Breaking BOTS: Cheating at Blue Team CTFs with AI Speed-Runs"](https://media.ccc.de/v/39c3-breaking-bots-cheating-at-blue-team-ctfs-with-ai-speed-runs)
+- 🔗 [What Sthack CTF 2026 intends to do](https://sthack.fr/editions/2026/ctf.html)
 
 
 User feedback:
