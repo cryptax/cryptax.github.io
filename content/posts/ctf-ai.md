@@ -13,13 +13,13 @@ tags:
 
 # CTFs and Artificial Intelligence. Post Ph0wn 2026 Thoughts.
 
-*Update May 19, 2026:
+*Update May 19, 2026:*
 
-- Re-phrased first paragraph. In particular, replaced the title "Myth #1 CTF players hate AI [..]" with "CTF players hate AI [..]: True or False?" because I found my title was too biaised. It did not express fairly enough the reality.
-- Added a paragraph on my (current) opinion.
-- Added references to [foreman](https://github.com/palkeo/foreman) and [Kabir](https://kabir.au/blog/the-ctf-scene-is-dead)*
+- *Re-phrased first paragraph. In particular, replaced the title "Myth #1 CTF players hate AI [..]" with "CTF players hate AI [..]: True or False?" because I found my title was too biaised. It did not express fairly enough the reality.*
+- *Added a paragraph on my (current) opinion.*
+- *Added references to [foreman](https://github.com/palkeo/foreman) and [Kabir](https://kabir.au/blog/the-ctf-scene-is-dead)*
 
-## My opinion - in short?
+## My opinion, in short
 
 The "problem" of AI in CTFs is very complex, with pros and cons...
 
@@ -28,6 +28,15 @@ The "problem" of AI in CTFs is very complex, with pros and cons...
 - I "hate" when people tell me "it's dead": I want them to investigate solutions. I love when CTF organizers *try* something new, and even if their solution is not perfect, I support their attempts to "save" CTFs.
 - I "hate" when people tell me "everything is fine, there is no problem, AI is just a new tool". No, AI is not "just a tool", it *thinks*. Acknowledge the problem! It's *okay* to have problems...
 - I "hate" when people tell me "just adapt". Yeah, well, thanks, I'm trying to. Perhaps you should too!
+
+### What will you do for Ph0wn CTF 2027?
+
+Answer: **I really have NO idea yet.**
+
+A couple of things we tried at Ph0wn 2026 worked out (prompt injection, air gapped challenges), while others showed limits (creation of beginner challenges, hardware challenges with serial/USB/simulator access).
+
+I don't want to do Ph0wn 2027 "as in 2026" without any modification regarding AI, but I don't *know what to do yet*. I'm watching attempts from other CTFs (NorthSec, THCon, Sthack, CTE...) to see if anything works out. Not to mention that there are several organizers for Ph0wn, and we'll need to agree on a solution/mode.
+
 
 
 ## "CTF players hate AI because it spoils CTFs": True or False?
