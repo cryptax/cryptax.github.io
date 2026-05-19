@@ -2,18 +2,37 @@
 layout: post
 title: "CTFs and AI"
 author: cryptax
-date: 2026-05-06
+date: 2026-05-19
 draft: false
 tags:
 - AI
 - CTF
+- orchestration
+- dead
 ---
 
 # CTFs and Artificial Intelligence. Post Ph0wn 2026 Thoughts.
 
-## Myth #1: "CTF players hate AI because it spoils CTFs"
+*Update May 19, 2026:
 
-*Reality: this is not the opinion of the majority of CTF players*
+- Re-phrased first paragraph. In particular, replaced the title "Myth #1 CTF players hate AI [..]" with "CTF players hate AI [..]: True or False?" because I found my title was too biaised. It did not express fairly enough the reality.
+- Added a paragraph on my (current) opinion.
+- Added references to [foreman](https://github.com/palkeo/foreman) and [Kabir](https://kabir.au/blog/the-ctf-scene-is-dead)*
+
+## My opinion - in short?
+
+The "problem" of AI in CTFs is very complex, with pros and cons...
+
+> If you absolutely want my opinion, as of May 19, 2026, there you go: **I fear that CTFs are over** - like LAN parties were - but **I am such an optimistic person that I refuse to believe we won't find a solution, or a new sort of technical event which is fun and educative** like CTFs were.
+
+- I "hate" when people tell me "it's dead": I want them to investigate solutions. I love when CTF organizers *try* something new, and even if their solution is not perfect, I support their attempts to "save" CTFs.
+- I "hate" when people tell me "everything is fine, there is no problem, AI is just a new tool". No, AI is not "just a tool", it *thinks*. Acknowledge the problem! It's *okay* to have problems...
+- I "hate" when people tell me "just adapt". Yeah, well, thanks, I'm trying to. Perhaps you should too!
+
+
+## "CTF players hate AI because it spoils CTFs": True or False?
+
+*Reality: it's complex, but honestly we can't conclude either way yet*.
 
 ![](/images/ctf2026-destroyed.png)
 
@@ -41,9 +60,10 @@ It seems AI is rather an issue for **challenge creators** who
 2. Don't understand teams who solve without understanding the challenge,
 3. Don't like to spend time hardening their challenge towards AI or (4) are unsure what's the best option to do so.
 
-> Conclusion: **80% of CTF players see no issue with using AI** over CTF challenges. They welcome the technology and want to learn about it. Challenge creators are more reluctant, partly discouraged or helpless faced to machines.
+> Conclusion: the majority of public messages (on social networks, blog posts etc) condemn the use of AI in CTFs. But our anonymous survey of CTF players at Ph0wn 2026 show 80% of players are happy with using AI over CTF challenges. So, who should we believe? Is our survey reliable or not? Is it a difference between public voice and anonymous ones (see later)? As for challenge creators, yes, the majority are reluctant, partly discouraged or helpless faced to machines.
 
-## Myth #2: "Solving with AI requires no skills"
+
+## Myth : "Solving with AI requires no skills"
 
 *Reality: AI requires different skills*
 
@@ -60,7 +80,7 @@ The responses show very different results.
 
 > Conclusion: **AI does not help all teams the same way**. It would be unfair to see AI does not give a strong advantage to teams, but it would be equally unfair to claim teams who flag with AI demonstrate no intelligence 💡 of their own.
 
-## Myth #3: "CTFs are Pay to Win"
+## Myth : "CTFs are Pay to Win"
 
 *Reality: very few CTF players will pay to win*
 
@@ -153,7 +173,7 @@ After [our talk at THCon, with Damien Cauquil](https://thcon.party/events/#chain
 CTFs and AI talks:
 
 - Damien "virtualabs" Cauquil, Chain of Thought Fucks everybody, Bière Sécu Rennes 9, [🔗](https://github.com/Biere-Secu-Rennes/BSR/blob/main/bsr9/bsr9-virtualabs-chain_of_thought_fs_everybody.pdf)
-- A. Apvrille, D. Cauquil, [*Chain of Thought Fucks*](https://github.com/cryptax/talks/tree/master/THCon-2026), [THCon](https://thcon.party/events/#chain-of-thought), May 2026
+- A. Apvrille, D. Cauquil, *Chain of Thought Fucks* [🔗](https://github.com/cryptax/talks/tree/master/THCon-2026), [THCon](https://thcon.party/events/#chain-of-thought), May 2026.
 
 
 Feedbacks from CTFs:
@@ -172,12 +192,13 @@ User feedback:
 - 🔗 [Krauq, "CTF is dying because of AI...?"](https://blog.krauq.com/post/ctf-is-dying-because-of-ai)
 - 🔗 [Toot from Hoshino Lina](https://vt.social/@lina/116198976928184530)
 - 🔗 [Post from Bl4sty](https://x.com/bl4sty/status/2031022899960693222)
-
+- 🔗 [Kabir, the CTF scene is dead](https://kabir.au/blog/the-ctf-scene-is-dead)
 
 Tools:
 
 - CAI wins the NeuroGrid CTF: European-built CAI (CyberSecurity AI) sets a new global benchmark, November 25, 2025 [🔗](https://news.aliasrobotics.com/cai-wins-the-neurogrid-ctf-european-built-cai-cybersecurity-ai-sets-a-new-global-benchmark/)
 - Yuwen Zou, Jia Liu, Wenjun Fan, CTFAgent: An LLM-powered Agent for CTF Challenge Solving, Journal of Information Security and Applications, [DOI 🔗](https://doi.org/10.1016/j.jisa.2025.104305)
+- Palkeo, Foreman: a secure orchestrator for running short-lived interactive LLM sessions in sandboxed Incus containers, [🔗](https://github.com/palkeo/foreman) [blog](https://www.palkeo.com/en/blog/foreman.html)
 
 CTF write-ups, solved with AI (at least parts):
 
