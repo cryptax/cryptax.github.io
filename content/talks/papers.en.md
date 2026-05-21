@@ -20,8 +20,8 @@ This page lists articles published and presented at industrial or academic confe
 
 ## 2026
 
-- A. Apvrille, [*Targeting the elderly: from spoofing to persistence*](https://www.virusbulletin.com/conference/vb2026/abstracts/targeting-elderly-spoofing-persistence/), [Virus Bulletin](https://www.virusbulletin.com/conference/vb2026/programme/), Sevilla, Spain, October 14-16, 2026. *To appear*.
-- D. Cauquil, A. Apvrille, *Chain of Thought F's everybody*, [THCon](https://thcon.party/program/), Toulouse, France, May 2026 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/THCon-2026/ctf-ai.pdf)
+- *Targeting the elderly: from spoofing to persistence*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2026/programme/), Sevilla, Spain, October 14-16, 2026. *To appear* [:(fa-solid fa-file-lines):](https://www.virusbulletin.com/conference/vb2026/abstracts/targeting-elderly-spoofing-persistence/).
+- D. Cauquil, A. Apvrille, *Chain of Thought F's everybody*, [THCon](https://thcon.party/program/), Toulouse, France, May 2026 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/THCon-2026/ctf-ai.pdf) [:(fa-solid fa-video):](https://thcon.party/live/) starting at *3:04:54*.
 
 
 ## 2025

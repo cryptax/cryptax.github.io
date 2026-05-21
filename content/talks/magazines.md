@@ -9,7 +9,9 @@ tags:
 - publication
 - poc
 - gtfo
-date: 2025-10-28
+- ph0wn
+- magazine
+date: 2026-05-21
 draft: false
 ---
 # Journals, magazines, e-Zines etc
@@ -81,7 +83,14 @@ In Issue no 2, November 2024, [:(fa-solid fa-file-pdf):](https://github.com/ph0w
 - *R2D2*
 - *Thnxtag*
 
+In Issue no 3, March 2026, [:(fa-solid fa-file-pdf):](https://github.com/ph0wn/writeups/blob/master/ph0wnmag/issue-03/ph0wnmag.pdf):
 
+- *Flagged Pages*
+- *Operation Kiosk Stage 2*
+- *Skull Island Seal*
+- *Sploosh Kaboom Stage 1 and 2*
+- b3cha and Cryptax, *Tortuga Rum*
+- *Warm Bed*
 
 
 ## Diamond Editions **fr**
