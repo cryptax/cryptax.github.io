@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2026-03-26"
+date: "2026-05-21"
 ---
 
 Conferences I spoke at:
@@ -37,7 +37,7 @@ Conferences I spoke at:
 - [NoHat](https://nohat.it) 2020
 - [NorthSec](https://nsec.io) 2021 2025
 - Nuit du Hack 2015 2017
-- [Nullcon](https://nullcon.net) Webinar 2020 2024
+- [Nullcon](https://nullcon.net) 2020 2024
 - [Pass The Salt](https://pass-the-salt.org/) 2018 2020
 - PDPTA 2003
 - r2con [2025](https://radare.org/con/2025)
@@ -54,4 +54,4 @@ Conferences I spoke at:
 - [Troopers](https://www.troopers.de) 2018 2023
 - IEEE TrustCom 2015
 - [UYBHYS](https://www.unlockyourbrain.bzh/) 2020 2025
-- [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022 2024
+- [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022 2024 2026
