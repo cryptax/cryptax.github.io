@@ -73,6 +73,7 @@ tags:
 # 2026
 
 - [CTFs and AI](https://cryptax.github.io/posts/ctf-ai/), May 2026.
+- [What I like / don't like about Warp Terminal](https://cryptax.medium.com/what-i-like-dont-like-about-warp-terminal-f5acd0e47990), April 30, 2026.
 - [Reviewing the AI-generated submissions with AI](https://cryptax.github.io/posts/reviewing-ai-generated-submissions-with-ai/), April 21, 2026.
 - [Agent & skills setup for Insomni'hack CTF](https://medium.com/@cryptax/agent-skills-setup-for-insomnihack-ctf-c7c2b3c2e0f3), April 13, 2026.
 
