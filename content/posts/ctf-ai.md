@@ -13,6 +13,10 @@ tags:
 
 # CTFs and Artificial Intelligence. Post Ph0wn 2026 Thoughts.
 
+*Update May 26, 2026:*
+
+- Link to feedback from [NorthSec CTF](https://res260.medium.com/northsec-et-le-pouls-de-la-communaut%C3%A9-sur-lagentic-ctf-d1e55d9308cb)
+
 *Update May 19, 2026:*
 
 - *Re-phrased first paragraph. In particular, replaced the title "Myth #1 CTF players hate AI [..]" with "CTF players hate AI [..]: True or False?" because I found my title was too biaised. It did not express fairly enough the reality.*
@@ -195,6 +199,7 @@ Feedbacks from CTFs:
 - [FEED26] Feedback from Ph0wn 2026 [🔗](https://github.com/ph0wn/writeups/tree/master/2026/feedback), in French.
 - 🔗 [39C3, "Breaking BOTS: Cheating at Blue Team CTFs with AI Speed-Runs"](https://media.ccc.de/v/39c3-breaking-bots-cheating-at-blue-team-ctfs-with-ai-speed-runs)
 - 🔗 [What Sthack CTF 2026 intends to do](https://sthack.fr/editions/2026/ctf.html)
+- 🔗 [Retour sur nsec 2026: le pouls de la communauté sur l'agentic CTF](https://res260.medium.com/northsec-et-le-pouls-de-la-communaut%C3%A9-sur-lagentic-ctf-d1e55d9308cb), May 20, 2206 (in French).
 
 
 User feedback:
