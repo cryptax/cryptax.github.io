@@ -196,10 +196,10 @@ Feedbacks from CTFs:
 - 🔗 [Feedback from HACK10](https://danisy-eisyraf-portfolio.super.site/blog-posts/how-i-make-ctf-challenges-harder-to-solve-with-ai)
 - 🔗 [Retex Hack'in 2026](https://lololekik.com/fr/post/ai-vs-ctfs)
 - 🔗 [CTF and AI at BSidesSF 2026](https://blog.includesecurity.com/2026/04/ctfs-in-the-ai-era/)
-- [FEED26] Feedback from Ph0wn 2026 [🔗](https://github.com/ph0wn/writeups/tree/master/2026/feedback), in French.
+- Feedback from Ph0wn 2026 [🔗](https://github.com/ph0wn/writeups/tree/master/2026/feedback), in French.
 - 🔗 [39C3, "Breaking BOTS: Cheating at Blue Team CTFs with AI Speed-Runs"](https://media.ccc.de/v/39c3-breaking-bots-cheating-at-blue-team-ctfs-with-ai-speed-runs)
 - 🔗 [What Sthack CTF 2026 intends to do](https://sthack.fr/editions/2026/ctf.html)
-- 🔗 [Retour sur nsec 2026: le pouls de la communauté sur l'agentic CTF](https://res260.medium.com/northsec-et-le-pouls-de-la-communaut%C3%A9-sur-lagentic-ctf-d1e55d9308cb), May 20, 2206 (in French).
+- 🔗 [Retour sur nsec 2026: le pouls de la communauté sur l'agentic CTF](https://res260.medium.com/northsec-et-le-pouls-de-la-communaut%C3%A9-sur-lagentic-ctf-d1e55d9308cb), May 20, 2206, in French.
 
 
 User feedback:
