@@ -2,7 +2,7 @@
 layout: post
 title: "CTFs and AI"
 author: cryptax
-date: 2026-05-19
+date: 2026-05-26
 draft: false
 tags:
 - AI
