@@ -2,7 +2,7 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
-date: "2026-03-23"
+date: "2026-06-01"
 tags:
 - training
 - workshop
@@ -12,14 +12,15 @@ tags:
 - reverse engineering
 - r2ai
 - mcp
+- Ghidra
 ---
 
 # Training / workshops
 
-R2ai:
+Reverse engineering with AI:
 
-- *Rétro-ingénierie, bananes et IA*, at [Auvergn'hack](https://www.auvergnhack.fr/), May 2026, *to appear* **fr**
-- *Reverse engineering with r2ai* at [UYBHYS](https://unlockyourbrain.bzh/ateliers/#r2ai), November 2025 (to appear)  :(fa-solid fa-clock): 2 hours.
+- *Rétro-ingénierie, bananes et IA*, at [Auvergn'hack](https://www.auvergnhack.fr/), May 2026, **fr** (OpenCode, GhidraMCP, r2mcp) :(fa-solid fa-clock): 2.5 hours. 
+- *Reverse engineering with r2ai* at [UYBHYS](https://unlockyourbrain.bzh/ateliers/#r2ai), November 2025 :(fa-solid fa-clock): 2 hours.
 - *Crack Rust with r2ai* at [SHL](https://shl.contact) October 21, 2025 (to appear) :(fa-solid fa-clock): 2 hours.
 - *Reverse engineering with r2ai and GhidraMCP* at [BruCON 2025](https://www.brucon.org/) September 2025 :(fa-solid fa-clock): 4 hours [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/tree/master/BruCON-2025)
 
