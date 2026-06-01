@@ -25,7 +25,7 @@ At Auvergn'hack, **on the 4 conferences I followed in the afternoon, 3 were deep
 
 ## The best talks
 
-![](/assets/images/auvergnhack26-landlock.png)
+![](/images/auvergnhack26-landlock.png)
 
 1. **Landlock**, a Linux security module that lets applications sandbox themselves and restrict access to files, directories and sockets [:(fa-solid fa-file-lines):](https://blog.sekoia.io/leveraging-landlock-telemetry-for-linux-detection-engineering/). It's rather lightweight and for example an excellent solution to block against path traversal. In practice, I'm not entirely convinced this will be widely adopted and efficient, because you have to implement Landlock calls in your code, it doesn't control access to memory etc. Nevertheless, it was happy to learn about the feature and see it in action.
 
@@ -35,7 +35,7 @@ At Auvergn'hack, **on the 4 conferences I followed in the afternoon, 3 were deep
 
 ## The venue, the atmosphere
 
-![](/assets/images/auvergnhack26-venue.png)
+![](/images/auvergnhack26-venue.png)
 
 The conference took place at the PIC. It's a massive timber building with an open, airy design, plenty of natural light, and a friendly atmosphere. There are conference rooms, coworking areas, and several good-quality fast-casual dining options.
 
