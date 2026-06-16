@@ -51,7 +51,7 @@ We all loved the beginning where we had to open a digital safe to access the CTF
 
 It was such an original idea. The code was hidden in ticks (sounds) in the [intro video](https://www.youtube.com/shorts/ZOP-pttsNEI). We patiently had to work out which numbers that equalled to, and reproduce the moves on the front page.
 
-> **Did you use AI?** Yes. Of course. And I am pretty sure most teams did. *But* in this particular case, IMHO, **AI made the challenge more funning**. We still had to find the trick: parse all documents we were given, decide that in the intro video the ticks conveyed important meaning, grab the audio. AI just did the last step for us: listen to the audio and work out the number of ticks for us to open the safe. I'm not sure I would have enjoyed spending time on this myself, I'm glad the AI did it.
+> **Did you use AI?** Yes. Of course. And I am pretty sure most teams did. *But* in this particular case, IMHO, **AI made the challenge more funny**. We still had to find the trick: parse all documents we were given, decide that in the intro video the ticks conveyed important meaning, grab the audio. AI just did the last step for us: listen to the audio and work out the number of ticks for us to open the safe. I'm not sure I would have enjoyed spending time on this myself, I'm glad the AI did it 😉
 
 ## OSINT is *not* for n00bs
 
@@ -82,9 +82,9 @@ If you are a board game players, the CTE is similar to [Detective](https://iello
 
 You probably heard [my position on AI in CTFs](./ctf-ai.md): while I'd hate to ban AI - as any other tool - it's true that it often spoils the fun of challenges. I've been thinking about solutions - so is the community - and I'm still thinking.
 
-The CTE was a really good surprise on this account. **Artificial Intelligence helped speed up some potentially boring parts, but only seldom spoiled the fun of the challenges**. 
+The CTE was a really good surprise on this account. **Artificial Intelligence helped speed up some potentially boring parts, but only seldom spoiled the fun of the challenges**. (Yes, it happened but only very occasionally).
 
-AI is good at very specific tasks. Let me tell you specifically where it helped me in the CTE:
+AI is good at very specific tasks. Let me tell you where it helped me in the CTE:
 
 - Search for an idea in a large quantity of data. The AI is better than me to turn this idea in an adequate `grep` with many words, or simply read and summarize text.
 - Write specific scripts, e.g. download bluesky posts each with their date and title in a directory.
@@ -95,7 +95,7 @@ But **AI is quite bad at larger tasks**, understanding how to assemble the puzzl
 
 On reverse, I had it use a [Ghidra MCP](https://github.com/bethington/ghidra-mcp), and while it was good at explaining specifically this or that line, **it had no intuition at where to look at in the binary** (main, password comparison etc).
 
-It did solve *a couple of Web challenges*, but never immediately. I'm notoriously unskilled at web challenges and usually avoid them in CTFs, so I can't say I was of a big help. Still, I often asked my AI agent for recaps: what it had already tried, what was its next steps, and that where I directed it, because, once more, surprisingly it had little intuition of where to go when I seemed more obvious to me. When it solved, at the end, I always asked it to generate a good writeup for me: I read it, and I must say I learned a lot about web challenges! Maybe I'll try a few easy web challenges on my own in future CTFs.
+It did solve *a couple of Web challenges*, but never immediately. I'm notoriously unskilled at web challenges and usually avoid them in CTFs, so I can't say I was of a big help. Still, **I often asked my AI agent for recaps**: what it had already tried, what was its next steps, and that where I directed it, because, once more, surprisingly **it had little intuition of where to go when I seemed more obvious to me**. When it solved, at the end, I always asked it to generate a good writeup for me: I read it, and I must say I learned a lot about web challenges!
 
 > **Why was AI not an issue in the CTF?** My analysis is that this CTF is very much about assembling information from multiple sources. While an AI is excellent at reading tons of information and summarizing it, models are apparently still poor at really understanding what they read and correlating facts.
 
@@ -103,12 +103,12 @@ It did solve *a couple of Web challenges*, but never immediately. I'm notoriousl
 
 Official write-ups for the CTF are available [here](https://github.com/EternalBlueCTE2k26/CTEv2-Writeups/). I might post a few selected writeups of my own on my blog afterwards too.
 
-- Which was your favorite challenge? **Toujours en Vente**. **Le Vault** was excellent too.
-- Which challenge did you struggle the most on? **Hello World** and perhaps **Banque Root** (I slightly contest the challenge solutions, but that's merely because I'm unhappy to have wasted so much time on them 😜
-- Which challenge looked most like a [Ph0wn](https://ph0wn.org) challenge? **Point de chute** or **Le coffre fort**.
-- What is your favorite OSINT challenge? Difficult to say! I like very much **Le Bailleur innocent**. I found **Banque Root** very interesting in terms of OSINT techniques.
-- Which character did you prefer? I can't say. Of course, I'm on the side of the victim, Melanie. But Samir and Miguel are very interesting characters too.
-- Did you solve all challenges? No!!! There were 90! Our team solved ~40+.
+- *Which was your favorite challenge?* **Toujours en Vente**. **Le Vault** was excellent too. This is biased by the fact I love Reverse and Crypto challenges.
+- *Which challenge did you struggle the most on?* **Hello World** and perhaps **Banque Root**. Ah ha! I'd even grumble and contest the solutions, but you'd be right to think this merely because I'm unhappy to have wasted so much time on them 😜
+- *Which challenge looked most like a [Ph0wn](https://ph0wn.org) challenge*? **Point de chute** or **Le coffre fort**.
+- *What is your favorite OSINT challenge*? Difficult to say! I like very much **Le Bailleur innocent**. I found **Banque Root** very interesting in terms of OSINT techniques.
+- *Which character did you prefer*? I can't say. Of course, I'm on the side of the victim, Melanie. But Samir and Miguel are very interesting characters too.
+- *Did you solve all challenges*? No!!! There were 90! Our team solved ~40+.
 
 
 **Many many thanks to the organizing team for setting up this awesome CTF**. The scenario and the challenges were grasping. Many thanks also to the Support Team who kept answering (quickly) to our questions on Discord.
