@@ -41,6 +41,9 @@ The very special thing at CTE is a *thrilling scenario*: very well done, lots of
 
 The French gendarmerie created a [intro video](https://www.youtube.com/shorts/ZOP-pttsNEI) and a [wrap-up](https://www.youtube.com/watch?v=XRka3q9UXBY). Watch them to get a glimpse at the professionalism of the CTE! The videos are really well done. The final one shows the victim, Melanie Lefevre, in motion and cybercriminal Miguel Santos, being caught.
 
+![Fictive cyber-criminal, Miguel Santos](/images/cte2026-miguel.png)
+
+
 > **Is a good scenario just smoke and mirrors, only meant to look impressive?** No, in the CTE, it provides thousands of details, elements, proofs which help progress through the investigation. It also helps understand this *could* be real, and what investigators might do in such cases. At [Virus Bulletin](https://www.virusbulletin.com/conference/vb2026/programme/) this year, I am presenting a cyber threat which affected an elderly citizen. He "only" suffered financial loss, but we see through this case it could easily have been far worse.
 
 ## Lock-picking
@@ -64,6 +67,8 @@ After the CTE, and more experience with OSINT, I appreciate the skills and tools
 - I used a lot [sherlock](https://github.com/sherlock-project/sherlock) (pre-installed on Exegol) and had less success with [maigret](https://github.com/soxoj/maigret/blob/main/README.md).
 - I discovered [dumpor.io](https://dumpor.io/) which provides a general overview of several social media accounts for a given login.
 - This [Gmail OSINT tool](https://gmail-osint.activetk.jp/) did wonders. I had never realized how easy it could be to access a user's calendar, google drive etc if adequate protection wasn't in place.
+
+![](/images/cte2026-gmail-osint.png)
 
 In terms of OSINT methodology,
 
