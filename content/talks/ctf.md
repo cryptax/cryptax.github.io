@@ -2,7 +2,7 @@
 title: "CTF, CrackMe and other challenges"
 draft: false
 weight: 2
-date: "2026-05-08"
+date: "2026-06-16"
 tags:
 - challenge
 - crackme
@@ -29,8 +29,9 @@ I designed a few crackme if you feel like trying:
 
 # Hall of Fun
 
-I play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
+I often play in the **pic0wn CTF team** (a very small but fun team) and **Soudure au Beurre**
 
+- CTE v2 (2026): 13 (Eternal Green)
 - THCon CTF 2026: **1** (0ld T0kenZ)
 - Insomni'hack 2026: 21 (with Soudure au Beurre)
 - BlackAlps 2025: 8 (with Soudure au Beurre)
