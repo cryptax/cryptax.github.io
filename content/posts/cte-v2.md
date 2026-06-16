@@ -100,18 +100,18 @@ But **AI is quite bad at larger tasks**, understanding how to assemble the puzzl
 
 On reverse, I had it use a [Ghidra MCP](https://github.com/bethington/ghidra-mcp), and while it was good at explaining specifically this or that line, **it had no intuition at where to look at in the binary** (main, password comparison etc).
 
-It did solve *a couple of Web challenges*, but never immediately. I'm notoriously unskilled at web challenges and usually avoid them in CTFs, so I can't say I was of a big help. Still, **I often asked my AI agent for recaps**: what it had already tried, what was its next steps, and that where I directed it, because, once more, surprisingly **it had little intuition of where to go when I seemed more obvious to me**. When it solved, at the end, I always asked it to generate a good writeup for me: I read it, and I must say I learned a lot about web challenges!
+It did solve *a couple of Web challenges*, but never immediately. I'm notoriously unskilled at web challenges and usually avoid them in CTFs, so I can't say I was of a big help. Still, **I often asked my AI agent for recaps**: what it had already tried, what was its next steps, and that's where I directed it, because, once more, surprisingly **it had little intuition of where to go when I seemed obvious to me**. When it solved, at the end, I always asked it to generate a good writeup for me: I read it, and I must say I learned a lot about web challenges (e.g JWT tokens).
 
 > **Why was AI not an issue in the CTF?** My analysis is that this CTF is very much about assembling information from multiple sources. While an AI is excellent at reading tons of information and summarizing it, models are apparently still poor at really understanding what they read and correlating facts.
 
 ## Write-ups, FAQ and Conclusion
 
-Official write-ups for the CTF are available [here](https://github.com/EternalBlueCTE2k26/CTEv2-Writeups/). I might post a few selected writeups of my own on my blog afterwards too.
+Official write-ups for the CTF are available [here](https://github.com/EternalBlueCTE2k26/CTEv2-Writeups/). I might post a few selected writeups of my own on this blog afterwards too.
 
 - *Which was your favorite challenge?* **Toujours en Vente**. **Le Vault** was excellent too. This is biased by the fact I love Reverse and Crypto challenges.
 - *Which challenge did you struggle the most on?* **Hello World** and perhaps **Banque Root**. Ah ha! I'd even grumble and contest the solutions, but you'd be right to think this merely because I'm unhappy to have wasted so much time on them 😜
 - *Which challenge looked most like a [Ph0wn](https://ph0wn.org) challenge*? **Point de chute** or **Le coffre fort**.
-- *What is your favorite OSINT challenge*? Difficult to say! I like very much **Le Bailleur innocent**. I found **Banque Root** very interesting in terms of OSINT techniques.
+- *What is your favorite OSINT challenge*? Difficult to say! I liked very much **Le Bailleur innocent**. I found **Banque Root** very interesting in terms of OSINT techniques.
 - *Which character did you prefer*? I can't say. Of course, I'm on the side of the victim, Melanie. But Samir and Miguel are very interesting characters too.
 - *Did you solve all challenges*? No!!! There were 90! Our team solved ~40+.
 
