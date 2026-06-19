@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2026-05-21"
+date: "2026-06-19"
 tags:
 - r2ai
 - AI
@@ -72,6 +72,8 @@ tags:
 
 # 2026
 
+- [Capture The Evidence v2](https://cryptax.github.io/posts/cte-v2/), June 2026
+- [Auvergn'hack](https://cryptax.github.io/posts/auvergnhack-2026/), May 2026
 - [CTFs and AI](https://cryptax.github.io/posts/ctf-ai/), May 2026.
 - [What I like / don't like about Warp Terminal](https://cryptax.medium.com/what-i-like-dont-like-about-warp-terminal-f5acd0e47990), April 30, 2026.
 - [Reviewing the AI-generated submissions with AI](https://cryptax.github.io/posts/reviewing-ai-generated-submissions-with-ai/), April 21, 2026.
