@@ -117,9 +117,9 @@ Constraints:
 3. The sum of all bytes must be divisible by 10
 4. An exclamation mark must be in the middle of the password
 5. Password must contain at least 1 lowercase, 1 uppercase, 1 digit and 1 character `!`
-6. The password must contain the string `paste!s d3 na74 b4c4lh4u` as a subsequence, but not necessarily contiguous, i.e we can have `p`, then other bytes, then `aste!s` etc.
+6. The password must contain the string `paste!s d3 na74 3 b4c4lh4u` as a subsequence, but not necessarily contiguous, i.e we can have `p`, then other bytes, then `aste!s` etc.
 
-The string `paste!s d3 na74 b4c4lh4u` decodes from an encrypted table at 0x10a96c: `STRING[i] = ENC_TABLE[i] ^ (i | 0xc0)`.
+The string `paste!s d3 na74 3 b4c4lh4u` decodes from an encrypted table at 0x10a96c: `STRING[i] = ENC_TABLE[i] ^ (i + 0xc0)`.
 
 ![](/images/cte2026-tjrs-bacalhau.png)
 
