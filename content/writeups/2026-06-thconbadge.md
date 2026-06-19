@@ -60,25 +60,6 @@ My setup is:
 
 A typical initial prompt I used: "Use my Ghidra MCP to connect to the open program on seg0. Then go to function timer_init() and rename functions and variables inside it with meaningful names."
 
-AI 
-
-
-| write handler | 0x28c42 | Write handler for the custom GATT service 0xfd6c1234-e5ab-41cd-9876-543210fedcba |
-
-AI tells us the *write handler* supports several commands:
-
-| ID | Expected length | Action |
-| -- | --------------- | ------ |
-| 0x02 | 4 bytes | LED toggle |
-| 0x03 | 4 bytes | LED color/off |
-| 0x04 | 4 bytes | Display frame |
-| 0x05 | 4 bytes | LED brightness |
-| 0x06 | 6 bytes | Display text |
-| 0x07 | 2 bytes | Screenshot |
-
-It reads an encrypted write value, XOR decrypts it with a 2-byte key (0x7a69 fallback), validates the length and processes the action.
-
-
 ## Flashing the firmware challenge
 
 The command on the git repo did not quite work: `esptool.py --port /dev/ttyUSB0 --baud 115200 --chip esp32 write_flash 0x0 firmware.bin` complained: "This chip is ESP32-C6, not ESP32. ". I simply removed the argument, and it saw it was ESP32-C6 on its own to flash the board correctly.
