@@ -23,6 +23,8 @@ Usually, when there's one technical analysis, people tend to think it's "enough"
 
 In this blog post, I am going to cover techniques the malware author used to deceive the analyst.
 
+*Sample SHA256: b7443b0ab48d2f5786d1b6f3a580f02621e9ae5a3877ee3a44e01df13d984328*
+
 ## No malloc / free
 
 In the main function of the RAT - and mostly everywhere in the binary - we see numerous calls to `GetProcessHeap()`, or `HeapFree()` etc.
@@ -39,7 +41,7 @@ This is because this Rust binary was compiled *without linking to msvcrt* (Micro
 
 In this case, the binary was compiled for *Windows* MSVC. Rust uses the Windows Heap API (`GetProcessHeap`, `HeapAlloc`, `HeapFree`...). Those calls appear any time Rust code uses things like `Box<T>`, `Vec<T>` or String which all allocate on the heap.
 
-Ok. But why? Actually, this is a **deliberate anti-analysis technique** because it's impossible to hook `malloc` or `free` - which is what typical EDR or security products would attempt to do to track allocations. Any tool hooking `malloc` or `free` won't see anything special. 
+> Ok. But why? Actually, this is a **deliberate anti-analysis technique** because it's impossible to hook `malloc` or `free` - which is what typical EDR or security products would attempt to do to track allocations. Any tool hooking `malloc` or `free` won't see anything special. 
 
 ## Confusing Anti-VM feature
 
@@ -48,7 +50,6 @@ One of the first calls the main does appear to be an anti-VM function. Precisely
 From assembly, the re-constructed code (written in Rust) looks like this:
 
 ```rust
-
 fn check_sandbox_probe() -> bool {
     let patterns = [
         r"(?i)nvidia|nvml|nvenc",              
@@ -89,13 +90,13 @@ We see that `init_sandbox_regex()` returns a boolean in `sandbox_ret`. This valu
 
 So, the return value of `init_sandbox_regex()` is never used. It's **dead code**, either left there by some bad copy/paste, or intentionally left there to confuse the analyst (I confirm it confused me...).
 
-**There is absolutely no VM/sandbox detection at all**, the entire point of the function is to create the absolute path for the config database `nvctr_sys.db`.
+> Verdict. **There is absolutely no VM/sandbox detection at all**, the entire point of the function is to create the absolute path for the config database `nvctr_sys.db`.
 
 ## Time check
 
 Later, the LabubaRAT main function shows the following code:
 
-```
+```c
   GetSystemTimePreciseAsFileTime(&local_468);
   if (local_468 < 0x19db1ded53e8000) {
     lVar16 = 0xeec9d9346455996;
@@ -117,13 +118,13 @@ If the current date is before that date - this is the expected situation - we go
 
 From the current process id, the `lVar16` value and the current date, a seed is computed. Using a different constant when the date is abnormal ensures the seed is of a different nature in that case, and consequently for example, that subsequent decryption will fail.
 
-This is a **time check** function. 
+> This is a **time check** function. 
 
 ## Anti-Debug
 
 After generating the seed, the code calls `IsDebuggerPresent()`.
 
-```
+```c
   BVar9 = IsDebuggerPresent();
   if (BVar9 != 0) {
     infinite_loop();
@@ -138,7 +139,7 @@ After generating the seed, the code calls `IsDebuggerPresent()`.
 
 If a debugger is indeed present, the code will go into an infinite loop (causing the analyst difficulty to debug and stop the process).
 
-This is basic but effective debugger detection code.
+> This is basic but effective debugger detection code.
 
 ## Conclusion
 
