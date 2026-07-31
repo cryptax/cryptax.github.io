@@ -2,7 +2,7 @@
 title: "My research topics"
 draft: false
 weight: 1
-date: "2025-12-08"
+date: "2026-07-31"
 tags:
 - topic
 - mobile malware
@@ -80,6 +80,8 @@ Artificial Intelligence and malware
 - Decomping Rust with AI [RadareCon 2025](https://youtu.be/XFiSfU-1E7I?si=dT9zWBx3PC5wH3hY), [:(fa-solid fa-link):](https://cryptax.medium.com/rust-in-your-disassembler-1aa700c3b041)
 - Ghidra MCP [BruCON 2025](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
 - AI-assisted decompilation: [arXiv 2025](https://arxiv.org/pdf/2504.07574)
+- Windows/LabubaRAT [:(fa-solid fa-link):](https://cryptax.github.io/posts/labubarat/)
+- Linux/GoGra *to appear at 44Con*
 - Linux/Devura.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
 - Linux/RudeDevil.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
 - Linux/Sshdinjector [:(fa-solid fa-link):](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst) ...

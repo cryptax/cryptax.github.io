@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2026-06-19"
+date: "2026-07-31"
 tags:
 - r2ai
 - AI
@@ -72,6 +72,7 @@ tags:
 
 # 2026
 
+- [LabubaRAT anti-analysis features](https://cryptax.github.io/posts/labubarat/), July 2026.
 - [Capture The Evidence v2](https://cryptax.github.io/posts/cte-v2/), June 2026
 - [Auvergn'hack](https://cryptax.github.io/posts/auvergnhack-2026/), May 2026
 - [CTFs and AI](https://cryptax.github.io/posts/ctf-ai/), May 2026.

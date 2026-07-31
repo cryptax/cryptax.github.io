@@ -2,7 +2,7 @@
 title: "Conference list: where I spoke"
 weight: 3
 draft: false
-date: "2026-05-21"
+date: "2026-07-31"
 ---
 
 Conferences I spoke at:
@@ -55,3 +55,4 @@ Conferences I spoke at:
 - IEEE TrustCom 2015
 - [UYBHYS](https://www.unlockyourbrain.bzh/) 2020 2025
 - [Virus Bulletin](https://virusbtn.com) 2011 2013 2016 2017 2018 2019 2021 2022 2024 2026
+- [44Con](https://44con.com/) 2026
