@@ -11,7 +11,7 @@ Conferences I spoke at:
 - AREA 41 2016
 - [Auvergn'hack](https://www.auvergnhack.fr/) 2026
 - [Barbhack](https://barbhack.fr) 2020 2022 2025
-- [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024 2025
+- [BlackAlps](https://blackalps.ch) 2018 2019 2022 2023 2024 2025 2026
 - [BlackHat Europe](http://www.blackhat.com) 2012 2014
 - [BotConf](https://botconf.eu) 2020
 - [BruCON](https://brucon.org) 2023 2025
