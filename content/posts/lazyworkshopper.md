@@ -28,17 +28,18 @@ Yes. Because that's really what it is.
 
 This is the sort of knowledge they'll share to their audience afterwards. The sentence is correct, because the "lazy workshopper" is smart and has good memory. More precisely, regarding that precise topic, I'd point out it's better to first open the decompiler, work with it, and only use AI as a second step (but that's inner knowledge the lazy workshopper might miss).
 
+> It's difficult to spot an imposter.
+
 **People will be impressed, because in a (short) conversation, people will assume they have in front of them someone who's installed a MCP several times, and reversed hundreds of binaries.**
 
-> It's difficult to spot an imposter.
 
 In a conversation, it's going to be difficult to grasp there is nothing beyond words in the knowledge of that person. *Those who have the vastest knowledge are not those who speak the most*, sometimes they're not very good at communication.
 
-## The lazy workshopper grasp the surface, but not the real essence
+## The lazy workshopper grasps the surface, but not the real essence
 
 In my labs (and same for many other speakers), most of the time is spent over exercises. Completing the exercise actually isn't the important point. What's important is to try, to fail, to understand how to recover from that failure. For many minds, trying on your own is far more efficient than hearing it.
 
-Want to see a speaker do something? hear advice? Those are **talks**. I personally like workshops in conference because they offer an alternative to my brains: when I've listened for a couple of hours, I'm more than happy to take a break and use my own keyboards once again.
+Want to see a speaker do something? hear advice? Those are **talks**. Talks are great too. It's a different way of learning. In a conference, I love to have both: when I've listened for a couple of hours, I'm more than happy to take a break and use my own keyboards once again.
 
 ## It takes lots of time to prepare a workshop
 
@@ -58,7 +59,9 @@ I'd kind of accept having a lazy workshopper in a paid workshop: they paid, if t
 
 ## Conclusion
 
-**I love free workshops**, and I want conferences to continue to offer free workshops. I attended free workshops in awesome conferences like [Hack.Lu](https://hack.lu) and [Hacktivity](https://hacktivity.com), and those workshops really helped me work in new areas or new tools I didn't know. Several years after, **I still remember the first workshop I followed on Radare2, or Unicorn, or Exploits on ARM64**. They were awesome. Thanks again to the Speakers (and conference organizers) who made them possible.
+**I love free workshops**, and I want conferences to continue to offer free workshops. I attended free workshops in awesome conferences like [Hack.Lu](https://hack.lu), [Hacktivity](https://hacktivity.com), [Pass The Salt](https://www.pass-the-salt.org/), [GreHack](https://grehack.fr), and more! Those workshops really helped me work in new areas or new tools I didn't know.
+
+Several years after, **I still remember the first workshop I followed on Radare2, or Unicorn, or Exploits on ARM64**. They were awesome. Thanks again to the Speakers (and conference organizers) who made them possible.
 
 Attending a free workshop? **Please show respect to the speaker: come with your laptop prepared, and do your best on the labs**. Your Speaker spent days/weeks preparing the workshop for you, you can give him/her in return 2 hours of your attention.
 
