@@ -73,7 +73,7 @@ Android vulnerabilities
 - Spectre: [Pass The Salt 2018](https://2018.pass-the-salt.org/files/talks/05-spectre.pdf)
 - Hide [BlackHat Europe 2014](https://github.com/cryptax/talks/blob/master/BlackHatEurope-2014/eu-14-Apvrille-HideAndroidApplicationsInImages-wp.pdf)
 
-# IoT
+# Linux or IoT
 
 Artificial Intelligence and malware
 
@@ -81,7 +81,7 @@ Artificial Intelligence and malware
 - Ghidra MCP [BruCON 2025](https://github.com/cryptax/talks/blob/master/BruCON-2025/r2ai.pdf)
 - AI-assisted decompilation: [arXiv 2025](https://arxiv.org/pdf/2504.07574)
 - Windows/LabubaRAT [:(fa-solid fa-link):](https://cryptax.github.io/posts/labubarat/)
-- Linux/GoGra *to appear at 44Con*
+- Linux/GoGra [:(fa-solid fa-link):]https://github.com/cryptax/talks/blob/master/44con-2026/gogra.pdf)
 - Linux/Devura.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
 - Linux/RudeDevil.A!tr [Insomnihack 2025](https://github.com/cryptax/talks/blob/master/InsomniHack-2025/r2ai.pdf) 
 - Linux/Sshdinjector [:(fa-solid fa-link):](https://www.fortinet.com/blog/threat-research/analyzing-elf-sshdinjector-with-a-human-and-artificial-analyst) ...
