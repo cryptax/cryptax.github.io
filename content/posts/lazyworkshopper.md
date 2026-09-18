@@ -61,7 +61,7 @@ I'd kind of accept having a lazy workshopper in a paid workshop: they paid, if t
 
 **I love free workshops**, and I want conferences to continue to offer free workshops. I attended free workshops in awesome conferences like [Hack.Lu](https://hack.lu), [Hacktivity](https://hacktivity.com), [Pass The Salt](https://www.pass-the-salt.org/), [GreHack](https://grehack.fr), and more! Those workshops really helped me work in new areas or new tools I didn't know.
 
-Several years after, **I still remember the first workshop I followed on Radare2, or Unicorn, or Exploits on ARM64**. They were awesome. Thanks again to the Speakers (and conference organizers) who made them possible.
+Several years after, **I still remember the first workshop I followed on Radare2, or Unicorn, or Exploits on ARM64, or HydraBus**. They were awesome. Thanks again to the Speakers (and conference organizers) who made them possible.
 
 Attending a free workshop? **Please show respect to the speaker: come with your laptop prepared, and do your best on the labs**. Your Speaker spent days/weeks preparing the workshop for you, you can give him/her in return 2 hours of your attention.
 
