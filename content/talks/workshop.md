@@ -2,7 +2,7 @@
 title: "Workshops or trainings where I taught"
 weight: 2
 draft: false
-date: "2026-08-18"
+date: "2026-09-28"
 tags:
 - training
 - workshop
@@ -19,6 +19,7 @@ tags:
 
 Reverse engineering with AI:
 
+- *Reverse Engineering Super Powers with AI*, at [GreHack](https://grehack.fr), November 2026 (OpenCode, GhidraMCP, r2mcp) :(fa-solid fa-clock): 3 hours.
 - *Reversing with AI*, at [44Con](https://44con.com/44con-2026-talks-and-workshops/), September 2026, (OpenCode, GhidraMCP, r2mcp) :(fa-solid fa-clock): 2 hours. 
 - *Rétro-ingénierie, bananes et IA*, at [Auvergn'hack](https://www.auvergnhack.fr/), May 2026, **fr** (OpenCode, GhidraMCP, r2mcp) :(fa-solid fa-clock): 2.5 hours. 
 - *Reverse engineering with r2ai* at [UYBHYS](https://unlockyourbrain.bzh/ateliers/#r2ai), November 2025 :(fa-solid fa-clock): 2 hours.
