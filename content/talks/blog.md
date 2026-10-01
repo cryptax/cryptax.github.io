@@ -67,12 +67,13 @@ tags:
 - opencode
 - agent
 - skills
+- JEV
 
 ---
 
 # 2026
 
-- [Testing JEV against a fictional attack](assets/images/jev-questions.png), Oct 2026.
+- [Testing JEV against a fictional attack](https://cryptax.github.io/posts/2026-10-jev/), Oct 2026.
 - [The Lazy Workshopper](https://cryptax.github.io/posts/lazyworkshopper/), Sept 2026.
 - [LabubaRAT anti-analysis features](https://cryptax.github.io/posts/labubarat/), July 2026.
 - [Capture The Evidence v2](https://cryptax.github.io/posts/cte-v2/), June 2026
