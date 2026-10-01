@@ -11,7 +11,7 @@ tags:
 - gtfo
 - ph0wn
 - magazine
-date: 2026-05-21
+date: 2026-09-28
 draft: false
 ---
 # Journals, magazines, e-Zines etc
@@ -130,3 +130,6 @@ In Issue no 3, March 2026, [:(fa-solid fa-file-pdf):](https://github.com/ph0wn/w
 - M. Pourzandi, A. Apvrille, *Setting up Virtual Security Zones in a Linux Cluster*, [Linux Journal](https://www.linuxjournal.com), Issue 126, October 2004 [html](https://www.linuxjournal.com/article/6803)
 - A. Apvrille, M. Pourzandi, D. Gordon, V. Roy, *Stop Malicious Code Execution at Kernel-Level*, Linux World magazine, Vol. 2, No. 1, January 2004.
 
+# Interviews
+
+- F. Sious, *"Entretien: Axelle Apvrille: Il est plus facile d'écrire un malware que de le détecter"*, Alliancy, Septembre 2026, [:(fa-solid fa-link):](https://alliancy.fr/axelle-apvrille-il-est-plus-facile-decrire-un-malware-que-de-le-detecter-f0172e0f-7b73-4130-ac9b-7d67628c6fb5)

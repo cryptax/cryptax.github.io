@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2028-09-18"
+date: "2026-10-01"
 tags:
 - r2ai
 - AI
@@ -72,6 +72,7 @@ tags:
 
 # 2026
 
+- [Testing JEV against a fictional attack](assets/images/jev-questions.png), Oct 2026.
 - [The Lazy Workshopper](https://cryptax.github.io/posts/lazyworkshopper/), Sept 2026.
 - [LabubaRAT anti-analysis features](https://cryptax.github.io/posts/labubarat/), July 2026.
 - [Capture The Evidence v2](https://cryptax.github.io/posts/cte-v2/), June 2026
