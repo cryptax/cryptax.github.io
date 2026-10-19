@@ -11,7 +11,7 @@ tags:
 - gtfo
 - ph0wn
 - magazine
-date: 2026-09-28
+date: 2026-10-19
 draft: false
 ---
 # Journals, magazines, e-Zines etc
@@ -97,6 +97,7 @@ In Issue no 3, March 2026, [:(fa-solid fa-file-pdf):](https://github.com/ph0wn/w
 
 ### MISC Magazine
 
+- *Malware GoGra: quand l'IA et votre désassembleur se liguent contre vous*, MISC no. 148. A paraitre.
 - *Analyse de malware assistée par intelligence artificielle*, MISC no. 139, Mai/Juin 2025, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-139/analyse-de-malware-assistee-par-intelligence-artificielle)
 - *Android/FluHorse, le malware qui défie les désassembleurs*,  MISC no. 136, Novembre/Décembre 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-136/android-fluhorse-le-malware-qui-defie-les-desassembleurs)
 - *20 ans de virus sur téléphone mobile*, MISC no. 132, Mars/Avril 2024, [:(fa-solid fa-cart-shopping):](https://connect.ed-diamond.com/misc/misc-132/20-ans-de-virus-sur-telephone-mobile)
