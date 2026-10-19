@@ -25,7 +25,7 @@ Conferences I spoke at:
 - [DefCamp](https://def.camp) 2016
 - EICAR 2010 2012
 - ElbSides 2025
-- [GreHack](https://grehack.fr) 2013 2017
+- [GreHack](https://grehack.fr) 2013 2017 2026
 - Hack in Paris 2015
 - Hack.Lu 2013 2014 2015 2016 2018 2019 2024
 - [Hacktivity](https://hacktivity.com/en) 2013 2015

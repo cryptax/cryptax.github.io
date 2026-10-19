@@ -106,7 +106,7 @@ It did solve *a couple of Web challenges*, but never immediately. I'm notoriousl
 
 ## Write-ups, FAQ and Conclusion
 
-Official write-ups for the CTF are available [here](https://github.com/EternalBlueCTE2k26/CTEv2-Writeups/). I might post a few selected writeups of my own on this blog afterwards too.
+Official write-ups for the CTF are available [here](https://github.com/EternalBlueCTE2k26/CTEv2-Writeups/). I might post a few selected writeups of my own on this blog afterwards too (updated: see [toujours en vente](/cte2026-tjrsenvente) and [le vault](/cte2026-vault))
 
 - *Which was your favorite challenge?* **Toujours en Vente**. **Le Vault** was excellent too. This is biased by the fact I love Reverse and Crypto challenges.
 - *Which challenge did you struggle the most on?* **Hello World** and perhaps **Banque Root**. Ah ha! I'd even grumble and contest the solutions, but you'd be right to think this merely because I'm unhappy to have wasted so much time on them 😜
