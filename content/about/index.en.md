@@ -1,5 +1,5 @@
 ---
-tags: [ "linux", "fvwm", "alpine", "LVM", "pandoc", "docker" ]
+tags: [ "linux", "fvwm", "alpine", "LVM", "pandoc", "docker", "zoxide", "polybar", "herdr" ]
 ---
 
 # Who am I? :wave:
@@ -12,10 +12,10 @@ In a prior life, I used to implement *cryptographic algorithms and security prot
 
 # Preferred tools :hammer_and_pick:
 
-- **Linux** Mint. I like *Debian* too.
-- [**FVWM**](https://www.fvwm.org) Window Manager. It's old, but lightweight, fast and very customizable.
+- **Linux** Mint or Debian. Unless I am forced into using Ubuntu.
+- [**FVWM**](https://www.fvwm.org) Window Manager. It's old, but lightweight, fast and very customizable. I've enhanced it with a custom [polybar](https://github.com/polybar/polybar).
 - I was recently forced out from [**Alpine**](https://en.wikipedia.org/wiki/Alpine_(email_client)) to read my emails, and now use **Thunderbird**.
-- **Emacs** is my favorite editor. I used *Visual Studio Code* for a couple of months... and came back to Emacs in the end.
+- **Emacs** is my favorite editor. I used *Visual Studio Code* for some specific developments (platform.io, Android), but I prefer Emacs for most tasks.
 
 
 Gosh, do you only like *old tools*? Hmm... often, but *not all the time*! :wink:
@@ -23,8 +23,9 @@ Gosh, do you only like *old tools*? Hmm... often, but *not all the time*! :wink:
 - **Docker** is a great invention!
 - I love **Markdown**, and most of the time that's what I use to write documents, and then transform them using [Pandoc](https://pandoc.org). My research slides are written using direct *LaTeX / Beamer* though, especially because I need TikZ figures all the time.
 - I used to like very much *ZFS* (on Solaris), but its support on Linux was problematic. Since then, I switched to **LVM** and like it very much.
-- I'm currently testing [**Warp Terminal**](https://warp.dev) which looks pretty good.
+- I multiplex my terminals with **[Herdr](https://herdr.dev)**.
 - I never really used IRC and prefer **Discord**.
+- My shell uses [Zoxide](https://github.com/ajeetdsouza/zoxide) for fast `cd` swapping and [ble.sh](https://github.com/akinomyoga/ble.sh/) for completion.
 - I'm always on the look out for *new tools* which really help, as long as they are not too heavy. Feel free to share.
 
 
