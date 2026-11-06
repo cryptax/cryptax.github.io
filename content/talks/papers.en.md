@@ -7,7 +7,7 @@ tags:
 - hackable
 - publication
 - academic
-date: 2026-10-19
+date: 2026-11-06
 draft: false
 ---
 # Conferences
@@ -23,7 +23,7 @@ This page lists articles published and presented at industrial or academic confe
 - *Targeting the elderly: from spoofing to persistence*, [Virus Bulletin](https://www.virusbulletin.com/conference/vb2026/programme/), Sevilla, Spain, October 14-16, 2026. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/VirusBulletin-2026/elderly.pdf)
 - *Inside Linux GoGra backdoor* (slightly different angles):
   - [44Con](https://44con.com/44con-2026-talks-and-workshops/), London, UK, September 17-18, 2026. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/44con-2026/gogra.pdf)
-  - [BlackAlps](https://blackalps.ch/ba-26), Yverdon les Bains, Switzerland, November 5-6. *To appear*.
+  - [BlackAlps](https://blackalps.ch/ba-26), Yverdon les Bains, Switzerland, November 5-6. [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/BlackAlps-2026/gogra-blackalps.pdf) [:(fa-solid fa-video):](https://github.com/cryptax/talks/blob/master/BlackAlps-2026/GoStrings.mp4)
 - D. Cauquil, A. Apvrille, *Chain of Thought F's everybody*, [THCon](https://thcon.party/program/), Toulouse, France, May 2026 [:(fa-solid fa-file-lines):](https://github.com/cryptax/talks/blob/master/THCon-2026/ctf-ai.pdf) [:(fa-solid fa-video):](https://thcon.party/live/) starting at *3:04:54*.
 
 
