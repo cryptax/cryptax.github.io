@@ -57,7 +57,7 @@ In the second image, it **gave me a partial script** letting me fill in the impo
 
 The agent is available in Appendix.
 
-# CTFs in 2026 where I had fun (or not)
+# CTFs in 2026 where I had fun (or not) 🚩
 
 > Organizers: don't take it personal if your CTF is rated "no fun". I probably had "some" fun + I respect and admire the job you did + it doesn't mean I didn't fancy the conference! 
 
@@ -66,7 +66,7 @@ The agent is available in Appendix.
 | -------- | ---- | ----------------------------------- |
 | Axxxx CTF | No | On site issues. The CTF started several hours late. |
 | Txxxx CTF | More or less | My team intensively used AI. It was fun to see how good AI was, but now that I know, it's no longer fun, I wouldn't do that again. |
-| CTE v2   | **Yes!!!** | **Captivating scenario**. 70% OSINT where AI does help much. 30% of not too difficult challenges. **I learned** solving them. AI would have flagged them without issue, but *I didn't ask AI for more than the occasional help*, and it was great. |
+| [CTE v2](https://fr.linkedin.com/posts/eternalblue-ctf-team_gendarmerienationale-rgpaca-eternalblue-activity-7435595124937637888-FU8b)   | **Yes!!!** | **Captivating scenario**. 70% OSINT where AI does help much. 30% of not too difficult challenges. **I learned** solving them. AI would have flagged them without issue, but *I didn't ask AI for more than the occasional help*, and it was great. |
 | Hxxxx CTF | A little | I worked on a couple of challenges which were technically interesting. Mostly the issue was that **I wouldn't have flagged without AI**. But at least, I **learned**. |
 | Bxxxx CTF | No | All challenges I tried were **far too difficult for a human but easy with an AI**. What's the point?! I even tried a Crypto challenge marked *Easy*. Usually, I'm pretty decent at Crypto challenges, honestly. Well, the AI worked out it, but I don't even understand the writeup because it's so complicated!!! |
 
@@ -83,8 +83,8 @@ The agent is available in Appendix.
 
 # My opinion on organization choices.
 
-- I **don't like when prizes are given based on unclear or non measurable conditions**. We are in a scientific field, not in a literary or artistic area. When you give the prize to the "most funny writeup" or the "biggest fail", there is a strong risk you'll give it to friends, or based on private jokes etc. This is fun for people who "belong to the community", but it makes others uncomfortable.
-- **"Non-competitive CTF" is just like a car with no motor**. Removing competition from CTFs is removing one of its founding motivations. Maybe competitive CTFs are dead, true. Maybe we should bury them and create something new, like "Challenging Workshops".
+- I **don't like when prizes 🎁 are given based on unclear or non measurable conditions**. We are in a scientific field, not in a literary or artistic area. When you give the prize to the "most funny writeup" or the "biggest fail", there is a strong risk you'll give it to friends, or based on private jokes etc. This is fun for people who "belong to the community", but it makes others uncomfortable.
+- **"Non-competitive CTF" is just like a car 🚗 with no motor**. Removing competition from CTFs is removing one of its founding motivations. Maybe competitive CTFs are dead, true. Maybe we should bury them and create something new, like "Challenging Workshops".
 
 > Shifting from CTFs to "Challenge Workshops" is a path to investigate.
 
