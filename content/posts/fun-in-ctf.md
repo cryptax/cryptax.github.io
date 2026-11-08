@@ -78,7 +78,7 @@ The agent is available in Appendix.
 - **Do not artificially harden challenges** to thwart AI. It's likely it will fail and the challenge will be easy for AI, but super difficult for humans. Zero interest.
 
 > For **Ph0wn 2026**, I instructed challenge authors to test their challenges against LLMs, and harden them based on test results.
-> For **Ph0wn 2027**, my instructions will be totally different: given the fact that LLM solves [nearly] everything, **don't bother about AI when creating your challenge**. Create your challenges as in "old days" (I mean without AI lol). Create challenges which are fun and educative.
+> For **Ph0wn 2027**, my instructions will be totally different: given the fact that LLMs solve [nearly] everything, **don't bother about AI when creating your challenge**. Create your challenges as in "old days" (I mean without AI lol). Create challenges which are fun and educative.
 
 
 # My opinion on organization choices.
