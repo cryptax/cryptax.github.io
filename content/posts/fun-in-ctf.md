@@ -68,14 +68,14 @@ The agent is available in Appendix.
 | Txxxx CTF | More or less | My team intensively used AI. It was fun to see how good AI was, but now that I know, it's no longer fun, I wouldn't do that again. |
 | [CTE v2](https://fr.linkedin.com/posts/eternalblue-ctf-team_gendarmerienationale-rgpaca-eternalblue-activity-7435595124937637888-FU8b)   | **Yes!!!** | **Captivating scenario**. 70% OSINT where AI does help much. 30% of not too difficult challenges. **I learned** solving them. AI would have flagged them without issue, but *I didn't ask AI for more than the occasional help*, and it was great. |
 | Hxxxx CTF | A little | I worked on a couple of challenges which were technically interesting. Mostly the issue was that **I wouldn't have flagged without AI**. But at least, I **learned**. |
-| Bxxxx CTF | No | All challenges I tried were **far too difficult for a human but easy with an AI**. What's the point?! I even tried a Crypto challenge marked *Easy*. Usually, I'm pretty decent at Crypto challenges, honestly. Well, the AI worked out it, but I don't even understand the writeup because it's so complicated!!! |
+| Bxxxx CTF | No | All challenges I tried were **far too difficult for a human but easy with an AI**. What's the point?! I even tried a Crypto challenge marked *Easy*. Usually, I'm pretty decent at Crypto challenges, honestly. Well, the AI worked it out, but I don't even understand the writeup because it's so complicated!!! |
 
 
 # Advice for Challenge Authors
 
 - Analyze CTFs where you *played*: which challenges did you fancy? why? Your answers should give you the right direction to create your own.
 - New to creating challenges? Often you are afraid your challenge will be too easy, and consequently, you create it far too difficult and twisty. Have your challenge tested by a friend. 
-- **Do not artifically harden challenges** to thwart AI. It's likely it will fail and the challenge will be easy for AI, but super difficult for humans. Zero interest.
+- **Do not artificially harden challenges** to thwart AI. It's likely it will fail and the challenge will be easy for AI, but super difficult for humans. Zero interest.
 
 > For **Ph0wn 2026**, I instructed challenge authors to test their challenges against LLMs, and harden them based on test results.
 > For **Ph0wn 2027**, my instructions will be totally different: given the fact that LLM solves [nearly] everything, **don't bother about AI when creating your challenge**. Create your challenges as in "old days" (I mean without AI lol). Create challenges which are fun and educative.
