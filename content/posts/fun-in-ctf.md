@@ -2,7 +2,7 @@
 layout: post
 title: "Can we still have fun at CTFs?"
 author: cryptax
-date: 2026-11-08
+date: 2026-11-07
 draft: false
 tags:
 - CTF
