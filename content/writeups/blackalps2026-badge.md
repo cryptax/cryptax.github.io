@@ -21,7 +21,7 @@ At a booth, [Compass Security](https://www.compass-security.com/en/) was running
 
 You'd go to their stand, get your photo taken (if you wanted) and have a local LLM on one of their laptops process the image. In my case, I added the prompt "put a crocodile on my shoulder" - spot it in the picture.
 
-On the back of the badge, you'd find a QR code to a repository to handle their badge: [GitHub](https://github.com/CompassSecurity/nfcink)
+On the back of the badge, you'd find a QR code to a repository to handle their badge: [GitHub](https://github.com/CompassSecurity/nfcink)  🔗
 
 ![](/images/compass-back.jpg)
 
@@ -235,7 +235,7 @@ print(tokenizer.decode(output[0], skip_special_tokens=True))
 
 Claude finds 8 words without problem, but is uncertain the nineth word is Many (paragraph 18) or Day (paragraph 35).
 
-![](/images/compass-claude.jpg)
+![](/images/compass-claude.png)
 
 I send an email to the organizers with a first attempt and the word `Day`: `cryptax a136c5a8 Dinner Work Pretty Wine Summer Cash Church Quiet Day`, but it is not correct.
 
