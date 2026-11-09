@@ -2,7 +2,7 @@
 title: "Blog posts: what I wrote"
 weight: 3
 draft: false
-date: "2026-10-01"
+date: "2026-11-08"
 tags:
 - r2ai
 - AI
@@ -68,11 +68,16 @@ tags:
 - agent
 - skills
 - JEV
+- GoGra
 
 ---
 
 # 2026
 
+- [Analyzing an Illegal Android Gambling App built with Flutter](https://www.fortinet.com/blog/threat-research/analyzing-an-illegal-android-gambling-app-built-with-flutter), November 2026
+- [Can we still have fun at CTFs](https://cryptax.github.io/posts/fun-in-ctf/) Nov 2026
+- [Linux/GoGra Payload Analysis](https://cryptax.github.io/posts/gogra_dropper/) Nov 2026
+- [Linux/GoGra Dropper Analysis](https://cryptax.github.io/posts/gogra_dropper/), Nov 2026.
 - [Testing JEV against a fictional attack](https://cryptax.github.io/posts/2026-10-jev/), Oct 2026.
 - [The Lazy Workshopper](https://cryptax.github.io/posts/lazyworkshopper/), Sept 2026.
 - [LabubaRAT anti-analysis features](https://cryptax.github.io/posts/labubarat/), July 2026.
