@@ -18,28 +18,29 @@ tags:
 
 # Can we still have fun at CTFs?
 
-> These last two months, I played 2 CTFs, and I did **not have fun** 😢
 
 | Year   | Impact for CTFs     |
 | ------ | ------------------- |
 | 2023   | First challenge at **[Ph0wn](https://ph0wn.org)** involving a **LLM**. LLMs are far better than chat bots, but they are far from being able to solve CTF challenges. |
 | 2024   | Several AI bypassing challenges at **N0PS** CTF. LLMs have improved, but there is still no MCP (end of 2024), and few agents |
-| 2025   | All CTF players have open browser tabs with their favorite model (e.g NorthSec CTF). *Easy* challenges are solvable end to end by LLMs |
+| 2025   | All CTF players have open browser tabs with their favorite model (e.g [NorthSec](https://nsec.io) CTF). *Easy* challenges are solvable end to end by LLMs |
 | 2026   | MCPs, agents, skills, orchestrators are frequently used by CTF players. Several teams have setups that automatically download the challenges, dispatch them to several LLMs and solve them in different threads. **Nearly all challenges are solved autonomously by LLMs, except difficult ones or "different" ones**. Beginning of 2026, the setup requires lots of tokens and access to good models. **End of 2026, even low or average LLMs do the work**, it's possible to get some challenges solved by a local LLM running on a decent laptop. |
 
-For CTFs, the shift occurs between the end of 2025 and 2026, where most CTF challenges become easily solvable by AI. At first, we were astonished by LLM capabilities. By now, for most CTF players, the "fun of configuring an AI and watching it solve a challenge" has worn off. 😟
+For CTFs, **the shift occurs between the end of 2025 and 2026**, where most CTF challenges become easily solvable by AI. At first, we were astonished by LLM capabilities. By now, for most CTF players, the "fun of configuring an AI and watching it solve a challenge" has worn off. 😟
+
+> These last two months, I played 2 CTFs, and I did **not have fun** 😢
 
 Consequently, starting mid-2026, various CTF organizers tried new options:
 
-- No Scoreboards (Sthack, Insomni'hack)
+- No Scoreboards ([Sthack](https://blog.sthack.fr/blog/2026/no-compet-ctf/), [GreHack](https://grehack.fr), [Insomni'hack](https://www.insomnihack.ch/content/contest))
 - No prizes, but goodies for everyone (Sthack)
-- Two Scoreboards (Hack.Lu)
-- Declare use of AI (NorthSec)
-- Prizes to the best writeup presentations (BlackAlps)
+- Two Scoreboards ([Hack.Lu](https://flu.xxx))
+- Declare use of AI ([NorthSec](https://nsec.io))
+- Prizes to the best writeup presentations ([BlackAlps](https://blackalps.ch))
 
 
 
-# Limiting agents: a solution for participants?
+# An Agent that doesn't Spoil
 
 During my last CTF, I intentionally played with an agent I told **not to give me the flag, not to spoil the challenge**. My agent is designed to:
 
@@ -55,7 +56,7 @@ In the second image, it **gave me a partial script** letting me fill in the impo
 
 ![](/images/mentor2.png)
 
-The agent is available in Appendix.
+The agent is available in **Appendix**.
 
 # CTFs in 2026 where I had fun (or not) 🚩
 
