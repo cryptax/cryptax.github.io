@@ -16,7 +16,7 @@ tags:
 
 At GreHack 2026 CTF, there were lots of challenges in the *Hardware* category, with a couple of challenges on operational **HP 85** devices. HP 85 are desktop computers released in 1980 with an integrated 5-inch CRT, built-in printer, tape drive and BASIC interpreter.
 
-![](/images/2026-grehack-hardware.jpg)
+![](/images/2026-grehack-hardware.png)
 
 The machines are restored and maintained by [ACONIT](https://aconit.org). It's a real pleasure to use antique devices which are running smoothly - yes, even the printer.
 
@@ -179,11 +179,11 @@ This time, we work with the program `2DEDT` and we get the hint there is *yet an
 No code to write? Okay, I look into every menu, and try hidden options.
 This is when I try option "5" in the following menu.
 
-![](/images/grehack-menu.png)
+![](/images/grehack26-menu.jpg)
 
 I don't even notice at first that it has printed the flag - the printer didn't make that much noise 🖨️
 
-![](/images/grehack-flag4.jpg)
+![](/images/grehack26-flag4.jpg)
 
 ## Conclusion
 
