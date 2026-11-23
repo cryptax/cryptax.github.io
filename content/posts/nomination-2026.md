@@ -27,6 +27,7 @@ Cryptax Nomination Awards. Lol. In other words, I'm listing my favorite talks, p
 | Best **keynote** | U. Laskay, *Building Systems That Survive Attack: Lessons from Banknote Security*, November 2026, [**BlackAlps**](https://blackalps.ch) |
 | Best **new tool** :(fa-solid fa-wrench): | *Herdr* [:(fa-solid fa-file-code):](https://herdr.dev/) |
 | Best conference **booths** :(fa-solid fa-person-booth): | GreHack [:(fa-solid fa-link):](https://grehack.fr) |
+| Best rump sessions | GreHack [:(fa-solid fa-link):](https://grehack.fr) |
 | Best conference **food** :(fa-solid fa-utensils): | BlackAlps [:(fa-solid fa-link):](https://blackalps.ch/) |
 | Best **CTF challenge** | *e-Ink badge* [:(fa-solid fa-file-lines):](https://cryptax.github.io/blackalps2026-badge/), side challenge proposed at *Compass Security*'s booth at *BlackAlps*. On NFC :(fa-brands fa-nfc-symbol):, smartcards :(fa-solid fa-credit-card): and AI :(fa-solid fa-robot):. |
 | Best **CTF** (besides [ph0wn CTF](https://ph0wn.org)) :(fa-solid fa-face-smile-wink): | *Capture The Evidence v2* [:(fa-solid fa-link):](https://www.linkedin.com/posts/eternalblue-ctf-team_rgpaca-cte-gendarmerienationale-activity-7468572621790601216-16rr) |
