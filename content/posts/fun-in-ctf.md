@@ -18,6 +18,8 @@ tags:
 
 # Can we still have fun at CTFs?
 
+*Note: this blog post was written before GreHack, and therefore does not mention it*
+
 
 | Year   | Impact for CTFs     |
 | ------ | ------------------- |
